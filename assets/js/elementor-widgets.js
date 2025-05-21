@@ -16,9 +16,24 @@
       initWidgets: function () {
         // Initialize widget-specific functionality here
 
+        // Register Feature Box widget handler
+        // elementorFrontend.hooks.addAction('frontend/element_ready/integra_feature_box.default', this.featureBoxWidget);
+
         // Example:
         // elementorFrontend.hooks.addAction('frontend/element_ready/integra_example.default', this.exampleWidget);
       },
+
+      // Feature Box widget handler
+      // featureBoxWidget: function ($scope) {
+      //   var $widget = $scope.find('.integra-feature-box');
+
+      //   // Add hover animations or other interactive features
+      //   $widget.on('mouseenter', function () {
+      //     $(this).addClass('is-hovered');
+      //   }).on('mouseleave', function () {
+      //     $(this).removeClass('is-hovered');
+      //   });
+      // },
 
       // Example widget handler
       // exampleWidget: function($scope) {
