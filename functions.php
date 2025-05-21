@@ -180,3 +180,27 @@ if ( defined( 'JETPACK__VERSION' ) ) {
 	require get_template_directory() . '/inc/jetpack.php';
 }
 
+/**
+ * Load Elementor custom widgets if Elementor is active.
+ */
+function integra_elements_elementor_support() {
+    // Check if Elementor is installed and activated
+    if ( ! did_action( 'elementor/loaded' ) ) {
+        return;
+    }
+
+    // Check Elementor version
+    if ( ! version_compare( ELEMENTOR_VERSION, '3.5.0', '>=' ) ) {
+        add_action( 'admin_notices', function() {
+            echo '<div class="notice notice-error"><p>' . 
+                 esc_html__( 'Integra Elements requires Elementor version 3.5.0 or greater.', 'integra-elements' ) . 
+                 '</p></div>';
+        } );
+        return;
+    }
+
+    // Load our custom widgets
+    require get_template_directory() . '/inc/elementor-widgets.php';
+}
+add_action( 'after_setup_theme', 'integra_elements_elementor_support' );
+
