@@ -1,0 +1,53 @@
+@use "../config/_index" as config;
+
+.grid {
+  display: grid;
+  gap: config.spacing("4");
+
+  // Gap variants
+  &--gap-sm {
+    gap: config.spacing("2");
+  }
+
+  &--gap-lg {
+    gap: config.spacing("8");
+  }
+
+  // Responsive grid templates
+  &--2-col {
+    grid-template-columns: 1fr;
+
+    @include config.breakpoint("md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &--3-col {
+    grid-template-columns: 1fr;
+
+    @include config.breakpoint("md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include config.breakpoint("lg") {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &--4-col {
+    grid-template-columns: 1fr;
+
+    @include config.breakpoint("md") {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include config.breakpoint("lg") {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  // Auto-fit grid for cards
+  &--auto-fit {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, 18rem), 1fr));
+  }
+}
