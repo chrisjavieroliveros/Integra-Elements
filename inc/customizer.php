@@ -5,6 +5,35 @@
  * @package Integra_Elements
  */
 
+ /**
+ * Add theme version field to the Customizer.
+ *
+ * @param WP_Customize_Manager $wp_customize Theme Customizer object.
+ */
+function integra_elements_customize_theme_version( $wp_customize ) {
+	// Add Theme Version Section
+	$wp_customize->add_section('integra_theme_version_section', array(
+		'title' => __('Theme Version', 'integra-elements'),
+		'priority' => 120,
+	));
+	
+	// Add Theme Version Setting
+	$wp_customize->add_setting('integra_theme_version', array(
+		'default' => '1.0.0',
+		'sanitize_callback' => 'sanitize_text_field',
+	));
+	
+	// Add Theme Version Control
+	$wp_customize->add_control('integra_theme_version', array(
+		'label' => __('Theme Version Number', 'integra-elements'),
+		'description' => __('Enter the current theme version number (e.g. 1.0.1)', 'integra-elements'),
+		'section' => 'integra_theme_version_section',
+		'type' => 'text',
+	));
+}
+add_action('customize_register', 'integra_elements_customize_theme_version');
+
+
 /**
  * Add postMessage support for site title and description for the Theme Customizer.
  *
@@ -31,6 +60,26 @@ function integra_elements_customize_register( $wp_customize ) {
 			)
 		);
 	}
+
+	// Add Theme Version Section
+    $wp_customize->add_section('integra_theme_version_section', array(
+        'title' => __('Theme Version', 'integra-elements'),
+        'priority' => 120,
+    ));
+    
+    // Add Theme Version Setting
+    $wp_customize->add_setting('integra_theme_version', array(
+        'default' => '1.0.0',
+        'sanitize_callback' => 'sanitize_text_field',
+    ));
+    
+    // Add Theme Version Control
+    $wp_customize->add_control('integra_theme_version', array(
+        'label' => __('Theme Version Number', 'integra-elements'),
+        'description' => __('Enter the current theme version number (e.g. 1.0.1)', 'integra-elements'),
+        'section' => 'integra_theme_version_section',
+        'type' => 'text',
+    ));
 }
 add_action( 'customize_register', 'integra_elements_customize_register' );
 
@@ -59,3 +108,4 @@ function integra_elements_customize_preview_js() {
 	wp_enqueue_script( 'integra-elements-customizer', get_template_directory_uri() . '/js/customizer.js', array( 'customize-preview' ), _S_VERSION, true );
 }
 add_action( 'customize_preview_init', 'integra_elements_customize_preview_js' );
+

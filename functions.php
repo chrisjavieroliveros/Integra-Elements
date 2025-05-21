@@ -8,8 +8,9 @@
  */
 
 if ( ! defined( '_S_VERSION' ) ) {
-	// Replace the version number of the theme on each release.
-	define( '_S_VERSION', '1.0.0' );
+    // Get version from theme mod or use default
+    $theme_version = get_theme_mod('integra_theme_version', '1.0.0');
+    define( '_S_VERSION', $theme_version );
 }
 
 /**
@@ -140,6 +141,9 @@ add_action( 'widgets_init', 'integra_elements_widgets_init' );
 function integra_elements_scripts() {
 	wp_enqueue_style( 'integra-elements-style', get_stylesheet_uri(), array(), _S_VERSION );
 	wp_style_add_data( 'integra-elements-style', 'rtl', 'replace' );
+	
+	// Enqueue main.min.css from assets directory
+	wp_enqueue_style( 'integra-elements-main', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION );
 
 	wp_enqueue_script( 'integra-elements-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
