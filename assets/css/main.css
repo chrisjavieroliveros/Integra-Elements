@@ -24,7 +24,7 @@
  *    @include generate-color-variables();
  * 
  * 3. Use colors in your SCSS:
- *    - Function: color: color('primary');      // Returns #314459
+ *    - Function: color: color('primary');      // Returns #c2171c
  *    - Function: border: 1px solid color('primary-300');  // Uses shade variant
  *    - Variable: background: var(--color-primary);  // Use CSS variable
  *    - Opacity: background: color-alpha('primary', 0.5);  // 50% opacity
@@ -225,7 +225,7 @@ img {
 }
 
 a {
-  color: #2a8de9;
+  color: #103256;
   text-decoration: none;
 }
 
@@ -238,7 +238,7 @@ button {
 }
 
 :focus-visible {
-  outline: 2px solid #2a8de9;
+  outline: 2px solid #103256;
   outline-offset: 2px;
 }
 
@@ -291,12 +291,12 @@ p:last-child {
 }
 
 a {
-  color: #314459;
+  color: #c2171c;
   text-decoration: underline;
   transition: color 0.2s;
 }
 a:hover {
-  color: #4a637f;
+  color: #df4347;
 }
 
 .text-small {
@@ -329,7 +329,7 @@ a:hover {
   transition: var(--button-default-transition);
 }
 .btn:focus-visible {
-  outline: 2px solid #314459;
+  outline: 2px solid #c2171c;
   outline-offset: 2px;
 }
 .btn--sm {
@@ -345,64 +345,64 @@ a:hover {
   width: 100%;
 }
 .btn--primary {
-  background-color: #314459;
+  background-color: #c2171c;
   color: #ffffff;
-  border-color: #314459;
+  border-color: #c2171c;
 }
 .btn--primary:hover {
-  background-color: #4a637f;
+  background-color: #ce4549;
   color: #ffffff;
-  border-color: #4a637f;
+  border-color: #ce4549;
 }
 .btn--secondary {
-  background-color: #2a8de9;
+  background-color: #103256;
   color: #ffffff;
-  border-color: #2a8de9;
+  border-color: #103256;
 }
 .btn--secondary:hover {
-  background-color: #5eabef;
+  background-color: #425c78;
   color: #ffffff;
-  border-color: #5eabef;
+  border-color: #425c78;
 }
 .btn--danger {
-  background-color: #e63946;
+  background-color: #d81c1c;
   color: #ffffff;
-  border-color: #e63946;
+  border-color: #d81c1c;
 }
 .btn--danger:hover {
-  background-color: #f06a75;
+  background-color: #e24949;
   color: #ffffff;
-  border-color: #f06a75;
+  border-color: #e24949;
 }
 .btn--warning {
-  background-color: #ffb703;
+  background-color: #f59e0b;
   color: #000000;
-  border-color: #ffb703;
+  border-color: #f59e0b;
 }
 .btn--warning:hover {
-  background-color: #ffc733;
+  background-color: #f7b53b;
   color: #000000;
-  border-color: #ffc733;
+  border-color: #f7b53b;
 }
 .btn--success {
-  background-color: #2a9d8f;
+  background-color: #0f766e;
   color: #ffffff;
-  border-color: #2a9d8f;
+  border-color: #0f766e;
 }
 .btn--success:hover {
-  background-color: #56b3a7;
+  background-color: #3f948d;
   color: #ffffff;
-  border-color: #56b3a7;
+  border-color: #3f948d;
 }
 .btn--info {
-  background-color: #219ebc;
+  background-color: #0369a1;
   color: #ffffff;
-  border-color: #219ebc;
+  border-color: #0369a1;
 }
 .btn--info:hover {
-  background-color: #4fb3d1;
+  background-color: #358bba;
   color: #ffffff;
-  border-color: #4fb3d1;
+  border-color: #358bba;
 }
 
 /**
@@ -417,73 +417,73 @@ a:hover {
  * all styles based on the SMACSS methodology.
  */
 :root {
-  --color-primary: #314459;
-  --color-primary-tint: #4a637f;
-  --color-primary-shade: #1f2c3a;
+  --color-primary: #c2171c;
+  --color-primary-tint: #ce4549;
+  --color-primary-shade: #9a1216;
   --color-primary-contrast: #ffffff;
-  --color-primary-50: #e6ebf1;
-  --color-primary-100: #cdd7e3;
-  --color-primary-200: #9fb3c8;
-  --color-primary-300: #718fac;
-  --color-primary-400: #4a637f;
-  --color-primary-500: #314459;
-  --color-primary-600: #28394b;
-  --color-primary-700: #1f2c3a;
-  --color-primary-800: #16202a;
-  --color-primary-900: #0d141a;
-  --color-primary-950: #070c10;
-  --color-secondary: #2a8de9;
-  --color-secondary-tint: #5eabef;
-  --color-secondary-shade: #1971c2;
+  --color-primary-50: #fbe7e8;
+  --color-primary-100: #f7d0d1;
+  --color-primary-200: #efa1a3;
+  --color-primary-300: #e77275;
+  --color-primary-400: #df4347;
+  --color-primary-500: #c2171c;
+  --color-primary-600: #9c1216;
+  --color-primary-700: #750e11;
+  --color-primary-800: #4e090b;
+  --color-primary-900: #270405;
+  --color-primary-950: #140202;
+  --color-secondary: #103256;
+  --color-secondary-tint: #425c78;
+  --color-secondary-shade: #0d2845;
   --color-secondary-contrast: #ffffff;
-  --color-secondary-50: #e3f2fd;
-  --color-secondary-100: #bbdefb;
-  --color-secondary-200: #90caf9;
-  --color-secondary-300: #64b5f6;
-  --color-secondary-400: #42a5f5;
-  --color-secondary-500: #2a8de9;
-  --color-secondary-600: #1e7bd6;
-  --color-secondary-700: #1971c2;
-  --color-secondary-800: #155fae;
-  --color-secondary-900: #104b8a;
-  --color-secondary-950: #0a2f5c;
-  --color-danger: #e63946;
-  --color-danger-tint: #f06a75;
-  --color-danger-shade: #a52833;
+  --color-secondary-50: #e6ebf0;
+  --color-secondary-100: #cdd8e2;
+  --color-secondary-200: #9ab0c5;
+  --color-secondary-300: #6889a8;
+  --color-secondary-400: #3b618a;
+  --color-secondary-500: #103256;
+  --color-secondary-600: #0d2845;
+  --color-secondary-700: #0a1e34;
+  --color-secondary-800: #071422;
+  --color-secondary-900: #030a11;
+  --color-secondary-950: #020508;
+  --color-danger: #d81c1c;
+  --color-danger-tint: #e24949;
+  --color-danger-shade: #ad1616;
   --color-danger-contrast: #ffffff;
-  --color-warning: #ffb703;
-  --color-warning-tint: #ffc733;
-  --color-warning-shade: #cc9202;
+  --color-warning: #f59e0b;
+  --color-warning-tint: #f7b53b;
+  --color-warning-shade: #c47e09;
   --color-warning-contrast: #000000;
-  --color-success: #2a9d8f;
-  --color-success-tint: #56b3a7;
-  --color-success-shade: #1f7468;
+  --color-success: #0f766e;
+  --color-success-tint: #3f948d;
+  --color-success-shade: #0c5e58;
   --color-success-contrast: #ffffff;
-  --color-info: #219ebc;
-  --color-info-tint: #4fb3d1;
-  --color-info-shade: #197a91;
+  --color-info: #0369a1;
+  --color-info-tint: #358bba;
+  --color-info-shade: #025480;
   --color-info-contrast: #ffffff;
   --color-light-50: #fefefe;
-  --color-light-100: #fcfcfc;
-  --color-light-200: #f9f9f9;
-  --color-light-300: #f5f5f5;
-  --color-light-400: #f0f0f0;
-  --color-light-500: #ebebeb;
-  --color-light-600: #d6d6d6;
-  --color-light-700: #bfbfbf;
-  --color-light-800: #a6a6a6;
-  --color-light-900: #8c8c8c;
-  --color-light-950: #737373;
-  --color-dark-50: #e6e6e6;
-  --color-dark-100: #cccccc;
-  --color-dark-200: #b3b3b3;
-  --color-dark-300: #999999;
-  --color-dark-400: #808080;
-  --color-dark-500: #666666;
-  --color-dark-600: #4d4d4d;
-  --color-dark-700: #333333;
-  --color-dark-800: #1a1a1a;
-  --color-dark-900: #0d0d0d;
+  --color-light-100: #fafafa;
+  --color-light-200: #f5f5f5;
+  --color-light-300: #ebebeb;
+  --color-light-400: #e0e0e0;
+  --color-light-500: #d6d6d6;
+  --color-light-600: #cccccc;
+  --color-light-700: #c2c2c2;
+  --color-light-800: #b8b8b8;
+  --color-light-900: #adadad;
+  --color-light-950: #a3a3a3;
+  --color-dark-50: #ababab;
+  --color-dark-100: #a1a1a1;
+  --color-dark-200: #8e8e8e;
+  --color-dark-300: #7c7c7c;
+  --color-dark-400: #6a6a6a;
+  --color-dark-500: #585858;
+  --color-dark-600: #464646;
+  --color-dark-700: #343434;
+  --color-dark-800: #222222;
+  --color-dark-900: #101010;
   --color-dark-950: #050505;
   --color-black: #272727;
   --color-white: #ffffff;
@@ -659,7 +659,7 @@ a:hover {
 }
 
 .hero {
-  background-color: #314459;
+  background-color: #c2171c;
   color: #ffffff;
 }
 
