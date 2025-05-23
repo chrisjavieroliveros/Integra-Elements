@@ -55,8 +55,8 @@ class Integra_Elementor_Widgets {
         // Enqueue widget styles
         add_action('elementor/frontend/after_enqueue_styles', [$this, 'widget_styles']);
         
-        // Enqueue widget scripts
-        add_action('elementor/frontend/after_register_scripts', [$this, 'widget_scripts']);
+        // Enqueue widget scripts - using after_enqueue_scripts instead of after_register_scripts
+        add_action('elementor/frontend/after_enqueue_scripts', [$this, 'widget_scripts']);
     }
 
     /**
@@ -131,8 +131,18 @@ class Integra_Elementor_Widgets {
             'integra-elementor-widgets',
             get_template_directory_uri() . '/assets/js/elementor-widgets.js',
             ['jquery', 'elementor-frontend'],
-            _S_VERSION,
+            _S_VERSION, 
             true
+        );
+        
+        // Add localized script data to ensure our script can access Elementor data
+        wp_localize_script(
+            'integra-elementor-widgets',
+            'IntegraElementorData',
+            [
+                'ajaxurl' => admin_url('admin-ajax.php'),
+                'nonce'   => wp_create_nonce('integra-elementor-nonce'),
+            ]
         );
     }
 }
