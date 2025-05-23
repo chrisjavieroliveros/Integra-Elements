@@ -1,0 +1,218 @@
+@use "../config/colors" as *;
+@use "../config/breakpoints" as breakpoints;
+@use "../config/spacing" as spacing;
+
+.site-navigation {
+  width: 100%;
+
+  // Container for the navigation
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: spacing.spacing("4") 0;
+  }
+
+  // Logo styles
+  .nav-logo {
+    z-index: 2;
+
+    img {
+      max-height: 50px;
+      width: auto;
+    }
+  }
+
+  // Mobile toggle button
+  .mobile-nav-toggle {
+    display: none;
+    z-index: 2;
+    cursor: pointer;
+    padding: spacing.spacing("2");
+    background: none;
+    border: none;
+
+    @include breakpoints.breakpoint("md") {
+      display: block;
+    }
+
+    .menu-toggle-icon {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background-color: color("secondary");
+      position: relative;
+      transition: all 0.3s ease;
+
+      &::before,
+      &::after {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        background-color: color("secondary");
+        transition: all 0.3s ease;
+      }
+
+      &::before {
+        transform: translateY(-8px);
+      }
+
+      &::after {
+        transform: translateY(8px);
+      }
+    }
+
+    &[aria-expanded="true"] {
+      .menu-toggle-icon {
+        background-color: transparent;
+
+        &::before {
+          transform: rotate(45deg);
+        }
+
+        &::after {
+          transform: rotate(-45deg);
+        }
+      }
+    }
+  }
+
+  // Navigation menu wrapper
+  .nav-menu-wrapper {
+    @include breakpoints.breakpoint("md") {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background-color: color("white");
+      padding: spacing.spacing("10") spacing.spacing("4") spacing.spacing("4");
+      transform: translateX(-100%);
+      transition: transform 0.3s ease;
+      z-index: 1;
+      overflow-y: auto;
+
+      &.active {
+        transform: translateX(0);
+      }
+    }
+  }
+
+  // Main menu styles
+  .main-menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+
+    @include breakpoints.breakpoint("md") {
+      display: flex;
+      align-items: center;
+      gap: spacing.spacing("6");
+    }
+
+    @include breakpoints.breakpoint("md") {
+      text-align: center;
+    }
+
+    // First level items
+    > li {
+      position: relative;
+
+      @include breakpoints.breakpoint("md") {
+        margin-bottom: spacing.spacing("4");
+      }
+
+      > a {
+        color: color("secondary");
+        text-decoration: none;
+        font-weight: 500;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: color("primary");
+        }
+      }
+    }
+
+    // Submenu styles
+    .sub-menu {
+      list-style: none;
+      margin: 0;
+      padding: spacing.spacing("2") 0;
+
+      @include breakpoints.breakpoint("md") {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        min-width: 200px;
+        background-color: color("white");
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        opacity: 0;
+        visibility: hidden;
+        transform: translateY(10px);
+        transition: all 0.2s ease;
+      }
+
+      li {
+        @include breakpoints.breakpoint("md") {
+          padding: spacing.spacing("2") spacing.spacing("4");
+        }
+
+        @include breakpoints.breakpoint("md") {
+          margin-bottom: spacing.spacing("2");
+        }
+      }
+
+      a {
+        color: color("secondary");
+        text-decoration: none;
+        display: block;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: color("primary");
+        }
+      }
+    }
+
+    // Show submenu on hover/focus for desktop
+    @include breakpoints.breakpoint("md") {
+      li:hover > .sub-menu,
+      li:focus-within > .sub-menu {
+        opacity: 1;
+        visibility: visible;
+        transform: translateY(0);
+      }
+    }
+
+    // Show submenu on click for mobile
+    @include breakpoints.breakpoint("md") {
+      .menu-item-has-children {
+        &.sub-menu-active {
+          > .sub-menu {
+            display: block;
+          }
+        }
+
+        > .sub-menu {
+          display: none;
+        }
+      }
+    }
+  }
+}
+
+// Screen reader text
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}

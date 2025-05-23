@@ -712,6 +712,185 @@ a:hover {
   color: #ffffff;
 }
 
+.site-navigation {
+  width: 100%;
+}
+.site-navigation .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.site-navigation .nav-logo {
+  z-index: 2;
+}
+.site-navigation .nav-logo img {
+  max-height: 50px;
+  width: auto;
+}
+.site-navigation .mobile-nav-toggle {
+  display: none;
+  z-index: 2;
+  cursor: pointer;
+  padding: 0.5rem;
+  background: none;
+  border: none;
+}
+@media (min-width: 768px) {
+  .site-navigation .mobile-nav-toggle {
+    display: block;
+  }
+}
+.site-navigation .mobile-nav-toggle .menu-toggle-icon {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background-color: #103256;
+  position: relative;
+  transition: all 0.3s ease;
+}
+.site-navigation .mobile-nav-toggle .menu-toggle-icon::before, .site-navigation .mobile-nav-toggle .menu-toggle-icon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #103256;
+  transition: all 0.3s ease;
+}
+.site-navigation .mobile-nav-toggle .menu-toggle-icon::before {
+  transform: translateY(-8px);
+}
+.site-navigation .mobile-nav-toggle .menu-toggle-icon::after {
+  transform: translateY(8px);
+}
+.site-navigation .mobile-nav-toggle[aria-expanded=true] .menu-toggle-icon {
+  background-color: transparent;
+}
+.site-navigation .mobile-nav-toggle[aria-expanded=true] .menu-toggle-icon::before {
+  transform: rotate(45deg);
+}
+.site-navigation .mobile-nav-toggle[aria-expanded=true] .menu-toggle-icon::after {
+  transform: rotate(-45deg);
+}
+@media (min-width: 768px) {
+  .site-navigation .nav-menu-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #ffffff;
+    padding: 4rem 1rem 1rem;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+    z-index: 1;
+    overflow-y: auto;
+  }
+  .site-navigation .nav-menu-wrapper.active {
+    transform: translateX(0);
+  }
+}
+.site-navigation .main-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+@media (min-width: 768px) {
+  .site-navigation .main-menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+@media (min-width: 768px) {
+  .site-navigation .main-menu {
+    text-align: center;
+  }
+}
+.site-navigation .main-menu > li {
+  position: relative;
+}
+@media (min-width: 768px) {
+  .site-navigation .main-menu > li {
+    margin-bottom: 1rem;
+  }
+}
+.site-navigation .main-menu > li > a {
+  color: #103256;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.2s ease;
+}
+.site-navigation .main-menu > li > a:hover {
+  color: #c2171c;
+}
+.site-navigation .main-menu .sub-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0.5rem 0;
+}
+@media (min-width: 768px) {
+  .site-navigation .main-menu .sub-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    min-width: 200px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(10px);
+    transition: all 0.2s ease;
+  }
+}
+@media (min-width: 768px) {
+  .site-navigation .main-menu .sub-menu li {
+    padding: 0.5rem 1rem;
+  }
+}
+@media (min-width: 768px) {
+  .site-navigation .main-menu .sub-menu li {
+    margin-bottom: 0.5rem;
+  }
+}
+.site-navigation .main-menu .sub-menu a {
+  color: #103256;
+  text-decoration: none;
+  display: block;
+  transition: color 0.2s ease;
+}
+.site-navigation .main-menu .sub-menu a:hover {
+  color: #c2171c;
+}
+@media (min-width: 768px) {
+  .site-navigation .main-menu li:hover > .sub-menu,
+  .site-navigation .main-menu li:focus-within > .sub-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+}
+@media (min-width: 768px) {
+  .site-navigation .main-menu .menu-item-has-children.sub-menu-active > .sub-menu {
+    display: block;
+  }
+  .site-navigation .main-menu .menu-item-has-children > .sub-menu {
+    display: none;
+  }
+}
+
+.screen-reader-text {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 /**
  * Project: SMACSS SCSS Architecture
  * Description: This project implements a scalable and modular architecture for CSS (SMACSS) 
