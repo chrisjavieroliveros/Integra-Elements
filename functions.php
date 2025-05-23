@@ -154,6 +154,23 @@ function integra_elements_scripts() {
 add_action( 'wp_enqueue_scripts', 'integra_elements_scripts' );
 
 /**
+ * Enqueue jQuery from Google CDN.
+ */
+function integra_elements_enqueue_jquery() {
+    if (!is_admin()) {
+        // Deregister the default WordPress jQuery
+        wp_deregister_script('jquery');
+        
+        // Register jQuery from Google CDN
+        wp_register_script('jquery', 'https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js', array(), '3.6.4', true);
+        
+        // Enqueue it
+        wp_enqueue_script('jquery');
+    }
+}
+add_action('wp_enqueue_scripts', 'integra_elements_enqueue_jquery');
+
+/**
  * Implement the Custom Header feature.
  */
 require get_template_directory() . '/inc/custom-header.php';
