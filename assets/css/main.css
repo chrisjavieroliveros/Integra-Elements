@@ -350,9 +350,9 @@ a:hover {
   border-color: #c2171c;
 }
 .btn--primary:hover {
-  background-color: #ce4549;
+  background-color: #1f0909;
   color: #ffffff;
-  border-color: #ce4549;
+  border-color: #1f0909;
 }
 .btn--secondary {
   background-color: #103256;
@@ -418,7 +418,7 @@ a:hover {
  */
 :root {
   --color-primary: #c2171c;
-  --color-primary-tint: #ce4549;
+  --color-primary-tint: #1f0909;
   --color-primary-shade: #9a1216;
   --color-primary-contrast: #ffffff;
   --color-primary-50: #fbe7e8;
@@ -569,24 +569,43 @@ a:hover {
  * This file serves as the entry point for the SCSS architecture. It organizes and imports 
  * all styles based on the SMACSS methodology.
  */
+/**
+ * CONTAINER CONFIGURATION
+ * ----------------------
+ * 
+ * USAGE:
+ * 1. Apply the container class to create a responsive, centered wrapper:
+ *    <div class="container">Content goes here</div>
+ * 
+ * 2. Container variations:
+ *    - Default: <div class="container">...</div> (max-width: 1200px)
+ *    - Narrow: <div class="container container--narrow">...</div> (max-width: 800px)
+ *    - Wide: <div class="container container--wide">...</div> (max-width: 1600px)
+ *    - Fluid: <div class="container container--fluid">...</div> (max-width: 100%)
+ * 
+ * 3. Container padding is responsive and handled by CSS variables:
+ *    - Large screens: var(--container-padding-lg)
+ *    - Medium screens: var(--container-padding-md)
+ *    - Small screens: var(--container-padding-sm)
+ */
 .container {
   width: 100%;
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: var(--container-padding-sm);
-  padding-right: var(--container-padding-sm);
+  padding-left: var(--container-padding-lg);
+  padding-right: var(--container-padding-lg);
 }
-@media (min-width: 768px) {
+@media (min-width: 992px) {
   .container {
     padding-left: var(--container-padding-md);
     padding-right: var(--container-padding-md);
   }
 }
-@media (min-width: 992px) {
+@media (min-width: 768px) {
   .container {
-    padding-left: var(--container-padding-lg);
-    padding-right: var(--container-padding-lg);
+    padding-left: var(--container-padding-sm);
+    padding-right: var(--container-padding-sm);
   }
 }
 .container--narrow {
@@ -609,6 +628,36 @@ a:hover {
  * 
  * This file serves as the entry point for the SCSS architecture. It organizes and imports 
  * all styles based on the SMACSS methodology.
+ */
+/**
+ * GRID LAYOUT CONFIGURATION
+ * -----------------------
+ * 
+ * USAGE:
+ * 1. Apply the grid class to create a responsive grid layout:
+ *    <div class="grid">
+ *      <div>Item 1</div>
+ *      <div>Item 2</div>
+ *    </div>
+ * 
+ * 2. Column variations (responsive):
+ *    - Two columns: <div class="grid grid--2-col">...</div>
+ *      Mobile: 1 column, Tablet/Desktop: 2 columns
+ *    
+ *    - Three columns: <div class="grid grid--3-col">...</div>
+ *      Mobile: 1 column, Tablet: 2 columns, Desktop: 3 columns
+ *    
+ *    - Four columns: <div class="grid grid--4-col">...</div>
+ *      Mobile: 1 column, Tablet: 2 columns, Desktop: 4 columns
+ * 
+ * 3. Gap variations:
+ *    - Default: <div class="grid">...</div> (gap: spacing("4"))
+ *    - Small: <div class="grid grid--gap-sm">...</div> (gap: spacing("2"))
+ *    - Large: <div class="grid grid--gap-lg">...</div> (gap: spacing("8"))
+ * 
+ * 4. Auto-fit grid (for card layouts):
+ *    <div class="grid grid--auto-fit">...</div>
+ *    Creates a responsive grid that automatically fits columns based on available space
  */
 .grid {
   display: grid;

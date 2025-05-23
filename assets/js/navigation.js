@@ -1,99 +1,65 @@
 /**
- * File navigation.js.
+ * Main Navigation JavaScript
  *
- * Handles toggling the navigation menu for small screens and enables TAB key
- * navigation support for dropdown menus.
+ * Handles navigation functionality for the theme.
+ * This file is intentionally kept minimal and can be customized as needed.
+ *
+ * @package WP-Integra-Elements
  */
-(function () {
-	const siteNavigation = document.getElementById('site-navigation');
 
-	// Return early if the navigation doesn't exist.
-	if (!siteNavigation) {
-		return;
-	}
+(function ($) {
+    'use strict';
 
-	const button = siteNavigation.getElementsByTagName('button')[0];
+    // Initialize when the DOM is fully loaded
+    $(document).ready(function () {
 
-	// Return early if the button doesn't exist.
-	if ('undefined' === typeof button) {
-		return;
-	}
+        // Mobile menu toggle functionality
+        const $mobileNavToggle = $('#mobile-nav-toggle');
+        const $navMenuWrapper = $('.nav-menu-wrapper');
 
-	const menu = siteNavigation.getElementsByTagName('ul')[0];
+        $mobileNavToggle.on('click', function (e) {
+            e.preventDefault();
 
-	// Hide menu toggle button if menu is empty and return early.
-	if ('undefined' === typeof menu) {
-		button.style.display = 'none';
-		return;
-	}
+            const expanded = $mobileNavToggle.attr('aria-expanded') === 'true';
 
-	if (!menu.classList.contains('nav-menu')) {
-		menu.classList.add('nav-menu');
-	}
+            // Toggle expanded state
+            $mobileNavToggle.attr('aria-expanded', !expanded);
 
-	// Toggle the .toggled class and the aria-expanded value each time the button is clicked.
-	button.addEventListener('click', function () {
-		siteNavigation.classList.toggle('toggled');
+            // Toggle menu visibility
+            $navMenuWrapper.toggleClass('active');
+        });
 
-		if (button.getAttribute('aria-expanded') === 'true') {
-			button.setAttribute('aria-expanded', 'false');
-		} else {
-			button.setAttribute('aria-expanded', 'true');
-		}
-	});
+        // Close menu when clicking outside
+        $(document).on('click', function (event) {
+            if (!$(event.target).closest('#site-navigation').length) {
+                $navMenuWrapper.removeClass('active');
+                $mobileNavToggle.attr('aria-expanded', 'false');
+            }
+        });
 
-	// Remove the .toggled class and set aria-expanded to false when the user clicks outside the navigation.
-	document.addEventListener('click', function (event) {
-		const isClickInside = siteNavigation.contains(event.target);
+        // Prevent clicks inside navigation from closing the menu
+        $navMenuWrapper.on('click', function (event) {
+            event.stopPropagation();
+        });
 
-		if (!isClickInside) {
-			siteNavigation.classList.remove('toggled');
-			button.setAttribute('aria-expanded', 'false');
-		}
-	});
+        // Add dropdown functionality for sub-menus if needed
+        // This is a basic version - you can expand it later
+        $('.menu-item-has-children > a').on('click', function (e) {
+            if (window.innerWidth < 769) {
+                e.preventDefault();
+                $(this).next('.sub-menu').slideToggle();
+                $(this).parent().toggleClass('sub-menu-active');
+            }
+        });
 
-	// Get all the link elements within the menu.
-	const links = menu.getElementsByTagName('a');
+        // Handle window resize events
+        $(window).on('resize', function () {
+            if (window.innerWidth > 768) {
+                $navMenuWrapper.removeClass('active');
+                $('.sub-menu').removeAttr('style');
+            }
+        });
 
-	// Get all the link elements with children within the menu.
-	const linksWithChildren = menu.querySelectorAll('.menu-item-has-children > a, .page_item_has_children > a');
+    });
 
-	// Toggle focus each time a menu link is focused or blurred.
-	for (const link of links) {
-		link.addEventListener('focus', toggleFocus, true);
-		link.addEventListener('blur', toggleFocus, true);
-	}
-
-	// Toggle focus each time a menu link with children receive a touch event.
-	for (const link of linksWithChildren) {
-		link.addEventListener('touchstart', toggleFocus, false);
-	}
-
-	/**
-	 * Sets or removes .focus class on an element.
-	 */
-	function toggleFocus() {
-		if (event.type === 'focus' || event.type === 'blur') {
-			let self = this;
-			// Move up through the ancestors of the current link until we hit .nav-menu.
-			while (!self.classList.contains('nav-menu')) {
-				// On li elements toggle the class .focus.
-				if ('li' === self.tagName.toLowerCase()) {
-					self.classList.toggle('focus');
-				}
-				self = self.parentNode;
-			}
-		}
-
-		if (event.type === 'touchstart') {
-			const menuItem = this.parentNode;
-			event.preventDefault();
-			for (const link of menuItem.parentNode.children) {
-				if (menuItem !== link) {
-					link.classList.remove('focus');
-				}
-			}
-			menuItem.classList.toggle('focus');
-		}
-	}
-}());
+})(jQuery);
