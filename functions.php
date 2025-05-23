@@ -144,7 +144,6 @@ function integra_elements_scripts() {
 	
 	// Enqueue main.min.css from assets directory
 	wp_enqueue_style( 'integra-elements-main', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION );
-
 	wp_enqueue_script( 'integra-elements-navigation', get_template_directory_uri() . '/js/navigation.js', array(), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {

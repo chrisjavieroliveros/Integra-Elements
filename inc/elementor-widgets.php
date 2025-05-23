@@ -52,9 +52,6 @@ class Integra_Elementor_Widgets {
         // Register widget categories
         add_action('elementor/elements/categories_registered', [$this, 'add_widget_categories']);
         
-        // Enqueue widget styles
-        add_action('elementor/frontend/after_enqueue_styles', [$this, 'widget_styles']);
-        
         // Enqueue widget scripts - using after_enqueue_scripts instead of after_register_scripts
         add_action('elementor/frontend/after_enqueue_scripts', [$this, 'widget_scripts']);
     }
@@ -109,18 +106,6 @@ class Integra_Elementor_Widgets {
         );
     }
 
-    /**
-     * Enqueue widget styles
-     */
-    public function widget_styles() {
-        // Add your widget styles here
-        wp_enqueue_style(
-            'integra-elementor-widgets',
-            get_template_directory_uri() . '/assets/css/elementor-widgets.css',
-            [],
-            _S_VERSION
-        );
-    }
 
     /**
      * Enqueue widget scripts
