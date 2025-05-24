@@ -48,6 +48,8 @@
 		</div><!-- .site-info -->
 	</footer><!-- #colophon -->
 </div><!-- #page -->
+</div><!-- #smooth-content -->
+</div><!-- #smooth-wrapper -->
 
 <?php wp_footer(); ?>
 

@@ -153,6 +153,10 @@ function integra_elements_scripts() {
 	wp_enqueue_script( 'gsap-scrollsmoother', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js', array('gsap', 'gsap-scrolltrigger'), '3.13.0', true );
 	wp_enqueue_script( 'gsap-splittext', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js', array('gsap'), '3.13.0', true );
 	
+	// Enqueue ScrollSmoother initialization script
+	wp_enqueue_script( 'integra-scroll-smoother', get_template_directory_uri() . '/assets/js/scroll-smoother.js', array('gsap', 'gsap-scrolltrigger', 'gsap-scrollsmoother'), _S_VERSION, true );
+	
+	// Enqueue main.js from assets directory
 	wp_enqueue_script( 'integra-elements-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), _S_VERSION, true );
 
 	if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {
