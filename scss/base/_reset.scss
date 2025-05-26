@@ -17,10 +17,11 @@ html {
 body {
   margin: 0;
   font-family: typography.font-family("base");
-  font-size: typography.font-size("base");
+  font-size: typography.font-size(3); // Updated to use numbered scale (16px)
   line-height: typography.line-height("normal");
   color: colors.color("black");
   background-color: colors.color("white");
+  @include typography.font-base-styles; // Add base font styles
 }
 
 // Remove default margin

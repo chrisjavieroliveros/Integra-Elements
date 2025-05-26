@@ -9,17 +9,28 @@
  *    @include generate-typography-variables();
  * 
  * 3. Use typography in your SCSS:
- *    - Font family: font-family: font-family('heading');  // Returns 'Inter', -apple-system, etc.
+ *    - Font family: font-family: font-family('heading');  // Returns 'Roboto', -apple-system, etc.
  *    - Font weight: font-weight: font-weight('bold');     // Returns 700
- *    - Font size: font-size: font-size('lg');            // Returns 1.125rem
- *    - Line height: line-height: line-height('tight');   // Returns 1.25
+ *    - Font size: font-size: font-size(3);               // Returns 1rem (16px)
+ *    - Line height: line-height: line-height('tight');    // Returns 1.25
  *    - Letter spacing: letter-spacing: letter-spacing('wide');  // Returns 0.025em
- *    - Variable: font-size: var(--font-size-xl);         // Use CSS variable
+ *    - Variable: font-size: var(--font-size-5);          // Use CSS variable
+ * 
+ * Font size scale:
+ *    1: 0.75rem  (12px) - Small labels, footnotes
+ *    2: 0.875rem (14px) - Secondary text
+ *    3: 1rem     (16px) - Body text
+ *    4: 1.125rem (18px) - Large body text
+ *    5: 1.25rem  (20px) - Small headings
+ *    6: 1.5rem   (24px) - Medium headings
+ *    7: 1.875rem (30px) - Large headings
+ *    8: 2.25rem  (36px) - Extra large headings
+ *    9: 3rem     (48px) - Display headings
  * 
  * 4. For component patterns:
  *    .heading-1 { 
  *      font-family: font-family('heading');
- *      font-size: font-size('5xl');
+ *      font-size: font-size(8);
  *      font-weight: font-weight('bold');
  *      line-height: line-height('tight');
  *    }
@@ -32,24 +43,32 @@
 // Font families
 $font-families: (
   "base": (
-    "Inter",
+    "Roboto",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
-    Roboto,
     "Helvetica Neue",
     Arial,
+    "Noto Sans",
     sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji",
   ),
   "heading": (
-    "Inter",
+    "Roboto",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
-    Roboto,
     "Helvetica Neue",
     Arial,
+    "Noto Sans",
     sans-serif,
+    "Apple Color Emoji",
+    "Segoe UI Emoji",
+    "Segoe UI Symbol",
+    "Noto Color Emoji",
   ),
   "mono": (
     "SFMono-Regular",
@@ -57,6 +76,7 @@ $font-families: (
     "Liberation Mono",
     Menlo,
     Monaco,
+    "Courier New",
     monospace,
   ),
 );
@@ -70,26 +90,25 @@ $font-weights: (
   "bold": 700,
 );
 
-// Font sizes
+// Font sizes - Scaled progression
 $font-sizes: (
-  "xs": 0.75rem,
-  // 12px
-  "sm": 0.875rem,
-  // 14px
-  "base": 1rem,
-  // 16px
-  "lg": 1.125rem,
-  // 18px
-  "xl": 1.25rem,
-  // 20px
-  "2xl": 1.5rem,
-  // 24px
-  "3xl": 1.875rem,
-  // 30px
-  "4xl": 2.25rem,
-  // 36px
-  "5xl": 3rem,
-  // 48px
+  1: 0.75rem,
+  // 12px - Small labels, footnotes
+  2: 0.875rem,
+  // 14px - Secondary text
+  3: 1rem,
+  // 16px - Body text
+  4: 1.125rem,
+  // 18px - Large body text
+  5: 1.25rem,
+  // 20px - Small headings
+  6: 1.5rem,
+  // 24px - Medium headings
+  7: 1.875rem,
+  // 30px - Large headings
+  8: 2.25rem,
+  // 36px - Extra large headings
+  9: 3rem // 48px - Display headings,,,,,
 );
 
 // Line heights
@@ -188,6 +207,10 @@ $letter-spacing: (
  */
 @mixin generate-typography-variables() {
   :root {
+    // Add font optical sizing and variation settings
+    --font-optical-sizing: auto;
+    --font-variation-settings: "wdth" 100;
+
     @each $name, $value in $font-sizes {
       --font-size-#{$name}: #{$value};
     }
@@ -204,4 +227,11 @@ $letter-spacing: (
       --font-weight-#{$name}: #{$value};
     }
   }
+}
+
+// Add a mixin for font base styles
+@mixin font-base-styles {
+  font-optical-sizing: var(--font-optical-sizing);
+  font-style: normal;
+  font-variation-settings: var(--font-variation-settings);
 }

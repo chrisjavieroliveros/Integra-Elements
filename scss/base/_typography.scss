@@ -9,33 +9,34 @@ h4,
 h5,
 h6 {
   font-family: typography.font-family("heading");
-  font-weight: typography.font-weight("bold");
+  font-weight: 300;
   line-height: typography.line-height("tight");
   margin-bottom: spacing.spacing("4");
+  @include typography.font-base-styles;
 }
 
 h1 {
-  font-size: typography.font-size("4xl");
+  font-size: typography.font-size(8); // 2.25rem/36px
 }
 
 h2 {
-  font-size: typography.font-size("3xl");
+  font-size: typography.font-size(7); // 1.875rem/30px
 }
 
 h3 {
-  font-size: typography.font-size("2xl");
+  font-size: typography.font-size(6); // 1.5rem/24px
 }
 
 h4 {
-  font-size: typography.font-size("xl");
+  font-size: typography.font-size(5); // 1.25rem/20px
 }
 
 h5 {
-  font-size: typography.font-size("lg");
+  font-size: typography.font-size(4); // 1.125rem/18px
 }
 
 h6 {
-  font-size: typography.font-size("base");
+  font-size: typography.font-size(3); // 1rem/16px
 }
 
 p {
@@ -47,7 +48,7 @@ p {
 }
 
 .lead {
-  font-size: typography.font-size("xl");
+  font-size: typography.font-size(5);
   line-height: typography.line-height("snug");
 }
 
@@ -62,5 +63,32 @@ a {
 }
 
 .text-small {
-  font-size: typography.font-size("sm");
+  font-size: typography.font-size(2);
+}
+
+.display-1 {
+  font-family: typography.font-family("heading");
+  font-size: typography.font-size(9);
+  font-weight: typography.font-weight("bold");
+  line-height: typography.line-height("none");
+  letter-spacing: typography.letter-spacing("tight");
+  @include typography.font-base-styles;
+}
+
+.display-2 {
+  font-family: typography.font-family("heading");
+  font-size: typography.font-size(8);
+  font-weight: typography.font-weight("bold");
+  line-height: typography.line-height("none");
+  letter-spacing: typography.letter-spacing("tight");
+  @include typography.font-base-styles;
+}
+
+.display-3 {
+  font-family: typography.font-family("heading");
+  font-size: typography.font-size(7);
+  font-weight: typography.font-weight("bold");
+  line-height: typography.line-height("tight");
+  letter-spacing: typography.letter-spacing("tight");
+  @include typography.font-base-styles;
 }
