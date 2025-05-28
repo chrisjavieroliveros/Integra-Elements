@@ -69,6 +69,9 @@ function integra_elements_scripts() {
     // Fallback for browsers with JavaScript disabled
     wp_add_inline_style('integra-google-fonts', "@media not print{#integra-google-fonts{media:all}}");
 
+    // Theme Config CSS;
+    // wp_enqueue_style('integra-theme-config', get_template_directory_uri() . '/assets/css/config.min.css', array(), _S_VERSION);
+
     // Theme Styles
     wp_enqueue_style('integra-elements-style', get_stylesheet_uri(), array(), _S_VERSION);
     wp_enqueue_style('integra-elements-main', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION);

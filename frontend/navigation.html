@@ -1,38 +1,85 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Navigation Component</title>
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="../style.css" />
-    <link rel="stylesheet" href="../assets/css/main.min.css" />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Navigation Component</title>
 
-    <!-- Scripts -->
-    <script src="../assets/js/"></script>
-  </head>
-  <body>
-    <section class="hero">
-      <div class="hero__container">
-        <div class="hero__content">
-          <h1 class="hero__title">Your Compelling Headline</h1>
-          <p class="hero__description">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-            lacinia odio vitae vestibulum vestibulum.
-          </p>
-          <div class="hero__cta">
-            <a href="#" class="btn btn-primary">Get Started</a>
-            <a href="#" class="btn btn-secondary">Learn More</a>
+  <!-- CSS -->
+  <link rel="stylesheet" href="../style.css" />
+  <link rel="stylesheet" href="../assets/css/main.min.css" />
+
+  <!-- Scripts -->
+  <script src="../assets/js/scroll-smoother.js"></script>
+  <script src="../assets/js/navigation.js"></script>
+  <script src="../assets/js/elementor-widgets.js"></script>
+</head>
+
+<body>
+
+  <nav>
+
+    <div class="nav">
+
+      <!-- Nav Header -->
+      <div class="nav-header">
+        <div class="container">
+          <div class="nav-left">
+            <a href="#" class="logo">
+              <img src="../assets/images/logo.svg" alt="Logo" />
+            </a>
           </div>
-        </div>
-        <div class="hero__preview">
-          <div class="hero__image-wrapper">
-            <!-- Image placeholder - replace src with actual image -->
-            <img src="placeholder.jpg" alt="Hero image" class="hero__image" />
+
+          <div class="nav-center">
+            <ul class="menu">
+              <li>
+                <a href="#">Navigation Item</a>
+              </li>
+              <li class="has-dropdown">
+                <a href="#">Navigation Item</a>
+              </li>
+              <li class="active">
+                <a href="#">Navigation Item</a>
+              </li>
+              <li>
+                <a href="#">Navigation Item</a>
+              </li>
+              <li>
+                <a href="#">Navigation Item</a>
+              </li>
+              <li>
+                <a href="#">Navigation Item</a>
+              </li>
+            </ul>
+          </div>
+
+          <div class="nav-right">
+            <ul class="menu">
+              <li>
+                <a href="#">Contact</a>
+              </li>
+              <li>
+                <a href="#">Login</a>
+              </li>
+              <li>
+                <a href="#" class="btn">Check our Pricing</a>
+              </li>
+            </ul>
           </div>
         </div>
       </div>
-    </section>
-  </body>
+
+      <!-- Nav Body -->
+      <div class="nav-body">
+        <div class="container">
+        </div>
+      </div>
+    </div>
+
+    </div>
+  </nav>
+
+</body>
+
 </html>

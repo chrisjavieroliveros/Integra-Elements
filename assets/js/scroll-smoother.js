@@ -13,15 +13,16 @@ document.addEventListener('DOMContentLoaded', function () {
   gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
 
   // Initialize ScrollSmoother
-  let smoother = ScrollSmoother.create({
-    wrapper: "#smooth-wrapper",
-    content: "#smooth-content",
-    smooth: 1.2,               // How long (in seconds) it takes to "catch up" to the native scroll position
-    effects: true,             // looks for data-speed and data-lag attributes on elements
-    smoothTouch: 0.1,          // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
-    normalizeScroll: true,     // prevents address bar from showing/hiding on most devices, solves various other browser inconsistencies
-    ignoreMobileResize: true,  // skips ScrollTrigger.refresh() on mobile resizes from address bar showing/hiding
-  });
+  let smoother = ScrollSmoother.create(
+    {
+      wrapper: "#smooth-wrapper",
+      content: "#smooth-content",
+      smooth: 1.2,               // How long (in seconds) it takes to "catch up" to the native scroll position
+      effects: true,             // looks for data-speed and data-lag attributes on elements
+      smoothTouch: 0.1,          // much shorter smoothing time on touch devices (default is NO smoothing on touch devices)
+      normalizeScroll: true,     // prevents address bar from showing/hiding on most devices, solves various other browser inconsistencies
+      ignoreMobileResize: true,  // skips ScrollTrigger.refresh() on mobile resizes from address bar showing/hiding
+    });
 
   // Remove loading class and add loaded class
   document.body.classList.remove('scroll-smoother-loading');
