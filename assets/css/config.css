@@ -89,120 +89,16 @@
  * @example margin: spacing('sm');    // Returns 1rem via alias
  */
 /**
- * Button Configuration
+ * BUTTON CONFIGURATION
+ * -------------------
+ * This file contains only button maps and utility functions.
+ * CSS custom properties are generated in config/config.scss
  */
 /**
- * Generate CSS button variables
- * Creates CSS custom properties for all button configurations
- * @example @include generate-button-variables();
- */
-:root {
-  --button-default-padding-y: var(--spacing-2);
-  --button-default-padding-x: var(--spacing-4);
-  --button-default-border-radius: 0.375rem;
-  --button-default-font-weight: medium;
-  --button-default-font-size: var(--font-size-base);
-  --button-default-transition: all 0.2s ease-in-out;
-  --button-sm-padding-y: var(--spacing-1);
-  --button-sm-padding-x: var(--spacing-3);
-  --button-sm-font-size: var(--font-size-sm);
-  --button-lg-padding-y: var(--spacing-3);
-  --button-lg-padding-x: var(--spacing-6);
-  --button-lg-font-size: var(--font-size-lg);
-}
-
-/* 
-* USAGE:
- * ------------------------
- * The `generate-button-variables` mixin creates CSS custom properties 
- * for button styling based on the $button-sizes map. These variables 
- * can be used directly in your CSS or SCSS stylesheets.
- *
- * 1. Ensure this configuration file is imported and 
- *    `@include generate-button-variables();` is called in your main SCSS file,
- *    typically at the root level.
- *
- * 2. Available CSS Custom Properties:
- *    The mixin generates properties in the format: `--button-{size}-{property}`
- *
- *    Based on the default $button-sizes map, the following are generated:
- *    
- *    For size "default":
- *    --button-default-padding-y: var(--spacing-2);
- *    --button-default-padding-x: var(--spacing-4);
- *    --button-default-border-radius: 0.375rem;
- *    --button-default-font-weight: medium;
- *    --button-default-font-size: var(--font-size-base);
- *    --button-default-transition: all 0.2s ease-in-out;
- *
- *    For size "sm":
- *    --button-sm-padding-y: var(--spacing-1);
- *    --button-sm-padding-x: var(--spacing-3);
- *    --button-sm-font-size: var(--font-size-sm);
- *
- *    For size "lg":
- *    --button-lg-padding-y: var(--spacing-3);
- *    --button-lg-padding-x: var(--spacing-6);
- *    --button-lg-font-size: var(--font-size-lg);
- *
- * 3. Example Usage in CSS/SCSS:
- *    
- *    .my-button {
- *      padding: var(--button-default-padding-y) var(--button-default-padding-x);
- *      font-size: var(--button-default-font-size);
- *      font-weight: var(--button-default-font-weight);
- *      border-radius: var(--button-default-border-radius);
- *      transition: var(--button-default-transition);
- *      background-color: lightblue; // Example color
- *      color: black;                 // Example color
- *      border: none;
- *      cursor: pointer;
- *    }
- *
- *    .my-button-small {
- *      padding: var(--button-sm-padding-y) var(--button-sm-padding-x);
- *      font-size: var(--button-sm-font-size);
- *      // Other small button styles
- *    }
- *
- *    .my-button-large {
- *      padding: var(--button-lg-padding-y) var(--button-lg-padding-x);
- *      font-size: var(--button-lg-font-size);
- *      // Other large button styles
- *    }
- *
- * 4. Customizing Buttons:
- *    To customize button styles, you can:
- *    a) Override the CSS custom properties in a more specific selector:
- *       .special-button {
- *         --button-default-font-weight: bold; // Override for this button
- *         font-weight: var(--button-default-font-weight); 
- *         // other styles
- *       }
- *
- *    b) Modify the `$button-sizes` map in this file and recompile your SCSS
- *       to update the base values for all buttons. For example, to change
- *       the default button's border radius:
- *       
- *       $button-sizes: (
- *         "default": (
- *           // ... other properties
- *           "border-radius": "0.5rem", // New border-radius
- *           // ... other properties
- *         ),
- *         // ... other sizes
- *       );
- *
- * 5. Using the `button-property` function (SCSS context only):
- *    The `button-property($size, $property)` function can be used within
- *    your SCSS files to directly access configured button properties if needed,
- *    though using the generated CSS variables is generally recommended for
- *    wider compatibility and dynamic styling capabilities.
- *
- *    .another-button {
- *      // Example: Not typically needed if CSS variables are used
- *      font-size: button-property("default", "font-size"); 
- *    }
+ * Function to get button size value
+ * @param {String} $name - The size name from the $button-sizes map
+ * @return {String} The size value
+ * @example padding: buttonSize('md-padding-y'); // Returns 0.5rem
  */
 :root {
   --color-Primary: #C33329;
@@ -325,4 +221,24 @@
   --spacing-10: 4rem;
   --spacing-12: 6rem;
   --spacing-16: 8rem;
+  --button-sm-padding-y: 0.25rem;
+  --button-sm-padding-x: 0.75rem;
+  --button-sm-font-size: 0.875rem;
+  --button-sm-line-height: 1.25rem;
+  --button-sm-border-radius: 0.25rem;
+  --button-md-padding-y: 0.5rem;
+  --button-md-padding-x: 1rem;
+  --button-md-font-size: 1rem;
+  --button-md-line-height: 1.5rem;
+  --button-md-border-radius: 0.375rem;
+  --button-lg-padding-y: 0.75rem;
+  --button-lg-padding-x: 1.5rem;
+  --button-lg-font-size: 1.125rem;
+  --button-lg-line-height: 1.75rem;
+  --button-lg-border-radius: 0.5rem;
+  --button-xl-padding-y: 1rem;
+  --button-xl-padding-x: 2rem;
+  --button-xl-font-size: 1.25rem;
+  --button-xl-line-height: 2rem;
+  --button-xl-border-radius: 0.75rem;
 }

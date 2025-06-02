@@ -67,4 +67,9 @@
     @each $name, $value in spacing.$spacing {
         --spacing-#{$name}: #{$value};
     }
+
+    // Button Sizes - from buttons.$button-sizes map
+    @each $name, $value in buttons.$button-sizes {
+        --button-#{$name}: #{$value};
+    }
 }
