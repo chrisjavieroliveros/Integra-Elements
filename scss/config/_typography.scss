@@ -1,28 +1,8 @@
 /**
  * TYPOGRAPHY CONFIGURATION
  * -----------------------
- * 
- * USAGE:
- * 1. Import this file: @import 'config/typography';
- * 
- * 2. Generate CSS variables in your root file:
- *    @include generate-typography-variables();
- * 
- * 3. Use typography in your SCSS:
- *    - Font family: font-family: font-family('heading');  // Returns 'Inter', -apple-system, etc.
- *    - Font weight: font-weight: font-weight('bold');     // Returns 700
- *    - Font size: font-size: font-size('lg');            // Returns 1.125rem
- *    - Line height: line-height: line-height('tight');   // Returns 1.25
- *    - Letter spacing: letter-spacing: letter-spacing('wide');  // Returns 0.025em
- *    - Variable: font-size: var(--font-size-xl);         // Use CSS variable
- * 
- * 4. For component patterns:
- *    .heading-1 { 
- *      font-family: font-family('heading');
- *      font-size: font-size('5xl');
- *      font-weight: font-weight('bold');
- *      line-height: line-height('tight');
- *    }
+ * This file contains only typography maps and utility functions.
+ * CSS custom properties are generated in config/config.scss
  */
 
 /**
@@ -182,35 +162,3 @@ $letter-spacing: (
   @error "Letter spacing '#{$name}' not found.";
   @return null;
 }
-
-/**
- * Generate CSS typography variables
- * Creates CSS custom properties for all typography settings
- * @example @include generate-typography-variables();
- */
-@mixin generate-typography-variables() {
-  :root {
-    @each $name, $value in $font-families {
-      --font-family-#{$name}: #{$value};
-    }
-
-    @each $name, $value in $font-sizes {
-      --font-size-#{$name}: #{$value};
-    }
-
-    @each $name, $value in $line-heights {
-      --line-height-#{$name}: #{$value};
-    }
-
-    @each $name, $value in $letter-spacing {
-      --letter-spacing-#{$name}: #{$value};
-    }
-
-    @each $name, $value in $font-weights {
-      --font-weight-#{$name}: #{$value};
-    }
-  }
-}
-
-// Generate CSS variables
-@include generate-typography-variables();

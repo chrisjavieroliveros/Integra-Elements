@@ -159,10 +159,12 @@ class Example_Widget extends \Elementor\Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
         ?>
-        <div class="integra-elementor-widget integra-example-widget">
-            <h2 class="integra-widget-title"><?php echo esc_html($settings['title']); ?></h2>
-            <div class="integra-widget-description">
-                <?php echo wp_kses_post($settings['description']); ?>
+        <div class="container">
+            <div class="integra-elementor-widget integra-example-widget">
+                <h2 class="integra-widget-title"><?php echo esc_html($settings['title']); ?></h2>
+                <div class="integra-widget-description">
+                    <?php echo wp_kses_post($settings['description']); ?>
+                </div>
             </div>
         </div>
         <?php

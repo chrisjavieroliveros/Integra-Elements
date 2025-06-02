@@ -1,4 +1,4 @@
-@use "../../tools/_index" as tools;
+@use "../utilities/breakpoints" as breakpoints;
 
 /**
  * CONTAINER CONFIGURATION
@@ -27,20 +27,22 @@
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  // Mobile-first: Start with small padding
-  padding-left: var(--container-padding-sm);
-  padding-right: var(--container-padding-sm);
+  padding-left: var(--spacing-4);
+  padding-right: var(--spacing-4);
+  outline: 1px solid red;
 
-  // Tablet and up: Medium padding
-  @include tools.breakpoint-up("md") {
-    padding-left: var(--container-padding-md);
-    padding-right: var(--container-padding-md);
+  // Tablet and up: Larger padding
+  @include breakpoints.breakpoint('md') {
+    padding-left: var(--spacing-6);
+    padding-right: var(--spacing-6);
+    outline: 1px solid blue;
   }
 
-  // Desktop and up: Large padding
-  @include tools.breakpoint-up("lg") {
-    padding-left: var(--container-padding-lg);
-    padding-right: var(--container-padding-lg);
+  // Desktop and up: Even larger padding
+  @include breakpoints.breakpoint('lg') {
+    padding-left: var(--spacing-8);
+    padding-right: var(--spacing-8);
+    outline: 1px solid green;
   }
 
   &--narrow {
