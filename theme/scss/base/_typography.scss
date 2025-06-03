@@ -48,12 +48,12 @@ p {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-Primary);
   text-decoration: underline;
   transition: color 0.2s;
 
   &:hover {
-    color: var(--color-primary-400);
+    color: var(--color-Primary-400);
   }
 }
 

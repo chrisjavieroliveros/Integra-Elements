@@ -16,7 +16,9 @@
 // =============================================================================
 // UTILITIES - Mixins, functions, and utility classes
 // =============================================================================
-@use "utilities/__index" as utilities;
+
+@use "functions/__index" as functions;
+@use "helpers/__index" as helpers;
 
 // =============================================================================
 // STYLES - Uses CSS custom properties from config.css

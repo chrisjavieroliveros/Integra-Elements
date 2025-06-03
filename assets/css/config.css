@@ -24,19 +24,6 @@
  * CSS custom properties are generated in config/config.scss
  */
 /**
- * Function to get color value
- * @param {String} $name - The color name from the $colors map
- * @return {Color} The color value
- * @example color: getColor('Primary');      // Returns #C33329
- */
-/**
- * Function to get color with opacity
- * @param {String} $name - The color name from the $colors map
- * @param {Number} $alpha - Opacity value between 0 and 1
- * @return {Color} The rgba color value with opacity
- * @example background: color-alpha('Primary', 0.5); // Returns rgba(195, 51, 41, 0.5)
- */
-/**
  * TYPOGRAPHY CONFIGURATION
  * -----------------------
  * This file contains only typography maps and utility functions.
@@ -44,36 +31,6 @@
  */
 /**
  * Typography Configuration
- */
-/**
- * Function to get font family
- * @param {String} $name - The font family name from the $font-families map
- * @return {List} The list of font family values
- * @example font-family: font-family('heading'); // Returns 'Inter', -apple-system, etc.
- */
-/**
- * Function to get font weight
- * @param {String} $name - The font weight name from the $font-weights map
- * @return {Number} The font weight value
- * @example font-weight: font-weight('bold'); // Returns 700
- */
-/**
- * Function to get font size
- * @param {String} $name - The font size name from the $font-sizes map
- * @return {Length} The font size value in rem
- * @example font-size: font-size('lg'); // Returns 1.125rem
- */
-/**
- * Function to get line height
- * @param {String} $name - The line height name from the $line-heights map
- * @return {Number} The line height value
- * @example line-height: line-height('tight'); // Returns 1.25
- */
-/**
- * Function to get letter spacing
- * @param {String} $name - The letter spacing name from the $letter-spacing map
- * @return {Length} The letter spacing value in em
- * @example letter-spacing: letter-spacing('wide'); // Returns 0.025em
  */
 /**
  * SPACING CONFIGURATION
@@ -93,12 +50,6 @@
  * -------------------
  * This file contains only button maps and utility functions.
  * CSS custom properties are generated in config/config.scss
- */
-/**
- * Function to get button size value
- * @param {String} $name - The size name from the $button-sizes map
- * @return {String} The size value
- * @example padding: buttonSize('md-padding-y'); // Returns 0.5rem
  */
 :root {
   --color-Primary: #C33329;

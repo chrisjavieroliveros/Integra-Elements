@@ -13,9 +13,17 @@
  * (compiled from config.scss) which contains all CSS custom properties.
  */
 /**
- * UTILITIES INDEX
- * ===============
- * This file forwards all mixins, functions, and utility classes.
+ * COLOR CONFIGURATION
+ * ------------------
+ * This file contains only color maps and utility functions.
+ * CSS custom properties are generated in config/config.scss
+ */
+/**
+ * Function to get CSS custom property for color
+ * @param {String} $name - The color name from the colors map
+ * @return {String} The CSS custom property variable
+ * @example color: getColor('Primary');      // Returns var(--color-Primary)
+ * @example background: getColor('Primary-400'); // Returns var(--color-Primary-400)
  */
 /**
  * BREAKPOINTS
@@ -39,19 +47,13 @@
  * @example @include breakpoint-down('md') { display: block; }
  */
 /**
- * TEXT UTILITY MIXINS
- * -------------------
- * 
- * Mixins for text manipulation and display utilities
- * 
- * USAGE:
- * @use "../mixins/text" as text;
- * @include text.truncate-text;
- * @include text.truncate-multiline(3);
+ * MIXINS INDEX
+ * ===============
+ * This file forwards all mixins, functions, and utility classes.
  */
 /**
- * Truncate text with ellipsis
- * @example @include truncate-text;
+ * TEXT UTILITY MIXINS
+ * -------------------
  */
 /**
  * Multi-line text truncation
@@ -386,12 +388,12 @@ p:last-child {
 }
 
 a {
-  color: var(--color-primary);
+  color: var(--color-Primary);
   text-decoration: underline;
   transition: color 0.2s;
 }
 a:hover {
-  color: var(--color-primary-400);
+  color: var(--color-Primary-400);
 }
 
 .text-small {

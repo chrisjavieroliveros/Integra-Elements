@@ -1,0 +1,30 @@
+/**
+ * BREAKPOINTS
+ * -----------
+ * Simple responsive breakpoint system with mobile-first approach.
+ */
+
+// Breakpoint definitions
+$breakpoints: (
+    "xs": 375px,
+    "sm": 576px,
+    "md": 768px,
+    "lg": 992px,
+    "xl": 1200px,
+    "xxl": 1400px,
+);
+
+/**
+ * Get breakpoint value
+ * @param {String} $name - The breakpoint name
+ * @return {Number} The breakpoint value in pixels
+ * @example width: breakpoint('md'); // Returns 768px
+ */
+@function breakpoint($name) {
+    @if map-has-key($breakpoints, $name) {
+        @return map-get($breakpoints, $name);
+    }
+
+    @error "Breakpoint '#{$name}' not found.";
+    @return null;
+}

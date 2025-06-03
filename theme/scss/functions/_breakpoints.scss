@@ -1,0 +1,35 @@
+@use "../../config/breakpoints" as breakpoints;
+
+/**
+ * Apply styles at a breakpoint and up (mobile-first)
+ * @param {String} $size - Breakpoint size name
+ * @example @include breakpoint('md') { display: flex; }
+ */
+@mixin breakpoint($size) {
+  @if map-has-key(breakpoints.$breakpoints, $size) {
+    @media (min-width: breakpoints.breakpoint($size)) {
+      @content;
+    }
+  }
+
+  @else {
+    @error "Breakpoint '#{$size}' not found.";
+  }
+}
+
+/**
+ * Apply styles below a breakpoint (max-width)
+ * @param {String} $size - Breakpoint size name
+ * @example @include breakpoint-down('md') { display: block; }
+ */
+@mixin breakpoint-down($size) {
+  @if map-has-key(breakpoints.$breakpoints, $size) {
+    @media (max-width: #{breakpoints.breakpoint($size) - 0.02px}) {
+      @content;
+    }
+  }
+
+  @else {
+    @error "Breakpoint '#{$size}' not found.";
+  }
+}

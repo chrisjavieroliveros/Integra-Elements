@@ -1,18 +1,6 @@
 /**
  * TEXT UTILITY MIXINS
  * -------------------
- * 
- * Mixins for text manipulation and display utilities
- * 
- * USAGE:
- * @use "../mixins/text" as text;
- * @include text.truncate-text;
- * @include text.truncate-multiline(3);
- */
-
-/**
- * Truncate text with ellipsis
- * @example @include truncate-text;
  */
 @mixin truncate-text {
   overflow: hidden;

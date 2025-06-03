@@ -35,18 +35,3 @@ $button-sizes: (
   "xl-line-height": "2rem",
   "xl-border-radius": "0.75rem",
 );
-
-/**
- * Function to get button size value
- * @param {String} $name - The size name from the $button-sizes map
- * @return {String} The size value
- * @example padding: buttonSize('md-padding-y'); // Returns 0.5rem
- */
-@function buttonSize($name) {
-  @if map-has-key($button-sizes, $name) {
-    @return map-get($button-sizes, $name);
-  }
-
-  @error "Button size '#{$name}' not found in button-sizes map.";
-  @return null;
-}
