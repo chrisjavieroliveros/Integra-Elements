@@ -1,0 +1,340 @@
+/**
+ * List Elements
+ * =============
+ * Base styles for ordered lists, unordered lists, and definition lists
+ */
+
+// Base list styles (already reset in _reset.scss, but adding semantic styles)
+ul,
+ol {
+    margin-bottom: var(--spacing-4);
+    padding-left: var(--spacing-6);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// Unordered lists
+ul {
+    list-style-type: disc;
+
+    ul {
+        list-style-type: circle;
+        margin-bottom: var(--spacing-2);
+
+        ul {
+            list-style-type: square;
+        }
+    }
+}
+
+// Ordered lists
+ol {
+    list-style-type: decimal;
+
+    ol {
+        list-style-type: lower-alpha;
+        margin-bottom: var(--spacing-2);
+
+        ol {
+            list-style-type: lower-roman;
+        }
+    }
+}
+
+// List items
+li {
+    margin-bottom: var(--spacing-2);
+    line-height: var(--line-height-normal, 1.5);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+
+    // Nested lists
+    ul,
+    ol {
+        margin-top: var(--spacing-2);
+        margin-bottom: var(--spacing-2);
+    }
+}
+
+// Definition lists
+dl {
+    margin-bottom: var(--spacing-4);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+dt {
+    font-weight: var(--font-weight-bold, 700);
+    margin-bottom: var(--spacing-1);
+    color: var(--color-gray-900, #1a202c);
+}
+
+dd {
+    margin-bottom: var(--spacing-3);
+    margin-left: var(--spacing-4);
+    color: var(--color-gray-700, #374151);
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+// List utilities
+.list-unstyled {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+        margin-bottom: var(--spacing-2);
+    }
+}
+
+.list-inline {
+    padding-left: 0;
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 0;
+
+    li {
+        margin-right: var(--spacing-4);
+        margin-bottom: 0;
+
+        &:last-child {
+            margin-right: 0;
+        }
+    }
+}
+
+.list-spaced {
+    li {
+        margin-bottom: var(--spacing-4);
+    }
+}
+
+.list-tight {
+    li {
+        margin-bottom: var(--spacing-1);
+    }
+}
+
+// List with separators
+.list-separated {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+        padding: var(--spacing-3) 0;
+        border-bottom: 1px solid var(--color-gray-200, #e5e7eb);
+        margin-bottom: 0;
+
+        &:first-child {
+            padding-top: 0;
+        }
+
+        &:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+    }
+}
+
+// Navigation lists
+.list-nav {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+        margin-bottom: 0;
+    }
+
+    a {
+        display: block;
+        padding: var(--spacing-2) var(--spacing-3);
+        text-decoration: none;
+        color: var(--color-gray-700, #374151);
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+        border-radius: var(--border-radius-sm, 0.25rem);
+
+        &:hover {
+            background-color: var(--color-gray-100, #f3f4f6);
+            color: var(--color-gray-900, #1a202c);
+        }
+
+        &.active {
+            background-color: var(--color-primary, #007bff);
+            color: var(--color-white, #fff);
+        }
+    }
+}
+
+// Breadcrumb list
+.list-breadcrumb {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin-bottom: var(--spacing-4);
+    list-style: none;
+    background-color: var(--color-gray-100, #f3f4f6);
+    border-radius: var(--border-radius-sm, 0.25rem);
+    padding: var(--spacing-2) var(--spacing-4);
+
+    li {
+        display: flex;
+        align-items: center;
+        margin-bottom: 0;
+
+        &:not(:last-child)::after {
+            content: "/";
+            margin: 0 var(--spacing-2);
+            color: var(--color-gray-500, #6b7280);
+        }
+
+        a {
+            color: var(--color-primary, #007bff);
+            text-decoration: none;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        &:last-child {
+            color: var(--color-gray-600, #4b5563);
+        }
+    }
+}
+
+// Checklist
+.list-checklist {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+        position: relative;
+        padding-left: var(--spacing-6);
+        margin-bottom: var(--spacing-2);
+
+        &::before {
+            content: "□";
+            position: absolute;
+            left: 0;
+            color: var(--color-gray-400, #9ca3af);
+            font-size: 1.2em;
+            line-height: 1;
+        }
+
+        &.checked {
+            &::before {
+                content: "✓";
+                color: var(--color-success, #28a745);
+            }
+
+            text-decoration: line-through;
+            color: var(--color-gray-500, #6b7280);
+        }
+    }
+}
+
+// Tag list
+.list-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--spacing-2);
+    padding: 0;
+    list-style: none;
+    margin-bottom: var(--spacing-4);
+
+    li {
+        margin-bottom: 0;
+
+        a,
+        span {
+            display: inline-block;
+            padding: var(--spacing-1) var(--spacing-3);
+            background-color: var(--color-gray-100, #f3f4f6);
+            color: var(--color-gray-700, #374151);
+            border-radius: var(--border-radius-full, 9999px);
+            font-size: var(--font-size-sm);
+            text-decoration: none;
+            transition: background-color 0.15s ease-in-out;
+
+            &:hover {
+                background-color: var(--color-gray-200, #e5e7eb);
+            }
+        }
+    }
+}
+
+// Social media list
+.list-social {
+    display: flex;
+    gap: var(--spacing-3);
+    padding: 0;
+    list-style: none;
+    margin-bottom: var(--spacing-4);
+
+    li {
+        margin-bottom: 0;
+    }
+
+    a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 2.5rem;
+        height: 2.5rem;
+        background-color: var(--color-gray-100, #f3f4f6);
+        color: var(--color-gray-600, #4b5563);
+        border-radius: 50%;
+        text-decoration: none;
+        transition: background-color 0.15s ease-in-out, color 0.15s ease-in-out;
+
+        &:hover {
+            background-color: var(--color-primary, #007bff);
+            color: var(--color-white, #fff);
+        }
+    }
+}
+
+// List with icons
+.list-icon {
+    padding-left: 0;
+    list-style: none;
+
+    li {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: var(--spacing-3);
+
+        &::before {
+            content: "•";
+            color: var(--color-primary, #007bff);
+            margin-right: var(--spacing-3);
+            margin-top: 0.125rem;
+            font-size: 1.2em;
+            line-height: 1;
+        }
+    }
+
+    &.list-icon--check li::before {
+        content: "✓";
+        color: var(--color-success, #28a745);
+    }
+
+    &.list-icon--arrow li::before {
+        content: "→";
+        color: var(--color-primary, #007bff);
+    }
+
+    &.list-icon--star li::before {
+        content: "★";
+        color: var(--color-warning, #ffc107);
+    }
+}
