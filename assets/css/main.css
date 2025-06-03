@@ -13,17 +13,13 @@
  * (compiled from config.scss) which contains all CSS custom properties.
  */
 /**
- * COLOR CONFIGURATION
- * ------------------
- * This file contains only color maps and utility functions.
- * CSS custom properties are generated in config/config.scss
+ * TEXT UTILITY MIXINS
+ * -------------------
  */
 /**
- * Function to get CSS custom property for color
- * @param {String} $name - The color name from the colors map
- * @return {String} The CSS custom property variable
- * @example color: getColor('Primary');      // Returns var(--color-Primary)
- * @example background: getColor('Primary-400'); // Returns var(--color-Primary-400)
+ * Multi-line text truncation
+ * @param {Number} $lines - Number of lines to show
+ * @example @include truncate-multiline(3);
  */
 /**
  * BREAKPOINTS
@@ -47,18 +43,22 @@
  * @example @include breakpoint-down('md') { display: block; }
  */
 /**
+ * COLOR CONFIGURATION
+ * ------------------
+ * This file contains only color maps and utility functions.
+ * CSS custom properties are generated in config/config.scss
+ */
+/**
+ * Function to get CSS custom property for color
+ * @param {String} $name - The color name from the colors map
+ * @return {String} The CSS custom property variable
+ * @example color: getColor('Primary');      // Returns var(--color-Primary)
+ * @example background: getColor('Primary-400'); // Returns var(--color-Primary-400)
+ */
+/**
  * MIXINS INDEX
  * ===============
  * This file forwards all mixins, functions, and utility classes.
- */
-/**
- * TEXT UTILITY MIXINS
- * -------------------
- */
-/**
- * Multi-line text truncation
- * @param {Number} $lines - Number of lines to show
- * @example @include truncate-multiline(3);
  */
 .text-center {
   text-align: center !important;
