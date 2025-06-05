@@ -22,30 +22,16 @@
 
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
+
+
 <div id="smooth-wrapper">
 	<div id="smooth-content">
 
-		<div id="page" class="site">
-			<a class="skip-link screen-reader-text" href="#primary"><?php esc_html_e( 'Skip to content', 'integra-elements' ); ?></a>
-			<header id="masthead" class="site-header">
-				<div class="site-branding">
-					<?php
-					the_custom_logo();
-					if ( is_front_page() && is_home() ) :
-						?>
-						<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-						<?php
-					else :
-						?>
-						<p class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></p>
-						<?php
-					endif;
-					$integra_elements_description = get_bloginfo( 'description', 'display' );
-					if ( $integra_elements_description || is_customize_preview() ) :
-						?>
-						<p class="site-description"><?php echo $integra_elements_description; // phpcs:ignore WordPress.Security.EscapeOutput.OutputNotEscaped ?></p>
-					<?php endif; ?>
-				</div><!-- .site-branding -->
+		<header id="masthead" class="site-header">
+			<?php get_template_part( 'template-parts/navigation/navigation' ); ?>
+		</header>
 
-				<?php get_template_part( 'template-parts/navigation/navigation' ); ?>
-			</header><!-- #masthead -->
+		<div style="height: 300vh;">
+			<h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ab, voluptas?</h1>
+			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Repellat, magni sunt voluptas sequi, nam corrupti excepturi illo autem tempora adipisci corporis quibusdam tenetur velit, pariatur molestias assumenda? Ut amet facere id quo ducimus consectetur doloremque ipsum provident quam sunt corporis possimus beatae, minima, distinctio reprehenderit aut maiores veritatis explicabo sequi accusamus, facilis labore aspernatur nam! Corrupti, odio. Ut harum inventore vero magnam! Sed praesentium iusto mollitia aperiam quasi, porro reiciendis excepturi! Ipsam inventore nam eligendi incidunt autem eum blanditiis quidem laboriosam consectetur similique! At iusto a omnis provident voluptatem unde, delectus magnam veritatis fugiat quos, aliquid praesentium voluptates fuga repellat!</p>
+		</div>

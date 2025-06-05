@@ -50,10 +50,10 @@ p {
 a {
   color: var(--color-Primary);
   text-decoration: underline;
-  transition: color 0.2s;
 
   &:hover {
-    color: var(--color-Primary-400);
+    transition: color 0.2s;
+    color: getColor('Primary-400');
   }
 }
 

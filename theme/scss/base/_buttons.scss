@@ -1,20 +1,22 @@
+@use "../utilities/get-color" as *;
+
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--button-default-padding-y) var(--button-default-padding-x);
-  border-radius: var(--button-default-border-radius);
+  padding: var(--button-md-padding-y) var(--button-md-padding-x);
+  border-radius: var(--button-md-border-radius);
   font-family: var(--font-family-base);
-  font-weight: var(--button-default-font-weight);
-  font-size: var(--button-default-font-size);
+  font-weight: var(--font-weight-regular);
+  font-size: var(--button-md-font-size);
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: var(--button-default-transition);
+  transition: all 0.2s ease-in-out;
 
   // Focus styles
   &:focus-visible {
-    outline: 2px solid var(--color-primary);
+    outline: 2px solid #{getColor('Primary')};
     outline-offset: 2px;
   }
 
@@ -37,74 +39,106 @@
 
   // Variants (Primary, Secondary, Danger, etc.)
   &--primary {
-    background-color: var(--color-primary);
-    color: var(--color-primary-contrast);
-    border-color: var(--color-primary);
+    background-color: #{getColor('Primary')};
+    color: #{getColor('Primary-Contrast')};
+    border-color: #{getColor('Primary')};
 
     &:hover {
-      background-color: var(--color-primary-tint);
-      color: var(--color-primary-contrast);
-      border-color: var(--color-primary-tint);
+      background-color: #{getColor('Primary-Tint')};
+      color: #{getColor('Primary-Contrast')};
+      border-color: #{getColor('Primary-Tint')};
     }
   }
 
   &--secondary {
-    background-color: var(--color-secondary);
-    color: var(--color-secondary-contrast);
-    border-color: var(--color-secondary);
+    background-color: #{getColor('Secondary')};
+    color: #{getColor('Secondary-Contrast')};
+    border-color: #{getColor('Secondary')};
 
     &:hover {
-      background-color: var(--color-secondary-tint);
-      color: var(--color-secondary-contrast);
-      border-color: var(--color-secondary-tint);
+      background-color: #{getColor('Secondary-Tint')};
+      color: #{getColor('Secondary-Contrast')};
+      border-color: #{getColor('Secondary-Tint')};
+    }
+  }
+
+  &--tertiary {
+    background-color: #{getColor('Tertiary')};
+    color: #{getColor('Tertiary-Contrast')};
+    border-color: #{getColor('Tertiary')};
+
+    &:hover {
+      background-color: #{getColor('Tertiary-Tint')};
+      color: #{getColor('Tertiary-Contrast')};
+      border-color: #{getColor('Tertiary-Tint')};
     }
   }
 
   &--danger {
-    background-color: var(--color-danger);
-    color: var(--color-danger-contrast);
-    border-color: var(--color-danger);
+    background-color: #{getColor('Danger')};
+    color: #{getColor('Danger-Contrast')};
+    border-color: #{getColor('Danger')};
 
     &:hover {
-      background-color: var(--color-danger-tint);
-      color: var(--color-danger-contrast);
-      border-color: var(--color-danger-tint);
+      background-color: #{getColor('Danger-Tint')};
+      color: #{getColor('Danger-Contrast')};
+      border-color: #{getColor('Danger-Tint')};
     }
   }
 
   &--warning {
-    background-color: var(--color-warning);
-    color: var(--color-warning-contrast);
-    border-color: var(--color-warning);
+    background-color: #{getColor('Warning')};
+    color: #{getColor('Warning-Contrast')};
+    border-color: #{getColor('Warning')};
 
     &:hover {
-      background-color: var(--color-warning-tint);
-      color: var(--color-warning-contrast);
-      border-color: var(--color-warning-tint);
+      background-color: #{getColor('Warning-Tint')};
+      color: #{getColor('Warning-Contrast')};
+      border-color: #{getColor('Warning-Tint')};
     }
   }
 
   &--success {
-    background-color: var(--color-success);
-    color: var(--color-success-contrast);
-    border-color: var(--color-success);
+    background-color: #{getColor('Success')};
+    color: #{getColor('Success-Contrast')};
+    border-color: #{getColor('Success')};
 
     &:hover {
-      background-color: var(--color-success-tint);
-      color: var(--color-success-contrast);
-      border-color: var(--color-success-tint);
+      background-color: #{getColor('Success-Tint')};
+      color: #{getColor('Success-Contrast')};
+      border-color: #{getColor('Success-Tint')};
     }
   }
 
   &--info {
-    background-color: var(--color-info);
-    color: var(--color-info-contrast);
-    border-color: var(--color-info);
+    background-color: #{getColor('Info')};
+    color: #{getColor('Info-Contrast')};
+    border-color: #{getColor('Info')};
 
     &:hover {
-      background-color: var(--color-info-tint);
-      color: var(--color-info-contrast);
-      border-color: var(--color-info-tint);
+      background-color: #{getColor('Info-Tint')};
+      color: #{getColor('Info-Contrast')};
+      border-color: #{getColor('Info-Tint')};
+    }
+  }
+
+  &--black {
+    background-color: #{getColor('Black')};
+    color: #{getColor('White')};
+    border-color: #{getColor('Black')};
+
+    &:hover {
+      background-color: #{getColor('Black-Tint')};
+    }
+  }
+
+  &--white {
+    background-color: #{getColor('White')};
+    color: #{getColor('Black')};
+    border-color: #{getColor('White')};
+
+    &:hover {
+      background-color: #{getColor('White-Tint')};
     }
   }
 }
