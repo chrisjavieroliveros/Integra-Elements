@@ -86,7 +86,7 @@
  * - Normalize.css principles
  * - Accessibility improvements
  * 
- * Updated: 2024
+ * Updated: 2025
  */
 /* Box sizing rules */
 *,
@@ -139,11 +139,6 @@ ol {
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  line-height: var(--line-height-normal, 1.5);
-  font-family: var(--font-family-base, system-ui, sans-serif);
-  font-size: var(--font-size-base, 1rem);
-  color: var(--color-black, #000);
-  background-color: var(--color-white, #fff);
   margin: 0;
   padding: 0;
 }
@@ -173,8 +168,7 @@ h6 {
 
 /* A elements that don't have a class get default styles */
 a:not([class]) {
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
   color: currentColor;
 }
 
@@ -340,14 +334,23 @@ pre {
   border: 0;
 }
 
+html,
+body {
+  font-size: 16px;
+  font-family: var(--font-family-base, system-ui, sans-serif);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-4);
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  font-weight: 100;
   font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-4);
 }
@@ -583,10 +586,11 @@ blockquote cite::before {
   align-items: center;
   justify-content: center;
   padding: var(--button-md-padding-y) var(--button-md-padding-x);
-  border-radius: var(--button-md-border-radius);
+  border-radius: var(--button-border-radius);
   font-family: var(--font-family-base);
   font-weight: var(--font-weight-regular);
   font-size: var(--button-md-font-size);
+  line-height: var(--button-line-height);
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
@@ -812,9 +816,6 @@ select[readonly] {
   color: var(--form-input-disabled-color, var(--color-gray-500, #6b7280));
   cursor: not-allowed;
   opacity: 0.65;
-}
-input[type=text]::-moz-placeholder, input[type=email]::-moz-placeholder, input[type=password]::-moz-placeholder, input[type=number]::-moz-placeholder, input[type=tel]::-moz-placeholder, input[type=url]::-moz-placeholder, input[type=search]::-moz-placeholder, input[type=date]::-moz-placeholder, input[type=datetime-local]::-moz-placeholder, input[type=month]::-moz-placeholder, input[type=time]::-moz-placeholder, input[type=week]::-moz-placeholder, textarea::-moz-placeholder, select::-moz-placeholder {
-  color: var(--form-input-placeholder-color, var(--color-gray-400, #9ca3af));
 }
 input[type=text]::placeholder,
 input[type=email]::placeholder,
@@ -1497,9 +1498,7 @@ caption {
 
 .table-sortable th[data-sortable] {
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   position: relative;
   padding-right: calc(var(--table-cell-padding-x, 0.75rem) + 1.5rem);
 }
@@ -1555,9 +1554,7 @@ caption {
 
 .table-collapsible .collapse-toggle {
   cursor: pointer;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
 }
 .table-collapsible .collapse-toggle::before {
   content: "▶";
@@ -1782,8 +1779,7 @@ figcaption, .figure-caption {
 .img-gallery .img-gallery__item img {
   width: 100%;
   height: 200px;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   transition: transform 0.3s ease-in-out;
 }
 .img-gallery .img-gallery__item:hover img {
@@ -1836,8 +1832,7 @@ figcaption, .figure-caption {
   width: 2.5rem;
   height: 2.5rem;
   border-radius: 50%;
-  -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border: 2px solid var(--color-white, #fff);
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }

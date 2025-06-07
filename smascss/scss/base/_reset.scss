@@ -8,7 +8,7 @@
  * - Normalize.css principles
  * - Accessibility improvements
  * 
- * Updated: 2024
+ * Updated: 2025
  */
 
 /* Box sizing rules */
@@ -62,11 +62,6 @@ ol {
 /* Set core body defaults */
 body {
   min-height: 100vh;
-  line-height: var(--line-height-normal, 1.5);
-  font-family: var(--font-family-base, system-ui, sans-serif);
-  font-size: var(--font-size-base, 1rem);
-  color: var(--color-black, #000);
-  background-color: var(--color-white, #fff);
   margin: 0;
   padding: 0;
 }

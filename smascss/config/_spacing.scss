@@ -55,7 +55,6 @@ $spacing-aliases: (
  * @example margin: spacing('sm');    // Returns 1rem via alias
  */
 @function spacing($key) {
-
   // Check if it's an alias first
   @if map-has-key($spacing-aliases, $key) {
     $alias-key: map-get($spacing-aliases, $key);

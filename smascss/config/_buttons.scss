@@ -5,33 +5,31 @@
  * CSS custom properties are generated in config/config.scss
  */
 
-// Button size configurations
+// Button consistent properties (same across all sizes)
+$button-base: (
+  "line-height": "1.5",
+  "border-radius": "0.375rem",
+);
+
+// Button size configurations (size-specific properties only)
 $button-sizes: (
   // Small buttons
   "sm-padding-y": "0.25rem",
   "sm-padding-x": "0.75rem",
   "sm-font-size": "0.875rem",
-  "sm-line-height": "1.25rem",
-  "sm-border-radius": "0.25rem",
 
   // Default/Medium buttons
   "md-padding-y": "0.5rem",
   "md-padding-x": "1rem",
   "md-font-size": "1rem",
-  "md-line-height": "1.5rem",
-  "md-border-radius": "0.375rem",
 
   // Large buttons
   "lg-padding-y": "0.75rem",
   "lg-padding-x": "1.5rem",
   "lg-font-size": "1.125rem",
-  "lg-line-height": "1.75rem",
-  "lg-border-radius": "0.5rem",
 
   // Extra large buttons
   "xl-padding-y": "1rem",
   "xl-padding-x": "2rem",
-  "xl-font-size": "1.25rem",
-  "xl-line-height": "2rem",
-  "xl-border-radius": "0.75rem",
+  "xl-font-size": "1.25rem"
 );

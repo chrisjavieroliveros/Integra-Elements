@@ -32,29 +32,38 @@
 // =============================================================================
 
 :root {
+  // Colors - from colors.$colors map
+  @each $name, $value in colors.$colors {
+    --color-#{$name}: #{$value};
+  }
 
-    // Colors - from colors.$colors map
-    @each $name, $value in colors.$colors {
-        --color-#{$name}: #{$value};
-    }
+  // Typography - Font families
+  @each $name, $value in typography.$font-families {
+    --font-family-#{$name}: #{$value};
+  }
 
-    // Typography - Font families
-    @each $name, $value in typography.$font-families {
-        --font-family-#{$name}: #{$value};
-    }
+  // Typography - Font sizes
+  @each $name, $value in typography.$font-sizes {
+    --font-size-#{$name}: #{$value};
+  }
 
-    // Typography - Font sizes
-    @each $name, $value in typography.$font-sizes {
-        --font-size-#{$name}: #{$value};
-    }
+  // Typography - Line heights
+  @each $name, $value in typography.$line-heights {
+    --line-height-#{$name}: #{$value};
+  }
 
-    // Spacing - from spacing.$spacing map
-    @each $name, $value in spacing.$spacing {
-        --spacing-#{$name}: #{$value};
-    }
+  // Spacing - from spacing.$spacing map
+  @each $name, $value in spacing.$spacing {
+    --spacing-#{$name}: #{$value};
+  }
 
-    // Button Sizes - from buttons.$button-sizes map
-    @each $name, $value in buttons.$button-sizes {
-        --button-#{$name}: #{$value};
-    }
+  // Button Base Properties - from buttons.$button-base map
+  @each $name, $value in buttons.$button-base {
+    --button-#{$name}: #{$value};
+  }
+
+  // Button Sizes - from buttons.$button-sizes map
+  @each $name, $value in buttons.$button-sizes {
+    --button-#{$name}: #{$value};
+  }
 }

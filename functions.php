@@ -10,52 +10,28 @@ if (!defined('_S_VERSION')) {
  * ==========================================================================
  */
 
+/**
+ * Simple Google Fonts loader - just paste the Google Fonts HTML!
+ * Copy the HTML from fonts.google.com and paste the stylesheet URL below.
+ */
 function integra_elements_enqueue_fonts() {
-    $font_families = array(
-        'Roboto' => array(
-            'weights' => range(100, 900, 100),
-            'display' => 'swap',
-            'italic' => true
-        )
-    );
-
-    $fonts_url = '';
-    $fonts = array();
-
-    foreach ($font_families as $family => $properties) {
-        if (isset($properties['opsz'])) {
-            $weights = implode(';', array_map(function($weight) {
-                return "opsz,wght@12..96,{$weight}";
-            }, $properties['weights']));
-        } else {
-            $weights = array();
-            foreach ($properties['weights'] as $weight) {
-                $weights[] = "0,{$weight}";
-                if (isset($properties['italic']) && $properties['italic']) {
-                    $weights[] = "1,{$weight}";
-                }
-            }
-            $weights = 'ital,wght@' . implode(';', $weights);
-        }
-        
-        $fonts[] = str_replace('+', ' ', $family) . ':' . $weights;
+    // 👇 Just paste your Google Fonts URL here!
+    $google_fonts_url = 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
+    
+    // 💡 Pro Tip - Multiple Fonts: Just add &family= for each additional font
+    // $google_fonts_url = 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@300;400;600&display=swap';
+    
+// That's it! The function handles the rest automatically.
+    if (!empty($google_fonts_url)) {
+        add_action('wp_head', function() use ($google_fonts_url) {
+            echo '<link rel="preconnect" href="https://fonts.googleapis.com" />' . "\n";
+            echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />' . "\n";
+            echo '<link rel="preload" as="style" href="' . esc_url($google_fonts_url) . '" />' . "\n";
+            echo '<link rel="stylesheet" href="' . esc_url($google_fonts_url) . '" />' . "\n";
+        }, 1);
     }
-
-    if ($fonts) {
-        $fonts_url = add_query_arg(array(
-            'family' => urlencode(implode('&family=', $fonts)),
-            'display' => 'swap',
-        ), 'https://fonts.googleapis.com/css2');
-    }
-
-    // Add preload for better performance
-    add_action('wp_head', function() use ($fonts_url) {
-        echo '<link rel="preconnect" href="https://fonts.googleapis.com" />';
-        echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />';
-        echo '<link rel="preload" as="style" href="' . esc_url($fonts_url) . '" />';
-    }, 1);
-
-    return esc_url($fonts_url);
+    
+    return esc_url($google_fonts_url);
 }
 
 function integra_elements_scripts() {

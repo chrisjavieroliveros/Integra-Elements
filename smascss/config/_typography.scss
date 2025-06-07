@@ -11,20 +11,18 @@
 
 // Font families
 $font-families: (
-  "base": ("Inter",
+  "base": ("Roboto",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
-    Roboto,
     "Helvetica Neue",
     Arial,
     sans-serif,
   ),
-  "heading": ("Inter",
+  "heading": ("Roboto",
     -apple-system,
     BlinkMacSystemFont,
     "Segoe UI",
-    Roboto,
     "Helvetica Neue",
     Arial,
     sans-serif,
@@ -37,15 +35,6 @@ $font-families: (
     monospace,
   ),
 );
-
-// // Font weights
-// $font-weights: (
-//   "light": 300,
-//   "regular": 400,
-//   "medium": 500,
-//   "semibold": 600,
-//   "bold": 700,
-// );
 
 // Font sizes
 $font-sizes: (
@@ -69,15 +58,15 @@ $font-sizes: (
   // 48px
 );
 
-// // Line heights
-// $line-heights: (
-//   "none": 1,
-//   "tight": 1.25,
-//   "snug": 1.375,
-//   "normal": 1.5,
-//   "relaxed": 1.625,
-//   "loose": 2,
-// );
+// Line heights
+$line-heights: (
+  "none": 1,
+  "tight": 1.25,
+  "snug": 1.375,
+  "normal": 1.5,
+  "relaxed": 1.625,
+  "loose": 2,
+);
 
 // // Letter spacing
 // $letter-spacing: (

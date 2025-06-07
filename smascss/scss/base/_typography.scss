@@ -1,11 +1,20 @@
+html,
+body {
+  font-size: 16px; // Set the base font size to 16px
+  font-family: var(--font-family-base, system-ui, sans-serif);
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-relaxed);
+  margin-bottom: var(--spacing-4);
+}
+
 h1,
 h2,
 h3,
 h4,
 h5,
 h6 {
+  font-weight: 100;
   font-family: var(--font-family-heading);
-  font-weight: var(--font-weight-bold);
   line-height: var(--line-height-tight);
   margin-bottom: var(--spacing-4);
 }
