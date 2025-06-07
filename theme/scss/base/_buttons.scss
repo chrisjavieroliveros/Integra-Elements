@@ -16,7 +16,7 @@
 
   // Focus styles
   &:focus-visible {
-    outline: 2px solid #{getColor('Primary')};
+    outline: 2px solid getColor('Primary');
     outline-offset: 2px;
   }
 
@@ -39,106 +39,108 @@
 
   // Variants (Primary, Secondary, Danger, etc.)
   &--primary {
-    background-color: #{getColor('Primary')};
-    color: #{getColor('Primary-Contrast')};
-    border-color: #{getColor('Primary')};
+    background-color: getColor('Primary');
+    color: getColor('Primary-Contrast');
+    border-color: getColor('Primary');
 
     &:hover {
-      background-color: #{getColor('Primary-Tint')};
-      color: #{getColor('Primary-Contrast')};
-      border-color: #{getColor('Primary-Tint')};
+      background-color: getColor('Primary-Tint');
+      color: getColor('Primary-Contrast');
+      border-color: getColor('Primary-Tint');
     }
   }
 
   &--secondary {
-    background-color: #{getColor('Secondary')};
-    color: #{getColor('Secondary-Contrast')};
-    border-color: #{getColor('Secondary')};
+    background-color: getColor('Secondary');
+    color: getColor('Secondary-Contrast');
+    border-color: getColor('Secondary');
 
     &:hover {
-      background-color: #{getColor('Secondary-Tint')};
-      color: #{getColor('Secondary-Contrast')};
-      border-color: #{getColor('Secondary-Tint')};
+      background-color: getColor('Secondary-Tint');
+      color: getColor('Secondary-Contrast');
+      border-color: getColor('Secondary-Tint');
     }
   }
 
   &--tertiary {
-    background-color: #{getColor('Tertiary')};
-    color: #{getColor('Tertiary-Contrast')};
-    border-color: #{getColor('Tertiary')};
+    background-color: getColor('Tertiary');
+    color: getColor('Tertiary-Contrast');
+    border-color: getColor('Tertiary');
 
     &:hover {
-      background-color: #{getColor('Tertiary-Tint')};
-      color: #{getColor('Tertiary-Contrast')};
-      border-color: #{getColor('Tertiary-Tint')};
+      background-color: getColor('Tertiary-Tint');
+      color: getColor('Tertiary-Contrast');
+      border-color: getColor('Tertiary-Tint');
     }
   }
 
   &--danger {
-    background-color: #{getColor('Danger')};
-    color: #{getColor('Danger-Contrast')};
-    border-color: #{getColor('Danger')};
+    background-color: getColor('Danger');
+    color: getColor('Danger-Contrast');
+    border-color: getColor('Danger');
 
     &:hover {
-      background-color: #{getColor('Danger-Tint')};
-      color: #{getColor('Danger-Contrast')};
-      border-color: #{getColor('Danger-Tint')};
+      background-color: getColor('Danger-Tint');
+      color: getColor('Danger-Contrast');
+      border-color: getColor('Danger-Tint');
     }
   }
 
   &--warning {
-    background-color: #{getColor('Warning')};
-    color: #{getColor('Warning-Contrast')};
-    border-color: #{getColor('Warning')};
+    background-color: getColor('Warning');
+    color: getColor('Warning-Contrast');
+    border-color: getColor('Warning');
 
     &:hover {
-      background-color: #{getColor('Warning-Tint')};
-      color: #{getColor('Warning-Contrast')};
-      border-color: #{getColor('Warning-Tint')};
+      background-color: getColor('Warning-Tint');
+      color: getColor('Warning-Contrast');
+      border-color: getColor('Warning-Tint');
     }
   }
 
   &--success {
-    background-color: #{getColor('Success')};
-    color: #{getColor('Success-Contrast')};
-    border-color: #{getColor('Success')};
+    background-color: getColor('Success');
+    color: getColor('Success-Contrast');
+    border-color: getColor('Success');
 
     &:hover {
-      background-color: #{getColor('Success-Tint')};
-      color: #{getColor('Success-Contrast')};
-      border-color: #{getColor('Success-Tint')};
+      background-color: getColor('Success-Tint');
+      color: getColor('Success-Contrast');
+      border-color: getColor('Success-Tint');
     }
   }
 
   &--info {
-    background-color: #{getColor('Info')};
-    color: #{getColor('Info-Contrast')};
-    border-color: #{getColor('Info')};
+    background-color: getColor('Info');
+    color: getColor('Info-Contrast');
+    border-color: getColor('Info');
 
     &:hover {
-      background-color: #{getColor('Info-Tint')};
-      color: #{getColor('Info-Contrast')};
-      border-color: #{getColor('Info-Tint')};
+      background-color: getColor('Info-Tint');
+      color: getColor('Info-Contrast');
+      border-color: getColor('Info-Tint');
     }
   }
 
   &--black {
-    background-color: #{getColor('Black')};
-    color: #{getColor('White')};
-    border-color: #{getColor('Black')};
+    background-color: getColor('Black');
+    color: getColor('White');
+    border-color: getColor('Black');
 
     &:hover {
-      background-color: #{getColor('Black-Tint')};
+      background-color: getColor('White');
+      color: getColor('Black');
     }
   }
 
   &--white {
-    background-color: #{getColor('White')};
-    color: #{getColor('Black')};
-    border-color: #{getColor('White')};
+    background-color: getColor('White');
+    color: getColor('Black');
+    border-color: getColor('White');
 
     &:hover {
-      background-color: #{getColor('White-Tint')};
+      background-color: getColor('Black');
+      color: getColor('White');
     }
   }
 }

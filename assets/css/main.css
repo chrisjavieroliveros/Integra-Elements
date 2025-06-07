@@ -590,8 +590,6 @@ blockquote cite::before {
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
-}
-.btn:hover {
   transition: all 0.2s ease-in-out;
 }
 .btn:focus-visible {
@@ -686,7 +684,8 @@ blockquote cite::before {
   border-color: var(--color-Black);
 }
 .btn--black:hover {
-  background-color: var(--color-Black-Tint);
+  background-color: var(--color-White);
+  color: var(--color-Black);
 }
 .btn--white {
   background-color: var(--color-White);
@@ -694,7 +693,8 @@ blockquote cite::before {
   border-color: var(--color-White);
 }
 .btn--white:hover {
-  background-color: var(--color-White-Tint);
+  background-color: var(--color-Black);
+  color: var(--color-White);
 }
 
 /**

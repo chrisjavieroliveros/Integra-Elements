@@ -48,21 +48,6 @@
         --font-size-#{$name}: #{$value};
     }
 
-    // Typography - Font weights
-    @each $name, $value in typography.$font-weights {
-        --font-weight-#{$name}: #{$value};
-    }
-
-    // Typography - Line heights
-    @each $name, $value in typography.$line-heights {
-        --line-height-#{$name}: #{$value};
-    }
-
-    // Typography - Letter spacing
-    @each $name, $value in typography.$letter-spacing {
-        --letter-spacing-#{$name}: #{$value};
-    }
-
     // Spacing - from spacing.$spacing map
     @each $name, $value in spacing.$spacing {
         --spacing-#{$name}: #{$value};
