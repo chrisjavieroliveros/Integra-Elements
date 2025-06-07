@@ -162,18 +162,16 @@
   --spacing-10: 4rem;
   --spacing-12: 6rem;
   --spacing-16: 8rem;
-  --button-line-height: 1.5;
-  --button-border-radius: 0.375rem;
-  --button-sm-padding-y: 0.25rem;
+  --button-line-height: 1.7;
+  --button-border-radius: 0.25rem;
+  --button-font-weight: 400;
+  --button-sm-height: 2rem;
   --button-sm-padding-x: 0.75rem;
-  --button-sm-font-size: 0.875rem;
-  --button-md-padding-y: 0.5rem;
+  --button-sm-font-size: 0.75rem;
+  --button-md-height: 2.5rem;
   --button-md-padding-x: 1rem;
-  --button-md-font-size: 1rem;
-  --button-lg-padding-y: 0.75rem;
-  --button-lg-padding-x: 1.5rem;
-  --button-lg-font-size: 1.125rem;
-  --button-xl-padding-y: 1rem;
-  --button-xl-padding-x: 2rem;
-  --button-xl-font-size: 1.25rem;
+  --button-md-font-size: 0.875rem;
+  --button-lg-height: 2.75rem;
+  --button-lg-padding-x: 1.125rem;
+  --button-lg-font-size: 1rem;
 }

@@ -3,23 +3,6 @@
 /**
  * CONTAINER CONFIGURATION
  * ----------------------
- * 
- * Mobile-first responsive container implementation
- * 
- * USAGE:
- * 1. Apply the container class to create a responsive, centered wrapper:
- *    <div class="container">Content goes here</div>
- * 
- * 2. Container variations:
- *    - Default: <div class="container">...</div> (max-width: 1200px)
- *    - Narrow: <div class="container container--narrow">...</div> (max-width: 800px)
- *    - Wide: <div class="container container--wide">...</div> (max-width: 1600px)
- *    - Fluid: <div class="container container--fluid">...</div> (max-width: 100%)
- * 
- * 3. Container padding is responsive and handled by CSS variables:
- *    - Mobile: var(--container-padding-sm)
- *    - Tablet: var(--container-padding-md)
- *    - Desktop: var(--container-padding-lg)
  */
 
 .container {
@@ -30,13 +13,13 @@
   padding-left: var(--spacing-4);
   padding-right: var(--spacing-4);
 
-  // Tablet and up: Larger padding
+  // Tablet and up: Larger padding;
   @include breakpoints.breakpoint('md') {
     padding-left: var(--spacing-6);
     padding-right: var(--spacing-6);
   }
 
-  // Desktop and up: Even larger padding
+  // Desktop and up: Even larger padding;
   @include breakpoints.breakpoint('lg') {
     padding-left: var(--spacing-8);
     padding-right: var(--spacing-8);
@@ -50,7 +33,7 @@
     max-width: 1600px;
   }
 
-  &--fluid {
+  &--full {
     max-width: 100%;
   }
 }

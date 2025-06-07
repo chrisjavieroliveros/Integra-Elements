@@ -4,16 +4,17 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: var(--button-md-padding-y) var(--button-md-padding-x);
+  text-decoration: none;
+  height: var(--button-md-height);
+  padding: 0 var(--button-md-padding-x);
   border-radius: var(--button-border-radius);
   font-family: var(--font-family-base);
-  font-weight: var(--font-weight-regular);
+  font-weight: var(--button-font-weight);
   font-size: var(--button-md-font-size);
   line-height: var(--button-line-height);
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all 0.2s ease-in-out;
 
   // Focus styles
   &:focus-visible {
@@ -21,14 +22,20 @@
     outline-offset: 2px;
   }
 
+  &:hover {
+    transition: all 0.2s ease-in-out;
+  }
+
   // Sizes
   &--sm {
-    padding: var(--button-sm-padding-y) var(--button-sm-padding-x);
+    height: var(--button-sm-height);
+    padding: 0 var(--button-sm-padding-x);
     font-size: var(--button-sm-font-size);
   }
 
   &--lg {
-    padding: var(--button-lg-padding-y) var(--button-lg-padding-x);
+    height: var(--button-lg-height);
+    padding: 0 var(--button-lg-padding-x);
     font-size: var(--button-lg-font-size);
   }
 
@@ -40,14 +47,14 @@
 
   // Variants (Primary, Secondary, Danger, etc.)
   &--primary {
-    background-color: getColor("Primary");
     color: getColor("Primary-Contrast");
+    background-color: getColor("Primary");
     border-color: getColor("Primary");
 
     &:hover {
-      background-color: getColor("Primary-Tint");
       color: getColor("Primary-Contrast");
-      border-color: getColor("Primary-Tint");
+      background-color: getColor("Primary-Shade");
+      border-color: getColor("Primary-Shade");
     }
   }
 

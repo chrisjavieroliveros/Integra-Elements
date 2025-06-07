@@ -12,39 +12,24 @@ $base-spacing: 1rem;
 $spacing: (
   "0": 0,
   "1": 0.25rem,
-  // 4px
   "2": 0.5rem,
-  // 8px
   "3": 0.75rem,
-  // 12px
   "4": 1rem,
-  // 16px
   "5": 1.5rem,
-  // 24px
   "6": 2rem,
-  // 32px
   "8": 3rem,
-  // 48px
   "10": 4rem,
-  // 64px
   "12": 6rem,
-  // 96px
   "16": 8rem,
-  // 128px
 );
 
 // Spacing aliases for common use cases
 $spacing-aliases: (
   "xs": "1",
-  // 0.25rem
   "sm": "4",
-  // 1rem
   "md": "6",
-  // 2rem
   "lg": "8",
-  // 3rem
   "xl": "12",
-  // 6rem
 );
 
 /**
@@ -55,6 +40,7 @@ $spacing-aliases: (
  * @example margin: spacing('sm');    // Returns 1rem via alias
  */
 @function spacing($key) {
+
   // Check if it's an alias first
   @if map-has-key($spacing-aliases, $key) {
     $alias-key: map-get($spacing-aliases, $key);
