@@ -70,18 +70,6 @@
     }
   }
 
-  &--tertiary {
-    background-color: getColor("Tertiary");
-    color: getColor("Tertiary-Contrast");
-    border-color: getColor("Tertiary");
-
-    &:hover {
-      background-color: getColor("Tertiary-Tint");
-      color: getColor("Tertiary-Contrast");
-      border-color: getColor("Tertiary-Tint");
-    }
-  }
-
   &--danger {
     background-color: getColor("Danger");
     color: getColor("Danger-Contrast");
