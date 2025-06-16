@@ -22,9 +22,10 @@
 <body <?php body_class(); ?>>
 <?php wp_body_open(); ?>
 
+
 <div id="smooth-wrapper">
 	<div id="smooth-content">
-
-		<!-- <header id="masthead" class="site-header">
-			<?php // get_template_part( 'template-parts/navigation/navigation' ); ?>
-		</header> -->
+		
+		<header id="masthead" class="site-header">
+			<?php get_template_part( 'template-parts/navigation/navigation' ); ?>
+		</header>

@@ -6,10 +6,8 @@
  */
 
 namespace Integra_Elements\Elementor\Widgets;
-namespace Integra_Elements\Elementor\Traits;
 
-
-// use Integra_Elements\Elementor\Traits\Common_Background_Color;
+use Integra_Elements\Elementor\Traits\Common_Background_Color;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -19,6 +17,7 @@ if (!defined('ABSPATH')) {
  * Class Feature_Box_Widget
  */
 class Feature_Box_Widget extends \Elementor\Widget_Base {
+    
     use Common_Background_Color;
 
     /**

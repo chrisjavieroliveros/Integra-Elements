@@ -179,18 +179,4 @@ class Example_Widget extends \Elementor\Widget_Base {
         </div>
         <?php
     }
-
-    /**
-     * Render widget output in the editor.
-     */
-    protected function content_template() {
-        ?>
-        <div class="integra-elementor-widget integra-example-widget">
-            <h2 class="integra-widget-title">{{{ settings.title }}}</h2>
-            <div class="integra-widget-description">
-                {{{ settings.description }}}
-            </div>
-        </div>
-        <?php
-    }
 }

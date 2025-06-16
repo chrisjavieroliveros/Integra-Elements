@@ -92,5 +92,5 @@ document.addEventListener('DOMContentLoaded', function () {
     ScrollTrigger.refresh();
   });
 
-  console.log('ScrollSmoother initialized successfully');
+  // console.log('ScrollSmoother initialized successfully');
 });

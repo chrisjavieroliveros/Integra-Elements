@@ -89,12 +89,19 @@ class Integra_Elementor_Widgets {
             
             require_once $widget_file;
             
+            // Convert filename to class name
             $widget_name = pathinfo($widget_file, PATHINFO_FILENAME);
-            $class_name = str_replace('-', '_', $widget_name);
-            $class_name = $this->widgets_namespace . $class_name;
             
-            if (class_exists($class_name)) {
-                $widgets_manager->register(new $class_name());
+            // Convert kebab-case to PascalCase for class name
+            $class_parts = explode('-', $widget_name);
+            $class_parts = array_map('ucfirst', $class_parts);
+            $class_name = implode('_', $class_parts);
+            
+            // Add namespace
+            $full_class_name = $this->widgets_namespace . $class_name;
+            
+            if (class_exists($full_class_name)) {
+                $widgets_manager->register(new $full_class_name());
             }
         }
     }
