@@ -7,7 +7,7 @@
 
 namespace Integra_Elements\Elementor\Widgets;
 
-use Integra_Elements\Elementor\Traits\Common_Background_Color;
+// use Integra_Elements\Elementor\Traits\Common_Background_Color;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -17,7 +17,7 @@ if (!defined('ABSPATH')) {
  * Class Example_Widget
  */
 class Example_Widget extends \Elementor\Widget_Base {
-    use Common_Background_Color;
+    // use Common_Background_Color;
 
     /**
      * Get widget name.
@@ -154,11 +154,11 @@ class Example_Widget extends \Elementor\Widget_Base {
          );
 
          // Add shared background color control
-         $this->add_common_background_color(
-             '.integra-elementor-widget',
-             'widget_background_color',
-             'Widget Background Color'
-         );
+         // $this->add_common_background_color(
+         //     '.integra-elementor-widget',
+         //     'widget_background_color',
+         //     'Widget Background Color'
+         // );
 
          $this->end_controls_section();
     }

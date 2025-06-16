@@ -75,34 +75,27 @@ class Integra_Elementor_Widgets {
      * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
      */
     public function register_widgets($widgets_manager) {
-        // Load shared controls first
-        require_once $this->widgets_dir . 'shared-controls.php';
+        // Step 4: Add traits back gradually
         
-        // Autoload widgets
-        $widget_files = glob($this->widgets_dir . '*.php');
+        // Load traits first (but don't use them yet) - DISABLED due to critical errors
+        // require_once $this->widgets_dir . 'traits/shared-controls.php';
         
-        foreach ($widget_files as $widget_file) {
-            // Skip the shared controls file
-            if (basename($widget_file) === 'shared-controls.php') {
-                continue;
-            }
-            
-            require_once $widget_file;
-            
-            // Convert filename to class name
-            $widget_name = pathinfo($widget_file, PATHINFO_FILENAME);
-            
-            // Convert kebab-case to PascalCase for class name
-            $class_parts = explode('-', $widget_name);
-            $class_parts = array_map('ucfirst', $class_parts);
-            $class_name = implode('_', $class_parts);
-            
-            // Add namespace
-            $full_class_name = $this->widgets_namespace . $class_name;
-            
-            if (class_exists($full_class_name)) {
-                $widgets_manager->register(new $full_class_name());
-            }
+        // Load all widgets
+        require_once $this->widgets_dir . 'test-widget.php';
+        require_once $this->widgets_dir . 'example-widget.php';
+        require_once $this->widgets_dir . 'feature-box-widget.php';
+        
+        // Register all widgets
+        if (class_exists($this->widgets_namespace . 'Test_Widget')) {
+            $widgets_manager->register(new \Integra_Elements\Elementor\Widgets\Test_Widget());
+        }
+        
+        if (class_exists($this->widgets_namespace . 'Example_Widget')) {
+            $widgets_manager->register(new \Integra_Elements\Elementor\Widgets\Example_Widget());
+        }
+        
+        if (class_exists($this->widgets_namespace . 'Feature_Box_Widget')) {
+            $widgets_manager->register(new \Integra_Elements\Elementor\Widgets\Feature_Box_Widget());
         }
     }
 
@@ -120,7 +113,6 @@ class Integra_Elementor_Widgets {
             ]
         );
     }
-
 
     /**
      * Enqueue widget scripts
