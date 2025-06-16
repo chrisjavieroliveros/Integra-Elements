@@ -6,6 +6,7 @@
  */
 
 document.addEventListener('DOMContentLoaded', function () {
+
   // Add loading class to prevent content jump
   document.body.classList.add('scroll-smoother-loading');
 

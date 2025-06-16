@@ -10,9 +10,7 @@
     @media (min-width: breakpoints.breakpoint($size)) {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @error "Breakpoint '#{$size}' not found.";
   }
 }
@@ -27,9 +25,7 @@
     @media (max-width: #{breakpoints.breakpoint($size) - 0.02px}) {
       @content;
     }
-  }
-
-  @else {
+  } @else {
     @error "Breakpoint '#{$size}' not found.";
   }
 }

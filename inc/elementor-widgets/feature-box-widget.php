@@ -6,6 +6,10 @@
  */
 
 namespace Integra_Elements\Elementor\Widgets;
+namespace Integra_Elements\Elementor\Traits;
+
+
+// use Integra_Elements\Elementor\Traits\Common_Background_Color;
 
 if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
@@ -15,6 +19,7 @@ if (!defined('ABSPATH')) {
  * Class Feature_Box_Widget
  */
 class Feature_Box_Widget extends \Elementor\Widget_Base {
+    use Common_Background_Color;
 
     /**
      * Get widget name.
@@ -338,15 +343,12 @@ class Feature_Box_Widget extends \Elementor\Widget_Base {
             ]
         );
 
-        $this->add_group_control(
-            \Elementor\Group_Control_Background::get_type(),
-            [
-                'name' => 'box_background',
-                'label' => __('Background', 'integra-elements'),
-                'types' => ['classic', 'gradient'],
-                'selector' => '{{WRAPPER}} .integra-feature-box',
-            ]
-        );
+                 // Add shared background color control
+         $this->add_common_background_color(
+             '.integra-feature-box',
+             'box_background_color',
+             'Box Background Color'
+         );
 
         $this->add_group_control(
             \Elementor\Group_Control_Border::get_type(),

@@ -75,10 +75,18 @@ class Integra_Elementor_Widgets {
      * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
      */
     public function register_widgets($widgets_manager) {
+        // Load shared controls first
+        require_once $this->widgets_dir . 'shared-controls.php';
+        
         // Autoload widgets
         $widget_files = glob($this->widgets_dir . '*.php');
         
         foreach ($widget_files as $widget_file) {
+            // Skip the shared controls file
+            if (basename($widget_file) === 'shared-controls.php') {
+                continue;
+            }
+            
             require_once $widget_file;
             
             $widget_name = pathinfo($widget_file, PATHINFO_FILENAME);

@@ -6,12 +6,12 @@
 
 // Breakpoint definitions
 $breakpoints: (
-    "xs": 375px,
-    "sm": 576px,
-    "md": 768px,
-    "lg": 992px,
-    "xl": 1200px,
-    "xxl": 1400px,
+  "xs": 375px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
 );
 
 /**
@@ -21,10 +21,10 @@ $breakpoints: (
  * @example width: breakpoint('md'); // Returns 768px
  */
 @function breakpoint($name) {
-    @if map-has-key($breakpoints, $name) {
-        @return map-get($breakpoints, $name);
-    }
+  @if map-has-key($breakpoints, $name) {
+    @return map-get($breakpoints, $name);
+  }
 
-    @error "Breakpoint '#{$name}' not found.";
-    @return null;
+  @error "Breakpoint '#{$name}' not found.";
+  @return null;
 }
