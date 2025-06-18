@@ -46,18 +46,6 @@ h6 {
       font-size: var(--display-2-lg);
     }
   }
-
-  &-3 {
-    font-size: var(--display-3-sm);
-
-    @include breakpoints.breakpoint(md) {
-      font-size: var(--display-3-md);
-    }
-
-    @include breakpoints.breakpoint(lg) {
-      font-size: var(--display-3-lg);
-    }
-  }
 }
 
 h1 {

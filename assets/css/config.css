@@ -99,19 +99,16 @@
   --lead-font-weight: 700;
   --lead-line-height: 140%;
   --heading-font-weight: 700;
-  --heading-line-height: 140%;
+  --heading-line-height: 120%;
 }
 
 :root {
-  --display-1-sm: 3rem;
-  --display-1-md: 3.5rem;
-  --display-1-lg: 4rem;
-  --display-2-sm: 2.5rem;
-  --display-2-md: 3rem;
-  --display-2-lg: 3.5rem;
-  --display-3-sm: 2rem;
-  --display-3-md: 2.5rem;
-  --display-3-lg: 3rem;
+  --display-1-sm: 2.25rem;
+  --display-1-md: 2.75rem;
+  --display-1-lg: 3rem;
+  --display-2-sm: 2rem;
+  --display-2-md: 2.25rem;
+  --display-2-lg: 2.75rem;
   --h1-sm: 1.75rem;
   --h1-md: 2rem;
   --h1-lg: 2.5rem;
