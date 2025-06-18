@@ -74,6 +74,18 @@ class Test_Widget extends \Elementor\Widget_Base {
      */
     protected function render() {
         $settings = $this->get_settings_for_display();
-        echo '<div class="integra-test-widget">' . esc_html($settings['text']) . '</div>';
+        ?>
+
+        <section>
+            <div class="container">
+                <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, consectetur?</h1>
+                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est soluta totam rem.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit itaque tenetur, cupiditate vel ducimus ratione ea cumque. Minus voluptas ad nesciunt. Sed, dolore? Quidem atque illo temporibus aspernatur culpa incidunt.</p>
+            </div>
+        </section>
+
+
+        <?php
+        // echo '<div class="integra-test-widget">' . esc_html($settings['text']) . '</div>';
     }
 } 

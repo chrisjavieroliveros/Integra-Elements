@@ -75,28 +75,68 @@ class Integra_Elementor_Widgets {
      * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
      */
     public function register_widgets($widgets_manager) {
-        // Step 4: Add traits back gradually
         
-        // Load traits first (but don't use them yet) - DISABLED due to critical errors
-        // require_once $this->widgets_dir . 'traits/shared-controls.php';
-        
-        // Load all widgets
-        require_once $this->widgets_dir . 'test-widget.php';
-        require_once $this->widgets_dir . 'example-widget.php';
-        require_once $this->widgets_dir . 'feature-box-widget.php';
-        
-        // Register all widgets
-        if (class_exists($this->widgets_namespace . 'Test_Widget')) {
-            $widgets_manager->register(new \Integra_Elements\Elementor\Widgets\Test_Widget());
+        // Automatically load and register all widgets from the widgets directory
+        $this->auto_register_widgets($widgets_manager);
+    }
+
+    /**
+     * Automatically register all widgets from the widgets directory
+     *
+     * @param \Elementor\Widgets_Manager $widgets_manager Elementor widgets manager.
+     */
+    private function auto_register_widgets($widgets_manager) {
+        // Check if widgets directory exists
+        if (!is_dir($this->widgets_dir)) {
+            return;
         }
-        
-        if (class_exists($this->widgets_namespace . 'Example_Widget')) {
-            $widgets_manager->register(new \Integra_Elements\Elementor\Widgets\Example_Widget());
+
+        // Get all PHP files in the widgets directory
+        $widget_files = glob($this->widgets_dir . '*.php');
+
+        if (empty($widget_files)) {
+            return;
         }
-        
-        if (class_exists($this->widgets_namespace . 'Feature_Box_Widget')) {
-            $widgets_manager->register(new \Integra_Elements\Elementor\Widgets\Feature_Box_Widget());
+
+        foreach ($widget_files as $widget_file) {
+            // Skip if file doesn't exist
+            if (!file_exists($widget_file)) {
+                continue;
+            }
+
+            // Get filename without extension
+            $filename = basename($widget_file, '.php');
+            
+            // Convert filename to class name (e.g., 'test-widget' becomes 'Test_Widget')
+            $class_name = $this->filename_to_class_name($filename);
+            $full_class_name = $this->widgets_namespace . $class_name;
+
+            // Load the widget file
+            require_once $widget_file;
+
+            // Register the widget if class exists
+            if (class_exists($full_class_name)) {
+                $widgets_manager->register(new $full_class_name());
+            }
         }
+    }
+
+    /**
+     * Convert filename to class name
+     * 
+     * Converts 'test-widget' to 'Test_Widget'
+     * Converts 'feature-box-widget' to 'Feature_Box_Widget'
+     *
+     * @param string $filename The filename without extension
+     * @return string The class name
+     */
+    private function filename_to_class_name($filename) {
+        // Split by hyphens and capitalize each part
+        $parts = explode('-', $filename);
+        $class_parts = array_map('ucfirst', $parts);
+        
+        // Join with underscores
+        return implode('_', $class_parts);
     }
 
     /**

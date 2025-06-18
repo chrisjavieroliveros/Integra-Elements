@@ -1,10 +1,8 @@
 @use "sass:math";
 
 /**
- * COLOR CONFIGURATION
+ * COLOR VARIABLES
  * ------------------
- * This file contains only color maps and utility functions.
- * CSS custom properties are generated in config/config.scss
  */
 
 // Color palette
@@ -101,3 +99,11 @@ $colors: (
   "Black": #1e1e1e,
   "White": #ffffff
 );
+
+
+// Generate CSS custom properties for the colors map
+:root {
+  @each $name, $value in $colors {
+    --color-#{$name}: #{$value};
+  }
+}

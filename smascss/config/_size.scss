@@ -1,0 +1,62 @@
+/** 
+ * SIZE VARIABLES
+ * -------------------
+ */
+
+// Size scale
+$size: (
+    "0": 0,
+    "1": 0.25rem,
+    // 4px
+    "2": 0.5rem,
+    // 8px
+    "3": 0.75rem,
+    // 12px
+    "4": 1rem,
+    // 16px
+    "5": 1.5rem,
+    // 24px
+    "6": 2rem,
+    // 32px
+    "8": 3rem,
+    // 48px
+    "9": 3.5rem,
+    // 56px
+    "10": 4rem,
+    // 64px
+    "11": 4.5rem,
+    // 72px
+    "12": 6rem,
+    // 96px
+    "13": 6.5rem,
+    // 104px
+    "14": 7rem,
+    // 112px
+    "15": 7.5rem,
+    // 120px
+    "16": 8rem,
+    // 128px
+    "17": 8.5rem,
+    // 136px
+    "18": 9rem,
+    // 144px
+    "19": 9.5rem,
+    // 152px
+    "20": 10rem,
+    // 160px
+    "21": 10.5rem,
+    // 168px
+    "22": 11rem,
+    // 176px
+    "23": 11.5rem,
+    // 184px
+    "24": 12rem,
+    // 192px
+);
+
+// Generate CSS custom properties for the size map
+:root {
+    @each $name, $value in $size {
+        --size-#{$name}: #{$value};
+    }
+}

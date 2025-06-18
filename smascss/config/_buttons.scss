@@ -1,8 +1,6 @@
 /**
- * BUTTON CONFIGURATION
+ * BUTTON VARIABLES
  * -------------------
- * This file contains only button maps and utility functions.
- * CSS custom properties are generated in config/config.scss
  */
 
 // Button consistent properties (same across all sizes)
@@ -29,3 +27,17 @@ $button-sizes: (
   "lg-padding-x": "1.125rem",
   "lg-font-size": "1rem",
 );
+
+// Button Properties
+:root {
+  @each $name, $value in $button-base {
+    --btn-#{$name}: #{$value};
+  }
+}
+
+// Button sizes
+:root {
+  @each $name, $value in $button-sizes {
+    --btn-size--#{$name}: #{$value};
+  }
+}

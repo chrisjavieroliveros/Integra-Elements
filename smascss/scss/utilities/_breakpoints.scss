@@ -1,4 +1,33 @@
-@use "../../config/breakpoints" as breakpoints;
+/**
+ * BREAKPOINTS
+ * -----------
+ * Simple responsive breakpoint system with mobile-first approach.
+ */
+
+// Breakpoint definitions
+$breakpoints: (
+  "xs": 375px,
+  "sm": 576px,
+  "md": 768px,
+  "lg": 992px,
+  "xl": 1200px,
+  "xxl": 1400px,
+);
+
+/**
+ * Get breakpoint value
+ * @param {String} $name - The breakpoint name
+ * @return {Number} The breakpoint value in pixels
+ * @example width: breakpoint('md'); // Returns 768px
+ */
+@function breakpoint($name) {
+  @if map-has-key($breakpoints, $name) {
+    @return map-get($breakpoints, $name);
+  }
+
+  @error "Breakpoint '#{$name}' not found.";
+  @return null;
+}
 
 /**
  * Apply styles at a breakpoint and up (mobile-first)
@@ -6,11 +35,13 @@
  * @example @include breakpoint('md') { display: flex; }
  */
 @mixin breakpoint($size) {
-  @if map-has-key(breakpoints.$breakpoints, $size) {
-    @media (min-width: breakpoints.breakpoint($size)) {
+  @if map-has-key($breakpoints, $size) {
+    @media (min-width: breakpoint($size)) {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @error "Breakpoint '#{$size}' not found.";
   }
 }
@@ -21,11 +52,13 @@
  * @example @include breakpoint-down('md') { display: block; }
  */
 @mixin breakpoint-down($size) {
-  @if map-has-key(breakpoints.$breakpoints, $size) {
-    @media (max-width: #{breakpoints.breakpoint($size) - 0.02px}) {
+  @if map-has-key($breakpoints, $size) {
+    @media (max-width: #{breakpoint($size) - 0.02px}) {
       @content;
     }
-  } @else {
+  }
+
+  @else {
     @error "Breakpoint '#{$size}' not found.";
   }
 }

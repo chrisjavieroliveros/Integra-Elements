@@ -1,0 +1,21 @@
+{
+  "editor.formatOnSave": true,
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+  "files.associations": {
+    "*.scss": "scss"
+  },
+  "emmet.includeLanguages": {
+    "scss": "css"
+  },
+  // Disable format on save for specific files
+  "files.readonlyInclude": {
+    "**/smascss/config/_typography.scss": false
+  },
+  // Alternative: Use glob patterns to exclude from formatting
+  "editor.formatOnSaveMode": "file",
+  "[scss]": {
+    "editor.formatOnSave": true
+  },
+} 

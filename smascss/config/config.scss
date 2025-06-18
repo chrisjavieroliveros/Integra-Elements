@@ -1,69 +1,11 @@
 /**
- * CONFIG - CSS CUSTOM PROPERTIES GENERATOR
  * ========================================
- * 
- * This file is the single entry point for generating CSS custom properties.
- * It imports all configuration maps and generates :root variables in one place.
- * 
- * COMPILATION:
- * - This compiles to config.css 
- * - Link config.css before main.css in your HTML
- * - main.css will use var(--property-name) to access these values
- * 
- * STRUCTURE:
- * - Individual config files contain only maps and functions
- * - This file handles all CSS custom property generation
- * - Clean separation: config = variables, main = styles
- * 
+ * CONFIG - CSS VARIABLES
  * Author: Chris Javier Oliveros
+  * ========================================
  */
-
-// =============================================================================
-// IMPORT CONFIGURATION MAPS & FUNCTIONS
-// =============================================================================
 
 @use "colors" as colors;
 @use "typography" as typography;
-@use "spacing" as spacing;
+@use "size" as size;
 @use "buttons" as buttons;
-
-// =============================================================================
-// GENERATE ALL CSS CUSTOM PROPERTIES
-// =============================================================================
-
-:root {
-  // Colors - from colors.$colors map
-  @each $name, $value in colors.$colors {
-    --color-#{$name}: #{$value};
-  }
-
-  // Typography - Font families
-  @each $name, $value in typography.$font-families {
-    --font-family-#{$name}: #{$value};
-  }
-
-  // Typography - Font sizes
-  @each $name, $value in typography.$font-sizes {
-    --font-size-#{$name}: #{$value};
-  }
-
-  // Typography - Line heights
-  @each $name, $value in typography.$line-heights {
-    --line-height-#{$name}: #{$value};
-  }
-
-  // Spacing - from spacing.$spacing map
-  @each $name, $value in spacing.$spacing {
-    --spacing-#{$name}: #{$value};
-  }
-
-  // Button Base Properties - from buttons.$button-base map
-  @each $name, $value in buttons.$button-base {
-    --button-#{$name}: #{$value};
-  }
-
-  // Button Sizes - from buttons.$button-sizes map
-  @each $name, $value in buttons.$button-sizes {
-    --button-#{$name}: #{$value};
-  }
-}
