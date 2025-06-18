@@ -38,6 +38,6 @@ $button-sizes: (
 // Button sizes
 :root {
   @each $name, $value in $button-sizes {
-    --btn-size--#{$name}: #{$value};
+    --btn-#{$name}: #{$value};
   }
 }

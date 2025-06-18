@@ -1077,6 +1077,12 @@ blockquote cite::before {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  font-size: var(--btn-md-font-size);
+  font-weight: var(--btn-font-weight);
+  height: var(--btn-md-height);
+  line-height: var(--btn-line-height);
+  border-radius: var(--btn-border-radius);
+  padding: 0 var(--btn-md-padding-x);
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
@@ -1086,17 +1092,18 @@ blockquote cite::before {
   outline-offset: 2px;
 }
 .btn:hover {
+  text-decoration: none;
   transition: all 0.2s ease-in-out;
 }
 .btn--sm {
-  height: var(--button-sm-height);
-  padding: 0 var(--button-sm-padding-x);
-  font-size: var(--button-sm-font-size);
+  height: var(--btn-sm-height);
+  padding: 0 var(--btn-sm-padding-x);
+  font-size: var(--btn-sm-font-size);
 }
 .btn--lg {
-  height: var(--button-lg-height);
-  padding: 0 var(--button-lg-padding-x);
-  font-size: var(--button-lg-font-size);
+  height: var(--btn-lg-height);
+  padding: 0 var(--btn-lg-padding-x);
+  font-size: var(--btn-lg-font-size);
 }
 .btn--block {
   display: block;
@@ -1118,7 +1125,7 @@ blockquote cite::before {
   border-color: var(--color-Secondary);
 }
 .btn--secondary:hover {
-  background-color: var(--color-Secondary-Tint);
+  background-color: var(--color-Secondary-Shade);
   color: var(--color-Secondary-Contrast);
   border-color: var(--color-Secondary-Tint);
 }
@@ -1509,6 +1516,10 @@ nav .nav-header {
 nav .nav-body {
   display: flex;
   background-color: var(--color-Light-100);
+}
+
+.hero {
+  position: relative;
 }
 
 .elementor-widget-text-editor p {
