@@ -792,9 +792,6 @@ h6 {
 p {
   margin-bottom: var(--size-4);
 }
-p:last-child {
-  margin-bottom: 0;
-}
 
 .lead {
   font-size: var(--lead-font-size);
@@ -1527,7 +1524,7 @@ nav .nav-body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 1.5rem;
+  gap: 2rem;
 }
 .hero .hero-content {
   flex: 1 1 auto;
@@ -1570,6 +1567,22 @@ nav .nav-body {
   .hero .hero-content {
     order: 1;
   }
+}
+
+.eyebrow-text {
+  width: -moz-fit-content;
+  width: fit-content;
+  display: inline-block;
+  font-family: var(--eyebrow-font-family), "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-weight: var(--eyebrow-font-weight);
+  font-size: var(--eyebrow-font-size);
+  line-height: var(--eyebrow-line-height);
+  letter-spacing: var(--eyebrow-letter-spacing);
+  text-transform: var(--eyebrow-text-transform);
+  padding: var(--eyebrow-padding);
+  border-radius: var(--eyebrow-border-radius);
+  background-color: var(--eyebrow-background-color);
+  color: var(--eyebrow-color);
 }
 
 .elementor-widget-text-editor p {

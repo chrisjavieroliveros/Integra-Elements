@@ -123,9 +123,9 @@ h6 {
 p {
   margin-bottom: var(--size-4);
 
-  &:last-child {
-    margin-bottom: 0;
-  }
+  // &:last-child {
+  //   margin-bottom: 0;
+  // }
 }
 
 .lead {

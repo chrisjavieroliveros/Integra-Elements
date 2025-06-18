@@ -97,7 +97,7 @@
   --base-line-height: 140%;
   --lead-font-size: 1.125rem;
   --lead-font-weight: 700;
-  --lead-line-height: 140%;
+  --lead-line-height: 120%;
   --heading-font-weight: 700;
   --heading-line-height: 120%;
 }
@@ -127,6 +127,19 @@
   --h6-sm: 1rem;
   --h6-md: 1.125rem;
   --h6-lg: 1.25rem;
+}
+
+:root {
+  --eyebrow-font-family: Roboto;
+  --eyebrow-font-weight: 700;
+  --eyebrow-font-size: 0.875rem;
+  --eyebrow-line-height: 100%;
+  --eyebrow-letter-spacing: 4%;
+  --eyebrow-text-transform: uppercase;
+  --eyebrow-padding: 0;
+  --eyebrow-border-radius: 0;
+  --eyebrow-background-color: transparent;
+  --eyebrow-color: var(--color-Black);
 }
 
 /** 
@@ -175,7 +188,7 @@
   --btn-sm-padding-x: 0.75rem;
   --btn-sm-font-size: 0.75rem;
   --btn-md-height: 2.5rem;
-  --btn-md-padding-x: 1rem;
+  --btn-md-padding-x: 1.25rem;
   --btn-md-font-size: 0.875rem;
   --btn-lg-height: 2.75rem;
   --btn-lg-padding-x: 1.125rem;

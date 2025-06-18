@@ -21,7 +21,7 @@ $typography: (
   // Lead font variables;
   "lead-font-size": 1.125rem,
   "lead-font-weight": 700,
-  "lead-line-height": 140%,
+  "lead-line-height": 120%,
 
   // Heading font variables;
   "heading-font-weight": 700,
@@ -66,6 +66,18 @@ $heading-sizes: (
   ),
 );
 
+$eyebrow: (
+  "font-family": "Roboto",
+  "font-weight": 700,
+  "font-size": 0.875rem,
+  "line-height": 100%,
+  "letter-spacing": 4%,
+  "text-transform": uppercase,
+  "padding": 0,
+  "border-radius": 0,
+  "background-color": "transparent",
+  "color": var(--color-Black)
+);
 
 // Font Family Variables
 :root {
@@ -87,5 +99,12 @@ $heading-sizes: (
     @each $breakpoint, $size in $sizes {
       --#{$heading}-#{$breakpoint}: #{$size};
     }
+  }
+}
+
+// Eyebrow Variables
+:root {
+  @each $name, $value in $eyebrow {
+    --eyebrow-#{$name}: #{$value};
   }
 }
