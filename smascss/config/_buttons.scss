@@ -14,20 +14,17 @@ $button-base: (
 $button-sizes: (
   // Small buttons
   "sm-height": "2rem",
-  "sm-padding-x": "0.75rem",
+  "sm-padding-x": "1.5rem",
   "sm-font-size": "0.75rem",
 
   // Default/Medium buttons
   "md-height": "2.5rem",
-  // 40px
-  "md-padding-x": "1.25rem",
-  // 20px
+  "md-padding-x": "1.75rem",
   "md-font-size": "0.875rem",
-  // 14px
 
   // Large buttons
   "lg-height": "2.75rem",
-  "lg-padding-x": "1.125rem",
+  "lg-padding-x": "2rem",
   "lg-font-size": "1rem",
 );
 

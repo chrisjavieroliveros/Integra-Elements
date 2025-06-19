@@ -16,18 +16,20 @@ if (!defined('_S_VERSION')) {
  */
 function integra_elements_enqueue_fonts() {
     // 👇 Just paste your Google Fonts URL here!
-    $google_fonts_url = 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap';
+    $google_fonts_url = 'https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap';
     
     // 💡 Pro Tip - Multiple Fonts: Just add &family= for each additional font
     // $google_fonts_url = 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@300;400;600&display=swap';
     
-// That's it! The function handles the rest automatically.
+    // That's it! The function handles the rest automatically.
     if (!empty($google_fonts_url)) {
-        add_action('wp_head', function() use ($google_fonts_url) {
+        // Enqueue Google Fonts properly using WordPress enqueue system
+        wp_enqueue_style('integra-google-fonts', $google_fonts_url, array(), null);
+        
+        // Add preconnect links for performance
+        add_action('wp_head', function() {
             echo '<link rel="preconnect" href="https://fonts.googleapis.com" />' . "\n";
             echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />' . "\n";
-            echo '<link rel="preload" as="style" href="' . esc_url($google_fonts_url) . '" />' . "\n";
-            echo '<link rel="stylesheet" href="' . esc_url($google_fonts_url) . '" />' . "\n";
         }, 1);
     }
     
@@ -35,15 +37,8 @@ function integra_elements_enqueue_fonts() {
 }
 
 function integra_elements_scripts() {
-    // Enqueue Google Fonts with lazy loading
-    $fonts_url = integra_elements_enqueue_fonts();
-    wp_enqueue_style('integra-google-fonts', $fonts_url, array(), null, array(
-        'media' => 'print',
-        'onload' => "this.media='all'"
-    ));
-
-    // Fallback for browsers with JavaScript disabled
-    wp_add_inline_style('integra-google-fonts', "@media not print{#integra-google-fonts{media:all}}");
+    // Enqueue Google Fonts (handled by integra_elements_enqueue_fonts)
+    integra_elements_enqueue_fonts();
 
     // Theme Config CSS;
     wp_enqueue_style('integra-theme-config', get_template_directory_uri() . '/assets/css/config.min.css', array(), _S_VERSION);

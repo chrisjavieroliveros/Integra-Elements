@@ -5,7 +5,7 @@
  * @package WP-Integra-Elements
  */
 ?>
-<div class="nav-wrapper">
+<div class="nav-wrapper" hidden>
     <nav id="site-navigation" class="site-navigation">
         <div class="nav-container">
             <div class="nav-logo">
@@ -45,4 +45,5 @@
             </div>
         </div>
     </nav>
-</div><!-- .nav-wrapper -->
+</div>
+<!-- .nav-wrapper -->

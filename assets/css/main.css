@@ -84,7 +84,7 @@
   min-height: 100vh;
 }
 .height--marketing {
-  min-height: calc(95vh - 104px);
+  min-height: calc(85vh - 104px);
 }
 
 /**
@@ -1541,7 +1541,7 @@ nav .nav-body {
   flex-wrap: wrap;
   width: 100%;
 }
-@media (min-width: 375px) {
+@media (min-width: 480px) {
   .inline-cta {
     flex-direction: row;
   }
