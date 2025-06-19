@@ -1,5 +1,3 @@
-@use "../utilities/get-color" as *;
-
 .btn {
   display: inline-flex;
   align-items: center;
@@ -20,7 +18,7 @@
 
   // Focus styles
   &:focus-visible {
-    outline: 2px solid getColor("Primary");
+    outline: 2px solid var(--color-Primary);
     outline-offset: 2px;
   }
 
@@ -50,96 +48,96 @@
 
   // Variants (Primary, Secondary, Danger, etc.)
   &--primary {
-    color: getColor("Primary-Contrast");
-    background-color: getColor("Primary");
-    border-color: getColor("Primary");
+    color: var(--color-Primary-Contrast);
+    background-color: var(--color-Primary);
+    border-color: var(--color-Primary);
 
     &:hover {
-      color: getColor("Primary-Contrast");
-      background-color: getColor("Primary-Shade");
-      border-color: getColor("Primary-Shade");
+      color: var(--color-Primary-Contrast);
+      background-color: var(--color-Primary-Shade);
+      border-color: var(--color-Primary-Shade);
     }
   }
 
   &--secondary {
-    background-color: getColor("Secondary");
-    color: getColor("Secondary-Contrast");
-    border-color: getColor("Secondary");
+    background-color: var(--color-Secondary);
+    color: var(--color-Secondary-Contrast);
+    border-color: var(--color-Secondary);
 
     &:hover {
-      background-color: getColor("Secondary-Shade");
-      color: getColor("Secondary-Contrast");
-      border-color: getColor("Secondary-Tint");
+      background-color: var(--color-Secondary-Shade);
+      color: var(--color-Secondary-Contrast);
+      border-color: var(--color-Secondary-Tint);
     }
   }
 
   &--danger {
-    background-color: getColor("Danger");
-    color: getColor("Danger-Contrast");
-    border-color: getColor("Danger");
+    background-color: var(--color-Danger);
+    color: var(--color-Danger-Contrast);
+    border-color: var(--color-Danger);
 
     &:hover {
-      background-color: getColor("Danger-Tint");
-      color: getColor("Danger-Contrast");
-      border-color: getColor("Danger-Tint");
+      background-color: var(--color-Danger-Tint);
+      color: var(--color-Danger-Contrast);
+      border-color: var(--color-Danger-Tint);
     }
   }
 
   &--warning {
-    background-color: getColor("Warning");
-    color: getColor("Warning-Contrast");
-    border-color: getColor("Warning");
+    background-color: var(--color-Warning);
+    color: var(--color-Warning-Contrast);
+    border-color: var(--color-Warning);
 
     &:hover {
-      background-color: getColor("Warning-Tint");
-      color: getColor("Warning-Contrast");
-      border-color: getColor("Warning-Tint");
+      background-color: var(--color-Warning-Tint);
+      color: var(--color-Warning-Contrast);
+      border-color: var(--color-Warning-Tint);
     }
   }
 
   &--success {
-    background-color: getColor("Success");
-    color: getColor("Success-Contrast");
-    border-color: getColor("Success");
+    background-color: var(--color-Success);
+    color: var(--color-Success-Contrast);
+    border-color: var(--color-Success);
 
     &:hover {
-      background-color: getColor("Success-Tint");
-      color: getColor("Success-Contrast");
-      border-color: getColor("Success-Tint");
+      background-color: var(--color-Success-Tint);
+      color: var(--color-Success-Contrast);
+      border-color: var(--color-Success-Tint);
     }
   }
 
   &--info {
-    background-color: getColor("Info");
-    color: getColor("Info-Contrast");
-    border-color: getColor("Info");
+    background-color: var(--color-Info);
+    color: var(--color-Info-Contrast);
+    border-color: var(--color-Info);
 
     &:hover {
-      background-color: getColor("Info-Tint");
-      color: getColor("Info-Contrast");
-      border-color: getColor("Info-Tint");
+      background-color: var(--color-Info-Tint);
+      color: var(--color-Info-Contrast);
+      border-color: var(--color-Info-Tint);
     }
   }
 
   &--black {
-    background-color: getColor("Black");
-    color: getColor("White");
-    border-color: getColor("Black");
+    background-color: var(--color-Black);
+    color: var(--color-White);
+    border-color: var(--color-Black);
 
     &:hover {
-      background-color: getColor("White");
-      color: getColor("Black");
+      background-color: var(--color-White);
+      color: var(--color-Black);
     }
   }
 
   &--white {
-    background-color: getColor("White");
-    color: getColor("Black");
-    border-color: getColor("White");
+    background-color: var(--color-White);
+    color: var(--color-Black);
+    border-color: var(--color-White);
 
     &:hover {
-      background-color: getColor("Black");
-      color: getColor("White");
+      background-color: var(--color-Black);
+      color: var(--color-White);
     }
   }
 }

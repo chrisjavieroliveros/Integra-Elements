@@ -1,0 +1,15 @@
+@use "../utilities/breakpoints" as breakpoints;
+
+.inline-cta {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    width: 100%;
+
+    @include breakpoints.breakpoint(xs) {
+        flex-direction: row;
+    }
+
+}

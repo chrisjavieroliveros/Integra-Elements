@@ -1,0 +1,15 @@
+.height {
+
+    &--auto {
+        height: auto;
+    }
+
+    &--full {
+        min-height: 100vh;
+    }
+
+    &--marketing {
+        min-height: calc(95vh - 104px);
+    }
+
+}
