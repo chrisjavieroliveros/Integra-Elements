@@ -81,16 +81,16 @@
   --color-White: #ffffff;
 }
 
+:root {
+  --font-family-base: DM Sans;
+  --font-family-heading: Anek Bangla;
+  --font-family-mono: SFMono-Regular;
+}
+
 /**
  * TYPOGRAPHY VARIABLES
  * -----------------------
  */
-:root {
-  --font-family-base: Roboto;
-  --font-family-heading: Roboto;
-  --font-family-mono: SFMono-Regular;
-}
-
 :root {
   --base-font-size: 16px;
   --base-font-weight: 400;
@@ -98,7 +98,7 @@
   --lead-font-size: 1.125rem;
   --lead-font-weight: 700;
   --lead-line-height: 120%;
-  --heading-font-weight: 700;
+  --heading-font-weight: 400;
   --heading-line-height: 120%;
 }
 
@@ -130,7 +130,7 @@
 }
 
 :root {
-  --eyebrow-font-family: Roboto;
+  --eyebrow-font-family: DM Sans;
   --eyebrow-font-weight: 700;
   --eyebrow-font-size: 0.875rem;
   --eyebrow-line-height: 100%;
@@ -179,8 +179,8 @@
  */
 :root {
   --btn-line-height: 1.7;
-  --btn-border-radius: 0.25rem;
-  --btn-font-weight: 400;
+  --btn-border-radius: 999px;
+  --btn-font-weight: 700;
 }
 
 :root {

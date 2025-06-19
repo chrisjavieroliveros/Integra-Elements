@@ -4,12 +4,6 @@
  */
 
 
-// Font families
-$font-families: (
-  "base": "Roboto",
-  "heading": "Roboto",
-  "mono": "SFMono-Regular",
-);
 
 //  Base Font Variables;
 $typography: (
@@ -24,7 +18,7 @@ $typography: (
   "lead-line-height": 120%,
 
   // Heading font variables;
-  "heading-font-weight": 700,
+  "heading-font-weight": 400,
   "heading-line-height": 120%,
 );
 
@@ -67,7 +61,7 @@ $heading-sizes: (
 );
 
 $eyebrow: (
-  "font-family": "Roboto",
+  "font-family": "DM Sans",
   "font-weight": 700,
   "font-size": 0.875rem,
   "line-height": 100%,
@@ -79,12 +73,7 @@ $eyebrow: (
   "color": var(--color-Black)
 );
 
-// Font Family Variables
-:root {
-  @each $name, $value in $font-families {
-    --font-family-#{$name}: #{$value};
-  }
-}
+
 
 // Base Font Variables
 :root {

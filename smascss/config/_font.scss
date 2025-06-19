@@ -1,0 +1,13 @@
+// Font families
+$font-families: (
+    "base": "DM Sans",
+    "heading": "Anek Bangla",
+    "mono": "SFMono-Regular",
+);
+
+// Font Family Variables
+:root {
+    @each $name, $value in $font-families {
+        --font-family-#{$name}: #{$value};
+    }
+}

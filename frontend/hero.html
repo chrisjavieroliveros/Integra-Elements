@@ -10,39 +10,73 @@
     <link rel="stylesheet" href="../assets/css/config.css" />
     <link rel="stylesheet" href="../assets/css/main.css" />
 
+    <!-- Font Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+    <!-- JS -->
+    <script src="../assets/js/scroll-smoother.js"></script>
+
+
 </head>
 
 <body style="background-color: #fbfbfb;">
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
 
-    <!-- Hero:  -->
-    <section class="hero section-padding">
-        <div class="container container--narrow">
-            <div class="hero-content">
+            <!-- Hero: Default -->
+            <section class="hero section-padding">
+                <div class="container container--narrow">
+                    <div class="hero-content">
 
-                <span class="eyebrow-text">Lorem ipsum dolor.</span>
+                        <span class="eyebrow-text">Lorem ipsum dolor.</span>
 
-                <div class="text-content">
-                    <h1 class="display-1">Hero Component</h1>
-                    <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ducimus ratione similique amet
-                        quia
-                        eius, ad at id magni quod explicabo soluta tenetur dolorem quasi laudantium, nobis laboriosam,
-                        labore praesentium!</p>
+                        <div class="text-content">
+                            <h1 class="display-1">Hero Component</h1>
+                            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ducimus ratione
+                                similique amet
+                                quia
+                                eius, ad at id magni quod explicabo soluta tenetur dolorem quasi laudantium, nobis
+                                laboriosam,
+                                labore praesentium!</p>
+                        </div>
+
+                        <div class="cta-section">
+                            <a href="#" class="btn btn--primary">Learn More</a>
+                            <a href="#" class="btn btn--secondary">Contact Us</a>
+                        </div>
+
+                    </div>
+                    <div class="hero-preview" style="max-width: 500px;">
+                        <img src="https://www.securew2.com/wp-content/uploads/2025/03/A-Modern-Approach-to-PKI-Services-v5.svg"
+                            alt="Hero Image">
+                    </div>
                 </div>
+            </section>
 
-                <div class="cta-section">
-                    <a href="#" class="btn btn--primary">Learn More</a>
-                    <a href="#" class="btn btn--secondary">Contact Us</a>
+            <section class="featured-section" style="height: 200vh;">
+                <div class="container container--narrow">
+                    <div class="featured-content">
+                        <h2>Featured Section</h2>
+                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                    </div>
                 </div>
+            </section>
 
-            </div>
-            <div class="hero-preview" style="max-width: 500px;">
-                <img src="https://www.securew2.com/wp-content/uploads/2025/03/A-Modern-Approach-to-PKI-Services-v5.svg"
-                    alt="Hero Image">
-            </div>
+
         </div>
-    </section>
-
+    </div>
 </body>
 
 </html>
