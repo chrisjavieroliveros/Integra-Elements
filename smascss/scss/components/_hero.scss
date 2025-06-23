@@ -41,7 +41,6 @@
         }
     }
 
-
     &--centered {
         .hero-content {
             text-align: center;
@@ -54,20 +53,18 @@
 
     }
 
-    &--boxed {
-        background-color: var(--color-Light-100);
-    }
-
-
-
     @include breakpoints.breakpoint(md) {
         &--boxed {
-            margin: 0 var(--size-6);
+            margin: 0 var(--size-5);
             border-radius: var(--size-5);
         }
     }
 
     @include breakpoints.breakpoint(lg) {
+        &--boxed {
+            margin: 0 var(--size-6);
+        }
+
         .container {
             flex-direction: row;
             gap: 2rem;

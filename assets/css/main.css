@@ -87,6 +87,14 @@
   min-height: calc(85vh - 104px);
 }
 
+.theme-light {
+  color: var(--color-White);
+}
+
+.theme-dark {
+  color: var(--color-Black);
+}
+
 /**
  * Base Styles
  */
@@ -682,7 +690,6 @@ body {
   font-family: var(--font-family-base), "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   line-height: var(--base-line-height);
   color: var(--color-Black);
-  background-color: #fbfbfb;
 }
 
 h1,
@@ -1029,7 +1036,7 @@ blockquote cite::before {
 }
 .btn:hover {
   text-decoration: none;
-  transition: all 0.2s ease-in-out;
+  transition-duration: 120ms;
 }
 .btn--sm {
   height: var(--btn-sm-height);
@@ -1055,6 +1062,9 @@ blockquote cite::before {
   background-color: var(--color-Primary-Shade);
   border-color: var(--color-Primary-Shade);
 }
+.btn--primary:active {
+  background-color: var(--color-Primary-800);
+}
 .btn--secondary {
   background-color: var(--color-Secondary);
   color: var(--color-Secondary-Contrast);
@@ -1064,6 +1074,9 @@ blockquote cite::before {
   background-color: var(--color-Secondary-Shade);
   color: var(--color-Secondary-Contrast);
   border-color: var(--color-Secondary-Tint);
+}
+.btn--secondary:active {
+  background-color: var(--color-Secondary-800);
 }
 .btn--danger {
   background-color: var(--color-Danger);
@@ -1075,6 +1088,9 @@ blockquote cite::before {
   color: var(--color-Danger-Contrast);
   border-color: var(--color-Danger-Tint);
 }
+.btn--danger:active {
+  background-color: var(--color-Danger-800);
+}
 .btn--warning {
   background-color: var(--color-Warning);
   color: var(--color-Warning-Contrast);
@@ -1084,6 +1100,9 @@ blockquote cite::before {
   background-color: var(--color-Warning-Tint);
   color: var(--color-Warning-Contrast);
   border-color: var(--color-Warning-Tint);
+}
+.btn--warning:active {
+  background-color: var(--color-Warning-800);
 }
 .btn--success {
   background-color: var(--color-Success);
@@ -1095,6 +1114,9 @@ blockquote cite::before {
   color: var(--color-Success-Contrast);
   border-color: var(--color-Success-Tint);
 }
+.btn--success:active {
+  background-color: var(--color-Success-800);
+}
 .btn--info {
   background-color: var(--color-Info);
   color: var(--color-Info-Contrast);
@@ -1104,6 +1126,9 @@ blockquote cite::before {
   background-color: var(--color-Info-Tint);
   color: var(--color-Info-Contrast);
   border-color: var(--color-Info-Tint);
+}
+.btn--info:active {
+  background-color: var(--color-Info-800);
 }
 .btn--black {
   background-color: var(--color-Black);
@@ -1495,16 +1520,16 @@ nav .nav-body {
 .hero--centered .inline-cta {
   justify-content: center;
 }
-.hero--boxed {
-  background-color: var(--color-Light-100);
-}
 @media (min-width: 768px) {
   .hero--boxed {
-    margin: 0 var(--size-6);
+    margin: 0 var(--size-5);
     border-radius: var(--size-5);
   }
 }
 @media (min-width: 992px) {
+  .hero--boxed {
+    margin: 0 var(--size-6);
+  }
   .hero .container {
     flex-direction: row;
     gap: 2rem;
@@ -1530,7 +1555,6 @@ nav .nav-body {
   padding: var(--eyebrow-padding);
   border-radius: var(--eyebrow-border-radius);
   background-color: var(--eyebrow-background-color);
-  color: var(--eyebrow-color);
 }
 
 .inline-cta {

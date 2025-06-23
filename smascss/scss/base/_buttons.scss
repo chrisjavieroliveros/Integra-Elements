@@ -24,7 +24,7 @@
 
   &:hover {
     text-decoration: none;
-    transition: all 0.2s ease-in-out;
+    transition-duration: 120ms;
   }
 
   // Sizes
@@ -57,6 +57,10 @@
       background-color: var(--color-Primary-Shade);
       border-color: var(--color-Primary-Shade);
     }
+
+    &:active {
+      background-color: var(--color-Primary-800);
+    }
   }
 
   &--secondary {
@@ -68,6 +72,10 @@
       background-color: var(--color-Secondary-Shade);
       color: var(--color-Secondary-Contrast);
       border-color: var(--color-Secondary-Tint);
+    }
+
+    &:active {
+      background-color: var(--color-Secondary-800);
     }
   }
 
@@ -81,6 +89,10 @@
       color: var(--color-Danger-Contrast);
       border-color: var(--color-Danger-Tint);
     }
+
+    &:active {
+      background-color: var(--color-Danger-800);
+    }
   }
 
   &--warning {
@@ -92,6 +104,10 @@
       background-color: var(--color-Warning-Tint);
       color: var(--color-Warning-Contrast);
       border-color: var(--color-Warning-Tint);
+    }
+
+    &:active {
+      background-color: var(--color-Warning-800);
     }
   }
 
@@ -105,6 +121,10 @@
       color: var(--color-Success-Contrast);
       border-color: var(--color-Success-Tint);
     }
+
+    &:active {
+      background-color: var(--color-Success-800);
+    }
   }
 
   &--info {
@@ -116,6 +136,10 @@
       background-color: var(--color-Info-Tint);
       color: var(--color-Info-Contrast);
       border-color: var(--color-Info-Tint);
+    }
+
+    &:active {
+      background-color: var(--color-Info-800);
     }
   }
 

@@ -78,12 +78,10 @@ class Test_Widget extends \Elementor\Widget_Base {
 
         <section>
             <div class="container">
-                <h1>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Impedit, consectetur?</h1>
-                <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Est soluta totam rem.</p>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Suscipit itaque tenetur, cupiditate vel ducimus ratione ea cumque. Minus voluptas ad nesciunt. Sed, dolore? Quidem atque illo temporibus aspernatur culpa incidunt.</p>
+                <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit. Porro voluptates earum odit.</h1>
+                <p class="lead">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Accusantium vero reprehenderit velit perferendis saepe in quisquam explicabo ipsam sequi tempora perspiciatis enim, architecto possimus consectetur placeat beatae maxime. Dolor sequi suscipit expedita laborum quia quos nemo voluptates facilis iure saepe? Doloremque laboriosam excepturi nobis autem!</p>
             </div>
         </section>
-
 
         <?php
         // echo '<div class="integra-test-widget">' . esc_html($settings['text']) . '</div>';

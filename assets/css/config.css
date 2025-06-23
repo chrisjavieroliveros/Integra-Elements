@@ -56,27 +56,27 @@
   --color-Info-Shade: #025481;
   --color-Info-Contrast: #e6f0f6;
   --color-Light-50: #FBFCFC;
-  --color-Light-100: #f1f1f1;
-  --color-Light-200: #f0f0f0;
-  --color-Light-300: #e0e0e0;
-  --color-Light-400: #d0d0d0;
-  --color-Light-500: #c0c0c0;
-  --color-Light-600: #b0b0b0;
-  --color-Light-700: #a0a0a0;
-  --color-Light-800: #909090;
-  --color-Light-900: #808080;
-  --color-Light-950: #707070;
-  --color-Dark-50: #5e6066;
-  --color-Dark-100: #4a4b50;
-  --color-Dark-200: #38393e;
-  --color-Dark-300: #25272E;
-  --color-Dark-400: #21232a;
-  --color-Dark-500: #1d1f25;
-  --color-Dark-600: #191b20;
-  --color-Dark-700: #15171c;
-  --color-Dark-800: #121212;
-  --color-Dark-900: #0c0e12;
-  --color-Dark-950: #06070a;
+  --color-Light-100: #fafafa;
+  --color-Light-200: #f5f5f5;
+  --color-Light-300: #ebebeb;
+  --color-Light-400: #e0e0e0;
+  --color-Light-500: #d6d6d6;
+  --color-Light-600: #c2c2c2;
+  --color-Light-700: #b0b0b0;
+  --color-Light-800: #a0a0a0;
+  --color-Light-900: #8f8f8f;
+  --color-Light-950: #858585;
+  --color-Dark-50: #7a7a7a;
+  --color-Dark-100: #6f6f6f;
+  --color-Dark-200: #606060;
+  --color-Dark-300: #555555;
+  --color-Dark-400: #494949;
+  --color-Dark-500: #3d3d3d;
+  --color-Dark-600: #323232;
+  --color-Dark-700: #25272E;
+  --color-Dark-800: #1f1f1f;
+  --color-Dark-900: #141414;
+  --color-Dark-950: #0a0a0a;
   --color-Black: #1e1e1e;
   --color-White: #ffffff;
 }
@@ -139,7 +139,6 @@
   --eyebrow-padding: 0;
   --eyebrow-border-radius: 0;
   --eyebrow-background-color: transparent;
-  --eyebrow-color: var(--color-Black);
 }
 
 /** 

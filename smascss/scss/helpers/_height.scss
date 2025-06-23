@@ -5,11 +5,11 @@
     }
 
     &--full {
-        min-height: 100vh;
+        min-height: calc(100dvh - 104px);
     }
 
     &--marketing {
-        min-height: calc(85vh - 104px);
+        min-height: calc(85dvh - 104px);
     }
 
 }
