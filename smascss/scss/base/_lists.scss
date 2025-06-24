@@ -7,8 +7,8 @@
 // Base list styles (already reset in _reset.scss, but adding semantic styles)
 ul,
 ol {
-    margin-bottom: var(--size-4);
     padding-left: var(--size-6);
+    // margin-bottom: var(--size-4);
 
     &:last-child {
         margin-bottom: 0;

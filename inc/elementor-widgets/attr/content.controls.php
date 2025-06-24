@@ -41,11 +41,11 @@
         'label' => __('Heading Class', 'integra-elements'),
         'type' => \Elementor\Controls_Manager::SELECT,
         'options' => [
-            'default' => __('Default', 'integra-elements'),
             'display-1' => __('Display 1', 'integra-elements'),
             'display-2' => __('Display 2', 'integra-elements'),
+            'default' => __('Default', 'integra-elements'),
         ],
-        'default' => 'default',
+        'default' => 'display-1',
         ]
     );
 

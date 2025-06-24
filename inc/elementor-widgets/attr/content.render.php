@@ -17,7 +17,12 @@ $paragraph = $settings['paragraph'];
 
 // Content Markup;
 $content_markup = '';
-$content_markup .= '<span class="eyebrow-text">'. $eyebrow_text .'</span>';
+
+// Eyebrow Text;
+if($eyebrow_text !== '') {
+    $content_markup .= '<span class="eyebrow-text">'. $eyebrow_text .'</span>';
+}
+
 $content_markup .= '<div class="text-content">';
 $content_markup .= '<'. $heading_type .' class="'. $heading_class .'">'. $heading .'</'. $heading_type .'>';
 
@@ -27,7 +32,7 @@ if($subheading_type === 'bold') {
     $content_markup .= '<'. $subheading_type .'>'. $subheading .'</'. $subheading_type .'>';
 }
 
-$content_markup .= '<p>'. $paragraph .'</p>';
+$content_markup .= $paragraph;
 $content_markup .= '</div>';
 
 ?>

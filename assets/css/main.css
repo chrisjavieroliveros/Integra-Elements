@@ -1152,7 +1152,6 @@ blockquote cite::before {
  */
 ul,
 ol {
-  margin-bottom: var(--size-4);
   padding-left: var(--size-6);
 }
 ul:last-child,
