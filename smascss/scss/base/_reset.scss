@@ -112,14 +112,16 @@ body {
 ul,
 ol {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Keep list styles for semantic lists */
-ul:not([class]),
-ol:not([class]) {
-  list-style: revert;
-  margin-left: 1.5em;
-}
+// ul:not([class]),
+// ol:not([class]) {
+//   list-style: revert;
+//   margin-left: 1.5em;
+// }
 
 /* Remove list styles on ul, ol elements with a list role */
 ul[role="list"],
@@ -448,6 +450,7 @@ a:hover {
 
 /* Remove animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -479,6 +482,7 @@ a:hover {
 
 /* Print styles */
 @media print {
+
   *,
   *::before,
   *::after {
@@ -563,6 +567,7 @@ a:hover {
 
 /* Touch target sizing for mobile accessibility */
 @media (hover: none) and (pointer: coarse) {
+
   button,
   input[type="button"],
   input[type="submit"],
@@ -576,6 +581,7 @@ a:hover {
 
 /* Reduced motion for specific elements */
 @media (prefers-reduced-motion: reduce) {
+
   *::before,
   *::after {
     animation-delay: -1ms;

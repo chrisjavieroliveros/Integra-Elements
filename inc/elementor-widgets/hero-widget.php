@@ -25,7 +25,7 @@ class Hero_Widget extends \Elementor\Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-banner';
+        return 'eicon-ehp-hero';
     }
 
     public function get_categories() {
@@ -79,28 +79,8 @@ class Hero_Widget extends \Elementor\Widget_Base {
         // End General Section
         $this->end_controls_section();
 
-        // Content Section
-        $this->start_controls_section(
-            'section_content',
-            [
-                'label' => __('Content', 'integra-elements'),
-                'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
-            ]
-        );
-
-        $this->add_control(
-            'title',
-            [
-                'label' => __('Title', 'integra-elements'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Hero Title', 'integra-elements'),
-            ]
-        );
-
-        // End Content Section
-        $this->end_controls_section();
-
-
+        // Content Section;
+        include_once 'attr/content.controls.php';
 
 
         /*-- Style Tab ------------------------------------------------------------*/
@@ -152,26 +132,20 @@ class Hero_Widget extends \Elementor\Widget_Base {
         // Background Render;
         include_once 'attr/background.render.php';
 
+        // Content Render;
+        include_once 'attr/content.render.php';
+
         ?>
 
         <!-- Hero: Boxed + Centered-->
         <section class="hero section-padding <?= $section_class; ?>"
                 style="<?= $section_style; ?>">
             <div class="container container--narrow">
+
+
                 <div class="hero-content">
 
-                    <span class="eyebrow-text">Lorem ipsum dolor.</span>
-
-                    <div class="text-content">
-                        <h1 class="display-1">Hero Component Boxed</h1>
-                        <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ducimus ratione
-                            similique amet
-                            quia
-                            eius, ad at id magni quod explicabo soluta tenetur dolorem quasi laudantium, nobis
-                            laboriosam,
-                            labore praesentium!</p>
-                    </div>
+                    <?= $content_markup; ?>
 
                     <div class="inline-cta">
                         <a href="#" class="btn btn--primary">Learn More</a>

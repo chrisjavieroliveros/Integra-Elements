@@ -81,10 +81,10 @@
   height: auto;
 }
 .height--full {
-  min-height: 100vh;
+  min-height: calc(100svh - 104px);
 }
 .height--marketing {
-  min-height: calc(85vh - 104px);
+  min-height: calc(85svh - 104px);
 }
 
 .theme-light {
@@ -208,15 +208,11 @@ body {
 ul,
 ol {
   list-style: none;
+  margin: 0;
+  padding: 0;
 }
 
 /* Keep list styles for semantic lists */
-ul:not([class]),
-ol:not([class]) {
-  list-style: revert;
-  margin-left: 1.5em;
-}
-
 /* Remove list styles on ul, ol elements with a list role */
 ul[role=list],
 ol[role=list] {
