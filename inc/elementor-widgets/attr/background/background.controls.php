@@ -21,8 +21,6 @@
       'label' => 'Background Color',
       'type' => \Elementor\Controls_Manager::SELECT,
       'options' => [
-        // Base Colors
-        'Transparent' => 'Transparent',
         
         'Primary' => 'Primary',
         'Secondary' => 'Secondary',
@@ -30,36 +28,40 @@
         'White' => 'White',
                 
         // Light Colors
-        'Light-50' => 'Light 50',
-        'Light-100' => 'Light 100',
-        'Light-200' => 'Light 200',
-        'Light-300' => 'Light 300',
-        'Light-400' => 'Light 400',
-        'Light-500' => 'Light 500',
-        'Light-600' => 'Light 600',
-        'Light-700' => 'Light 700',
-        'Light-800' => 'Light 800',
-        'Light-900' => 'Light 900',
-        'Light-950' => 'Light 950',
+        // 'Light-50' => 'Light 50',
+        // 'Light-100' => 'Light 100',
+        // 'Light-200' => 'Light 200',
+        // 'Light-300' => 'Light 300',
+        // 'Light-400' => 'Light 400',
+        'Light-500' => 'Light',
+        // 'Light-600' => 'Light 600',
+        // 'Light-700' => 'Light 700',
+        // 'Light-800' => 'Light 800',
+        // 'Light-900' => 'Light 900',
+        // 'Light-950' => 'Light 950',
         
         // Dark Colors
-        'Dark-50' => 'Dark 50',
-        'Dark-100' => 'Dark 100',
-        'Dark-200' => 'Dark 200',
-        'Dark-300' => 'Dark 300',
-        'Dark-400' => 'Dark 400',
-        'Dark-500' => 'Dark 500',
-        'Dark-600' => 'Dark 600',
-        'Dark-700' => 'Dark 700',
-        'Dark-800' => 'Dark 800',
-        'Dark-900' => 'Dark 900',
-        'Dark-950' => 'Dark 950',
+        // 'Dark-50' => 'Dark 50',
+        // 'Dark-100' => 'Dark 100',
+        // 'Dark-200' => 'Dark 200',
+        // 'Dark-300' => 'Dark 300',
+        // 'Dark-400' => 'Dark 400',
+        'Dark-500' => 'Dark',
+        // 'Dark-600' => 'Dark 600',
+        // 'Dark-700' => 'Dark 700',
+        // 'Dark-800' => 'Dark 800',
+        // 'Dark-900' => 'Dark 900',
+        // 'Dark-950' => 'Dark 950',
 
         // State Colors
         'Danger' => 'Danger',
         'Warning' => 'Warning',
         'Success' => 'Success',
-        'Info' => 'Info'
+        'Info' => 'Info',
+
+        // Base Colors
+        'Transparent' => 'Transparent',
+
       ],
       'default' => 'Transparent',
       'condition' => [

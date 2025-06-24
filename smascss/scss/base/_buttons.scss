@@ -10,11 +10,13 @@
   line-height: var(--btn-line-height);
   border-radius: var(--btn-border-radius);
   padding: 0 var(--btn-md-padding-x);
-
-
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
+
+  .cta-icon {
+    margin-right: var(--size-2);
+  }
 
   // Focus styles
   &:focus-visible {
@@ -55,7 +57,7 @@
     &:hover {
       color: var(--color-Primary-Contrast);
       background-color: var(--color-Primary-Shade);
-      border-color: var(--color-Primary-Shade);
+      border-color: var(--color-Primary-700);
     }
 
     &:active {
@@ -71,7 +73,7 @@
     &:hover {
       background-color: var(--color-Secondary-Shade);
       color: var(--color-Secondary-Contrast);
-      border-color: var(--color-Secondary-Tint);
+      border-color: var(--color-Secondary-700);
     }
 
     &:active {
@@ -164,4 +166,17 @@
       color: var(--color-White);
     }
   }
+
+  &--light {
+    background-color: var(--color-Light-500);
+    color: var(--color-Black);
+    border-color: var(--color-Light);
+  }
+
+  &--dark {
+    background-color: var(--color-Dark-500);
+    color: var(--color-White);
+    border-color: var(--color-Dark-500);
+  }
+
 }

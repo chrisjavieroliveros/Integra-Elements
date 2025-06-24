@@ -1,0 +1,16 @@
+/* 
+* MEDIA VARIABLES
+* -------------------
+*/
+
+$video: (
+    "border-radius": 8px,
+    "border": 1px solid var(--color-Black),
+    "box-shadow": 0 0 24px rgba(0, 0, 0, 0.3),
+);
+
+:root {
+    @each $name, $value in $video {
+        --video-#{$name}: #{$value};
+    }
+}

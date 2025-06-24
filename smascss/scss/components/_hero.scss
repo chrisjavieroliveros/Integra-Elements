@@ -29,6 +29,11 @@
     .hero-preview {
         flex: 0 0 auto;
         order: 1;
+
+        img {
+            display: block;
+            width: 100%;
+        }
     }
 
     .text-content {

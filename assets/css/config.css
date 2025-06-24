@@ -158,19 +158,15 @@
   --size-9: 3.5rem;
   --size-10: 4rem;
   --size-11: 4.5rem;
-  --size-12: 6rem;
-  --size-13: 6.5rem;
-  --size-14: 7rem;
-  --size-15: 7.5rem;
-  --size-16: 8rem;
-  --size-17: 8.5rem;
-  --size-18: 9rem;
-  --size-19: 9.5rem;
-  --size-20: 10rem;
-  --size-21: 10.5rem;
-  --size-22: 11rem;
-  --size-23: 11.5rem;
-  --size-24: 12rem;
+  --size-12: 5rem;
+  --size-13: 5.5rem;
+  --size-14: 6rem;
+  --size-15: 6.5rem;
+  --size-16: 7rem;
+  --size-17: 7.5rem;
+  --size-18: 8rem;
+  --size-19: 8.5rem;
+  --size-20: 9rem;
 }
 
 /**
@@ -185,12 +181,47 @@
 
 :root {
   --btn-sm-height: 2rem;
-  --btn-sm-padding-x: 1.5rem;
+  --btn-sm-padding-x: 1.25rem;
   --btn-sm-font-size: 0.75rem;
   --btn-md-height: 2.5rem;
-  --btn-md-padding-x: 1.75rem;
+  --btn-md-padding-x: 1.5rem;
   --btn-md-font-size: 0.875rem;
   --btn-lg-height: 2.75rem;
-  --btn-lg-padding-x: 2rem;
+  --btn-lg-padding-x: 1.75rem;
   --btn-lg-font-size: 1rem;
+}
+
+/* 
+* MEDIA VARIABLES
+* -------------------
+*/
+:root {
+  --video-border-radius: 8px;
+  --video-border: 1px solid var(--color-Black);
+  --video-box-shadow: 0 0 24px rgba(0, 0, 0, 0.3);
+}
+
+/**
+ * SPACING VARIABLES
+ * ------------------
+ */
+:root {
+  --spacing-xs-mobile: 1.5rem;
+  --spacing-xs-tablet: 2rem;
+  --spacing-xs-desktop: 2.5rem;
+  --spacing-sm-mobile: 2.25rem;
+  --spacing-sm-tablet: 3rem;
+  --spacing-sm-desktop: 3.75rem;
+  --spacing-md-mobile: 3.5rem;
+  --spacing-md-tablet: 4.5rem;
+  --spacing-md-desktop: 5.5rem;
+  --spacing-lg-mobile: 5.25rem;
+  --spacing-lg-tablet: 6.75rem;
+  --spacing-lg-desktop: 8.25rem;
+  --spacing-xl-mobile: 7.5rem;
+  --spacing-xl-tablet: 9.5rem;
+  --spacing-xl-desktop: 11.5rem;
+  --spacing-xxl-mobile: 10.5rem;
+  --spacing-xxl-tablet: 13rem;
+  --spacing-xxl-desktop: 15.5rem;
 }

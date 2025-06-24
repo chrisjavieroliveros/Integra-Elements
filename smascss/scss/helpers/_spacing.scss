@@ -1,0 +1,127 @@
+@use "../utilities/breakpoints" as breakpoints;
+
+.spacing {
+
+    &--top-xs {
+        padding-top: var(--spacing-xs-mobile);
+
+        @include breakpoints.breakpoint('md') {
+            padding-top: var(--spacing-xs-tablet);
+        }
+
+        @include breakpoints.breakpoint('lg') {
+            padding-top: var(--spacing-xs-desktop);
+        }
+    }
+
+    &--bottom-xs {
+        padding-bottom: var(--spacing-xs-mobile);
+
+        @include breakpoints.breakpoint('md') {
+            padding-bottom: var(--spacing-xs-tablet);
+        }
+
+        @include breakpoints.breakpoint('lg') {
+            padding-bottom: var(--spacing-xs-desktop);
+        }
+    }
+
+
+    &--top-sm {
+        padding-top: var(--spacing-sm-mobile);
+
+        @include breakpoints.breakpoint('md') {
+            padding-top: var(--spacing-sm-tablet);
+        }
+
+        @include breakpoints.breakpoint('lg') {
+            padding-top: var(--spacing-sm-desktop);
+        }
+    }
+
+    &--bottom-sm {
+        padding-bottom: var(--spacing-sm-mobile);
+
+        @include breakpoints.breakpoint('md') {
+            padding-bottom: var(--spacing-sm-tablet);
+        }
+
+        @include breakpoints.breakpoint('lg') {
+            padding-bottom: var(--spacing-sm-desktop);
+        }
+    }
+
+
+    &--top-md {
+        padding-top: var(--spacing-md-mobile);
+
+        @include breakpoints.breakpoint('md') {
+            padding-top: var(--spacing-md-tablet);
+        }
+
+        @include breakpoints.breakpoint('lg') {
+            padding-top: var(--spacing-md-desktop);
+        }
+    }
+
+    &--bottom-md {
+        padding-bottom: var(--spacing-md-mobile);
+
+        @include breakpoints.breakpoint('md') {
+            padding-bottom: var(--spacing-md-tablet);
+        }
+
+        @include breakpoints.breakpoint('lg') {
+            padding-bottom: var(--spacing-md-desktop);
+        }
+    }
+
+    &--top-lg {
+        padding-top: var(--spacing-lg-mobile);
+
+        @include breakpoints.breakpoint('md') {
+            padding-top: var(--spacing-lg-tablet);
+        }
+
+        @include breakpoints.breakpoint('lg') {
+            padding-top: var(--spacing-lg-desktop);
+        }
+    }
+
+    &--bottom-lg {
+        padding-bottom: var(--spacing-lg-mobile);
+
+        @include breakpoints.breakpoint('md') {
+            padding-bottom: var(--spacing-lg-tablet);
+        }
+
+        @include breakpoints.breakpoint('lg') {
+            padding-bottom: var(--spacing-lg-desktop);
+        }
+    }
+
+    &--top-xl {
+        padding-top: var(--spacing-xl-mobile);
+
+        @include breakpoints.breakpoint('md') {
+            padding-top: var(--spacing-xl-tablet);
+        }
+
+        @include breakpoints.breakpoint('lg') {
+            padding-top: var(--spacing-xl-desktop);
+        }
+    }
+
+    &--bottom-xl {
+        padding-bottom: var(--spacing-xl-mobile);
+
+        @include breakpoints.breakpoint('md') {
+            padding-bottom: var(--spacing-xl-tablet);
+        }
+
+        @include breakpoints.breakpoint('lg') {
+            padding-bottom: var(--spacing-xl-desktop);
+        }
+    }
+
+}

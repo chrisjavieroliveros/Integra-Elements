@@ -1,0 +1,59 @@
+/* 
+    Set default global styles for: 
+    Images, Videos, iFrame, SVG assets, Figures 
+*/
+
+.video-style {
+    position: relative;
+    width: 100%;
+    height: max-content;
+    overflow: hidden;
+    // margin: 24px 0;
+    // margin-top: 32px;
+
+    border-radius: var(--video-border-radius);
+    border: var(--video-border);
+    box-shadow: var(--video-box-shadow);
+
+    video {
+        position: relative;
+        max-width: none;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+        object-position: center center;
+        margin-bottom: -12px;
+        display: block;
+    }
+
+    iframe {
+        display: block;
+    }
+
+    &--w-cover {
+        .video-cover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: grid;
+            place-items: center;
+            border-radius: 8px;
+            z-index: 2;
+            cursor: pointer;
+            background-color: var(--color-White);
+
+            img {
+                height: 120px !important;
+                opacity: 0.9;
+            }
+
+            &:hover {
+                img {
+                    transition-duration: 220ms;
+                    transform: scale(1.02);
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

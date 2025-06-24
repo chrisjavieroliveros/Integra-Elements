@@ -45,8 +45,11 @@ class Hero_Widget extends \Elementor\Widget_Base {
             ]
         );
 
+        // Container Controls;
+        include_once 'attr/container/container.controls.php';
+
         // Hero Height Controls (Auto, Full, Marketing);
-        include_once 'attr/height.controls.php';
+        include_once 'attr/height/height.controls.php';
 
         // Hero Style Controls (Default, Boxed)
         $this->add_control(
@@ -69,8 +72,8 @@ class Hero_Widget extends \Elementor\Widget_Base {
                 'label' => __('Hero Layout', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'options' => [
-                    'centered-column' => __('Centered Column', 'integra-elements'),
-                    'hero-with-preview' => __('Hero With Preview', 'integra-elements')
+                    'hero-centered' => __('Hero Centered', 'integra-elements'),
+                    'hero-w-preview' => __('Hero + Preview', 'integra-elements')
                 ],
                 'default' => 'centered-1-column',
             ]
@@ -80,7 +83,16 @@ class Hero_Widget extends \Elementor\Widget_Base {
         $this->end_controls_section();
 
         // Content Section;
-        include_once 'attr/content.controls.php';
+        include_once 'attr/content/content.controls.php';
+
+        // Preview Section;
+        include_once 'attr/preview/preview.controls.php';
+
+        // CTA Section;
+        include_once 'attr/cta/cta.controls.php';
+
+        // Spacing Section;
+        include_once 'attr/section-spacing/section-spacing.controls.php';
 
 
         /*-- Style Tab ------------------------------------------------------------*/
@@ -95,10 +107,10 @@ class Hero_Widget extends \Elementor\Widget_Base {
         );
 
         // Theme Controls;
-        include_once 'attr/theme.controls.php';
+        include_once 'attr/theme/theme.controls.php';
 
         // Background Controls;
-        include_once 'attr/background.controls.php';
+        include_once 'attr/background/background.controls.php';
 
         // End Background Section
         $this->end_controls_section();
@@ -116,9 +128,10 @@ class Hero_Widget extends \Elementor\Widget_Base {
             $section_class .= ' hero--boxed';
         }
 
+
         // Hero Layout;
         $hero_layout = $settings['hero_layout'];
-        if($hero_layout === 'centered-column') {
+        if($hero_layout === 'hero-centered') {
             $section_class .= ' hero--centered';
         }
 
@@ -127,36 +140,41 @@ class Hero_Widget extends \Elementor\Widget_Base {
         $section_class .= ' height--'. $hero_height;
 
         // Theme Render;
-        include_once 'attr/theme.render.php';
+        include_once 'attr/theme/theme.render.php';
+
+        // Container Render;
+        include_once 'attr/container/container.render.php';
 
         // Background Render;
-        include_once 'attr/background.render.php';
+        include_once 'attr/background/background.render.php';
 
         // Content Render;
-        include_once 'attr/content.render.php';
+        include_once 'attr/content/content.render.php';
+
+        // Preview Render;
+        include_once 'attr/preview/preview.render.php';
+
+        // CTA Render;
+        include_once 'attr/cta/cta.render.php';
+
+        // Spacing Render;
+        include_once 'attr/section-spacing/section-spacing.render.php';
 
         ?>
 
         <!-- Hero: Boxed + Centered-->
-        <section class="hero section-padding <?= $section_class; ?>"
+        <section class="hero <?= $section_class; ?>"
                 style="<?= $section_style; ?>">
-            <div class="container container--narrow">
-
+            <div class="<?= $container_class; ?>">
 
                 <div class="hero-content">
-
                     <?= $content_markup; ?>
-
-                    <div class="inline-cta">
-                        <a href="#" class="btn btn--primary">Learn More</a>
-                        <a href="#" class="btn btn--secondary">Contact Us</a>
-                    </div>
-
+                    <?= $cta_markup; ?>
                 </div>
 
-                <?php if($hero_layout === 'hero-with-preview') { ?>
+                <?php if($hero_layout === 'hero-w-preview') { ?>
                     <div class="hero-preview">
-                        <img src="<?= $settings['hero_preview']['url']; ?>" alt="<?= $settings['hero_preview']['alt']; ?>">
+                        <?= $preview_markup; ?>
                     </div>
                 <?php } ?>
 

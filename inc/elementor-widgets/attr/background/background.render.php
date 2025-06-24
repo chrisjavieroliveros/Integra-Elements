@@ -37,7 +37,6 @@ switch ($background_type) {
             $bg_pos_h = $this->get_settings('background_position_horizontal');
             $bg_pos_v = $this->get_settings('background_position_vertical');
             $bg_size = $this->get_settings('background_size');
-            $bg_attachment = $this->get_settings('background_attachment');
             
             // Add background image style
             $styles[] = "background-image: url('{$bg_image['url']}')";
@@ -45,13 +44,6 @@ switch ($background_type) {
             $styles[] = "background-size: {$bg_size}";
             $styles[] = "background-repeat: no-repeat";
             
-            // Handle parallax effect
-            if ($bg_attachment === 'parallax') {
-                $styles[] = "background-attachment: fixed";
-                $classes[] = "has-parallax-background";
-            } else {
-                $styles[] = "background-attachment: scroll";
-            }
         }
         break;
         
