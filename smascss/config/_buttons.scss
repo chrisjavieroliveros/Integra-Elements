@@ -13,8 +13,8 @@ $button-base: (
 // Button size configurations (size-specific properties only)
 $button-sizes: (
   // Small buttons
-  "sm-height": "2rem",
-  "sm-padding-x": "1.25rem",
+  "sm-height": "2.25rem",
+  "sm-padding-x": "1.5rem",
   "sm-font-size": "0.75rem",
 
   // Default/Medium buttons
@@ -23,8 +23,8 @@ $button-sizes: (
   "md-font-size": "0.875rem",
 
   // Large buttons
-  "lg-height": "2.75rem",
-  "lg-padding-x": "1.75rem",
+  "lg-height": "3.25rem",
+  "lg-padding-x": "2rem",
   "lg-font-size": "1rem",
 );
 

@@ -97,36 +97,36 @@
   --base-line-height: 140%;
   --lead-font-size: 1.125rem;
   --lead-font-weight: 700;
-  --lead-line-height: 120%;
+  --lead-line-height: 140%;
   --heading-font-weight: 700;
-  --heading-line-height: 120%;
+  --heading-line-height: 100%;
 }
 
 :root {
-  --display-1-sm: 2.25rem;
-  --display-1-md: 2.75rem;
-  --display-1-lg: 3rem;
-  --display-2-sm: 2rem;
-  --display-2-md: 2.25rem;
-  --display-2-lg: 2.75rem;
-  --h1-sm: 1.75rem;
-  --h1-md: 2rem;
-  --h1-lg: 2.5rem;
-  --h2-sm: 1.5rem;
-  --h2-md: 1.75rem;
-  --h2-lg: 2rem;
-  --h3-sm: 1.375rem;
-  --h3-md: 1.5rem;
-  --h3-lg: 1.75rem;
-  --h4-sm: 1.25rem;
-  --h4-md: 1.375rem;
-  --h4-lg: 1.5rem;
-  --h5-sm: 1.125rem;
-  --h5-md: 1.25rem;
-  --h5-lg: 1.375rem;
-  --h6-sm: 1rem;
-  --h6-md: 1.125rem;
-  --h6-lg: 1.25rem;
+  --display-1-sm: 2.75rem;
+  --display-1-md: 3.25rem;
+  --display-1-lg: 3.5rem;
+  --display-2-sm: 2.5rem;
+  --display-2-md: 2.75rem;
+  --display-2-lg: 3.25rem;
+  --h1-sm: 2.25rem;
+  --h1-md: 2.5rem;
+  --h1-lg: 3rem;
+  --h2-sm: 2rem;
+  --h2-md: 2.25rem;
+  --h2-lg: 2.5rem;
+  --h3-sm: 1.875rem;
+  --h3-md: 2rem;
+  --h3-lg: 2.25rem;
+  --h4-sm: 1.75rem;
+  --h4-md: 1.875rem;
+  --h4-lg: 2rem;
+  --h5-sm: 1.625rem;
+  --h5-md: 1.75rem;
+  --h5-lg: 1.875rem;
+  --h6-sm: 1.5rem;
+  --h6-md: 1.625rem;
+  --h6-lg: 1.75rem;
 }
 
 :root {
@@ -180,14 +180,14 @@
 }
 
 :root {
-  --btn-sm-height: 2rem;
-  --btn-sm-padding-x: 1.25rem;
+  --btn-sm-height: 2.25rem;
+  --btn-sm-padding-x: 1.5rem;
   --btn-sm-font-size: 0.75rem;
   --btn-md-height: 2.5rem;
   --btn-md-padding-x: 1.5rem;
   --btn-md-font-size: 0.875rem;
-  --btn-lg-height: 2.75rem;
-  --btn-lg-padding-x: 1.75rem;
+  --btn-lg-height: 3.25rem;
+  --btn-lg-padding-x: 2rem;
   --btn-lg-font-size: 1rem;
 }
 
