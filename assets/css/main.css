@@ -1141,6 +1141,9 @@ blockquote cite::before {
   border: 1px solid transparent;
 }
 .btn .cta-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin-right: var(--size-2);
 }
 .btn:focus-visible {
