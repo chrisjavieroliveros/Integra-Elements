@@ -109,7 +109,7 @@
       'default' => [
         [
           'button' => 'Button 1',
-          'color' => 'crimson',
+          'color' => 'primary',
           'link' => [
             'url' => '#',
           ],
