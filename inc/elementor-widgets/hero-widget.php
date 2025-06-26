@@ -75,7 +75,7 @@ class Hero_Widget extends \Elementor\Widget_Base {
                     'hero-centered' => __('Hero Centered', 'integra-elements'),
                     'hero-w-preview' => __('Hero + Preview', 'integra-elements')
                 ],
-                'default' => 'centered-1-column',
+                'default' => 'hero-centered',
             ]
         );
 
