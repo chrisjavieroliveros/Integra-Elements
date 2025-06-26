@@ -81,6 +81,10 @@
   --color-White: #ffffff;
 }
 
+/**
+ * FONT VARIABLES
+ * ------------------
+ */
 :root {
   --font-family-base: DM Sans;
   --font-family-heading: Anek Bangla;
@@ -139,10 +143,11 @@
   --eyebrow-padding: 0;
   --eyebrow-border-radius: 0;
   --eyebrow-background-color: transparent;
+  --eyebrow-color: var(--color-Primary);
 }
 
 /** 
- * SIZE VARIABLES
+ * SIZES VARIABLES
  * -------------------
  */
 :root {
