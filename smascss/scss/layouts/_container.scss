@@ -20,6 +20,10 @@
     padding-right: var(--size-6);
   }
 
+  &--slim {
+    max-width: 768px;
+  }
+
   &--narrow {
     max-width: 992px;
   }

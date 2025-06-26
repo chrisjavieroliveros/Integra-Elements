@@ -122,22 +122,13 @@ class Hero_Widget extends \Elementor\Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 
-        // Hero Style;
-        $hero_style = $settings['hero_style'];
-        if($hero_style === 'boxed') {
-            $section_class .= ' hero--boxed';
-        }
-
-
-        // Hero Layout;
-        $hero_layout = $settings['hero_layout'];
-        if($hero_layout === 'hero-centered') {
-            $section_class .= ' hero--centered';
-        }
-
-        // Hero Height;
-        $hero_height = $settings['height'];
-        $section_class .= ' height--'. $hero_height;
+        // Initialize all variables before any includes
+        $section_class = '';
+        $section_style = '';
+        $container_class = '';
+        $content_markup = '';
+        $preview_markup = '';
+        $cta_markup = '';
 
         // Theme Render;
         include_once 'attr/theme/theme.render.php';
@@ -160,12 +151,28 @@ class Hero_Widget extends \Elementor\Widget_Base {
         // Spacing Render;
         include_once 'attr/section-spacing/section-spacing.render.php';
 
+        // Hero Style;
+        $hero_style = $settings['hero_style'];
+        if($hero_style === 'boxed') {
+            $section_class .= ' hero--boxed';
+        }
+
+        // Hero Layout;
+        $hero_layout = $settings['hero_layout'];
+        if($hero_layout === 'hero-centered') {
+            $section_class .= ' hero--centered';
+        }
+
+        // Hero Height;
+        $hero_height = $settings['height'] ?? 'auto';
+        $section_class .= ' height--'. $hero_height;
+
         ?>
 
         <!-- Hero: Boxed + Centered-->
-        <section class="hero <?= $section_class; ?>"
-                style="<?= $section_style; ?>">
-            <div class="<?= $container_class; ?>">
+        <section class="hero <?= esc_attr(trim($section_class)); ?>"
+                style="<?= esc_attr($section_style); ?>">
+            <div class="<?= esc_attr(trim($container_class)); ?>">
 
                 <div class="hero-content">
                     <?= $content_markup; ?>

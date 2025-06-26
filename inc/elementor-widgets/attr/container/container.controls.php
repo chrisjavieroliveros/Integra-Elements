@@ -7,6 +7,7 @@
             'label' => __('Container', 'integra-elements'),
             'type' => \Elementor\Controls_Manager::SELECT,
             'options' => [
+                'slim' => __('Slim', 'integra-elements'),
                 'narrow' => __('Narrow', 'integra-elements'),
                 'default' => __('Default', 'integra-elements'),
                 'wide' => __('Wide', 'integra-elements'),

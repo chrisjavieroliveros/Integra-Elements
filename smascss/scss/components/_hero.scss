@@ -63,6 +63,10 @@
             margin: 0 var(--size-5);
             border-radius: var(--size-5);
         }
+
+        .text-content {
+            gap: 1rem;
+        }
     }
 
     @include breakpoints.breakpoint(lg) {

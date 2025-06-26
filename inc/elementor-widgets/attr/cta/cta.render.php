@@ -1,5 +1,10 @@
 <?php
 
+  // Check if $cta_markup is defined in the parent file
+  if (!isset($cta_markup)) {
+    $cta_markup = '';
+  }
+
   // Buttons / CTA;
   $ctaButtons = $settings['cta_buttons'];
 
@@ -9,24 +14,23 @@
     return;
   }
 
-  $cta_markup = '';
   $cta_markup .= '<div class="inline-cta">';
-  
+  $cta_size = $settings['cta_size'];
+
   foreach( $ctaButtons as $button ) {
     $buttonText = $button['button'];
     $buttonLink = $button['link']['url'];
     $buttonColor = $button['color'];
-    $buttonSize = $button['size'];
     $buttonIconPosition = $button['icon_position'];
 
-    $cta_markup .= '<a href="' . $buttonLink . '" class="btn btn--' . $buttonColor . ' btn--' . $buttonSize . '">';
+    $cta_markup .= '<a href="' . esc_url($buttonLink) . '" class="btn btn--' . esc_attr($buttonColor) . ' btn--' . esc_attr($cta_size) . '">';
     
     // Add the icon before the text if it exists
     if (!empty($button['cta_icon']['value'])) {
-      $cta_markup .= '<div class="cta-icon"><i class="' . $button['cta_icon']['value'] . '"></i></div>';
+      $cta_markup .= '<div class="cta-icon"><i class="' . esc_attr($button['cta_icon']['value']) . '"></i></div>';
     }
     
-    $cta_markup .= $buttonText;    
+    $cta_markup .= esc_html($buttonText);    
     $cta_markup .= '</a>';
   }
   

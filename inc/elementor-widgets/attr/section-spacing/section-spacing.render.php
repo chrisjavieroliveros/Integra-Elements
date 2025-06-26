@@ -1,4 +1,10 @@
 <?php 
+
+  // Check if $section_class defined in the parent file;
+  if (!isset($section_class)) {
+    $section_class = '';
+  }
+
   // Get the "Spacing" values
   $padding_top_settings = $settings['padding_top'];
   $padding_bottom_settings = $settings['padding_bottom'];

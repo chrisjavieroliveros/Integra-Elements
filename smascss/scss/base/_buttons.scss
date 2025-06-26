@@ -19,6 +19,7 @@
     align-items: center;
     justify-content: center;
     margin-right: var(--size-2);
+    // font-size: var(--btn-md-font-size);
   }
 
   // Focus styles
@@ -37,12 +38,20 @@
     height: var(--btn-sm-height);
     padding: 0 var(--btn-sm-padding-x);
     font-size: var(--btn-sm-font-size);
+
+    // .cta-icon {
+    //   font-size: var(--btn-sm-font-size);
+    // }
   }
 
   &--lg {
     height: var(--btn-lg-height);
     padding: 0 var(--btn-lg-padding-x);
     font-size: var(--btn-lg-font-size);
+
+    // .cta-icon {
+    //   font-size: var(--btn-lg-font-size);
+    // }
   }
 
   // Full width
@@ -154,8 +163,7 @@
     border-color: var(--color-Black);
 
     &:hover {
-      background-color: var(--color-White);
-      color: var(--color-Black);
+      background-color: var(--color-Dark-950);
     }
   }
 

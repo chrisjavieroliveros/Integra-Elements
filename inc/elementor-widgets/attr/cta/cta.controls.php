@@ -23,6 +23,22 @@
   );
 
 
+  // CTA Size;
+  $this->add_control(
+    'cta_size',
+    [
+      'label' => __( 'CTA Size', 'your-text-domain' ),
+      'type' => \Elementor\Controls_Manager::SELECT,
+      'default' => 'md',
+      'options' => [
+        'sm' => __( 'Small', 'your-text-domain' ),
+        'md' => __( 'Medium', 'your-text-domain' ),
+        'lg' => __( 'Large', 'your-text-domain' ),
+      ],
+    ]
+  );
+
+
   // Buttons (Repeater);
   $repeater = new \Elementor\Repeater();
 
@@ -71,21 +87,6 @@
     ]
   );
 
-  // Add "Size" Control;
-  $repeater->add_control(
-    'size',
-    [
-      'label' => __( 'Size', 'your-text-domain' ),
-      'type' => \Elementor\Controls_Manager::SELECT,
-      'default' => 'md',
-      'options' => [
-        'sm' => __( 'Small', 'your-text-domain' ),
-        'md' => __( 'Medium', 'your-text-domain' ),
-        'lg' => __( 'Large', 'your-text-domain' ),
-      ],
-    ]
-  );
-
   // Add "Icon" Control;
   $repeater->add_control(
     'cta_icon',
@@ -119,7 +120,7 @@
         ],
         [
           'button' => 'Button 2',
-          'color' => 'black',
+          'color' => 'secondary',
           'link' => [
             'url' => '#',
           ],

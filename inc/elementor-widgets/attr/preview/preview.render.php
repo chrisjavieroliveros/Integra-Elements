@@ -1,6 +1,9 @@
 <?php
 
-  $preview_markup = '';
+  // Check if $preview_markup is defined in the parent file
+  if (!isset($preview_markup)) {
+    $preview_markup = '';
+  }
   
   // Get preview type from attributes
   $preview_type = isset($settings['preview_type']) ? $settings['preview_type'] : '';
@@ -25,9 +28,9 @@
       case 'image':
 
         if($preview_max_width['size'] > 320) {
-          $preview_markup = '<img src="'.$preview_url.'" alt="Hero Image" style="max-width: '.$preview_max_width['size'].'px;">';
+          $preview_markup = '<img src="'.esc_url($preview_url).'" alt="Hero Image" style="max-width: '.$preview_max_width['size'].'px;">';
         } else {
-          $preview_markup = '<img src="'.$preview_url.'" alt="Hero Image">';
+          $preview_markup = '<img src="'.esc_url($preview_url).'" alt="Hero Image">';
         }
 
         // Apply special block styling for 'featured' widget type if preview_block is enabled
@@ -39,7 +42,7 @@
                 $block_color = $settings['preview_block_color'];
                 // Simply capitalize the first letter of the color name for the CSS variable
                 $formatted_color = ucfirst($block_color);
-                $previewBlockStyles = ' style="background-color: var(--radiance-color-' . $formatted_color . ');"';
+                $previewBlockStyles = ' style="background-color: var(--radiance-color-' . esc_attr($formatted_color) . ');"';
             }
             
             $preview_markup = '<div class="preview-block-wrapper"' . $previewBlockStyles . '>' . $preview_markup . '</div>';
@@ -56,7 +59,7 @@
             $preview_markup .= '<video controls>';
         }
 
-        $preview_markup .= '<source src="'.$preview_url.'" type="video/mp4">';
+        $preview_markup .= '<source src="'.esc_url($preview_url).'" type="video/mp4">';
         $preview_markup .= '</video>';
         $preview_markup .= '</div>';
         break;
@@ -72,7 +75,7 @@
                             width: 100%;
                             height: 0;
                             transform: scale(1);" >';
-        $preview_markup .= '<iframe src="'.$preview_url.'" frameborder="0" allowfullscreen></iframe>';
+        $preview_markup .= '<iframe src="'.esc_url($preview_url).'" frameborder="0" allowfullscreen></iframe>';
         $preview_markup .= '</div>';
         break;
         

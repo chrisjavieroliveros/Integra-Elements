@@ -6,6 +6,16 @@
  * Populates $section_class and $section_style variables
  */
 
+// Check if $section_class defined in the parent file;
+if (!isset($section_class)) {
+    $section_class = '';
+}
+
+// Check if $section_style defined in the parent file;
+if (!isset($section_style)) {
+    $section_style = '';
+}
+
 // Get background type
 $background_type = $this->get_settings('background');
 
@@ -18,15 +28,17 @@ switch ($background_type) {
     case 'color':
         // Handle background color
         $bg_color = $this->get_settings('background_color');
-        if (!empty($bg_color)) {
-            // Simply capitalize the first letter of the color name for the CSS variable
-            $formatted_color = ucfirst($bg_color);
-            
-            // if not transparent, add background color
-            if ($formatted_color !== 'Transparent') {
-                $styles[] = "background-color: var(--color-{$formatted_color})";
-            }
+        $light_variants = $this->get_settings('light_variants');
+        $dark_variants = $this->get_settings('dark_variants');
+
+        if ($bg_color === 'Light') {
+            $styles[] = "background-color: var(--color-{$light_variants});";
+        } else if ($bg_color === 'Dark') {
+            $styles[] = "background-color: var(--color-{$dark_variants});";
+        } else {
+            $styles[] = "background-color: var(--color-{$bg_color});";
         }
+
         break;
         
     case 'image':

@@ -109,7 +109,7 @@
 :root {
   --display-1-sm: 2.75rem;
   --display-1-md: 3.25rem;
-  --display-1-lg: 3.5rem;
+  --display-1-lg: 3.75rem;
   --display-2-sm: 2.5rem;
   --display-2-md: 2.75rem;
   --display-2-lg: 3.25rem;
@@ -185,15 +185,15 @@
 }
 
 :root {
-  --btn-sm-height: 2.25rem;
-  --btn-sm-padding-x: 1.5rem;
-  --btn-sm-font-size: 0.75rem;
-  --btn-md-height: 2.5rem;
-  --btn-md-padding-x: 1.5rem;
-  --btn-md-font-size: 0.875rem;
-  --btn-lg-height: 3.25rem;
-  --btn-lg-padding-x: 2rem;
-  --btn-lg-font-size: 1rem;
+  --btn-sm-height: 40px;
+  --btn-sm-padding-x: 16px;
+  --btn-sm-font-size: 12px;
+  --btn-md-height: 40px;
+  --btn-md-padding-x: 16px;
+  --btn-md-font-size: 14px;
+  --btn-lg-height: 48px;
+  --btn-lg-padding-x: 24px;
+  --btn-lg-font-size: 16px;
 }
 
 /* 
