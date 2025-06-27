@@ -53,7 +53,7 @@
         [
         'label' => __('Heading Class', 'integra-elements'),
         'type' => \Elementor\Controls_Manager::SELECT,
-        'default' => 'default',
+        'default' => 'display-1',
         'options' => [
             'default' => __('Default', 'integra-elements'),
             'display-1' => __('Display 1', 'integra-elements'),
@@ -68,7 +68,7 @@
         [
         'label' => __('Contents', 'integra-elements'),
         'type' => \Elementor\Controls_Manager::WYSIWYG,
-        'default' => __('Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.', 'integra-elements'),
+        'default' => __('<h1>Design That Speaks Volumes</h1><p><strong>Crafting seamless digital experiences that captivate, convert, and inspire.</strong></p><p>From strategy to execution, we blend creativity with code to build high-performing websites and apps tailored to your goals. Let’s bring your vision to life with clarity and purpose.</p>', 'integra-elements'),
         'label_block' => true,
         ]
     );

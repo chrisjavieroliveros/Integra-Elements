@@ -46,10 +46,10 @@ class Hero_Widget extends \Elementor\Widget_Base {
         );
 
         // Container Controls;
-        include_once 'attr/container/container.controls.php';
+        include('attr/container/container.controls.php');
 
         // Hero Height Controls (Auto, Full, Marketing);
-        include_once 'attr/height/height.controls.php';
+        include('attr/height/height.controls.php');
 
         // Hero Style Controls (Default, Boxed)
         $this->add_control(
@@ -83,16 +83,16 @@ class Hero_Widget extends \Elementor\Widget_Base {
         $this->end_controls_section();
 
         // Content Section;
-        include_once 'attr/content/content.controls.php';
+        include('attr/content/content.controls.php');
 
         // Preview Section;
-        include_once 'attr/preview/preview.controls.php';
+        include('attr/preview/preview.controls.php');
 
         // CTA Section;
-        include_once 'attr/cta/cta.controls.php';
+        include('attr/cta/cta.controls.php');
 
         // Spacing Section;
-        include_once 'attr/section-spacing/section-spacing.controls.php';
+        include('attr/spacing/spacing.controls.php');
 
 
         /*-- Style Tab ------------------------------------------------------------*/
@@ -107,10 +107,10 @@ class Hero_Widget extends \Elementor\Widget_Base {
         );
 
         // Theme Controls;
-        include_once 'attr/theme/theme.controls.php';
+        include('attr/theme/theme.controls.php');
 
         // Background Controls;
-        include_once 'attr/background/background.controls.php';
+        include('attr/background/background.controls.php');
 
         // End Background Section
         $this->end_controls_section();
@@ -122,34 +122,26 @@ class Hero_Widget extends \Elementor\Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 
-        // Initialize all variables before any includes
-        $section_class = '';
-        $section_style = '';
-        $container_class = '';
-        $content_markup = '';
-        $preview_markup = '';
-        $cta_markup = '';
-
         // Theme Render;
-        include_once 'attr/theme/theme.render.php';
+        include('attr/theme/theme.render.php');
 
         // Container Render;
-        include_once 'attr/container/container.render.php';
+        include('attr/container/container.render.php');
 
         // Background Render;
-        include_once 'attr/background/background.render.php';
+        include('attr/background/background.render.php');
 
         // Content Render;
-        include_once 'attr/content/content.render.php';
+        include('attr/content/content.render.php');
 
         // Preview Render;
-        include_once 'attr/preview/preview.render.php';
+        include('attr/preview/preview.render.php');
 
         // CTA Render;
-        include_once 'attr/cta/cta.render.php';
+        include('attr/cta/cta.render.php');
 
         // Spacing Render;
-        include_once 'attr/section-spacing/section-spacing.render.php';
+        include('attr/spacing/spacing.render.php');
 
         // Hero Style;
         $hero_style = $settings['hero_style'];
