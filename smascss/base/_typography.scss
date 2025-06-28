@@ -11,9 +11,10 @@ html,
 body {
   font-size: var(--base-font-size);
   font-weight: var(--base-font-weight);
-  font-family: var(--font-family-base), "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-family-base), "Helvetica Neue", Arial, sans-serif;
   line-height: var(--base-line-height);
   color: var(--color-Black);
+  font-optical-sizing: auto;
 }
 
 h1,
@@ -23,7 +24,7 @@ h4,
 h5,
 h6 {
   font-weight: var(--heading-font-weight);
-  font-family: var(--font-family-heading), "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-family-heading), "Helvetica Neue", Arial, sans-serif;
   line-height: var(--heading-line-height);
   margin: var(--size-0);
 }
@@ -146,7 +147,7 @@ a {
 
   &:hover {
     transition: color 0.2s;
-    color: getColor('Primary-400');
+    color: var(--color-Primary-400);
   }
 }
 

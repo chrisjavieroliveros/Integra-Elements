@@ -22,15 +22,24 @@
     $buttonLink = $button['link']['url'];
     $buttonColor = $button['color'];
     $buttonIconPosition = $button['icon_position'];
+    if(!isset($buttonIconPosition)) {
+      $buttonIconPosition = 'before';
+    }
 
     $cta_markup .= '<a href="' . esc_url($buttonLink) . '" class="btn btn--' . esc_attr($buttonColor) . ' btn--' . esc_attr($cta_size) . '">';
     
     // Add the icon before the text if it exists
-    if (!empty($button['cta_icon']['value'])) {
-      $cta_markup .= '<div class="cta-icon"><i class="' . esc_attr($button['cta_icon']['value']) . '"></i></div>';
+    if (!empty($button['cta_icon']['value']) && $buttonIconPosition === 'before') {
+      $cta_markup .= '<div class="cta-icon" style="margin-right: var(--size-2);"><i class="' . esc_attr($button['cta_icon']['value']) . '"></i></div>';
     }
     
     $cta_markup .= esc_html($buttonText);    
+
+    // Add the icon after the text if it exists
+    if (!empty($button['cta_icon']['value']) && $buttonIconPosition === 'after') {
+      $cta_markup .= '<div class="cta-icon" style="margin-left: var(--size-2);"><i class="' . esc_attr($button['cta_icon']['value']) . '"></i></div>';
+    }
+
     $cta_markup .= '</a>';
   }
   
