@@ -89,16 +89,99 @@ function integra_elements_handle_typography_save() {
 }
 
 /**
+ * Handle form submissions for eyebrow text settings
+ */
+function integra_elements_handle_eyebrow_text_save() {
+    if (isset($_POST['eyebrow_text']) && wp_verify_nonce($_POST['integra_eyebrow_text_nonce'], 'integra_eyebrow_text_save')) {
+        if (current_user_can('manage_options')) {
+            $eyebrow_text = $_POST['eyebrow_text'];
+            
+            // Save each eyebrow text setting to WordPress options
+            foreach ($eyebrow_text as $key => $value) {
+                update_option('integra_' . $key, sanitize_text_field($value));
+            }
+            
+            // Show success message
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-success is-dismissible"><p>Eyebrow Text settings saved successfully!</p></div>';
+            });
+        }
+    }
+}
+
+/**
+ * Handle form submissions for spacing settings
+ */
+function integra_elements_handle_spacing_save() {
+    if (isset($_POST['save_spacing']) && wp_verify_nonce($_POST['integra_spacing_nonce'], 'integra_spacing_save')) {
+        if (current_user_can('manage_options')) {
+            $spacing = $_POST['spacing'];
+            
+            // Save each spacing setting to WordPress options
+            foreach ($spacing as $key => $value) {
+                update_option('integra_' . $key, sanitize_text_field($value));
+            }
+            
+            // Show success message
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-success is-dismissible"><p>Spacing settings saved successfully!</p></div>';
+            });
+        }
+    }
+}
+
+/**
+ * Handle form submissions for buttons settings
+ */
+function integra_elements_handle_buttons_save() {
+    if (isset($_POST['submit_buttons']) && wp_verify_nonce($_POST['integra_buttons_nonce'], 'integra_buttons_save')) {
+        if (current_user_can('manage_options')) {
+            // Get all button form fields
+            $btn_fields = [
+                'integra_btn_line_height', 'integra_btn_border_radius', 'integra_btn_font_weight',
+                'integra_btn_sm_height', 'integra_btn_sm_padding_x', 'integra_btn_sm_font_size',
+                'integra_btn_md_height', 'integra_btn_md_padding_x', 'integra_btn_md_font_size',
+                'integra_btn_lg_height', 'integra_btn_lg_padding_x', 'integra_btn_lg_font_size'
+            ];
+            
+            // Save each button setting to WordPress options
+            foreach ($btn_fields as $field) {
+                if (isset($_POST[$field])) {
+                    update_option($field, sanitize_text_field($_POST[$field]));
+                }
+            }
+            
+            // Show success message
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-success is-dismissible"><p>Button settings saved successfully!</p></div>';
+            });
+        }
+    }
+}
+
+/**
  * Output dynamic CSS variables to frontend
  */
 function integra_elements_output_dynamic_css() {
     $css = ':root {';
     
+    // Include size variables
+    include(get_template_directory() . '/inc/admin/pages/size/size.vars.php');
+
     // Include color variables
     include(get_template_directory() . '/inc/admin/pages/colors/color.vars.php');
     
     // Include typography variables
     include(get_template_directory() . '/inc/admin/pages/typography/typography.vars.php');
+    
+    // Include spacing variables
+    include(get_template_directory() . '/inc/admin/pages/spacing/spacing.vars.php');
+    
+    // Include eyebrow text variables
+    include(get_template_directory() . '/inc/admin/pages/eyebrow-text/eyebrow-text.vars.php');
+    
+    // Include buttons variables
+    include(get_template_directory() . '/inc/admin/pages/buttons/buttons.vars.php');
 
     $css .= '}';
     
@@ -113,6 +196,9 @@ function integra_elements_admin_page_content() {
     // Handle form submissions
     integra_elements_handle_color_save();
     integra_elements_handle_typography_save();
+    integra_elements_handle_spacing_save();
+    integra_elements_handle_eyebrow_text_save();
+    integra_elements_handle_buttons_save();
     ?>
     <div class="wrap">
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
@@ -130,7 +216,6 @@ function integra_elements_admin_page_content() {
                         <ul class="integra-nav-list">
                             <li><a href="#" class="integra-nav-link" data-page="colors">Colors</a></li>
                             <li><a href="#" class="integra-nav-link" data-page="typography">Typography</a></li>
-                            <li><a href="#" class="integra-nav-link" data-page="sizes">Sizes</a></li>
                         </ul>
                     </div>
                 </div>
@@ -186,17 +271,10 @@ function integra_elements_admin_page_content() {
 
                 <!-- Core Pages -->
                 <?php include(get_template_directory() . '/inc/admin/pages/colors/color.page.php'); ?>               
-                
                 <?php include get_template_directory() . '/inc/admin/pages/typography/typography.page.php'; ?>
                 
-                <div class="integra-page" id="page-sizes">
-                    <h1>Sizes</h1>
-                </div>
-
                 <!-- Layout Pages -->
-                <div class="integra-page" id="page-spacing">
-                    <h1>Spacing</h1>
-                </div>
+                <?php include(get_template_directory() . '/inc/admin/pages/spacing/spacing.page.php'); ?>
                 
                 <div class="integra-page" id="page-media">
                     <h1>Media</h1>
@@ -204,7 +282,7 @@ function integra_elements_admin_page_content() {
 
                 <!-- Base Elements Pages -->
                 <div class="integra-page" id="page-button">
-                    <h1>Button</h1>
+                    <?php include(get_template_directory() . '/inc/admin/pages/buttons/buttons.page.php'); ?>
                 </div>
                 
                 <div class="integra-page" id="page-media-element">
@@ -214,6 +292,7 @@ function integra_elements_admin_page_content() {
                 <!-- Components Pages -->
                 <div class="integra-page" id="page-eyebrow-text">
                     <h1>Eyebrow Text</h1>
+                    <?php include(get_template_directory() . '/inc/admin/pages/eyebrow-text/eyebrow-text.page.php'); ?>
                 </div>
                 
             </div>

@@ -7,16 +7,16 @@
         <!-- Font Families -->
         <div class="integra-config-section">
             <h2>Font Families</h2>
-            <div class="integra-typography-grid">
-                <div class="integra-typography-field">
+            <div class="integra-config-grid">
+                <div class="integra-config-field">
                     <label for="font-family-base">Base Font Family</label>
                     <input type="text" id="font-family-base" name="typography[font_family_base]" value="<?php echo esc_attr(get_option('integra_font_family_base', 'DM Sans')); ?>" data-default-value="DM Sans" placeholder="DM Sans">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="font-family-heading">Heading Font Family</label>
                     <input type="text" id="font-family-heading" name="typography[font_family_heading]" value="<?php echo esc_attr(get_option('integra_font_family_heading', 'Anek Bangla')); ?>" data-default-value="Anek Bangla" placeholder="Anek Bangla">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="font-family-mono">Monospace Font Family</label>
                     <input type="text" id="font-family-mono" name="typography[font_family_mono]" value="<?php echo esc_attr(get_option('integra_font_family_mono', 'SFMono-Regular')); ?>" data-default-value="SFMono-Regular" placeholder="SFMono-Regular">
                 </div>
@@ -26,61 +26,36 @@
         <!-- Base Typography -->
         <div class="integra-config-section">
             <h2>Base Typography</h2>
-            <div class="integra-typography-grid">
-                <div class="integra-typography-field">
+            <div class="integra-config-grid">
+                <div class="integra-config-field">
                     <label for="base-font-size">Base Font Size</label>
                     <input type="text" id="base-font-size" name="typography[base_font_size]" value="<?php echo esc_attr(get_option('integra_base_font_size', '16px')); ?>" data-default-value="16px" placeholder="16px">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="base-font-weight">Base Font Weight</label>
-                    <select id="base-font-weight" name="typography[base_font_weight]" data-default-value="400">
-                        <?php
-                        $base_weight = get_option('integra_base_font_weight', '400');
-                        $weights = ['100', '200', '300', '400', '500', '600', '700', '800', '900'];
-                        foreach ($weights as $weight) {
-                            $selected = ($base_weight == $weight) ? 'selected' : '';
-                            echo "<option value='{$weight}' {$selected}>{$weight}</option>";
-                        }
-                        ?>
-                    </select>
+                    <input type="number" id="base-font-weight" name="typography[base_font_weight]" value="<?php echo esc_attr(get_option('integra_base_font_weight', '400')); ?>" data-default-value="400" placeholder="400" min="100" max="900" step="100">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="base-line-height">Base Line Height</label>
                     <input type="text" id="base-line-height" name="typography[base_line_height]" value="<?php echo esc_attr(get_option('integra_base_line_height', '140%')); ?>" data-default-value="140%" placeholder="140%">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="lead-font-size">Lead Font Size</label>
                     <input type="text" id="lead-font-size" name="typography[lead_font_size]" value="<?php echo esc_attr(get_option('integra_lead_font_size', '1.125rem')); ?>" data-default-value="1.125rem" placeholder="1.125rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="lead-font-weight">Lead Font Weight</label>
-                    <select id="lead-font-weight" name="typography[lead_font_weight]" data-default-value="700">
-                        <?php
-                        $lead_weight = get_option('integra_lead_font_weight', '700');
-                        foreach ($weights as $weight) {
-                            $selected = ($lead_weight == $weight) ? 'selected' : '';
-                            echo "<option value='{$weight}' {$selected}>{$weight}</option>";
-                        }
-                        ?>
-                    </select>
+                    <input type="number" id="lead-font-weight" name="typography[lead_font_weight]" value="<?php echo esc_attr(get_option('integra_lead_font_weight', '700')); ?>" data-default-value="700" placeholder="700" min="100" max="900" step="100">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="lead-line-height">Lead Line Height</label>
                     <input type="text" id="lead-line-height" name="typography[lead_line_height]" value="<?php echo esc_attr(get_option('integra_lead_line_height', '140%')); ?>" data-default-value="140%" placeholder="140%">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="heading-font-weight">Heading Font Weight</label>
-                    <select id="heading-font-weight" name="typography[heading_font_weight]" data-default-value="700">
-                        <?php
-                        $heading_weight = get_option('integra_heading_font_weight', '700');
-                        foreach ($weights as $weight) {
-                            $selected = ($heading_weight == $weight) ? 'selected' : '';
-                            echo "<option value='{$weight}' {$selected}>{$weight}</option>";
-                        }
-                        ?>
-                    </select>
+                    <input type="number" id="heading-font-weight" name="typography[heading_font_weight]" value="<?php echo esc_attr(get_option('integra_heading_font_weight', '700')); ?>" data-default-value="700" placeholder="700" min="100" max="900" step="100">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="heading-line-height">Heading Line Height</label>
                     <input type="text" id="heading-line-height" name="typography[heading_line_height]" value="<?php echo esc_attr(get_option('integra_heading_line_height', '100%')); ?>" data-default-value="100%" placeholder="100%">
                 </div>
@@ -90,28 +65,28 @@
         <!-- Display Headings -->
         <div class="integra-config-section">
             <h2>Display Headings</h2>
-            <div class="integra-typography-grid">
-                <div class="integra-typography-field">
+            <div class="integra-config-grid">
+                <div class="integra-config-field">
                     <label for="display-1-sm">Display 1 Small</label>
                     <input type="text" id="display-1-sm" name="typography[display_1_sm]" value="<?php echo esc_attr(get_option('integra_display_1_sm', '2.75rem')); ?>" data-default-value="2.75rem" placeholder="2.75rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="display-1-md">Display 1 Medium</label>
                     <input type="text" id="display-1-md" name="typography[display_1_md]" value="<?php echo esc_attr(get_option('integra_display_1_md', '3.25rem')); ?>" data-default-value="3.25rem" placeholder="3.25rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="display-1-lg">Display 1 Large</label>
                     <input type="text" id="display-1-lg" name="typography[display_1_lg]" value="<?php echo esc_attr(get_option('integra_display_1_lg', '3.75rem')); ?>" data-default-value="3.75rem" placeholder="3.75rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="display-2-sm">Display 2 Small</label>
                     <input type="text" id="display-2-sm" name="typography[display_2_sm]" value="<?php echo esc_attr(get_option('integra_display_2_sm', '2.5rem')); ?>" data-default-value="2.5rem" placeholder="2.5rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="display-2-md">Display 2 Medium</label>
                     <input type="text" id="display-2-md" name="typography[display_2_md]" value="<?php echo esc_attr(get_option('integra_display_2_md', '2.75rem')); ?>" data-default-value="2.75rem" placeholder="2.75rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="display-2-lg">Display 2 Large</label>
                     <input type="text" id="display-2-lg" name="typography[display_2_lg]" value="<?php echo esc_attr(get_option('integra_display_2_lg', '3.25rem')); ?>" data-default-value="3.25rem" placeholder="3.25rem">
                 </div>
@@ -121,40 +96,40 @@
         <!-- H1-H3 Headings -->
         <div class="integra-config-section">
             <h2>H1-H3 Headings</h2>
-            <div class="integra-typography-grid">
-                <div class="integra-typography-field">
+            <div class="integra-config-grid">
+                <div class="integra-config-field">
                     <label for="h1-sm">H1 Small</label>
                     <input type="text" id="h1-sm" name="typography[h1_sm]" value="<?php echo esc_attr(get_option('integra_h1_sm', '2.25rem')); ?>" data-default-value="2.25rem" placeholder="2.25rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h1-md">H1 Medium</label>
                     <input type="text" id="h1-md" name="typography[h1_md]" value="<?php echo esc_attr(get_option('integra_h1_md', '2.5rem')); ?>" data-default-value="2.5rem" placeholder="2.5rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h1-lg">H1 Large</label>
                     <input type="text" id="h1-lg" name="typography[h1_lg]" value="<?php echo esc_attr(get_option('integra_h1_lg', '3rem')); ?>" data-default-value="3rem" placeholder="3rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h2-sm">H2 Small</label>
                     <input type="text" id="h2-sm" name="typography[h2_sm]" value="<?php echo esc_attr(get_option('integra_h2_sm', '2rem')); ?>" data-default-value="2rem" placeholder="2rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h2-md">H2 Medium</label>
                     <input type="text" id="h2-md" name="typography[h2_md]" value="<?php echo esc_attr(get_option('integra_h2_md', '2.25rem')); ?>" data-default-value="2.25rem" placeholder="2.25rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h2-lg">H2 Large</label>
                     <input type="text" id="h2-lg" name="typography[h2_lg]" value="<?php echo esc_attr(get_option('integra_h2_lg', '2.5rem')); ?>" data-default-value="2.5rem" placeholder="2.5rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h3-sm">H3 Small</label>
                     <input type="text" id="h3-sm" name="typography[h3_sm]" value="<?php echo esc_attr(get_option('integra_h3_sm', '1.875rem')); ?>" data-default-value="1.875rem" placeholder="1.875rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h3-md">H3 Medium</label>
                     <input type="text" id="h3-md" name="typography[h3_md]" value="<?php echo esc_attr(get_option('integra_h3_md', '2rem')); ?>" data-default-value="2rem" placeholder="2rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h3-lg">H3 Large</label>
                     <input type="text" id="h3-lg" name="typography[h3_lg]" value="<?php echo esc_attr(get_option('integra_h3_lg', '2.25rem')); ?>" data-default-value="2.25rem" placeholder="2.25rem">
                 </div>
@@ -164,106 +139,42 @@
         <!-- H4-H6 Headings -->
         <div class="integra-config-section">
             <h2>H4-H6 Headings</h2>
-            <div class="integra-typography-grid">
-                <div class="integra-typography-field">
+            <div class="integra-config-grid">
+                <div class="integra-config-field">
                     <label for="h4-sm">H4 Small</label>
                     <input type="text" id="h4-sm" name="typography[h4_sm]" value="<?php echo esc_attr(get_option('integra_h4_sm', '1.75rem')); ?>" data-default-value="1.75rem" placeholder="1.75rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h4-md">H4 Medium</label>
                     <input type="text" id="h4-md" name="typography[h4_md]" value="<?php echo esc_attr(get_option('integra_h4_md', '1.875rem')); ?>" data-default-value="1.875rem" placeholder="1.875rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h4-lg">H4 Large</label>
                     <input type="text" id="h4-lg" name="typography[h4_lg]" value="<?php echo esc_attr(get_option('integra_h4_lg', '2rem')); ?>" data-default-value="2rem" placeholder="2rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h5-sm">H5 Small</label>
                     <input type="text" id="h5-sm" name="typography[h5_sm]" value="<?php echo esc_attr(get_option('integra_h5_sm', '1.625rem')); ?>" data-default-value="1.625rem" placeholder="1.625rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h5-md">H5 Medium</label>
                     <input type="text" id="h5-md" name="typography[h5_md]" value="<?php echo esc_attr(get_option('integra_h5_md', '1.75rem')); ?>" data-default-value="1.75rem" placeholder="1.75rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h5-lg">H5 Large</label>
                     <input type="text" id="h5-lg" name="typography[h5_lg]" value="<?php echo esc_attr(get_option('integra_h5_lg', '1.875rem')); ?>" data-default-value="1.875rem" placeholder="1.875rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h6-sm">H6 Small</label>
                     <input type="text" id="h6-sm" name="typography[h6_sm]" value="<?php echo esc_attr(get_option('integra_h6_sm', '1.5rem')); ?>" data-default-value="1.5rem" placeholder="1.5rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h6-md">H6 Medium</label>
                     <input type="text" id="h6-md" name="typography[h6_md]" value="<?php echo esc_attr(get_option('integra_h6_md', '1.625rem')); ?>" data-default-value="1.625rem" placeholder="1.625rem">
                 </div>
-                <div class="integra-typography-field">
+                <div class="integra-config-field">
                     <label for="h6-lg">H6 Large</label>
                     <input type="text" id="h6-lg" name="typography[h6_lg]" value="<?php echo esc_attr(get_option('integra_h6_lg', '1.75rem')); ?>" data-default-value="1.75rem" placeholder="1.75rem">
-                </div>
-            </div>
-        </div>
-
-        <!-- Eyebrow Text -->
-        <div class="integra-config-section">
-            <h2>Eyebrow Text</h2>
-            <div class="integra-typography-grid">
-                <div class="integra-typography-field">
-                    <label for="eyebrow-font-family">Eyebrow Font Family</label>
-                    <input type="text" id="eyebrow-font-family" name="typography[eyebrow_font_family]" value="<?php echo esc_attr(get_option('integra_eyebrow_font_family', 'DM Sans')); ?>" data-default-value="DM Sans" placeholder="DM Sans">
-                </div>
-                <div class="integra-typography-field">
-                    <label for="eyebrow-font-weight">Eyebrow Font Weight</label>
-                    <select id="eyebrow-font-weight" name="typography[eyebrow_font_weight]" data-default-value="700">
-                        <?php
-                        $eyebrow_weight = get_option('integra_eyebrow_font_weight', '700');
-                        foreach ($weights as $weight) {
-                            $selected = ($eyebrow_weight == $weight) ? 'selected' : '';
-                            echo "<option value='{$weight}' {$selected}>{$weight}</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div class="integra-typography-field">
-                    <label for="eyebrow-font-size">Eyebrow Font Size</label>
-                    <input type="text" id="eyebrow-font-size" name="typography[eyebrow_font_size]" value="<?php echo esc_attr(get_option('integra_eyebrow_font_size', '0.875rem')); ?>" data-default-value="0.875rem" placeholder="0.875rem">
-                </div>
-                <div class="integra-typography-field">
-                    <label for="eyebrow-line-height">Eyebrow Line Height</label>
-                    <input type="text" id="eyebrow-line-height" name="typography[eyebrow_line_height]" value="<?php echo esc_attr(get_option('integra_eyebrow_line_height', '100%')); ?>" data-default-value="100%" placeholder="100%">
-                </div>
-                <div class="integra-typography-field">
-                    <label for="eyebrow-letter-spacing">Eyebrow Letter Spacing</label>
-                    <input type="text" id="eyebrow-letter-spacing" name="typography[eyebrow_letter_spacing]" value="<?php echo esc_attr(get_option('integra_eyebrow_letter_spacing', '4%')); ?>" data-default-value="4%" placeholder="4%">
-                </div>
-                <div class="integra-typography-field">
-                    <label for="eyebrow-text-transform">Eyebrow Text Transform</label>
-                    <select id="eyebrow-text-transform" name="typography[eyebrow_text_transform]" data-default-value="uppercase">
-                        <?php
-                        $eyebrow_transform = get_option('integra_eyebrow_text_transform', 'uppercase');
-                        $transforms = ['none', 'uppercase', 'lowercase', 'capitalize'];
-                        foreach ($transforms as $transform) {
-                            $selected = ($eyebrow_transform == $transform) ? 'selected' : '';
-                            echo "<option value='{$transform}' {$selected}>" . ucfirst($transform) . "</option>";
-                        }
-                        ?>
-                    </select>
-                </div>
-                <div class="integra-typography-field">
-                    <label for="eyebrow-padding">Eyebrow Padding</label>
-                    <input type="text" id="eyebrow-padding" name="typography[eyebrow_padding]" value="<?php echo esc_attr(get_option('integra_eyebrow_padding', '0')); ?>" data-default-value="0" placeholder="0">
-                </div>
-                <div class="integra-typography-field">
-                    <label for="eyebrow-border-radius">Eyebrow Border Radius</label>
-                    <input type="text" id="eyebrow-border-radius" name="typography[eyebrow_border_radius]" value="<?php echo esc_attr(get_option('integra_eyebrow_border_radius', '0')); ?>" data-default-value="0" placeholder="0">
-                </div>
-                <div class="integra-typography-field">
-                    <label for="eyebrow-background-color">Eyebrow Background Color</label>
-                    <input type="text" id="eyebrow-background-color" name="typography[eyebrow_background_color]" value="<?php echo esc_attr(get_option('integra_eyebrow_background_color', 'transparent')); ?>" data-default-value="transparent" placeholder="transparent">
-                </div>
-                <div class="integra-typography-field">
-                    <label for="eyebrow-color">Eyebrow Color</label>
-                    <input type="text" id="eyebrow-color" name="typography[eyebrow_color]" value="<?php echo esc_attr(get_option('integra_eyebrow_color', 'var(--color-Primary)')); ?>" data-default-value="var(--color-Primary)" placeholder="var(--color-Primary)">
                 </div>
             </div>
         </div>
