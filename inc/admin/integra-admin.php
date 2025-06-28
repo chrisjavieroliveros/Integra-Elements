@@ -240,7 +240,7 @@ function integra_elements_admin_page_content() {
                     </button>
                     <div class="integra-accordion-content" id="base-elements">
                         <ul class="integra-nav-list">
-                            <li><a href="#" class="integra-nav-link" data-page="button">Button</a></li>
+                            <li><a href="#" class="integra-nav-link" data-page="buttons">Button</a></li>
                             <li><a href="#" class="integra-nav-link" data-page="media-element">Media</a></li>
                         </ul>
                     </div>
@@ -281,9 +281,7 @@ function integra_elements_admin_page_content() {
                 </div>
 
                 <!-- Base Elements Pages -->
-                <div class="integra-page" id="page-button">
-                    <?php include(get_template_directory() . '/inc/admin/pages/buttons/buttons.page.php'); ?>
-                </div>
+                <?php include(get_template_directory() . '/inc/admin/pages/buttons/buttons.page.php'); ?>
                 
                 <div class="integra-page" id="page-media-element">
                     <h1>Media</h1>
