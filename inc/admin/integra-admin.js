@@ -4,6 +4,54 @@
 
 jQuery(document).ready(function ($) {
 
+    // Get URL parameter
+    function getUrlParameter(name) {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get(name);
+    }
+
+    // Update URL with page parameter
+    function updateUrl(page) {
+        const url = new URL(window.location);
+        if (page && page !== 'welcome') {
+            url.searchParams.set('tab', page);
+        } else {
+            url.searchParams.delete('tab');
+        }
+        window.history.replaceState({}, '', url);
+    }
+
+    // Show specific page
+    function showPage(targetPage) {
+        if (!targetPage) {
+            targetPage = 'welcome';
+        }
+
+        // Update active link
+        $('.integra-nav-link').removeClass('active');
+        $('.integra-nav-link[data-page="' + targetPage + '"]').addClass('active');
+
+        // Show target page
+        $('.integra-page').removeClass('integra-page-active');
+        $('#page-' + targetPage).addClass('integra-page-active');
+
+        // Update URL
+        updateUrl(targetPage);
+
+        // Open the correct accordion section for this page
+        const $activeLink = $('.integra-nav-link[data-page="' + targetPage + '"]');
+        if ($activeLink.length) {
+            const $accordion = $activeLink.closest('.integra-accordion-content');
+            if ($accordion.length) {
+                const accordionId = $accordion.attr('id');
+                const $header = $('.integra-accordion-header[data-target="' + accordionId + '"]');
+                if (!$header.hasClass('active')) {
+                    $header.trigger('click');
+                }
+            }
+        }
+    }
+
     // Accordion functionality
     $('.integra-accordion-header').on('click', function (e) {
         e.preventDefault();
@@ -33,17 +81,18 @@ jQuery(document).ready(function ($) {
         const $link = $(this);
         const targetPage = $link.data('page');
 
-        // Update active link
-        $('.integra-nav-link').removeClass('active');
-        $link.addClass('active');
-
-        // Show target page
-        $('.integra-page').removeClass('integra-page-active');
-        $('#page-' + targetPage).addClass('integra-page-active');
+        showPage(targetPage);
     });
 
-    // Auto-open first accordion
-    $('.integra-accordion-header').first().trigger('click');
+    // Initialize page based on URL parameter or default
+    const currentPage = getUrlParameter('tab');
+    if (currentPage && $('#page-' + currentPage).length) {
+        showPage(currentPage);
+    } else {
+        // Auto-open first accordion if no specific page is requested
+        $('.integra-accordion-header').first().trigger('click');
+        showPage('welcome');
+    }
 
     // Color picker synchronization
     $('input[type="color"]').on('change', function () {

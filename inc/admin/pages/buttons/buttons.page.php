@@ -22,8 +22,8 @@ if (!defined('ABSPATH')) exit;
                     <input type="text" 
                            id="integra_btn_line_height" 
                            name="integra_btn_line_height" 
-                           value="<?php echo esc_attr(get_option('integra_btn_line_height', '1.7')); ?>"
-                           data-default-value="1.7" placeholder="1.7">
+                           value="<?php echo esc_attr(get_option('integra_btn_line_height', '120%')); ?>"
+                           data-default-value="120%" placeholder="Button Text Line Height">
                 </div>
                 
                 <div class="integra-config-field">
