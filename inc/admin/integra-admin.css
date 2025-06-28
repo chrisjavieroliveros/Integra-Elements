@@ -93,6 +93,88 @@
     color: #23282d;
 }
 
+/* Form Styles */
+.integra-colors-form,
+.integra-typography-form {
+    /* max-width: 800px; */
+}
+
+.integra-config-section {
+    margin-bottom: 30px;
+    padding: 20px;
+    background: #f9f9f9;
+    border: 1px solid #e5e5e5;
+}
+
+.integra-config-section h2 {
+    margin: 0 0 20px 0;
+    font-size: 18px;
+    color: #23282d;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+}
+
+.integra-color-grid,
+.integra-typography-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.integra-color-field,
+.integra-typography-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.integra-color-field label,
+.integra-typography-field label {
+    font-weight: 600;
+    font-size: 13px;
+    color: #555;
+}
+
+.integra-color-field input[type="color"] {
+    width: 100%;
+    height: 40px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.integra-color-field .color-hex {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 12px;
+}
+
+.integra-typography-field input[type="text"],
+.integra-typography-field select {
+    width: 100%;
+    padding: 6px 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 13px;
+}
+
+.integra-typography-field select {
+    height: 34px;
+}
+
+.integra-form-actions {
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #ddd;
+}
+
+.integra-form-actions .button {
+    margin-right: 10px;
+}
+
 /* Responsive */
 @media (max-width: 768px) {
     .integra-admin-container {
@@ -101,5 +183,10 @@
 
     .integra-admin-sidebar {
         width: 100%;
+    }
+
+    .integra-color-grid,
+    .integra-typography-grid {
+        grid-template-columns: 1fr;
     }
 }

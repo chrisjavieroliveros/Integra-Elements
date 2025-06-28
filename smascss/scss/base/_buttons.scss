@@ -3,6 +3,9 @@
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
 
   font-size: var(--btn-md-font-size);
   font-weight: var(--btn-font-weight);
@@ -10,16 +13,12 @@
   line-height: var(--btn-line-height);
   border-radius: var(--btn-border-radius);
   padding: 0 var(--btn-md-padding-x);
-  text-align: center;
-  cursor: pointer;
-  border: 1px solid transparent;
 
   .cta-icon {
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: var(--size-2);
-    // font-size: var(--btn-md-font-size);
   }
 
   // Focus styles

@@ -40,8 +40,7 @@ function integra_elements_scripts() {
     // Enqueue Google Fonts (handled by integra_elements_enqueue_fonts)
     integra_elements_enqueue_fonts();
 
-    // Theme Config CSS;
-    wp_enqueue_style('integra-theme-config', get_template_directory_uri() . '/assets/css/config.css', array(), _S_VERSION);
+    // Theme Config CSS - Now handled dynamically via admin page
 
     // Theme Styles
     wp_enqueue_style('integra-elements-style', get_stylesheet_uri(), array(), _S_VERSION);

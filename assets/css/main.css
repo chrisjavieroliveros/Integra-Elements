@@ -1137,15 +1137,15 @@ blockquote cite::before {
   align-items: center;
   justify-content: center;
   text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  border: 1px solid transparent;
   font-size: var(--btn-md-font-size);
   font-weight: var(--btn-font-weight);
   height: var(--btn-md-height);
   line-height: var(--btn-line-height);
   border-radius: var(--btn-border-radius);
   padding: 0 var(--btn-md-padding-x);
-  text-align: center;
-  cursor: pointer;
-  border: 1px solid transparent;
 }
 .btn .cta-icon {
   display: flex;
@@ -1646,21 +1646,6 @@ dd:last-child {
 }
 .container--full {
   max-width: 100%;
-}
-
-nav {
-  position: relative;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 100;
-}
-nav .nav-header {
-  display: flex;
-}
-nav .nav-body {
-  display: flex;
-  background-color: getColor(Light-100);
 }
 
 .hero {
