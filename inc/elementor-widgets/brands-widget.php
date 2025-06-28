@@ -75,6 +75,14 @@ class Brands_Widget extends \Elementor\Widget_Base {
                     'unit' => 'px',
                     'size' => 80,
                 ],
+                'tablet_default' => [
+                    'unit' => 'px',
+                    'size' => 64,
+                ],
+                'mobile_default' => [
+                    'unit' => 'px',
+                    'size' => 56,
+                ],
                 'selectors' => [
                     '{{WRAPPER}} .brand-item img' => 'height: {{SIZE}}{{UNIT}};',
                 ],
@@ -97,6 +105,14 @@ class Brands_Widget extends \Elementor\Widget_Base {
                 'default' => [
                     'unit' => 'px',
                     'size' => 32,
+                ],
+                'tablet_default' => [
+                    'unit' => 'px',
+                    'size' => 24,
+                ],
+                'mobile_default' => [
+                    'unit' => 'px',
+                    'size' => 16,
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .brands-grid' => 'column-gap: calc({{SIZE}}{{UNIT}});',
@@ -121,6 +137,14 @@ class Brands_Widget extends \Elementor\Widget_Base {
                 'default' => [
                     'unit' => 'px',
                     'size' => 8,
+                ],
+                'tablet_default' => [
+                    'unit' => 'px',
+                    'size' => 8,
+                ],
+                'mobile_default' => [
+                    'unit' => 'px',
+                    'size' => 4,
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .brands-grid' => 'row-gap: calc({{SIZE}}{{UNIT}});',
