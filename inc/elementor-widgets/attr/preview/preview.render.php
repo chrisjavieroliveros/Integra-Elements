@@ -27,12 +27,6 @@
     switch ($preview_type) {
       case 'image':
 
-        if($preview_max_width['size'] > 320) {
-          $preview_markup = '<img src="'.esc_url($preview_url).'" alt="Hero Image" style="max-width: '.$preview_max_width['size'].'px;">';
-        } else {
-          $preview_markup = '<img src="'.esc_url($preview_url).'" alt="Hero Image">';
-        }
-
         // Apply special block styling for 'featured' widget type if preview_block is enabled
         if (isset($widget_type) && $widget_type === 'featured' && isset($settings['preview_block']) && $settings['preview_block'] === 'yes') {
             $previewBlockStyles = '';
@@ -54,7 +48,7 @@
         $preview_markup = '<div class="video-style">';
 
         if($preview_max_width['size'] > 320) {
-            $preview_markup .= '<video controls style="max-width: '.$preview_max_width['size'].'px;">';
+            $preview_markup .= '<video controls>';
         } else {
             $preview_markup .= '<video controls>';
         }

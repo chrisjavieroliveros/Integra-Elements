@@ -88,20 +88,6 @@
   );
 
 
-  // Add "Icon Position" Control;
-  $repeater->add_control(
-    'icon_position',
-    [
-      'label' => __( 'Icon Position', 'your-text-domain' ),
-      'type' => \Elementor\Controls_Manager::SELECT,
-      'default' => 'before',
-      'options' => [
-        'before' => __( 'Before', 'your-text-domain' ),
-        'after' => __( 'After', 'your-text-domain' ),
-      ],
-    ]
-  );
-
   // Add "Icon" Control;
   $repeater->add_control(
     'cta_icon',
@@ -114,6 +100,20 @@
       ],
     ]
   );
+
+    // Add "Icon Position" Control;
+    $repeater->add_control(
+      'icon_position',
+      [
+        'label' => __( 'Icon Position', 'your-text-domain' ),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'options' => [
+          'before' => __( 'Before', 'your-text-domain' ),
+          'after' => __( 'After', 'your-text-domain' ),
+        ],
+        'default' => 'before',
+      ]
+    );
 
   // Repeater;
   $this->add_control(
@@ -130,7 +130,7 @@
             'url' => '#',
           ],
           'icon' => 'fa fa-angle-right',
-          'icon_position' => 'right',
+          'icon_position' => 'before',
           'size' => 'md',
         ],
         [
@@ -140,7 +140,7 @@
             'url' => '#',
           ],
           'icon' => 'fa fa-angle-right',
-          'icon_position' => 'right',
+          'icon_position' => 'after',
           'size' => 'md',
         ],
       ],

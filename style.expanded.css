@@ -191,16 +191,6 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
   }
 }
 
-.height--auto {
-  height: auto;
-}
-.height--full {
-  min-height: calc(100svh - 104px);
-}
-.height--marketing {
-  min-height: calc(85svh - 104px);
-}
-
 .theme-light {
   color: var(--color-White);
 }
@@ -1734,6 +1724,17 @@ dd:last-child {
   .inline-cta {
     flex-direction: row;
   }
+}
+
+.brands .brands-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--size-4);
+}
+.brands .brand-item img {
+  display: block;
+  width: auto;
 }
 
 .elementor-widget-text-editor p {

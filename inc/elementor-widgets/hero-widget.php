@@ -39,7 +39,7 @@ class Hero_Widget extends \Elementor\Widget_Base {
 
         // General Section
         $this->start_controls_section(
-            'section_general',
+        'section_general',
             [
                 'label' => __('General', 'integra-elements'),
             ]
@@ -154,10 +154,6 @@ class Hero_Widget extends \Elementor\Widget_Base {
         if($hero_layout === 'hero-centered') {
             $section_class .= ' hero--centered';
         }
-
-        // Hero Height;
-        $hero_height = $settings['height'] ?? 'auto';
-        $section_class .= ' height--'. $hero_height;
 
         ?>
 
