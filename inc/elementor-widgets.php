@@ -161,7 +161,7 @@ class Integra_Elementor_Widgets {
         // Add your widget scripts here
         wp_enqueue_script(
             'integra-elementor-widgets',
-            get_template_directory_uri() . '/assets/js/elementor-widgets.js',
+            get_template_directory_uri() . '/js/elementor-widgets.js',
             ['jquery', 'elementor-frontend'],
             _S_VERSION, 
             true

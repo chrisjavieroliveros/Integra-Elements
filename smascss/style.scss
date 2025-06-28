@@ -1,17 +1,17 @@
-/**
- * Project: SMACSS SCSS Architecture
- * Description: This project implements a scalable and modular architecture for CSS (SMACSS) 
- *              using SCSS to ensure maintainable and reusable styles.
- * Author: Chris Javier Oliveros
- * Version: 2.0.0
- * License: MIT
- * 
- * This file serves as the entry point for the SCSS architecture. It organizes and imports 
- * all styles based on the SMACSS methodology.
- * 
- * NOTE: This compiles to main.css and should be used alongside config.css
- * (compiled from config.scss) which contains all CSS custom properties.
- */
+/*!
+Theme Name: Integra Elements
+Theme URI: http://integra-elements.imco.design/
+Author: Chris Javier Oliveros, Jake Oliveros Chico
+Author URI: http://imco.design/chrisjavier
+Description: Integra Elements is a modern WordPress theme built from the ground up for designers, developers, and agencies who demand flexibility, speed, and visual perfection. Blending years of theme-building experience into a unified system, Integra Elements delivers a refined foundation powered by Elementor’s powerful page builder.
+Version: 1.0.3
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: integra-elements
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
 
 // =============================================================================
 // UTILITIES - Mixins, functions, and utility classes

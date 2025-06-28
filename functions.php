@@ -10,41 +10,41 @@ if (!defined('_S_VERSION')) {
  * ==========================================================================
  */
 
-/**
- * Simple Google Fonts loader - just paste the Google Fonts HTML!
- * Copy the HTML from fonts.google.com and paste the stylesheet URL below.
- */
-function integra_elements_enqueue_fonts() {
-    // 👇 Just paste your Google Fonts URL here!
-    $google_fonts_url = 'https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap';
+// /**
+//  * Simple Google Fonts loader - just paste the Google Fonts HTML!
+//  * Copy the HTML from fonts.google.com and paste the stylesheet URL below.
+//  */
+// function integra_elements_enqueue_fonts() {
+//     // 👇 Just paste your Google Fonts URL here!
+//     $google_fonts_url = 'https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap';
     
-    // 💡 Pro Tip - Multiple Fonts: Just add &family= for each additional font
-    // $google_fonts_url = 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@300;400;600&display=swap';
+//     // 💡 Pro Tip - Multiple Fonts: Just add &family= for each additional font
+//     // $google_fonts_url = 'https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&family=Open+Sans:wght@300;400;600&display=swap';
     
-    // That's it! The function handles the rest automatically.
-    if (!empty($google_fonts_url)) {
-        // Enqueue Google Fonts properly using WordPress enqueue system
-        wp_enqueue_style('integra-google-fonts', $google_fonts_url, array(), null);
+//     // That's it! The function handles the rest automatically.
+//     if (!empty($google_fonts_url)) {
+//         // Enqueue Google Fonts properly using WordPress enqueue system
+//         wp_enqueue_style('integra-google-fonts', $google_fonts_url, array(), null);
         
-        // Add preconnect links for performance
-        add_action('wp_head', function() {
-            echo '<link rel="preconnect" href="https://fonts.googleapis.com" />' . "\n";
-            echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />' . "\n";
-        }, 1);
-    }
+//         // Add preconnect links for performance
+//         add_action('wp_head', function() {
+//             echo '<link rel="preconnect" href="https://fonts.googleapis.com" />' . "\n";
+//             echo '<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />' . "\n";
+//         }, 1);
+//     }
     
-    return esc_url($google_fonts_url);
-}
+//     return esc_url($google_fonts_url);
+// }
 
 function integra_elements_scripts() {
     // Enqueue Google Fonts (handled by integra_elements_enqueue_fonts)
-    integra_elements_enqueue_fonts();
+    // integra_elements_enqueue_fonts();
 
     // Theme Config CSS - Now handled dynamically via admin page
 
     // Theme Styles
     wp_enqueue_style('integra-elements-style', get_stylesheet_uri(), array(), _S_VERSION);
-    wp_enqueue_style('integra-elements-main', get_template_directory_uri() . '/assets/css/main.min.css', array(), _S_VERSION);
+    wp_enqueue_style('integra-elements-main', get_stylesheet_uri() . '/style.css', array(), _S_VERSION);
 
     // GSAP Animation Library
     wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js', array(), '3.13.0', true);
@@ -54,8 +54,8 @@ function integra_elements_scripts() {
     wp_enqueue_script('gsap-splittext', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js', array('gsap'), '3.13.0', true);
 
     // Theme Scripts
-    wp_enqueue_script('integra-scroll-smoother', get_template_directory_uri() . '/assets/js/scroll-smoother.js', array('gsap', 'gsap-scrolltrigger', 'gsap-scrollsmoother'), _S_VERSION, true);
-    wp_enqueue_script('integra-elements-navigation', get_template_directory_uri() . '/assets/js/navigation.js', array('jquery'), _S_VERSION, true);
+    wp_enqueue_script('integra-scroll-smoother', get_template_directory_uri() . '/js/scroll-smoother.js', array('gsap', 'gsap-scrolltrigger', 'gsap-scrollsmoother'), _S_VERSION, true);
+    wp_enqueue_script('integra-elements-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), _S_VERSION, true);
 
     if (is_singular() && comments_open() && get_option('thread_comments')) {
         wp_enqueue_script('comment-reply');
@@ -126,17 +126,17 @@ function integra_elements_setup() {
 }
 add_action('after_setup_theme', 'integra_elements_setup');
 
-/**
- * Set the content width in pixels, based on the theme's design and stylesheet.
- *
- * Priority 0 to make it available to lower priority callbacks.
- *
- * @global int $content_width
- */
-function integra_elements_content_width() {
-	$GLOBALS['content_width'] = apply_filters( 'integra_elements_content_width', 640 );
-}
-add_action( 'after_setup_theme', 'integra_elements_content_width', 0 );
+// /**
+//  * Set the content width in pixels, based on the theme's design and stylesheet.
+//  *
+//  * Priority 0 to make it available to lower priority callbacks.
+//  *
+//  * @global int $content_width
+//  */
+// function integra_elements_content_width() {
+// 	$GLOBALS['content_width'] = apply_filters( 'integra_elements_content_width', 640 );
+// }
+// add_action( 'after_setup_theme', 'integra_elements_content_width', 0 );
 
 /**
  * Register widget area.

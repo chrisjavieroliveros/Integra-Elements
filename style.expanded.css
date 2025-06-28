@@ -1,18 +1,18 @@
 @charset "UTF-8";
-/**
- * Project: SMACSS SCSS Architecture
- * Description: This project implements a scalable and modular architecture for CSS (SMACSS) 
- *              using SCSS to ensure maintainable and reusable styles.
- * Author: Chris Javier Oliveros
- * Version: 2.0.0
- * License: MIT
- * 
- * This file serves as the entry point for the SCSS architecture. It organizes and imports 
- * all styles based on the SMACSS methodology.
- * 
- * NOTE: This compiles to main.css and should be used alongside config.css
- * (compiled from config.scss) which contains all CSS custom properties.
- */
+/*!
+Theme Name: Integra Elements
+Theme URI: http://integra-elements.imco.design/
+Author: Chris Javier Oliveros, Jake Oliveros Chico
+Author URI: http://imco.design/chrisjavier
+Description: Integra Elements is a modern WordPress theme built from the ground up for designers, developers, and agencies who demand flexibility, speed, and visual perfection. Blending years of theme-building experience into a unified system, Integra Elements delivers a refined foundation powered by Elementor’s powerful page builder.
+Version: 1.0.3
+Tested up to: 5.4
+Requires PHP: 5.6
+License: GNU General Public License v2 or later
+License URI: LICENSE
+Text Domain: integra-elements
+Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
+*/
 /**
  * TEXT UTILITY MIXINS
  * -------------------
@@ -422,9 +422,7 @@ button {
   text-align: center;
   white-space: nowrap;
   vertical-align: middle;
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
+  user-select: none;
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
@@ -562,8 +560,7 @@ dialog {
 
 dialog::backdrop {
   background: rgba(0, 0, 0, 0.5);
-  -webkit-backdrop-filter: blur(3px);
-          backdrop-filter: blur(3px);
+  backdrop-filter: blur(3px);
 }
 
 /* Modern semantic elements */
@@ -634,8 +631,7 @@ sup {
 /* Link improvements */
 a {
   color: var(--color-link, #2a8de9);
-  -webkit-text-decoration-skip: ink;
-          text-decoration-skip-ink: auto;
+  text-decoration-skip-ink: auto;
 }
 
 a:hover {
@@ -790,10 +786,6 @@ a:hover {
     transition-delay: 0s;
     transition-duration: 0s;
   }
-}
-*::-moz-selection {
-  background-color: var(--color-Secondary-50);
-  color: var(--color-Secondary);
 }
 *::selection {
   background-color: var(--color-Secondary-50);
@@ -1572,7 +1564,6 @@ dd:last-child {
 .video-style {
   position: relative;
   width: 100%;
-  height: -moz-max-content;
   height: max-content;
   overflow: hidden;
   border-radius: var(--video-border-radius);
@@ -1584,10 +1575,8 @@ dd:last-child {
   max-width: none;
   width: 100%;
   height: auto;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center center;
-     object-position: center center;
+  object-fit: contain;
+  object-position: center center;
   margin-bottom: -12px;
   display: block;
 }
@@ -1719,7 +1708,6 @@ dd:last-child {
 }
 
 .eyebrow-text {
-  width: -moz-fit-content;
   width: fit-content;
   display: inline-block;
   font-family: var(--eyebrow-font-family), "Segoe UI", "Helvetica Neue", Arial, sans-serif;
