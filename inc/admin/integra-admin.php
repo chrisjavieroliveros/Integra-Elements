@@ -79,15 +79,8 @@ function integra_elements_handle_typography_save() {
             foreach ($typography as $key => $value) {
                 // Handle Google Fonts import with special sanitization
                 if ($key === 'google_fonts_import') {
-                    // Allow specific HTML tags for Google Fonts import
-                    $allowed_html = array(
-                        'link' => array(
-                            'rel' => array(),
-                            'href' => array(),
-                            'crossorigin' => array(),
-                        ),
-                    );
-                    update_option('integra_' . $key, wp_kses($value, $allowed_html));
+                    // Allow ANY content for head injection (removes wp_kses restriction)
+                    update_option('integra_' . $key, wp_unslash($value));
                 } else {
                     update_option('integra_' . $key, sanitize_text_field($value));
                 }
@@ -226,20 +219,19 @@ function integra_elements_output_dynamic_css() {
 }
 add_action('wp_head', 'integra_elements_output_dynamic_css');
 
-/**
- * Output Google Fonts import code to frontend head
- */
+
+// Output Google Fonts import code to frontend head
 function integra_elements_output_google_fonts() {
     $google_fonts_import = get_option('integra_google_fonts_import', '');
     
     if (!empty($google_fonts_import)) {
-        // Output the Google Fonts import code
         echo "\n<!-- Integra Elements - Google Fonts Import -->\n";
-        echo $google_fonts_import . "\n";
-        echo "<!-- /Integra Elements - Google Fonts Import -->\n";
+        echo $google_fonts_import;
+        echo "\n<!-- /Integra Elements - Google Fonts Import -->\n";
     }
 }
 add_action('wp_head', 'integra_elements_output_google_fonts', 1);
+
 
 /**
  * Render the Integra Elements admin page content

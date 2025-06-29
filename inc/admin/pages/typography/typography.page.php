@@ -17,7 +17,7 @@
                     style="width: 100%; min-height: 120px; font-family: monospace; font-size: 12px;"
                 ><?php echo esc_textarea(get_option('integra_google_fonts_import', '')); ?></textarea>
                 <p class="description">
-                    Paste the complete Google Fonts HTML code here (including preconnect links and stylesheet link). 
+                    Paste your Google Fonts HTML code here (or any other content). 
                     This will be automatically added to your site's &lt;head&gt; section.
                 </p>
             </div>

@@ -11,7 +11,7 @@ html,
 body {
   font-size: var(--base-font-size);
   font-weight: var(--base-font-weight);
-  font-family: var(--font-family-base), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-family-base), sans-serif;
   line-height: var(--base-line-height);
   color: var(--color-Black);
   font-optical-sizing: auto;
@@ -24,7 +24,7 @@ h4,
 h5,
 h6 {
   font-weight: var(--heading-font-weight);
-  font-family: var(--font-family-heading), "Helvetica Neue", Arial, sans-serif;
+  font-family: var(--font-family-heading), sans-serif;
   line-height: var(--heading-line-height);
   margin: var(--size-0);
 }
