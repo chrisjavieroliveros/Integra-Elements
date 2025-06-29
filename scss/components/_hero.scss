@@ -18,13 +18,9 @@
         gap: 2rem;
     }
 
-    .hero-content {
-        flex: 1 1 auto;
-        order: 2;
-        display: flex;
-        flex-direction: column;
-        gap: 1rem;
-    }
+    // .hero-content {
+
+    // }
 
     .hero-preview {
         flex: 0 0 auto;
@@ -36,18 +32,12 @@
         }
     }
 
-    .text-content {
-        display: flex;
-        flex-direction: column;
-        gap: 0.75rem;
+    // .text-content {
 
-        p {
-            margin: 0;
-        }
-    }
+    // }
 
     &--centered {
-        .hero-content {
+        .text-content {
             text-align: center;
             align-items: center;
         }

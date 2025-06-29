@@ -1,4 +1,5 @@
 <?php
+
     $this->start_controls_section(
     'content_section',
     [
@@ -13,7 +14,7 @@
         [
         'label' => __('Eyebrow Text', 'integra-elements'),
         'type' => \Elementor\Controls_Manager::TEXT,
-        'default' => __('Eyebrow Text', 'integra-elements'),
+        'default' => __('EYEBROW TEXT', 'integra-elements'),
         ]
     );
 
