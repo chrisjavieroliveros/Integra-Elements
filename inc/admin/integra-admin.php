@@ -173,6 +173,27 @@ function integra_elements_handle_buttons_save() {
 }
 
 /**
+ * Handle form submissions for text content settings
+ */
+function integra_elements_handle_text_content_save() {
+    if (isset($_POST['save_text_content']) && wp_verify_nonce($_POST['integra_text_content_nonce'], 'integra_text_content_save')) {
+        if (current_user_can('manage_options')) {
+            $text_content = $_POST['text_content'];
+            
+            // Save each text content setting to WordPress options
+            foreach ($text_content as $key => $value) {
+                update_option('integra_text_content_' . $key, sanitize_text_field($value));
+            }
+            
+            // Show success message
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-success is-dismissible"><p>Text Content settings saved successfully!</p></div>';
+            });
+        }
+    }
+}
+
+/**
  * Output dynamic CSS variables to frontend
  */
 function integra_elements_output_dynamic_css() {
@@ -189,6 +210,9 @@ function integra_elements_output_dynamic_css() {
     
     // Include spacing variables
     include(get_template_directory() . '/inc/admin/pages/spacing/spacing.vars.php');
+    
+    // Include text content variables
+    include(get_template_directory() . '/inc/admin/pages/text-content/text-content.vars.php');
     
     // Include eyebrow text variables
     include(get_template_directory() . '/inc/admin/pages/eyebrow-text/eyebrow-text.vars.php');
@@ -225,6 +249,7 @@ function integra_elements_admin_page_content() {
     integra_elements_handle_color_save();
     integra_elements_handle_typography_save();
     integra_elements_handle_spacing_save();
+    integra_elements_handle_text_content_save();
     integra_elements_handle_eyebrow_text_save();
     integra_elements_handle_buttons_save();
     ?>
@@ -256,6 +281,7 @@ function integra_elements_admin_page_content() {
                     <div class="integra-accordion-content" id="layout">
                         <ul class="integra-nav-list">
                             <li><a href="#" class="integra-nav-link" data-page="spacing">Spacing</a></li>
+                            <li><a href="#" class="integra-nav-link" data-page="text-content">Text Content</a></li>
                             <li><a href="#" class="integra-nav-link" data-page="media">Media</a></li>
                         </ul>
                     </div>
@@ -303,6 +329,7 @@ function integra_elements_admin_page_content() {
                 
                 <!-- Layout Pages -->
                 <?php include(get_template_directory() . '/inc/admin/pages/spacing/spacing.page.php'); ?>
+                <?php include(get_template_directory() . '/inc/admin/pages/text-content/text-content.page.php'); ?>
                 
                 <div class="integra-page" id="page-media">
                     <h1>Media</h1>

@@ -84,7 +84,7 @@ class Heading_Widget extends \Elementor\Widget_Base {
                 ],
                 'default' => 'left',
                 'selectors' => [
-                    '{{WRAPPER}} .heading-content' => 'text-align: {{VALUE}};',
+                    '{{WRAPPER}} .text-content' => 'text-align: {{VALUE}};',
                 ],
             ]
         );
@@ -153,7 +153,7 @@ class Heading_Widget extends \Elementor\Widget_Base {
                 style="<?= esc_attr($section_style); ?>">
             <div class="<?= esc_attr(trim($container_class)); ?>">
 
-                <div class="heading-content">
+                <div class="text-content">
                     <?= $content_markup; ?>
                     <?= $cta_markup; ?>
                 </div>

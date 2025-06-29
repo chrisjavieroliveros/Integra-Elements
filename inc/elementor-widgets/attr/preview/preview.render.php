@@ -27,20 +27,8 @@
     switch ($preview_type) {
       case 'image':
 
-        // Apply special block styling for 'featured' widget type if preview_block is enabled
-        if (isset($widget_type) && $widget_type === 'featured' && isset($settings['preview_block']) && $settings['preview_block'] === 'yes') {
-            $previewBlockStyles = '';
-            
-            // Handle preview_block_color if set
-            if (!empty($settings['preview_block_color'])) {
-                $block_color = $settings['preview_block_color'];
-                // Simply capitalize the first letter of the color name for the CSS variable
-                $formatted_color = ucfirst($block_color);
-                $previewBlockStyles = ' style="background-color: var(--radiance-color-' . esc_attr($formatted_color) . ');"';
-            }
-            
-            $preview_markup = '<div class="preview-block-wrapper"' . $previewBlockStyles . '>' . $preview_markup . '</div>';
-        }
+        $preview_markup .= '<img src="'.esc_url($preview_url).'" alt="'.esc_attr($preview_alt).'" />';
+
         break;
         
       case 'video':

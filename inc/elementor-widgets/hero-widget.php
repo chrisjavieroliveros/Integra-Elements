@@ -174,7 +174,7 @@ class Hero_Widget extends \Elementor\Widget_Base {
                 style="<?= esc_attr($section_style); ?>">
             <div class="<?= esc_attr(trim($container_class)); ?>">
 
-                <div class="text-content">
+                <div class="hero-content text-content">
                     <?= $content_markup; ?>
                     <?= $cta_markup; ?>
                 </div>

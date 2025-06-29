@@ -1,14 +1,14 @@
 .text-content {
-    flex: 1 1 auto;
-    order: 2;
+    // flex: 1 1 auto;
+    // order: 2;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: var(--text-content-gap);
 
     .inner-content {
         display: flex;
         flex-direction: column;
-        gap: 0.75rem;
+        gap: var(--text-content-gap-inner);
 
         p {
             margin: 0;

@@ -85,27 +85,17 @@ $this->add_responsive_control(
   [
       'label' => __('Preview Max Width', 'your-text-domain'),
       'type' => \Elementor\Controls_Manager::SLIDER,
-      'size_units' => ['px', '%'],
+      'size_units' => ['px'],
       'range' => [
-        'auto' => [
-          'min' => 0,
-          'max' => 0,
-          'step' => 0,
-        ],
         'px' => [
-          'min' => 320,
-          'max' => 992,
-          'step' => 8,
-        ],
-        '%' => [
           'min' => 0,
-          'max' => 100,
+          'max' => 1000,
           'step' => 1,
         ],
       ],
       'default' => [
-        'unit' => '%',
-        'size' => 100,
+        'unit' => 'px',
+        'size' => 550,
       ],
       'selectors' => [
         '{{WRAPPER}} .hero-preview img' => 'max-width: {{SIZE}}{{UNIT}};',
