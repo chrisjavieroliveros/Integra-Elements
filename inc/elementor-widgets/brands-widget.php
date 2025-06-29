@@ -47,6 +47,9 @@ class Brands_Widget extends \Elementor\Widget_Base {
         // Container Controls;
         include('attr/container/container.controls.php');
 
+        // Height Controls
+        include('attr/height/height.controls.php');
+
         // End General Section
         $this->end_controls_section();
 
@@ -81,7 +84,7 @@ class Brands_Widget extends \Elementor\Widget_Base {
                 ],
                 'mobile_default' => [
                     'unit' => 'px',
-                    'size' => 56,
+                    'size' => 48,
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .brand-item img' => 'height: {{SIZE}}{{UNIT}};',
@@ -104,15 +107,15 @@ class Brands_Widget extends \Elementor\Widget_Base {
                 ],
                 'default' => [
                     'unit' => 'px',
-                    'size' => 32,
+                    'size' => 24,
                 ],
                 'tablet_default' => [
                     'unit' => 'px',
-                    'size' => 24,
+                    'size' => 20,
                 ],
                 'mobile_default' => [
                     'unit' => 'px',
-                    'size' => 16,
+                    'size' => 12,
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .brands-grid' => 'column-gap: calc({{SIZE}}{{UNIT}});',
@@ -136,15 +139,15 @@ class Brands_Widget extends \Elementor\Widget_Base {
                 ],
                 'default' => [
                     'unit' => 'px',
-                    'size' => 8,
+                    'size' => 16,
                 ],
                 'tablet_default' => [
                     'unit' => 'px',
-                    'size' => 8,
+                    'size' => 16,
                 ],
                 'mobile_default' => [
                     'unit' => 'px',
-                    'size' => 4,
+                    'size' => 12,
                 ],
                 'selectors' => [
                     '{{WRAPPER}} .brands-grid' => 'row-gap: calc({{SIZE}}{{UNIT}});',

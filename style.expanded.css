@@ -1726,11 +1726,14 @@ dd:last-child {
   }
 }
 
+.brands {
+  display: grid;
+  place-items: center;
+}
 .brands .brands-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  gap: var(--size-4);
 }
 .brands .brand-item img {
   display: block;

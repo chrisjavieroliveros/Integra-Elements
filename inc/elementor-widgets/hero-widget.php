@@ -48,7 +48,7 @@ class Hero_Widget extends \Elementor\Widget_Base {
         // Container Controls;
         include('attr/container/container.controls.php');
 
-        // Hero Height Controls (Auto, Full, Marketing);
+        // Height Controls
         include('attr/height/height.controls.php');
 
         // Hero Style Controls (Default, Boxed)
