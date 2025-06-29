@@ -23,16 +23,16 @@ echo '<form method="post" action="" class="integra-eyebrow-text-form">';
                 </div>
                 <div class="integra-config-field">
                     <label for="eyebrow-line-height">Eyebrow Line Height</label>
-                    <input type="text" id="eyebrow-line-height" name="eyebrow_text[eyebrow_line_height]" value="<?php echo esc_attr(get_option('integra_eyebrow_line_height', '100%')); ?>" data-default-value="100%" placeholder="100%">
+                    <input type="text" id="eyebrow-line-height" name="eyebrow_text[eyebrow_line_height]" value="<?php echo esc_attr(get_option('integra_eyebrow_line_height', '140%')); ?>" data-default-value="140%" placeholder="140%">
                 </div>
                 <div class="integra-config-field">
                     <label for="eyebrow-letter-spacing">Eyebrow Letter Spacing</label>
                     <input type="text" id="eyebrow-letter-spacing" name="eyebrow_text[eyebrow_letter_spacing]" value="<?php echo esc_attr(get_option('integra_eyebrow_letter_spacing', '4%')); ?>" data-default-value="4%" placeholder="4%">
                 </div>
-                <div class="integra-config-field">
+                <!-- <div class="integra-config-field">
                     <label for="eyebrow-text-transform">Eyebrow Text Transform</label>
                     <input type="text" id="eyebrow-text-transform" name="eyebrow_text[eyebrow_text_transform]" value="<?php echo esc_attr(get_option('integra_eyebrow_text_transform', 'uppercase')); ?>" data-default-value="uppercase" placeholder="uppercase">
-                </div>
+                </div> -->
                 <div class="integra-config-field">
                     <label for="eyebrow-padding">Eyebrow Padding</label>
                     <input type="text" id="eyebrow-padding" name="eyebrow_text[eyebrow_padding]" value="<?php echo esc_attr(get_option('integra_eyebrow_padding', '0')); ?>" data-default-value="0" placeholder="0">
@@ -45,10 +45,10 @@ echo '<form method="post" action="" class="integra-eyebrow-text-form">';
                     <label for="eyebrow-background-color">Eyebrow Background Color</label>
                     <input type="text" id="eyebrow-background-color" name="eyebrow_text[eyebrow_background_color]" value="<?php echo esc_attr(get_option('integra_eyebrow_background_color', 'transparent')); ?>" data-default-value="transparent" placeholder="transparent">
                 </div>
-                <div class="integra-config-field">
+                <!-- <div class="integra-config-field">
                     <label for="eyebrow-color">Eyebrow Color</label>
                     <input type="text" id="eyebrow-color" name="eyebrow_text[eyebrow_color]" value="<?php echo esc_attr(get_option('integra_eyebrow_color', 'var(--color-Primary)')); ?>" data-default-value="var(--color-Primary)" placeholder="var(--color-Primary)">
-                </div>
+                </div> -->
             </div>
         </div>
 
