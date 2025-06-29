@@ -32,6 +32,10 @@ class Hero_Widget extends \Elementor\Widget_Base {
         return ['integra-elements'];
     }
 
+    public function get_keywords() {
+        return ['integra', 'elements'];
+    }
+
     protected function register_controls() {
 
 
@@ -49,6 +53,14 @@ class Hero_Widget extends \Elementor\Widget_Base {
         include('attr/container/container.controls.php');
 
         // Height Controls
+        $height_config = [
+            'selector' => '.hero',
+            'defaults' => [
+                'desktop' => 90,
+                'tablet' => 95,
+                'mobile' => 100
+            ]
+        ];
         include('attr/height/height.controls.php');
 
         // Hero Style Controls (Default, Boxed)

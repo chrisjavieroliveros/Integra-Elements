@@ -25,11 +25,15 @@ class Brands_Widget extends \Elementor\Widget_Base {
     }
 
     public function get_icon() {
-        return 'eicon-logo';
+        return 'eicon-carousel';
     }
 
     public function get_categories() {
         return ['integra-elements'];
+    }
+
+    public function get_keywords() {
+        return ['integra', 'elements'];
     }
 
     protected function register_controls() {
@@ -48,6 +52,14 @@ class Brands_Widget extends \Elementor\Widget_Base {
         include('attr/container/container.controls.php');
 
         // Height Controls
+        $height_config = [
+            'selector' => '.brands',
+            'defaults' => [
+                'desktop' => 0,
+                'tablet' => 0,
+                'mobile' => 0,
+            ]            
+        ];
         include('attr/height/height.controls.php');
 
         // End General Section
