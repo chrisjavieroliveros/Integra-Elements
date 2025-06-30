@@ -46,9 +46,23 @@
   $repeater->add_control(
     'button',
     [
-      'label' => __( 'Button', 'your-text-domain' ),
+      'label' => __( 'Text', 'your-text-domain' ),
       'type' => \Elementor\Controls_Manager::TEXT,
       'default' => 'Button',
+    ]
+  );
+
+  // Add "Style" Control;
+  $repeater->add_control(
+    'style',
+    [
+      'label' => __( 'Style', 'your-text-domain' ),
+      'type' => \Elementor\Controls_Manager::SELECT,
+      'default' => 'flat',
+      'options' => [
+        'flat' => __( 'Flat', 'your-text-domain' ),
+        'outline' => __( 'Outline', 'your-text-domain' ),
+      ],
     ]
   );
 

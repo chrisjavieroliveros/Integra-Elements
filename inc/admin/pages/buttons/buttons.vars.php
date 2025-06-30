@@ -5,6 +5,7 @@ if (!defined('ABSPATH')) exit;
 $css .= '--btn-line-height: ' . esc_attr(get_option('integra_btn_line_height', '1.7')) . ';';
 $css .= '--btn-border-radius: ' . esc_attr(get_option('integra_btn_border_radius', '999px')) . ';';
 $css .= '--btn-font-weight: ' . esc_attr(get_option('integra_btn_font_weight', '700')) . ';';
+$css .= '--btn-border-width: ' . esc_attr(get_option('integra_btn_border_width', '1px')) . ';';
 
 // Small Button Size
 $css .= '--btn-sm-height: ' . esc_attr(get_option('integra_btn_sm_height', '40px')) . ';';

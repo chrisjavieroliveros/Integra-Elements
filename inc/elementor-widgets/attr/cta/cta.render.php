@@ -5,7 +5,6 @@
     $cta_markup = '';
   }
 
-  // Buttons / CTA;
   $ctaButtons = $settings['cta_buttons'];
 
   // Only render CTA if "Add CTA" is set to "Yes";
@@ -19,6 +18,7 @@
 
   foreach( $ctaButtons as $button ) {
     $buttonText = $button['button'];
+    $buttonStyle = $button['style'];
     $buttonLink = $button['link']['url'];
     $buttonColor = $button['color'];
     $buttonIconPosition = $button['icon_position'];
@@ -26,7 +26,7 @@
       $buttonIconPosition = 'before';
     }
 
-    $cta_markup .= '<a href="' . esc_url($buttonLink) . '" class="btn btn--' . esc_attr($buttonColor) . ' btn--' . esc_attr($cta_size) . '">';
+    $cta_markup .= '<a href="' . esc_url($buttonLink) . '" class="btn btn--' . esc_attr($buttonColor) . ' btn--' . esc_attr($cta_size) . ' btn--' . esc_attr($buttonStyle) . '">';
     
     // Add the icon before the text if it exists
     if (!empty($button['cta_icon']['value']) && $buttonIconPosition === 'before') {

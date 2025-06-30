@@ -41,9 +41,20 @@ if (!defined('ABSPATH')) exit;
                            id="integra_btn_font_weight" 
                            name="integra_btn_font_weight" 
                            value="<?php echo esc_attr(get_option('integra_btn_font_weight', '700')); ?>"
-                           min="100" max="900" step="100"
+                           min="100" max="1000" step="100"
                            data-default-value="700" placeholder="700">
                 </div>
+
+                <div class="integra-config-field">
+                    <label for="integra_btn_border_width">Border Width</label>
+                    <input type="text" 
+                           id="integra_btn_border_width" 
+                           name="integra_btn_border_width" 
+                           value="<?php echo esc_attr(get_option('integra_btn_border_width', '1px')); ?>"
+                           min="0" max="10" step="1"
+                           data-default-value="1px" placeholder="1px">
+                </div>
+
             </div>
         </div>
         

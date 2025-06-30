@@ -144,7 +144,7 @@ function integra_elements_handle_buttons_save() {
         if (current_user_can('manage_options')) {
             // Get all button form fields
             $btn_fields = [
-                'integra_btn_line_height', 'integra_btn_border_radius', 'integra_btn_font_weight',
+                'integra_btn_line_height', 'integra_btn_border_radius', 'integra_btn_font_weight', 'integra_btn_border_width',
                 'integra_btn_sm_height', 'integra_btn_sm_padding_x', 'integra_btn_sm_font_size',
                 'integra_btn_md_height', 'integra_btn_md_padding_x', 'integra_btn_md_font_size',
                 'integra_btn_lg_height', 'integra_btn_lg_padding_x', 'integra_btn_lg_font_size'
