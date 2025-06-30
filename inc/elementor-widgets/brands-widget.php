@@ -173,11 +173,11 @@ class Brands_Widget extends \Elementor\Widget_Base {
                 'label' => __('Brands', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::GALLERY,
                 'default' => [
-                    ['url' => 'https://placehold.co/120x80', 'id' => 0],
                     ['url' => 'https://placehold.co/180x80', 'id' => 0],
-                    ['url' => 'https://placehold.co/140x80', 'id' => 0],
-                    ['url' => 'https://placehold.co/200x80', 'id' => 0],
-                    ['url' => 'https://placehold.co/160x80', 'id' => 0],
+                    ['url' => 'https://placehold.co/180x80', 'id' => 0],
+                    ['url' => 'https://placehold.co/180x80', 'id' => 0],
+                    ['url' => 'https://placehold.co/180x80', 'id' => 0],
+                    ['url' => 'https://placehold.co/180x80', 'id' => 0],
                 ],
                 'show_label' => false,
             ]

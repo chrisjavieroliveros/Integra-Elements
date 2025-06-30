@@ -5,9 +5,9 @@
  */
 
 // Font Families
-$css .= '--font-family-base: ' . get_option('integra_font_family_base', 'DM Sans') . ';';
-$css .= '--font-family-heading: ' . get_option('integra_font_family_heading', 'Anek Bangla') . ';';
-$css .= '--font-family-mono: ' . get_option('integra_font_family_mono', 'SFMono-Regular') . ';';
+$css .= '--font-family-base: "' . get_option('integra_font_family_base', 'DM Sans') . '";';
+$css .= '--font-family-heading: "' . get_option('integra_font_family_heading', 'Anek Bangla') . '";';
+$css .= '--font-family-mono: "' . get_option('integra_font_family_mono', 'SFMono-Regular') . '";';
 
 // Base Typography
 $css .= '--base-font-size: ' . get_option('integra_base_font_size', '16px') . ';';
