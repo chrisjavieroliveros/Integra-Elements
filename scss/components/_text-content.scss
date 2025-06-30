@@ -1,6 +1,4 @@
 .text-content {
-    // flex: 1 1 auto;
-    // order: 2;
     display: flex;
     flex-direction: column;
     gap: var(--text-content-gap);
@@ -12,6 +10,10 @@
 
         p {
             margin: 0;
+            // font-size: var(--base-font-size);
+            // line-height: var(--base-line-height);
+            font-size: var(--text-content-font-size);
+            line-height: var(--text-content-line-height);
         }
     }
 

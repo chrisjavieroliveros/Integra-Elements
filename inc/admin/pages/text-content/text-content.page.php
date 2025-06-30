@@ -21,6 +21,23 @@
             </div>
         </div>
 
+        <!-- Text Content Typography -->
+        <div class="integra-config-section">
+            <h2>Text Content Typography</h2>
+            <div class="integra-config-grid">
+                <div class="integra-config-field">
+                    <label for="text-content-font-size">Font Size</label>
+                    <input type="text" id="text-content-font-size" name="text_content[font_size]" value="<?php echo esc_attr(get_option('integra_text_content_font_size', '1rem')); ?>" data-default-value="var(--base-font-size)" placeholder="1rem">
+                    <p class="description">The font size for text content elements.</p>
+                </div>
+                <div class="integra-config-field">
+                    <label for="text-content-line-height">Line Height</label>
+                    <input type="text" id="text-content-line-height" name="text_content[line_height]" value="<?php echo esc_attr(get_option('integra_text_content_line_height', '1.5')); ?>" data-default-value="var(--base-line-height)" placeholder="1.5">
+                    <p class="description">The line height for text content elements.</p>
+                </div>
+            </div>
+        </div>
+
         <div class="integra-form-actions">
             <button type="submit" name="save_text_content" class="button button-primary">Save Text Content</button>
             <button type="button" class="button integra-reset-button" data-confirm-message="Are you sure you want to reset all text content settings to defaults? This action cannot be undone.">Reset to Defaults</button>

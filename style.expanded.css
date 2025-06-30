@@ -1803,6 +1803,8 @@ dd:last-child {
 }
 .container--full {
   max-width: 100%;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .hero {
@@ -1913,6 +1915,18 @@ dd:last-child {
 }
 .text-content .inner-content p {
   margin: 0;
+  font-size: var(--text-content-font-size);
+  line-height: var(--text-content-line-height);
+}
+
+.divider-section {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.divider-section .divider {
+  width: 100%;
+  height: 1px;
 }
 
 .elementor-widget-text-editor p {

@@ -21,7 +21,7 @@ class Hero_Widget extends \Elementor\Widget_Base {
     }
 
     public function get_title() {
-        return __('Hero Section', 'integra-elements');
+        return __('Hero', 'integra-elements');
     }
 
     public function get_icon() {

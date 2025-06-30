@@ -21,7 +21,7 @@ class CTA_Widget extends \Elementor\Widget_Base {
     }
 
     public function get_title() {
-        return __('CTA Widget', 'integra-elements');
+        return __('CTA', 'integra-elements');
     }
 
     public function get_icon() {

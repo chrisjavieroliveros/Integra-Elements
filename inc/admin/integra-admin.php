@@ -273,7 +273,6 @@ function integra_elements_admin_page_content() {
                     <div class="integra-accordion-content" id="layout">
                         <ul class="integra-nav-list">
                             <li><a href="#" class="integra-nav-link" data-page="spacing">Spacing</a></li>
-                            <li><a href="#" class="integra-nav-link" data-page="text-content">Text Content</a></li>
                             <li><a href="#" class="integra-nav-link" data-page="media">Media</a></li>
                         </ul>
                     </div>
@@ -300,6 +299,7 @@ function integra_elements_admin_page_content() {
                     <div class="integra-accordion-content" id="components">
                         <ul class="integra-nav-list">
                             <li><a href="#" class="integra-nav-link" data-page="eyebrow-text">Eyebrow Text</a></li>
+                            <li><a href="#" class="integra-nav-link" data-page="text-content">Text Content</a></li>
                         </ul>
                     </div>
                 </div>

@@ -21,7 +21,7 @@ class Brands_Widget extends \Elementor\Widget_Base {
     }
 
     public function get_title() {
-        return __('Brands Section', 'integra-elements');
+        return __('Brands', 'integra-elements');
     }
 
     public function get_icon() {
