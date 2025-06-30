@@ -51,6 +51,63 @@
     ]
   );
 
+  // Add "Primary" Variants;
+  $this->add_control(
+    'primary_variants',
+    [
+      'label' => 'Primary Variants',
+      'type' => \Elementor\Controls_Manager::SELECT,
+      'options' => [
+        'Primary-50' => 'Primary-50',
+        'Primary-100' => 'Primary-100',
+        'Primary-200' => 'Primary-200',
+        'Primary-300' => 'Primary-300',
+        'Primary-400' => 'Primary-400',
+        'Primary-500' => 'Primary-500',
+        'Primary-600' => 'Primary-600',
+        'Primary-700' => 'Primary-700',
+        'Primary-800' => 'Primary-800',
+        'Primary-900' => 'Primary-900',
+        'Primary-950' => 'Primary-950',
+      ],
+      'condition' => [
+        'background_color' => [
+          'Primary',
+        ]
+      ],
+      'default' => 'Primary-500',
+    ]
+  );
+
+  // Add "Secondary" Variants;
+  $this->add_control(
+    'secondary_variants',
+    [
+      'label' => 'Secondary Variants',
+      'type' => \Elementor\Controls_Manager::SELECT,
+      'options' => [
+        'Secondary-50' => 'Secondary-50',
+        'Secondary-100' => 'Secondary-100',
+        'Secondary-200' => 'Secondary-200',
+        'Secondary-300' => 'Secondary-300',
+        'Secondary-400' => 'Secondary-400',
+        'Secondary-500' => 'Secondary-500',
+        'Secondary-600' => 'Secondary-600',
+        'Secondary-700' => 'Secondary-700',
+        'Secondary-800' => 'Secondary-800',
+        'Secondary-900' => 'Secondary-900',
+        'Secondary-950' => 'Secondary-950',
+      ],
+      'condition' => [
+        'background_color' => [
+          'Secondary',
+        ]
+      ],
+      'default' => 'Secondary-500',
+    ]
+  );
+
+
   // Add "Light" Variants;  
   $this->add_control(
     'light_variants',

@@ -1,11 +1,11 @@
 @use "../utilities/breakpoints" as breakpoints;
 
-* {
-  &::selection {
-    background-color: var(--color-Secondary-50);
-    color: var(--color-Secondary);
-  }
-}
+// * {
+//   &::selection {
+//     background-color: var(--color-Secondary-50);
+//     color: var(--color-Secondary);
+//   }
+// }
 
 html,
 body {

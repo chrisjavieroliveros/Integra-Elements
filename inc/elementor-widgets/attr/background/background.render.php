@@ -28,16 +28,40 @@ switch ($background_type) {
     case 'color':
         // Handle background color
         $bg_color = $this->get_settings('background_color');
+
+        // Get variants
+        $primary_variants = $this->get_settings('primary_variants');
+        $secondary_variants = $this->get_settings('secondary_variants');
         $light_variants = $this->get_settings('light_variants');
         $dark_variants = $this->get_settings('dark_variants');
 
-        if ($bg_color === 'Light') {
-            $styles[] = "background-color: var(--color-{$light_variants});";
-        } else if ($bg_color === 'Dark') {
-            $styles[] = "background-color: var(--color-{$dark_variants});";
-        } else {
-            $styles[] = "background-color: var(--color-{$bg_color});";
+        switch ($bg_color) {
+            case 'Primary':
+                $styles[] = "background-color: var(--color-{$primary_variants});";
+                break;
+            case 'Secondary':
+                $styles[] = "background-color: var(--color-{$secondary_variants});";
+                break;
+            case 'Light':
+                $styles[] = "background-color: var(--color-{$light_variants});";
+                break;
+            case 'Dark':
+                $styles[] = "background-color: var(--color-{$dark_variants});";
+                break;
+            default:
+                $styles[] = "background-color: var(--color-{$bg_color});";
+                break;
         }
+
+
+
+        // if ($bg_color === 'Light') {
+        //     $styles[] = "background-color: var(--color-{$light_variants});";
+        // } else if ($bg_color === 'Dark') {
+        //     $styles[] = "background-color: var(--color-{$dark_variants});";
+        // } else {
+        //     $styles[] = "background-color: var(--color-{$bg_color});";
+        // }
 
         break;
         

@@ -1,6 +1,6 @@
 <?php
 /**
- * Heading Widget - Heading Section Implementation
+ * Heading Group Widget - Heading Group Widget Implementation
  *
  * @package Integra_Elements
  */
@@ -12,16 +12,16 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Class Heading_Widget
+ * Class Heading_Group_Widget
  */
-class Heading_Widget extends \Elementor\Widget_Base {
+class Heading_Group_Widget extends \Elementor\Widget_Base {
 
     public function get_name() {
-        return 'integra_heading';
+        return 'integra_heading_group';
     }
 
     public function get_title() {
-        return __('Heading Section', 'integra-elements');
+        return __('Heading Group Widget', 'integra-elements');
     }
 
     public function get_icon() {
@@ -33,7 +33,7 @@ class Heading_Widget extends \Elementor\Widget_Base {
     }
 
     public function get_keywords() {
-        return ['integra', 'elements', 'heading', 'title'];
+        return ['integra', 'elements', 'heading', 'group', 'title'];
     }
 
     protected function register_controls() {
@@ -95,8 +95,6 @@ class Heading_Widget extends \Elementor\Widget_Base {
         // Content Section;
         include('attr/content/content.controls.php');
 
-        // CTA Section;
-        include('attr/cta/cta.controls.php');
 
         // Spacing Section;
         include('attr/spacing/spacing.controls.php');
@@ -140,9 +138,6 @@ class Heading_Widget extends \Elementor\Widget_Base {
         // Content Render;
         include('attr/content/content.render.php');
 
-        // CTA Render;
-        include('attr/cta/cta.render.php');
-
         // Spacing Render;
         include('attr/spacing/spacing.render.php');
 
@@ -155,7 +150,6 @@ class Heading_Widget extends \Elementor\Widget_Base {
 
                 <div class="text-content">
                     <?= $content_markup; ?>
-                    <?= $cta_markup; ?>
                 </div>
 
             </div>

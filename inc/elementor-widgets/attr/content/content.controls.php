@@ -54,7 +54,7 @@
         [
         'label' => __('Heading Class', 'integra-elements'),
         'type' => \Elementor\Controls_Manager::SELECT,
-        'default' => 'display-1',
+        'default' => 'default',
         'options' => [
             'default' => __('Default', 'integra-elements'),
             'display-1' => __('Display 1', 'integra-elements'),

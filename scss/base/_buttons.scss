@@ -36,20 +36,12 @@
     height: var(--btn-sm-height);
     padding: 0 var(--btn-sm-padding-x);
     font-size: var(--btn-sm-font-size);
-
-    // .cta-icon {
-    //   font-size: var(--btn-sm-font-size);
-    // }
   }
 
   &--lg {
     height: var(--btn-lg-height);
     padding: 0 var(--btn-lg-padding-x);
     font-size: var(--btn-lg-font-size);
-
-    // .cta-icon {
-    //   font-size: var(--btn-lg-font-size);
-    // }
   }
 
   // Full width
@@ -58,7 +50,7 @@
     width: 100%;
   }
 
-  // Variants (Primary, Secondary, Danger, etc.)
+  // Style: Flat -- Default
   &--primary {
     color: var(--color-Primary-Contrast);
     background-color: var(--color-Primary);
@@ -187,5 +179,15 @@
     color: var(--color-White);
     border-color: var(--color-Dark-500);
   }
+
+
+  // Style: Outline;  
+  &--outline {
+    background-color: transparent;
+  }
+
+
+
+
 
 }
