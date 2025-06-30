@@ -1861,6 +1861,7 @@ dd:last-child {
 }
 
 .eyebrow-text {
+  text-transform: uppercase;
   display: inline-block;
   font-family: var(--eyebrow-font-family), "Segoe UI", "Helvetica Neue", Arial, sans-serif;
   font-weight: var(--eyebrow-font-weight);
