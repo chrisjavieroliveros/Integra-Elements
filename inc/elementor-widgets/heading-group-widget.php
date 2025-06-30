@@ -21,7 +21,7 @@ class Heading_Group_Widget extends \Elementor\Widget_Base {
     }
 
     public function get_title() {
-        return __('Heading Group Widget', 'integra-elements');
+        return __('Heading Group', 'integra-elements');
     }
 
     public function get_icon() {
@@ -97,6 +97,14 @@ class Heading_Group_Widget extends \Elementor\Widget_Base {
 
 
         // Spacing Section;
+        $spacing_config = [
+            'selector' => '.text-content',
+            'defaults_bottom' => [
+                'desktop' => 40,
+                'tablet' => 32,
+                'mobile' => 24,
+            ],
+        ];
         include('attr/spacing/spacing.controls.php');
 
         /*-- Style Tab ------------------------------------------------------------*/

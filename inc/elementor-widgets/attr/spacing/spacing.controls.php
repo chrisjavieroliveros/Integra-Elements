@@ -1,6 +1,20 @@
 <?php 
 
-    // Add New Section "Spacing" Section
+  $spacing_config = [
+    'selector' => '.container',
+    'defaults_top' => [
+      'desktop' => 80,
+      'tablet' => 64,
+      'mobile' => 40,
+    ],
+    'defaults_bottom' => [
+      'desktop' => 80,
+      'tablet' => 64,
+      'mobile' => 40,
+    ],
+  ];
+
+// Add New Section "Spacing" Section
     $this->start_controls_section(
       'section_spacing',
       [
@@ -24,18 +38,18 @@
         ],
         'default' => [
           'unit' => 'px',
-          'size' => 80,
+          'size' => $spacing_config['defaults_top']['desktop'],
         ],
         'tablet_default' => [
           'unit' => 'px',
-          'size' => 64,
+          'size' => $spacing_config['defaults_top']['tablet'],
         ],
         'mobile_default' => [
           'unit' => 'px',
-          'size' => 40,
+          'size' => $spacing_config['defaults_top']['mobile'],
         ],
         'selectors' => [
-          '{{WRAPPER}} .container' => 'padding-top: {{SIZE}}{{UNIT}};',
+          '{{WRAPPER}} ' . $spacing_config['selector'] => 'padding-top: {{SIZE}}{{UNIT}};',
         ],
       ]
     );
@@ -56,18 +70,18 @@
         ],
         'default' => [
           'unit' => 'px',
-          'size' => 80,
+          'size' => $spacing_config['defaults_bottom']['desktop'],
         ],
         'tablet_default' => [
           'unit' => 'px',
-          'size' => 64,
+          'size' => $spacing_config['defaults_bottom']['tablet'],
         ],
         'mobile_default' => [
           'unit' => 'px',
-          'size' => 40,
+          'size' => $spacing_config['defaults_bottom']['mobile'],
         ],
         'selectors' => [
-          '{{WRAPPER}} .container' => 'padding-bottom: {{SIZE}}{{UNIT}};',
+          '{{WRAPPER}} ' . $spacing_config['selector'] => 'padding-bottom: {{SIZE}}{{UNIT}};',
         ],
       ]
     );
