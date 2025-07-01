@@ -1,6 +1,6 @@
 <?php 
 
-  $spacing_config = [
+  $spacing_defaults = [
     'selector' => '.container',
     'defaults_top' => [
       'desktop' => 80,
@@ -13,6 +13,8 @@
       'mobile' => 40,
     ],
   ];
+
+  $spacing_config = isset($spacing_config) ? array_replace_recursive($spacing_defaults, $spacing_config) : $spacing_defaults;
 
 // Add New Section "Spacing" Section
     $this->start_controls_section(

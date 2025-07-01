@@ -152,9 +152,6 @@ class Hero_Widget extends \Elementor\Widget_Base {
         // CTA Render;
         include('attr/cta/cta.render.php');
 
-        // Spacing Render;
-        include('attr/spacing/spacing.render.php');
-
         // Hero Style;
         $hero_style = $settings['hero_style'];
         if($hero_style === 'boxed') {

@@ -146,9 +146,6 @@ class Heading_Group_Widget extends \Elementor\Widget_Base {
         // Content Render;
         include('attr/content/content.render.php');
 
-        // Spacing Render;
-        include('attr/spacing/spacing.render.php');
-
         ?>
 
         <!-- Heading Section -->

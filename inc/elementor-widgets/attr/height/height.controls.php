@@ -10,8 +10,8 @@ $height_defaults = [
     ],
 ];
 
-// Merge with widget-specific config if provided
-$height_config = isset($height_config) ? array_merge($height_defaults, $height_config) : $height_defaults;
+// Merge with widget-specific config if provided - using recursive merge for nested arrays
+$height_config = isset($height_config) ? array_replace_recursive($height_defaults, $height_config) : $height_defaults;
 
 // Height Controls (Auto, Full, Marketing);
 $this->add_responsive_control(

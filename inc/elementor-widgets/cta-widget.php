@@ -131,8 +131,6 @@ class CTA_Widget extends \Elementor\Widget_Base {
         // CTA Render;
         include('attr/cta/cta.render.php');
 
-        // Spacing Render;
-        include('attr/spacing/spacing.render.php');
 
         ?>
 

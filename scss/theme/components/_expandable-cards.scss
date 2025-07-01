@@ -1,0 +1,100 @@
+@use "../utilities/breakpoints" as breakpoint;
+
+.expandable-cards-wrapper {
+    &--layout-3 {
+        display: grid;
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+        gap: 16px;
+
+        @include breakpoint.breakpoint(md) {
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        @include breakpoint.breakpoint(lg) {
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 32px;
+        }
+    }
+}
+
+.expandable-card {
+    font-size: 14px;
+
+    // .pill-wrapper {
+    //     justify-content: center;
+    // }
+
+    .visible-content,
+    .hidden-content {
+        padding: var(--expandable-card-padding);
+    }
+
+    .visible-content {
+        // text-align: center;
+        gap: 12px;
+
+        .icon-wrapper {
+            margin-bottom: 24px;
+
+            img {
+                display: block;
+                height: 100%;
+                width: auto;
+            }
+        }
+
+    }
+
+    .hidden-content {
+        border-top: 1px solid var(--color-Secondary-50);
+    }
+
+
+    .card-trigger {
+        margin-top: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 4px;
+        width: 100%;
+        text-align: center;
+        padding: 4px;
+        // background-color: var(--color-Primary-50);
+        color: var(--color-Primary-500);
+        font-weight: 600;
+        font-size: 14px;
+        border-radius: 4px;
+        cursor: pointer;
+
+
+        &:hover {
+            background-color: var(--color-Primary-50);
+        }
+    }
+
+
+    .expandable-card-list {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .expandable-card-list-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+
+        .icon-wrapper {
+            transform: translateY(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 16px;
+            width: 16px;
+            flex: 0 0 auto;
+            outline: 1px solid red;
+        }
+    }
+
+}

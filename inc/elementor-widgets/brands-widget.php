@@ -226,9 +226,6 @@ class Brands_Widget extends \Elementor\Widget_Base {
         // Background Render;
         include('attr/background/background.render.php');
 
-        // Spacing Render;
-        include('attr/spacing/spacing.render.php');
-
         ?>
 
         <!-- Brands Section -->

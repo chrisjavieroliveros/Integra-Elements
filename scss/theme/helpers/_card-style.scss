@@ -1,0 +1,22 @@
+.card-style {
+    background-color: var(--color-White);
+    border-radius: var(--card-style-border-radius);
+    border: 1px solid var(--card-style-border-color);
+    transition: all 240ms ease-out;
+
+    .active,
+    &:hover {
+        border: 1px solid var(--color-Secondary-200);
+        box-shadow: 0 8px 16px 0 rgba(122, 129, 140, 0.2);
+    }
+}
+
+.card-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--card-style-gap);
+
+    p {
+        margin: 0;
+    }
+}
