@@ -187,6 +187,27 @@ function integra_elements_handle_text_content_save() {
 }
 
 /**
+ * Handle form submissions for pill settings
+ */
+function integra_elements_handle_pill_save() {
+    if (isset($_POST['save_pill']) && wp_verify_nonce($_POST['integra_pill_nonce'], 'integra_pill_save')) {
+        if (current_user_can('manage_options')) {
+            $pill = $_POST['pill'];
+            
+            // Save each pill setting to WordPress options
+            foreach ($pill as $key => $value) {
+                update_option('integra_pill_' . $key, sanitize_text_field($value));
+            }
+            
+            // Show success message
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-success is-dismissible"><p>Pill settings saved successfully!</p></div>';
+            });
+        }
+    }
+}
+
+/**
  * Output dynamic CSS variables to frontend
  */
 function integra_elements_output_dynamic_css() {
@@ -212,6 +233,9 @@ function integra_elements_output_dynamic_css() {
     
     // Include buttons variables
     include(get_template_directory() . '/inc/admin/pages/buttons/buttons.vars.php');
+    
+    // Include pill variables
+    include(get_template_directory() . '/inc/admin/pages/pill/pill.vars.php');
 
     $css .= '}';
     
@@ -244,6 +268,7 @@ function integra_elements_admin_page_content() {
     integra_elements_handle_text_content_save();
     integra_elements_handle_eyebrow_text_save();
     integra_elements_handle_buttons_save();
+    integra_elements_handle_pill_save();
     ?>
     <div class="wrap">
         <h1><?php echo esc_html(get_admin_page_title()); ?></h1>
@@ -300,6 +325,7 @@ function integra_elements_admin_page_content() {
                         <ul class="integra-nav-list">
                             <li><a href="#" class="integra-nav-link" data-page="eyebrow-text">Eyebrow Text</a></li>
                             <li><a href="#" class="integra-nav-link" data-page="text-content">Text Content</a></li>
+                            <li><a href="#" class="integra-nav-link" data-page="pill">Pill</a></li>
                         </ul>
                     </div>
                 </div>
@@ -339,6 +365,8 @@ function integra_elements_admin_page_content() {
                     <h1>Eyebrow Text</h1>
                     <?php include(get_template_directory() . '/inc/admin/pages/eyebrow-text/eyebrow-text.page.php'); ?>
                 </div>
+                
+                <?php include(get_template_directory() . '/inc/admin/pages/pill/pill.page.php'); ?>
                 
             </div>
         </div>

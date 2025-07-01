@@ -491,7 +491,6 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 .card-content {
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 .card-content p {
   margin: 0;
@@ -2105,9 +2104,12 @@ dd:last-child {
 .expandable-card .pill-wrapper {
   justify-content: center;
 }
+.expandable-card .card-content {
+  gap: 12px;
+}
 .expandable-card .visible-content,
 .expandable-card .hidden-content {
-  padding: 24px 16px;
+  padding: 20px 12px;
 }
 .expandable-card .visible-content {
   text-align: center;
@@ -2125,6 +2127,7 @@ dd:last-child {
 }
 .expandable-card .hidden-content {
   border-top: 1px solid #eff2f5;
+  display: none;
 }
 .expandable-card .card-trigger {
   cursor: pointer;
@@ -2137,7 +2140,7 @@ dd:last-child {
   text-align: center;
   height: 32px;
   font-weight: 600;
-  font-size: 14px;
+  font-size: 12px;
   border-radius: 4px;
   color: #c33329;
 }
