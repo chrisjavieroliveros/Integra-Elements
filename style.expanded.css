@@ -2120,9 +2120,9 @@ dd:last-child {
   gap: 12px;
 }
 .expandable-card .visible-content .icon-wrapper {
-  margin-bottom: 24px;
   display: flex;
   justify-content: center;
+  margin-bottom: 8px;
 }
 .expandable-card .visible-content .icon-wrapper img {
   display: block;
@@ -2182,6 +2182,9 @@ dd:last-child {
 
 .elementor-editor-active .hidden-content {
   display: block;
+}
+.elementor-editor-active .expandable-card .visible-content {
+  height: auto;
 }
 
 .pill-wrapper {

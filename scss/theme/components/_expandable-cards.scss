@@ -44,9 +44,9 @@
         gap: 12px;
 
         .icon-wrapper {
-            margin-bottom: 24px;
             display: flex;
             justify-content: center;
+            margin-bottom: 8px;
 
             img {
                 display: block;
@@ -129,5 +129,11 @@
 .elementor-editor-active {
     .hidden-content {
         display: block;
+    }
+
+    .expandable-card {
+        .visible-content {
+            height: auto;
+        }
     }
 }
