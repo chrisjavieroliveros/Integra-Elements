@@ -21,21 +21,23 @@
 .expandable-card {
     font-size: 14px;
 
-    // .pill-wrapper {
-    //     justify-content: center;
-    // }
+    .pill-wrapper {
+        justify-content: center;
+    }
 
     .visible-content,
     .hidden-content {
-        padding: var(--expandable-card-padding);
+        padding: 24px 16px;
     }
 
     .visible-content {
-        // text-align: center;
+        text-align: center;
         gap: 12px;
 
         .icon-wrapper {
             margin-bottom: 24px;
+            display: flex;
+            justify-content: center;
 
             img {
                 display: block;
@@ -47,11 +49,11 @@
     }
 
     .hidden-content {
-        border-top: 1px solid var(--color-Secondary-50);
+        border-top: 1px solid #eff2f5;
     }
 
-
     .card-trigger {
+        cursor: pointer;
         margin-top: 16px;
         display: flex;
         align-items: center;
@@ -59,17 +61,16 @@
         gap: 4px;
         width: 100%;
         text-align: center;
-        padding: 4px;
-        // background-color: var(--color-Primary-50);
-        color: var(--color-Primary-500);
+
+        height: 32px;
         font-weight: 600;
         font-size: 14px;
         border-radius: 4px;
-        cursor: pointer;
+        color: #c33329;
 
 
         &:hover {
-            background-color: var(--color-Primary-50);
+            background-color: #fdebed;
         }
     }
 
@@ -93,7 +94,7 @@
             height: 16px;
             width: 16px;
             flex: 0 0 auto;
-            outline: 1px solid red;
+            // outline: 1px solid red;
         }
     }
 

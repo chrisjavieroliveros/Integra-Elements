@@ -478,20 +478,20 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 }
 
 .card-style {
-  background-color: var(--color-White);
-  border-radius: var(--card-style-border-radius);
-  border: 1px solid var(--card-style-border-color);
+  background-color: #ffffff;
+  border-radius: 8px;
+  border: 1px solid #d6dce4;
   transition: all 240ms ease-out;
 }
 .card-style .active, .card-style:hover {
-  border: 1px solid var(--color-Secondary-200);
+  border: 1px solid #b0bacd;
   box-shadow: 0 8px 16px 0 rgba(122, 129, 140, 0.2);
 }
 
 .card-content {
   display: flex;
   flex-direction: column;
-  gap: var(--card-style-gap);
+  gap: 12px;
 }
 .card-content p {
   margin: 0;
@@ -2102,15 +2102,21 @@ dd:last-child {
 .expandable-card {
   font-size: 14px;
 }
+.expandable-card .pill-wrapper {
+  justify-content: center;
+}
 .expandable-card .visible-content,
 .expandable-card .hidden-content {
-  padding: var(--expandable-card-padding);
+  padding: 24px 16px;
 }
 .expandable-card .visible-content {
+  text-align: center;
   gap: 12px;
 }
 .expandable-card .visible-content .icon-wrapper {
   margin-bottom: 24px;
+  display: flex;
+  justify-content: center;
 }
 .expandable-card .visible-content .icon-wrapper img {
   display: block;
@@ -2118,9 +2124,10 @@ dd:last-child {
   width: auto;
 }
 .expandable-card .hidden-content {
-  border-top: 1px solid var(--color-Secondary-50);
+  border-top: 1px solid #eff2f5;
 }
 .expandable-card .card-trigger {
+  cursor: pointer;
   margin-top: 16px;
   display: flex;
   align-items: center;
@@ -2128,15 +2135,14 @@ dd:last-child {
   gap: 4px;
   width: 100%;
   text-align: center;
-  padding: 4px;
-  color: var(--color-Primary-500);
+  height: 32px;
   font-weight: 600;
   font-size: 14px;
   border-radius: 4px;
-  cursor: pointer;
+  color: #c33329;
 }
 .expandable-card .card-trigger:hover {
-  background-color: var(--color-Primary-50);
+  background-color: #fdebed;
 }
 .expandable-card .expandable-card-list {
   display: flex;
@@ -2156,20 +2162,19 @@ dd:last-child {
   height: 16px;
   width: 16px;
   flex: 0 0 auto;
-  outline: 1px solid red;
 }
 
 .pill-wrapper {
   display: flex;
   flex-wrap: wrap;
-  gap: 8px;
+  gap: var(--pill-gap);
 }
 
 .pill {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 600;
+  font-weight: var(--pill-font-weight);
   color: var(--pill-color);
   border-radius: var(--pill-border-radius);
   padding: 0 var(--pill-padding-x);

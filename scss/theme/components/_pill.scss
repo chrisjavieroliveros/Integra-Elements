@@ -1,14 +1,16 @@
 .pill-wrapper {
     display: flex;
     flex-wrap: wrap;
-    gap: 8px;
+    gap: var(--pill-gap);
 }
 
 .pill {
     display: flex;
     align-items: center;
     justify-content: center;
-    font-weight: 600;
+
+    // Pill Variables;
+    font-weight: var(--pill-font-weight);
     color: var(--pill-color);
     border-radius: var(--pill-border-radius);
     padding: 0 var(--pill-padding-x);
