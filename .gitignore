@@ -1,3 +1,7 @@
 # Compiled CSS files
 assets/css/config.css 
-assets/css/config.min.css 
+assets/css/config.min.css
+
+assets/css/custom.css
+assets/css/custom.min.css
+

@@ -8,11 +8,6 @@ $height_defaults = [
         'tablet' => 60,
         'mobile' => 70,
     ],
-    'range' => [
-        'min' => 0,
-        'max' => 100,
-    ],
-    'unit' => 'svh'
 ];
 
 // Merge with widget-specific config if provided
@@ -24,24 +19,29 @@ $this->add_responsive_control(
     [
         'label' => __('Height', 'integra-elements'),
         'type' => \Elementor\Controls_Manager::SLIDER,
-        'size_units' => [$height_config['unit']],
+        'size_units' => ['svh', 'px'],
         'range' => [
-            $height_config['unit'] => [
-                'min' => $height_config['range']['min'],
-                'max' => $height_config['range']['max'],
+            'svh' => [
+                'min' => 0,
+                'max' => 100,
                 'step' => 1,
+            ],
+            'px' => [
+                'min' => 0,
+                'max' => 2000,
+                'step' => 10,
             ],
         ],
         'default' => [
-            'unit' => $height_config['unit'],
+            'unit' => 'svh',
             'size' => $height_config['defaults']['desktop'],
         ],
         'tablet_default' => [
-            'unit' => $height_config['unit'],
+            'unit' => 'svh',
             'size' => $height_config['defaults']['tablet'],
         ],
         'mobile_default' => [
-            'unit' => $height_config['unit'],
+            'unit' => 'svh',
             'size' => $height_config['defaults']['mobile'],
         ],
         'selectors' => [
