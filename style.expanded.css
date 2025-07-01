@@ -2083,7 +2083,7 @@ dd:last-child {
 .expandable-cards-wrapper--layout-3 {
   display: grid;
   grid-template-columns: repeat(1, minmax(0, 1fr));
-  gap: 16px;
+  gap: 18px;
 }
 @media (min-width: 768px) {
   .expandable-cards-wrapper--layout-3 {
@@ -2109,9 +2109,13 @@ dd:last-child {
 }
 .expandable-card .visible-content,
 .expandable-card .hidden-content {
-  padding: 20px 12px;
+  padding: 24px 16px;
 }
 .expandable-card .visible-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
   text-align: center;
   gap: 12px;
 }
@@ -2165,6 +2169,19 @@ dd:last-child {
   height: 16px;
   width: 16px;
   flex: 0 0 auto;
+}
+.expandable-card.expanded .visible-content {
+  height: auto;
+}
+.expandable-card.expanded .hidden-content {
+  display: block;
+}
+.expandable-card.expanded .card-trigger i {
+  transform: rotate(180deg);
+}
+
+.elementor-editor-active .hidden-content {
+  display: block;
 }
 
 .pill-wrapper {

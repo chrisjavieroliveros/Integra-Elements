@@ -230,12 +230,12 @@ class Expandable_Cards_Widget extends \Elementor\Widget_Base {
                     <?php foreach ($cards as $card) : ?>
                         <div class="expandable-card card-style">
                             <div class="visible-content">
-                                <?php if (!empty($card['icon']['url'])) : ?>
-                                <div class="icon-wrapper">
-                                    <img src="<?= esc_url($card['icon']['url']); ?>" alt="<?= esc_attr($card['title']); ?>">
-                                </div>
-                                <?php endif; ?>
                                 <div class="card-content">
+                                    <?php if (!empty($card['icon']['url'])) : ?>
+                                    <div class="icon-wrapper">
+                                        <img src="<?= esc_url($card['icon']['url']); ?>" alt="<?= esc_attr($card['title']); ?>">
+                                    </div>
+                                    <?php endif; ?>
                                     <?php if (!empty($card['title'])) : ?>
                                         <h6><?= esc_html($card['title']); ?></h6>
                                     <?php endif; ?>
@@ -252,7 +252,7 @@ class Expandable_Cards_Widget extends \Elementor\Widget_Base {
                                         </div>
                                     <?php endif; ?>
                                 </div>
-                                <span class="card-trigger"> Learn More <i class="fa fa-chevron-down" aria-hidden="true"></i> </span>
+                                <span class="card-trigger"> <span class="card-trigger-text">Learn More</span> <i class="fa fa-chevron-down" aria-hidden="true"></i> </span>
                             </div>
                             <div class="hidden-content">
                                 <div class="expandable-card-list">

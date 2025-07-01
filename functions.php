@@ -12,8 +12,9 @@ if (!defined('_S_VERSION')) {
 
 function integra_elements_scripts() {
 
-    // Theme Styles
+    // Theme Style & Script
     wp_enqueue_style('integra-elements-style', get_stylesheet_uri(), array(), _S_VERSION);
+    wp_enqueue_script('integra-elements-js', get_template_directory_uri() . '/js/integra-elements.js', array(), _S_VERSION, true);
 
     // GSAP Animation Library
     wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js', array(), '3.13.0', true);

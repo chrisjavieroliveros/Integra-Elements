@@ -4,7 +4,7 @@
     &--layout-3 {
         display: grid;
         grid-template-columns: repeat(1, minmax(0, 1fr));
-        gap: 16px;
+        gap: 18px;
 
         @include breakpoint.breakpoint(md) {
             grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -31,10 +31,15 @@
 
     .visible-content,
     .hidden-content {
-        padding: 20px 12px;
+        padding: 24px 16px;
     }
 
     .visible-content {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+
+        height: 100%;
         text-align: center;
         gap: 12px;
 
@@ -102,4 +107,27 @@
         }
     }
 
+    &.expanded {
+        .visible-content {
+            height: auto;
+        }
+
+        .hidden-content {
+            display: block;
+        }
+
+        .card-trigger {
+            i {
+                transform: rotate(180deg);
+            }
+        }
+    }
+
+}
+
+// Override when in Elementor Editor
+.elementor-editor-active {
+    .hidden-content {
+        display: block;
+    }
 }
