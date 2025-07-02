@@ -23,25 +23,25 @@
       'options' => [
         
         'Transparent' => 'Transparent',
+        'Separator_0' => '────',
 
         // Brand Colors
         'Primary' => 'Primary',
         'Secondary' => 'Secondary',
-        
+        'Separator_1' => '────',
+          
+        // Base Colors
+        'Light' => 'Light',
+        'Dark' => 'Dark',
+        'Black' => 'Black',
+        'White' => 'White',
+        'Separator_2' => '────',
+
         // State Colors
         'Danger' => 'Danger',
         'Warning' => 'Warning',
         'Success' => 'Success',
         'Info' => 'Info',
-        
-        // Base Colors
-        'Black' => 'Black',
-        'White' => 'White',
-
-        // Light/Dark Variants
-        'Light' => 'Light',
-        'Dark' => 'Dark',
-
 
       ],
       'default' => 'Transparent',

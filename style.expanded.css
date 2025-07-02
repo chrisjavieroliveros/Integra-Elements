@@ -1215,7 +1215,6 @@ a {
   text-decoration: underline;
 }
 a:hover {
-  transition: color 0.2s;
   color: var(--color-Primary-400);
 }
 
@@ -1408,7 +1407,7 @@ blockquote cite::before {
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all 240ms ease-out;
+  transition: all 120ms ease-out;
   font-size: var(--btn-md-font-size);
   font-weight: var(--btn-font-weight);
   height: var(--btn-md-height);
@@ -1427,7 +1426,7 @@ blockquote cite::before {
 }
 .btn:hover {
   text-decoration: none;
-  transition-duration: 120ms;
+  transform: translateY(-4px);
 }
 .btn--sm {
   height: var(--btn-sm-height);
@@ -1451,7 +1450,7 @@ blockquote cite::before {
 .btn--flat.btn--primary:hover {
   color: var(--color-Primary-Contrast);
   background-color: var(--color-Primary-Shade);
-  border-color: var(--color-Primary-700);
+  border-color: var(--color-Primary-Shade);
 }
 .btn--flat.btn--primary:active {
   background-color: var(--color-Primary-800);
@@ -1548,8 +1547,8 @@ blockquote cite::before {
   border-color: var(--color-Dark-500);
 }
 .btn--outline {
-  background-color: var(--color-White);
   border-width: var(--btn-border-width);
+  background-color: var(--btn-outline-bg);
 }
 .btn--outline.btn--primary {
   border-color: var(--color-Primary);
@@ -1567,13 +1566,37 @@ blockquote cite::before {
   background-color: var(--color-Secondary);
   color: var(--color-Secondary-Contrast);
 }
-.btn--outline.btn--white {
-  border-color: var(--color-White);
-  color: var(--color-Dark-400);
+.btn--outline.btn--danger {
+  border-color: var(--color-Danger);
+  color: var(--color-Danger);
 }
-.btn--outline.btn--white:hover {
-  background-color: var(--color-White);
-  color: var(--color-Black);
+.btn--outline.btn--danger:hover {
+  background-color: var(--color-Danger);
+  color: var(--color-Danger-Contrast);
+}
+.btn--outline.btn--warning {
+  border-color: var(--color-Warning);
+  color: var(--color-Warning);
+}
+.btn--outline.btn--warning:hover {
+  background-color: var(--color-Warning);
+  color: var(--color-Warning-Contrast);
+}
+.btn--outline.btn--success {
+  border-color: var(--color-Success);
+  color: var(--color-Success);
+}
+.btn--outline.btn--success:hover {
+  background-color: var(--color-Success);
+  color: var(--color-Success-Contrast);
+}
+.btn--outline.btn--info {
+  border-color: var(--color-Info);
+  color: var(--color-Info);
+}
+.btn--outline.btn--info:hover {
+  background-color: var(--color-Info);
+  color: var(--color-Info-Contrast);
 }
 .btn--outline.btn--black {
   border-color: var(--color-Black);
@@ -1583,13 +1606,29 @@ blockquote cite::before {
   background-color: var(--color-Black);
   color: var(--color-White);
 }
+.btn--outline.btn--white {
+  border-color: var(--color-White);
+  color: var(--color-White);
+}
+.btn--outline.btn--white:hover {
+  background-color: var(--color-White);
+  color: var(--color-Black);
+}
 .btn--outline.btn--light {
   border-color: var(--color-Light-500);
-  color: var(--color-Dark-400);
+  color: var(--color-Dark-500);
 }
 .btn--outline.btn--light:hover {
   background-color: var(--color-Light-500);
-  color: var(--color-Dark-600);
+  color: var(--color-Dark-500);
+}
+.btn--outline.btn--dark {
+  border-color: var(--color-Dark-500);
+  color: var(--color-Dark-500);
+}
+.btn--outline.btn--dark:hover {
+  background-color: var(--color-Dark-500);
+  color: var(--color-White);
 }
 
 /**

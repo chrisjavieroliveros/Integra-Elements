@@ -146,7 +146,6 @@ a {
   text-decoration: underline;
 
   &:hover {
-    transition: color 0.2s;
     color: var(--color-Primary-400);
   }
 }

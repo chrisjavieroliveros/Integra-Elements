@@ -74,12 +74,19 @@
       'type' => \Elementor\Controls_Manager::SELECT,
       'default' => 'primary',
       'options' => [
+        // Brand Colors
         'primary' => __( 'Primary', 'your-text-domain' ),
         'secondary' => __( 'Secondary', 'your-text-domain' ),
-        'black' => __( 'Black', 'your-text-domain' ),
-        'white' => __( 'White', 'your-text-domain' ),
+        'separator_1' => __( '────', 'your-text-domain' ),
+
+        // Base Colors
         'light' => __( 'Light', 'your-text-domain' ),
         'dark' => __( 'Dark', 'your-text-domain' ),
+        'black' => __( 'Black', 'your-text-domain' ),
+        'white' => __( 'White', 'your-text-domain' ),        
+        'separator_2' => __( '────', 'your-text-domain' ),
+        
+        // State Colors
         'danger' => __( 'Danger', 'your-text-domain' ),
         'warning' => __( 'Warning', 'your-text-domain' ),
         'success' => __( 'Success', 'your-text-domain' ),

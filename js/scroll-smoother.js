@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', function () {
   //     scrollTrigger: {
   //       trigger: elem,
   //       start: "top 80%",
-  //       end: "bottom 20%",
+  //       end: "bottom 5%",
   //       toggleActions: "play none none none", // Changed to reverse animations when scrolling up
   //       onEnter: () => console.log(`Element ${index} animation entered`),
   //       onLeave: () => console.log(`Element ${index} animation left`),
