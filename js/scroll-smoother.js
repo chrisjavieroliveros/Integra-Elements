@@ -33,21 +33,21 @@ document.addEventListener('DOMContentLoaded', function () {
   // You can uncomment and customize these as needed
 
   // Fade in Elementor Elements on scroll
-  // gsap.utils.toArray('[data-gsap-anim-flyin]').forEach((elem, index) => {
+  // gsap.utils.toArray('.elementor-widget').forEach((elem, index) => {
   //   console.log(`Setting up scroll animation for element ${index}:`, elem);
 
   //   // Create the animation
   //   const animation = gsap.fromTo(elem, {
   //     opacity: 0,
-  //     y: 16
+  //     y: 56
   //   }, {
   //     opacity: 1,
   //     y: 0,
-  //     duration: 0.2,
+  //     duration: 0.5,
   //     scrollTrigger: {
   //       trigger: elem,
   //       start: "top 80%",
-  //       end: "bottom 10%",
+  //       end: "bottom 20%",
   //       toggleActions: "play none none none", // Changed to reverse animations when scrolling up
   //       onEnter: () => console.log(`Element ${index} animation entered`),
   //       onLeave: () => console.log(`Element ${index} animation left`),
