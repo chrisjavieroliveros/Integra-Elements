@@ -170,14 +170,14 @@ class Expandable_Cards_Widget extends \Elementor\Widget_Base {
         $spacing_config = [
             'selector' => '.expandable-cards',
             'defaults_top' => [
-                'desktop' => 0,
-                'tablet' => 0,
-                'mobile' => 0,
+                'desktop' => 24,
+                'tablet' => 16,
+                'mobile' => 12,
             ],
             'defaults_bottom' => [
-                'desktop' => 0,
-                'tablet' => 0,
-                'mobile' => 0,
+                'desktop' => 24,
+                'tablet' => 16,
+                'mobile' => 12,
             ],
         ];
         include('attr/spacing/spacing.controls.php');

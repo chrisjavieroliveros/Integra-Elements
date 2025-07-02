@@ -2078,6 +2078,7 @@ dd:last-child {
 .divider-section .divider {
   width: 100%;
   height: 1px;
+  margin: 0 auto;
 }
 
 .expandable-cards-wrapper--layout-3 {
