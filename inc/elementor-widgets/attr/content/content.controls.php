@@ -30,6 +30,14 @@
             // Brand Colors
             'Primary' => 'Primary',
             'Secondary' => 'Secondary',
+            'Separator_0' => '────',
+
+            // Base Colors
+            'Light-500' => 'Light',
+            'Dark-500' => 'Dark',
+            'Black' => 'Black',
+            'White' => 'White',
+            'Separator_1' => '────',
             
             // State Colors
             'Danger' => 'Danger',
@@ -37,9 +45,6 @@
             'Success' => 'Success',
             'Info' => 'Info',
             
-            // Base Colors
-            'Black' => 'Black',
-            'White' => 'White',
     
           ],
         'condition' => [

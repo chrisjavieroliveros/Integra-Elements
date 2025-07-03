@@ -1407,7 +1407,7 @@ blockquote cite::before {
   text-align: center;
   cursor: pointer;
   border: 1px solid transparent;
-  transition: all 120ms ease-out;
+  transition: var(--btn-transition);
   font-size: var(--btn-md-font-size);
   font-weight: var(--btn-font-weight);
   height: var(--btn-md-height);
@@ -1426,7 +1426,7 @@ blockquote cite::before {
 }
 .btn:hover {
   text-decoration: none;
-  transform: translateY(-4px);
+  transform: var(--btn-onhover-transform);
 }
 .btn--sm {
   height: var(--btn-sm-height);
@@ -1616,7 +1616,7 @@ blockquote cite::before {
 }
 .btn--outline.btn--light {
   border-color: var(--color-Light-500);
-  color: var(--color-Dark-500);
+  color: var(--color-Dark-400);
 }
 .btn--outline.btn--light:hover {
   background-color: var(--color-Light-500);

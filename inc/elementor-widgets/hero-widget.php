@@ -91,6 +91,98 @@ class Hero_Widget extends \Elementor\Widget_Base {
             ]
         );
 
+        // Example Popover Toggle Control
+        $this->add_control(
+            'example_popover_toggle',
+            [
+                'label' => __('Example Settings', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::POPOVER_TOGGLE,
+                'label_off' => __('Default', 'integra-elements'),
+                'label_on' => __('Custom', 'integra-elements'),
+                'return_value' => 'yes',
+            ]
+        );
+
+        $this->start_popover();
+
+        // Sample Text Control
+        $this->add_control(
+            'sample_text',
+            [
+                'label' => __('Sample Text', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => __('Hello World', 'integra-elements'),
+                'condition' => [
+                    'example_popover_toggle' => 'yes'
+                ]
+            ]
+        );
+
+        // Sample Color Control
+        $this->add_control(
+            'sample_color',
+            [
+                'label' => __('Sample Color', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::COLOR,
+                'default' => '#3498db',
+                'condition' => [
+                    'example_popover_toggle' => 'yes'
+                ]
+            ]
+        );
+
+        // Sample Number Control
+        $this->add_control(
+            'sample_number',
+            [
+                'label' => __('Sample Number', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::NUMBER,
+                'min' => 0,
+                'max' => 100,
+                'step' => 1,
+                'default' => 50,
+                'condition' => [
+                    'example_popover_toggle' => 'yes'
+                ]
+            ]
+        );
+
+        // Sample Select Control
+        $this->add_control(
+            'sample_select',
+            [
+                'label' => __('Sample Select', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'option1' => __('Option 1', 'integra-elements'),
+                    'option2' => __('Option 2', 'integra-elements'),
+                    'option3' => __('Option 3', 'integra-elements')
+                ],
+                'default' => 'option1',
+                'condition' => [
+                    'example_popover_toggle' => 'yes'
+                ]
+            ]
+        );
+
+        // Sample Switcher Control
+        $this->add_control(
+            'sample_switcher',
+            [
+                'label' => __('Sample Switch', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'label_on' => __('On', 'integra-elements'),
+                'label_off' => __('Off', 'integra-elements'),
+                'return_value' => 'yes',
+                'default' => 'no',
+                'condition' => [
+                    'example_popover_toggle' => 'yes'
+                ]
+            ]
+        );
+
+        $this->end_popover();
+
         // End General Section
         $this->end_controls_section();
 

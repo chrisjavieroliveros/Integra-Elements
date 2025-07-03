@@ -142,19 +142,11 @@ function integra_elements_handle_spacing_save() {
 function integra_elements_handle_buttons_save() {
     if (isset($_POST['submit_buttons']) && wp_verify_nonce($_POST['integra_buttons_nonce'], 'integra_buttons_save')) {
         if (current_user_can('manage_options')) {
-            // Get all button form fields
-            $btn_fields = [
-                'integra_btn_line_height', 'integra_btn_border_radius', 'integra_btn_font_weight', 'integra_btn_border_width',
-                'integra_btn_sm_height', 'integra_btn_sm_padding_x', 'integra_btn_sm_font_size',
-                'integra_btn_md_height', 'integra_btn_md_padding_x', 'integra_btn_md_font_size',
-                'integra_btn_lg_height', 'integra_btn_lg_padding_x', 'integra_btn_lg_font_size'
-            ];
+            $button = $_POST['button'];
             
             // Save each button setting to WordPress options
-            foreach ($btn_fields as $field) {
-                if (isset($_POST[$field])) {
-                    update_option($field, sanitize_text_field($_POST[$field]));
-                }
+            foreach ($button as $key => $value) {
+                update_option('integra_button_' . $key, sanitize_text_field($value));
             }
             
             // Show success message

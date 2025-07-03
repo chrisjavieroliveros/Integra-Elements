@@ -73,7 +73,8 @@
       'condition' => [
         'background_color' => [
           'Primary',
-        ]
+        ],
+        'background' => 'color'
       ],
       'default' => 'Primary-500',
     ]
@@ -101,7 +102,8 @@
       'condition' => [
         'background_color' => [
           'Secondary',
-        ]
+        ],
+        'background' => 'color'
       ],
       'default' => 'Secondary-500',
     ]
@@ -130,7 +132,8 @@
       'condition' => [
         'background_color' => [
           'Light',
-        ]
+        ],
+        'background' => 'color'
       ],
       'default' => 'Light-50',
     ]
@@ -158,7 +161,8 @@
       'condition' => [
         'background_color' => [
           'Dark',
-        ]
+        ],
+        'background' => 'color'
       ],
       'default' => 'Dark-50',
     ]
