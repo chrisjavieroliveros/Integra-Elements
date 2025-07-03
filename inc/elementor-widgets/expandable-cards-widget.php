@@ -81,7 +81,7 @@ class Expandable_Cards_Widget extends \Elementor\Widget_Base {
             [
                 'label' => __('Icon', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::MEDIA,
-                'default' => [ 'url' => '' ],
+                'default' => [ 'url' => 'https://placehold.co/48x48' ],
             ]
         );
 
@@ -102,8 +102,8 @@ class Expandable_Cards_Widget extends \Elementor\Widget_Base {
             [
                 'label' => __('Pills', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'placeholder' => __('Enter pill text separated by commas (e.g., Pill 1, Pill 2, Pill 3)', 'integra-elements'),
-                'default' => 'Pill 1, Pill 2',
+                'placeholder' => __('Enter pill text separated by pipes (e.g., Pill 1 | Pill 2 | Pill 3)', 'integra-elements'),
+                'default' => 'Pill 1 | Pill 2',
             ]
         );
 
@@ -113,8 +113,16 @@ class Expandable_Cards_Widget extends \Elementor\Widget_Base {
             [
                 'label' => __('List Item: Text', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'placeholder' => __('Enter list items separated by commas (e.g., List item 1, List item 2, List item 3)', 'integra-elements'),
-                'default' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit, Sed do eiusmod tempor incididunt ut labore dolore magna, Ut enim ad minim veniam quis nostrud exercitation',
+                'placeholder' => __('Enter list items separated by pipes (e.g., List item 1 | List item 2 | List item 3)', 'integra-elements'),
+                'default' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit
+
+| 
+
+Sed do eiusmod tempor incididunt ut labore dolore magna
+
+| 
+
+Ut enim ad minim veniam quis nostrud exercitation',
             ]
         );
 
@@ -124,9 +132,13 @@ class Expandable_Cards_Widget extends \Elementor\Widget_Base {
             [
                 'label' => __('List Item: Icons', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'placeholder' => __('fa fa-exclamation-circle | Warning, fa fa-check-circle-o | Danger, fa fa-dot-circle-o | Success', 'integra-elements'),
-                'description' => __('Format: icon class | color. Use color names (Warning, Success) or theme colors (Secondary-500, Light-300). Separate with commas.', 'integra-elements'),
-                'default' => 'fa fa-exclamation-circle | Warning, fa fa-check-circle-o | Danger, fa fa-dot-circle-o | Success',
+                'placeholder' => __('fa fa-exclamation-circle | Warning || fa fa-check-circle-o | Danger || fa fa-dot-circle-o | Success', 'integra-elements'),
+                'description' => __('Format: icon class | color. Use color names (Warning, Success) or theme colors (Secondary-500, Light-300). Separate with double pipes (||).', 'integra-elements'),
+                'default' => 'fa fa-exclamation-circle | Warning 
+|| 
+fa fa-check-circle-o | Danger 
+|| 
+fa fa-dot-circle-o | Success',
             ]
         );
 
@@ -141,23 +153,59 @@ class Expandable_Cards_Widget extends \Elementor\Widget_Base {
                     [
                         'title' => 'Expandable Card #1',
                         'card_content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                        'pills_text' => 'Pill 1, Pill 2',
-                        'list_texts' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit, Sed do eiusmod tempor incididunt ut labore dolore magna, Ut enim ad minim veniam quis nostrud exercitation',
-                        'list_icons' => 'fa fa-exclamation-circle | Warning, fa fa-check-circle-o | Danger, fa fa-dot-circle-o | Success',
+                        'pills_text' => 'Pill 1 | Pill 2',
+                        'list_texts' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit
+
+| 
+
+Sed do eiusmod tempor incididunt ut labore dolore magna
+
+| 
+
+Ut enim ad minim veniam quis nostrud exercitation',
+                        'list_icons' => 'fa fa-exclamation-circle | Warning 
+|| 
+fa fa-check-circle-o | Danger 
+|| 
+fa fa-dot-circle-o | Success',
                     ],
                     [
                         'title' => 'Expandable Card #2',
                         'card_content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                        'pills_text' => 'Pill 1, Pill 2',
-                        'list_texts' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit, Sed do eiusmod tempor incididunt ut labore dolore magna, Ut enim ad minim veniam quis nostrud exercitation',
-                        'list_icons' => 'fa fa-exclamation-circle | Warning, fa fa-check-circle-o | Danger, fa fa-dot-circle-o | Success',
+                        'pills_text' => 'Pill 1 | Pill 2',
+                        'list_texts' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit
+
+| 
+
+Sed do eiusmod tempor incididunt ut labore dolore magna
+
+| 
+
+Ut enim ad minim veniam quis nostrud exercitation',
+                        'list_icons' => 'fa fa-exclamation-circle | Warning 
+|| 
+fa fa-check-circle-o | Danger 
+|| 
+fa fa-dot-circle-o | Success',
                     ],
                     [
                         'title' => 'Expandable Card #3',
                         'card_content' => 'Lorem ipsum dolor sit amet consectetur adipisicing elit.',
-                        'pills_text' => 'Pill 1, Pill 2',
-                        'list_texts' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit, Sed do eiusmod tempor incididunt ut labore dolore magna, Ut enim ad minim veniam quis nostrud exercitation',
-                        'list_icons' => 'fa fa-exclamation-circle | Warning, fa fa-check-circle-o | Danger, fa fa-dot-circle-o | Success',
+                        'pills_text' => 'Pill 1 | Pill 2',
+                        'list_texts' => 'Lorem ipsum dolor sit amet consectetur adipiscing elit
+
+| 
+
+Sed do eiusmod tempor incididunt ut labore dolore magna
+
+| 
+
+Ut enim ad minim veniam quis nostrud exercitation',
+                        'list_icons' => 'fa fa-exclamation-circle | Warning 
+|| 
+fa fa-check-circle-o | Danger 
+|| 
+fa fa-dot-circle-o | Success',
                     ],
                 ],
                 'title_field' => '{{{ title }}}',
@@ -245,7 +293,7 @@ class Expandable_Cards_Widget extends \Elementor\Widget_Base {
                                     <?php if (!empty($card['pills_text'])) : ?>
                                         <div class="pill-wrapper">
                                             <?php 
-                                            $pills = array_filter(array_map('trim', explode(',', $card['pills_text'])));
+                                            $pills = array_filter(array_map('trim', explode('|', $card['pills_text'])));
                                             foreach ($pills as $pill) : ?>
                                                 <span class="pill pill--light-200"><?= esc_html($pill); ?></span>
                                             <?php endforeach; ?>
@@ -258,9 +306,9 @@ class Expandable_Cards_Widget extends \Elementor\Widget_Base {
                                 <div class="expandable-card-list">
                                     <?php if (!empty($card['list_texts'])) : ?>
                                         <?php 
-                                        $expandable_items = array_filter(array_map('trim', explode(',', $card['list_texts'])));
+                                        $expandable_items = array_filter(array_map('trim', explode('|', $card['list_texts'])));
                                         $expandable_icons_raw = !empty($card['list_icons']) ? 
-                                            array_filter(array_map('trim', explode(',', $card['list_icons']))) : [];
+                                            array_filter(array_map('trim', explode('||', $card['list_icons']))) : [];
                                         
                                         foreach ($expandable_items as $index => $item) : 
                                             $icon_class = '';

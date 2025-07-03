@@ -52,6 +52,30 @@ class Divider_Widget extends \Elementor\Widget_Base {
         // Container Controls;
         include('attr/container/container.controls.php');
 
+        // Height Controls
+        $this->add_responsive_control(
+            'height',
+            [
+                'label' => __('Height', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 1,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'size' => 1,
+                    'unit' => 'px',
+                ],
+                'selectors' => [
+                    '{{WRAPPER}} .divider' => 'height: {{SIZE}}{{UNIT}};',
+                ],
+            ]
+        );
+
         // Width Controls
         $this->add_responsive_control(
             'max_width',

@@ -22,6 +22,8 @@ if($heading_class !== 'default') {
 }   
 
 // Add the contents to the content markup;
-$content_markup .= '<div class="inner-content">'. $contents .'</div>';
+if($contents !== '') {
+    $content_markup .= '<div class="inner-content">'. $contents .'</div>';
+}
 
 ?>

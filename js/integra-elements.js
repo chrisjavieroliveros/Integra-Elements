@@ -12,6 +12,26 @@
     $(document).ready(function () {
         console.log('Integra Elements Theme - Ready');
 
+        /* Segment UI */
+        $('.segment-ui-item').on('click', function (e) {
+            e.preventDefault();
+
+            console.log('Segment UI Item Clicked');
+
+            // Remove active class from all items
+            $('.segment-ui-item').removeClass('active');
+
+            // Add active class to the clicked item
+            $(this).addClass('active');
+
+            // Show the previews
+            $('.segment-ui-preview').removeClass('show');
+
+            // Show the preview of the clicked item
+            $('.segment-ui-preview').eq($(this).index()).addClass('show');
+
+        });
+
         /* Expandable Cards */
         $('.expandable-card .card-trigger').on('click', function (e) {
 
