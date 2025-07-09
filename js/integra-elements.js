@@ -10,7 +10,7 @@
 
     // Initialize when the DOM is fully loaded
     $(document).ready(function () {
-        console.log('Integra Elements Theme - Ready');
+        console.log('Integra Elements Theme - Loaded');
 
         /* Segment UI */
         $('.segment-ui-item').on('click', function (e) {
