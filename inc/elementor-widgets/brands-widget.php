@@ -82,7 +82,7 @@ class Brands_Widget extends \Elementor\Widget_Base {
                 'range' => [
                     'px' => [
                         'min' => 24,
-                        'max' => 120,
+                        'max' => 240,
                         'step' => 8,
                     ],
                 ],
