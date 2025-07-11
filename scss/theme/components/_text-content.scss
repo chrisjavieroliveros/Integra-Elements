@@ -13,6 +13,30 @@
             font-size: var(--text-content-font-size);
             line-height: var(--text-content-line-height);
         }
+
+        ul,
+        ol {
+
+            &.styled-icons {
+                padding-left: 0;
+
+                li {
+                    position: relative;
+                    list-style: none;
+                    padding-left: 1.5rem;
+                }
+
+                .fas {
+                    position: absolute;
+                    left: 0;
+                    top: 0.25rem;
+                }
+
+
+            }
+
+        }
+
     }
 
 }

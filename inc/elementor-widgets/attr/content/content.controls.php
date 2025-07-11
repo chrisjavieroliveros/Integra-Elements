@@ -240,6 +240,39 @@
         ]
     );
 
+    // List Style Icon Color
+    $this->add_control(
+        'list_style_icon_color',
+        [
+            'label' => __('List Icon Color', 'integra-elements'),
+            'type' => \Elementor\Controls_Manager::SELECT,
+            'default' => 'Primary',
+            'options' => [
+                
+                // Brand Colors
+                'Primary' => 'Primary',
+                'Secondary' => 'Secondary',
+                'Separator_0' => '────',
+
+                // Base Colors
+                'Light-500' => 'Light',
+                'Dark-500' => 'Dark',
+                'Black' => 'Black',
+                'White' => 'White',
+                'Separator_1' => '────',
+                
+                // State Colors
+                'Danger' => 'Danger',
+                'Warning' => 'Warning',
+                'Success' => 'Success',
+                'Info' => 'Info',
+            ],
+            'condition' => [
+                'list_style' => 'icon',
+            ],
+        ]
+    );
+
 
     // Paragraph (WYSIWYG);
     $this->add_control(

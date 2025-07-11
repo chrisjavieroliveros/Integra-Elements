@@ -2099,6 +2099,22 @@ dd:last-child {
   font-size: var(--text-content-font-size);
   line-height: var(--text-content-line-height);
 }
+.text-content .inner-content ul.styled-icons,
+.text-content .inner-content ol.styled-icons {
+  padding-left: 0;
+}
+.text-content .inner-content ul.styled-icons li,
+.text-content .inner-content ol.styled-icons li {
+  position: relative;
+  list-style: none;
+  padding-left: 1.5rem;
+}
+.text-content .inner-content ul.styled-icons .fas,
+.text-content .inner-content ol.styled-icons .fas {
+  position: absolute;
+  left: 0;
+  top: 0.25rem;
+}
 
 .divider-section {
   display: flex;
