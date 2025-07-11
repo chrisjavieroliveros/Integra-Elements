@@ -200,6 +200,27 @@ function integra_elements_handle_pill_save() {
 }
 
 /**
+ * Handle form submissions for display icon settings
+ */
+function integra_elements_handle_display_icon_save() {
+    if (isset($_POST['save_display_icon']) && wp_verify_nonce($_POST['integra_display_icon_nonce'], 'integra_display_icon_save')) {
+        if (current_user_can('manage_options')) {
+            $display_icon = $_POST['display_icon'];
+            
+            // Save each display icon setting to WordPress options
+            foreach ($display_icon as $key => $value) {
+                update_option('integra_display_icon_' . $key, sanitize_text_field($value));
+            }
+            
+            // Show success message
+            add_action('admin_notices', function() {
+                echo '<div class="notice notice-success is-dismissible"><p>Display Icon settings saved successfully!</p></div>';
+            });
+        }
+    }
+}
+
+/**
  * Output dynamic CSS variables to frontend
  */
 function integra_elements_output_dynamic_css() {
@@ -222,6 +243,9 @@ function integra_elements_output_dynamic_css() {
     
     // Include eyebrow text variables
     include(get_template_directory() . '/inc/admin/pages/eyebrow-text/eyebrow-text.vars.php');
+    
+    // Include display icon variables
+    include(get_template_directory() . '/inc/admin/pages/display-icon/display-icon.vars.php');
     
     // Include buttons variables
     include(get_template_directory() . '/inc/admin/pages/buttons/buttons.vars.php');
@@ -259,6 +283,7 @@ function integra_elements_admin_page_content() {
     integra_elements_handle_spacing_save();
     integra_elements_handle_text_content_save();
     integra_elements_handle_eyebrow_text_save();
+    integra_elements_handle_display_icon_save();
     integra_elements_handle_buttons_save();
     integra_elements_handle_pill_save();
     ?>
@@ -315,6 +340,7 @@ function integra_elements_admin_page_content() {
                     </button>
                     <div class="integra-accordion-content" id="components">
                         <ul class="integra-nav-list">
+                            <li><a href="#" class="integra-nav-link" data-page="display-icon">Display Icon</a></li>
                             <li><a href="#" class="integra-nav-link" data-page="eyebrow-text">Eyebrow Text</a></li>
                             <li><a href="#" class="integra-nav-link" data-page="text-content">Text Content</a></li>
                             <li><a href="#" class="integra-nav-link" data-page="pill">Pill</a></li>
@@ -353,6 +379,8 @@ function integra_elements_admin_page_content() {
                 </div>
 
                 <!-- Components Pages -->
+                <?php include(get_template_directory() . '/inc/admin/pages/display-icon/display-icon.page.php'); ?>
+                
                 <div class="integra-page" id="page-eyebrow-text">
                     <h1>Eyebrow Text</h1>
                     <?php include(get_template_directory() . '/inc/admin/pages/eyebrow-text/eyebrow-text.page.php'); ?>

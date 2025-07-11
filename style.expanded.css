@@ -2300,9 +2300,9 @@ dd:last-child {
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 10px;
-  font-size: 24px;
-  color: var(--color-Primary);
+  width: fit-content;
+  padding: var(--display-icon-padding);
+  font-size: var(--display-icon-font-size);
 }
 .display-icon .display-icon-base {
   position: absolute;
@@ -2311,9 +2311,8 @@ dd:last-child {
   width: 100%;
   height: 100%;
   content: "";
-  border-radius: 6px;
-  background-color: var(--color-Primary);
-  opacity: 0.1;
+  border-radius: var(--display-icon-base-border-radius);
+  opacity: var(--display-icon-base-opacity);
 }
 
 .elementor-widget-text-editor p {

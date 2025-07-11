@@ -3,11 +3,10 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    width: fit-content;
 
-    // will convert to a variable
-    padding: 10px;
-    font-size: 24px;
-    color: var(--color-Primary);
+    padding: var(--display-icon-padding);
+    font-size: var(--display-icon-font-size);
 
     .display-icon-base {
         position: absolute;
@@ -17,9 +16,7 @@
         height: 100%;
         content: '';
 
-        // will convert to a variable
-        border-radius: 6px;
-        background-color: var(--color-Primary);
-        opacity: 0.1;
+        border-radius: var(--display-icon-base-border-radius);
+        opacity: var(--display-icon-base-opacity);
     }
 }
