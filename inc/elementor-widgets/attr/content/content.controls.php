@@ -210,6 +210,37 @@
         ]
     );
 
+    // List Style (Default, Icons);
+    $this->add_control(
+        'list_style',
+        [
+        'label' => __('List Style', 'integra-elements'),
+        'type' => \Elementor\Controls_Manager::SELECT,
+        'default' => 'default',
+        'options' => [
+            'default' => __('Default', 'integra-elements'),
+            'icon' => __('Icon', 'integra-elements'),
+        ],
+        ]
+    );
+
+    // List Style Icon;
+    $this->add_control(
+        'list_style_icon',
+        [
+        'label' => __('List Style Icon', 'integra-elements'),
+        'type' => \Elementor\Controls_Manager::ICONS,
+        'default' => [
+            'value' => 'fas fa-star',
+            'library' => 'fa-solid',
+        ],
+        'condition' => [
+            'list_style' => 'icon',
+        ],
+        ]
+    );
+
+
     // Paragraph (WYSIWYG);
     $this->add_control(
         'contents',
