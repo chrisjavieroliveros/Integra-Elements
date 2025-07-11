@@ -6,7 +6,7 @@
     width: fit-content;
 
     padding: var(--display-icon-padding);
-    font-size: var(--display-icon-font-size);
+    // font-size: var(--display-icon-font-size);
 
     .display-icon-base {
         position: absolute;
@@ -15,8 +15,7 @@
         width: 100%;
         height: 100%;
         content: '';
-
         border-radius: var(--display-icon-base-border-radius);
-        opacity: var(--display-icon-base-opacity);
+        // opacity: var(--display-icon-base-opacity);
     }
 }

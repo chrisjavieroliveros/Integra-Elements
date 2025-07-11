@@ -7,6 +7,7 @@
         'tab' => \Elementor\Controls_Manager::TAB_CONTENT,
     ]
     );
+    
 
         // Display Icon Popover Toggle
         $this->add_control(
@@ -21,6 +22,16 @@
         );
     
         $this->start_popover();
+
+        // Show Display Icon;
+        $this->add_control(
+            'display_icon_show',
+            [
+                'label' => __('Show Display Icon', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SWITCHER,
+                'default' => 'yes',
+            ]
+        );
     
         // Display Icon
         $this->add_control(
@@ -51,7 +62,7 @@
                 ],
                 'default' => [
                     'unit' => 'px',
-                    'size' => 24,
+                    'size' => 16,
                 ],
                 'condition' => [
                     'display_icon[value]!' => '',
@@ -96,14 +107,14 @@
         $this->add_control(
             'display_icon_opacity',
             [
-                'label' => __('Icon Opacity', 'integra-elements'),
+                'label' => __('Base Color Opacity', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
                 'size_units' => ['%'],
                 'range' => [
                     '%' => [
                         'min' => 0,
                         'max' => 100,
-                        'step' => 1,
+                        'step' => 10,
                     ],
                 ],
                 'default' => [
