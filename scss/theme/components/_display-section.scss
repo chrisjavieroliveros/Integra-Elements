@@ -18,6 +18,11 @@
         gap: 2rem;
     }
 
+    .display-content {
+        flex: 1 1 auto;
+        order: 2;
+    }
+
     .display-preview {
         flex: 0 0 auto;
         order: 1;

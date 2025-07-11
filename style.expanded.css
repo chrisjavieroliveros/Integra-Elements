@@ -2012,6 +2012,10 @@ dd:last-child {
   justify-content: center;
   gap: 2rem;
 }
+.display-section .display-content {
+  flex: 1 1 auto;
+  order: 2;
+}
 .display-section .display-preview {
   flex: 0 0 auto;
   order: 1;
