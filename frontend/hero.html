@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Hero Component - Development</title>
+    <title>Display Component - Development</title>
 
     <!-- CSS -->
     <link rel="stylesheet" href="../assets/css/config.css" />
@@ -16,6 +16,9 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
         rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- GSAP Animation Library -->
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
@@ -34,16 +37,17 @@
     <div id="smooth-wrapper">
         <div id="smooth-content">
 
-            <!-- Hero: Boxed + Centered-->
-            <section class="hero height--marketing hero--boxed hero--centered spacing--top-md spacing--bottom-md"
+            <!-- Display: Centered with Background-->
+            <section
+                class="display-section height--marketing display-section--centered spacing--top-md spacing--bottom-md"
                 style="background-image: url('https://www.securew2.com/wp-content/uploads/2025/03/PKI-hero-bg.jpg');">
                 <div class="container container--narrow">
-                    <div class="text-content">
+                    <div class="display-content text-content">
 
                         <span class="eyebrow-text">Lorem ipsum dolor.</span>
 
                         <div class="inner-content">
-                            <h1 class="display-1">Hero Component Boxed</h1>
+                            <h1 class="display-1">Display Component Centered</h1>
                             <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ducimus ratione
                                 similique amet
@@ -54,23 +58,23 @@
                         </div>
 
                         <div class="inline-cta">
-                            <a href="#" class="btn btn--primary">Learn More</a>
-                            <a href="#" class="btn btn--secondary">Contact Us</a>
+                            <a href="#" class="btn btn--flat btn--primary">Learn More</a>
+                            <a href="#" class="btn btn--flat btn--secondary">Contact Us</a>
                         </div>
 
                     </div>
                 </div>
             </section>
 
-            <!-- Hero: Default -->
-            <section class="hero hero--centered spacing--top-md spacing--bottom-md">
+            <!-- Display: Default Centered -->
+            <section class="display-section display-section--centered spacing--top-md spacing--bottom-md">
                 <div class="container container--narrow">
-                    <div class="text-content">
+                    <div class="display-content text-content">
 
                         <span class="eyebrow-text">Lorem ipsum dolor.</span>
 
                         <div class="inner-content">
-                            <h1 class="display-1">Hero Component Default</h1>
+                            <h1 class="display-1">Display Component Default</h1>
                             <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ducimus ratione
                                 similique amet
@@ -81,23 +85,23 @@
                         </div>
 
                         <div class="inline-cta">
-                            <a href="#" class="btn btn--primary">Learn More</a>
-                            <a href="#" class="btn btn--secondary">Contact Us</a>
+                            <a href="#" class="btn btn--flat btn--primary">Learn More</a>
+                            <a href="#" class="btn btn--flat btn--secondary">Contact Us</a>
                         </div>
 
                     </div>
                 </div>
             </section>
 
-            <!-- Hero: With Preview -->
-            <section class="hero spacing--top-md spacing--bottom-md">
+            <!-- Display: With Preview -->
+            <section class="display-section spacing--top-md spacing--bottom-md">
                 <div class="container container--narrow">
-                    <div class="text-content">
+                    <div class="display-content text-content">
 
                         <span class="eyebrow-text">Lorem ipsum dolor.</span>
 
                         <div class="inner-content">
-                            <h1 class="display-1">Hero Component with Preview</h1>
+                            <h1 class="display-1">Display Component with Preview</h1>
                             <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
                             <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ducimus ratione
                                 similique amet
@@ -108,14 +112,49 @@
                         </div>
 
                         <div class="inline-cta">
-                            <a href="#" class="btn btn--primary">Learn More</a>
-                            <a href="#" class="btn btn--secondary">Contact Us</a>
+                            <a href="#" class="btn btn--flat btn--primary">Learn More</a>
+                            <a href="#" class="btn btn--flat btn--secondary">Contact Us</a>
                         </div>
 
                     </div>
-                    <div class="hero-preview" style="max-width: 500px;">
+                    <div class="display-preview" style="max-width: 500px;">
                         <img src="https://www.securew2.com/wp-content/uploads/2025/03/A-Modern-Approach-to-PKI-Services-v5.svg"
-                            alt="Hero Image">
+                            alt="Display Preview Image">
+                    </div>
+                </div>
+            </section>
+
+            <!-- Display: With Icon -->
+            <section class="display-section display-section--centered spacing--top-md spacing--bottom-md">
+                <div class="container container--narrow">
+                    <div class="display-content text-content">
+
+                        <!-- Display Icon Example -->
+
+                        <div class="display-icon">
+                            <i class="fas fa-star"></i>
+                            <div class="display-icon-base"></div>
+                        </div>
+
+
+                        <span class="eyebrow-text">Lorem ipsum dolor.</span>
+
+                        <div class="inner-content">
+                            <h1 class="display-1">Display Component with Icon</h1>
+                            <p class="lead">Lorem ipsum dolor sit amet consectetur adipisicing elit. Quisquam, quos.</p>
+                            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorum ducimus ratione
+                                similique amet
+                                quia
+                                eius, ad at id magni quod explicabo soluta tenetur dolorem quasi laudantium, nobis
+                                laboriosam,
+                                labore praesentium!</p>
+                        </div>
+
+                        <div class="inline-cta">
+                            <a href="#" class="btn btn--flat btn--primary">Learn More</a>
+                            <a href="#" class="btn btn--flat btn--secondary">Contact Us</a>
+                        </div>
+
                     </div>
                 </div>
             </section>

@@ -8,7 +8,128 @@
     ]
     );
 
-    //   Eyebrow text 
+        // Display Icon Popover Toggle
+        $this->add_control(
+            'display_icon_popover',
+            [
+                'label' => __('Display Icon', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::POPOVER_TOGGLE,
+                'label_off' => __('Default', 'integra-elements'),
+                'label_on' => __('Custom', 'integra-elements'),
+                'return_value' => 'yes',
+            ]
+        );
+    
+        $this->start_popover();
+    
+        // Display Icon
+        $this->add_control(
+            'display_icon',
+            [
+                'label' => __('Display Icon', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::ICONS,
+                'default' => [
+                    'value' => 'fas fa-star',
+                    'library' => 'fa-solid',
+                ],
+            ]
+        );
+    
+        // Display Icon Size
+        $this->add_control(
+            'display_icon_size',
+            [
+                'label' => __('Icon Size', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 8,
+                        'max' => 64,
+                        'step' => 4,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 24,
+                ],
+                'condition' => [
+                    'display_icon[value]!' => '',
+                ],
+            ]
+        );
+    
+        // Display Icon Color
+        $this->add_control(
+            'display_icon_color',
+            [
+                'label' => __('Icon Color', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'Primary',
+                'options' => [
+                    
+                    // Brand Colors
+                    'Primary' => 'Primary',
+                    'Secondary' => 'Secondary',
+                    'Separator_0' => '────',
+    
+                    // Base Colors
+                    'Light-500' => 'Light',
+                    'Dark-500' => 'Dark',
+                    'Black' => 'Black',
+                    'White' => 'White',
+                    'Separator_1' => '────',
+                    
+                    // State Colors
+                    'Danger' => 'Danger',
+                    'Warning' => 'Warning',
+                    'Success' => 'Success',
+                    'Info' => 'Info',
+                ],
+                'condition' => [
+                    'display_icon[value]!' => '',
+                ],
+            ]
+        );
+    
+        // Display Base Icon Color Opacity
+        $this->add_control(
+            'display_icon_opacity',
+            [
+                'label' => __('Icon Opacity', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => ['%'],
+                'range' => [
+                    '%' => [
+                        'min' => 0,
+                        'max' => 100,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'unit' => '%',
+                    'size' => 10,
+                ],
+            ]
+        );
+    
+        $this->end_popover();
+
+    // Eyebrow Text Popover Toggle
+    $this->add_control(
+        'eyebrow_text_popover',
+        [
+            'label' => __('Eyebrow Text', 'integra-elements'),
+            'type' => \Elementor\Controls_Manager::POPOVER_TOGGLE,
+            'label_off' => __('Default', 'integra-elements'),
+            'label_on' => __('Custom', 'integra-elements'),
+            'return_value' => 'yes',
+        ]
+    );
+
+    $this->start_popover();
+
+    // Eyebrow text 
     $this->add_control(
         'eyebrow_text',
         [
@@ -52,6 +173,9 @@
         ],
         ]
     );
+
+    $this->end_popover();
+
 
     // Heading Class (Display 1, Display 2, Default);
     $this->add_control(
