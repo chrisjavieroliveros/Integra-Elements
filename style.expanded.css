@@ -2027,16 +2027,7 @@ dd:last-child {
 .display-section--centered .inline-cta {
   justify-content: center;
 }
-@media (min-width: 768px) {
-  .display-section--boxed {
-    margin: 0 var(--size-5);
-    border-radius: var(--size-5);
-  }
-}
 @media (min-width: 992px) {
-  .display-section--boxed {
-    margin: 0 var(--size-6);
-  }
   .display-section .container {
     flex-direction: row;
   }

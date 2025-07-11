@@ -59,20 +59,6 @@ class Display_Widget extends \Elementor\Widget_Base {
         ];
         include('attr/height/height.controls.php');
 
-        // Display Style Controls (Default, Boxed)
-        $this->add_control(
-            'display_style',
-            [
-                'label' => __('Display Style', 'integra-elements'),
-                'type' => \Elementor\Controls_Manager::SELECT,
-                'options' => [
-                    'default' => __('Default', 'integra-elements'), 
-                    'boxed' => __('Boxed', 'integra-elements')
-                ],
-                'default' => 'default',
-            ]
-        );
-
         // Display Layout Controls (Centered 1 Column, Display With Preview)
         $this->add_control(
             'display_layout',
@@ -80,12 +66,30 @@ class Display_Widget extends \Elementor\Widget_Base {
                 'label' => __('Display Layout', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::SELECT,
                 'options' => [
-                    'display-centered' => __('Display Centered', 'integra-elements'),
+                    'display-centered' => __('Center (No Preview)', 'integra-elements'),
                     'display-w-preview' => __('Display + Preview', 'integra-elements')
                 ],
                 'default' => 'display-centered',
             ]
         );
+
+        // Display Preview Position Controls (Left, Right)
+        $this->add_control(
+            'display_preview_position',
+            [
+                'label' => __('Preview Position', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'left' => __('Left', 'integra-elements'),
+                    'right' => __('Right', 'integra-elements')
+                ],
+                'default' => 'left',
+                'condition' => [
+                    'display_layout' => 'display-w-preview',
+                ],
+            ]
+        );
+        
 
         // End General Section
         $this->end_controls_section();
@@ -148,12 +152,6 @@ class Display_Widget extends \Elementor\Widget_Base {
         // CTA Render;
         include('attr/cta/cta.render.php');
 
-        // Display Style;
-        $display_style = $settings['display_style'];
-        if($display_style === 'boxed') {
-            $section_class .= ' display-section--boxed';
-        }
-
         // Display Layout;
         $display_layout = $settings['display_layout'];
         if($display_layout === 'display-centered') {
@@ -162,7 +160,7 @@ class Display_Widget extends \Elementor\Widget_Base {
 
         ?>
 
-        <!-- Display: Boxed + Centered-->
+        <!-- Display Section -->
         <section class="display-section <?= esc_attr(trim($section_class)); ?>"
                 style="<?= esc_attr($section_style); ?>">
             <div class="<?= esc_attr(trim($container_class)); ?>">
