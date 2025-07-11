@@ -140,13 +140,23 @@
 
     $this->start_popover();
 
+    // Show Eyebrow Text
+    $this->add_control(
+        'eyebrow_text_show',
+        [
+            'label' => __('Show Eyebrow Text', 'integra-elements'),
+            'type' => \Elementor\Controls_Manager::SWITCHER,
+            'default' => 'yes',
+        ]
+    );
+
     // Eyebrow text 
     $this->add_control(
         'eyebrow_text',
         [
         'label' => __('Eyebrow Text', 'integra-elements'),
         'type' => \Elementor\Controls_Manager::TEXT,
-        'default' => __('EYEBROW TEXT', 'integra-elements'),
+        'default' => __('EYEBROW TEXT', 'integra-elements'),        
         ]
     );
 
@@ -178,10 +188,7 @@
             'Info' => 'Info',
             
     
-          ],
-        'condition' => [
-            'eyebrow_text!' => '',
-        ],
+          ],        
         ]
     );
 
