@@ -54,11 +54,7 @@ class CTA_Widget extends \Elementor\Widget_Base {
         // Height Controls
         $height_config = [
             'selector' => '.cta',
-            'defaults' => [
-                'desktop' => 0,
-                'tablet' => 0,
-                'mobile' => 0
-            ]
+            'default' => 0, // Will apply to all breakpoints initially
         ];
         include('attr/height/height.controls.php');
 

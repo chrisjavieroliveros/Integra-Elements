@@ -1,6 +1,6 @@
 @use "../utilities/breakpoints" as breakpoints;
 
-.hero {
+.display-section {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -18,12 +18,12 @@
         gap: 2rem;
     }
 
-    .hero-content {
-        flex: 1 1 auto;
-        order: 2;
-    }
+    // .display-content {
+    //     flex: 1 1 auto;
+    //     order: 2;
+    // }
 
-    .hero-preview {
+    .display-preview {
         flex: 0 0 auto;
         order: 1;
 
@@ -61,11 +61,11 @@
             flex-direction: row;
         }
 
-        .hero-preview {
+        .display-preview {
             order: 2;
         }
 
-        .hero-content {
+        .display-content {
             order: 1;
         }
 

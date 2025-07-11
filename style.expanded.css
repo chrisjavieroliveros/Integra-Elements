@@ -478,14 +478,14 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 }
 
 .card-style {
-  background-color: #ffffff;
   border-radius: 8px;
+  background-color: #ffffff;
   border: 1px solid #d6dce4;
   transition: all 240ms ease-out;
 }
 .card-style .active, .card-style:hover {
-  border: 1px solid #b0bacd;
-  box-shadow: 0 8px 16px 0 rgba(122, 129, 140, 0.2);
+  border: 1px solid #b9c3d5;
+  box-shadow: 0 8px 16px 0 rgba(122, 129, 140, 0.15);
 }
 
 .card-content {
@@ -1997,7 +1997,7 @@ dd:last-child {
   padding-right: 0;
 }
 
-.hero {
+.display-section {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -2005,49 +2005,45 @@ dd:last-child {
   background-position: center;
   background-repeat: no-repeat;
 }
-.hero .container {
+.display-section .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   gap: 2rem;
 }
-.hero .hero-content {
-  flex: 1 1 auto;
-  order: 2;
-}
-.hero .hero-preview {
+.display-section .display-preview {
   flex: 0 0 auto;
   order: 1;
 }
-.hero .hero-preview img {
+.display-section .display-preview img {
   display: block;
   width: 100%;
 }
-.hero--centered .text-content {
+.display-section--centered .text-content {
   text-align: center;
   align-items: center;
 }
-.hero--centered .inline-cta {
+.display-section--centered .inline-cta {
   justify-content: center;
 }
 @media (min-width: 768px) {
-  .hero--boxed {
+  .display-section--boxed {
     margin: 0 var(--size-5);
     border-radius: var(--size-5);
   }
 }
 @media (min-width: 992px) {
-  .hero--boxed {
+  .display-section--boxed {
     margin: 0 var(--size-6);
   }
-  .hero .container {
+  .display-section .container {
     flex-direction: row;
   }
-  .hero .hero-preview {
+  .display-section .display-preview {
     order: 2;
   }
-  .hero .hero-content {
+  .display-section .display-content {
     order: 1;
   }
 }
@@ -2150,6 +2146,12 @@ dd:last-child {
 .expandable-card .visible-content,
 .expandable-card .hidden-content {
   padding: 24px 16px;
+}
+@media (min-width: 768px) {
+  .expandable-card .visible-content,
+  .expandable-card .hidden-content {
+    padding: 32px 24px;
+  }
 }
 .expandable-card .visible-content {
   display: flex;

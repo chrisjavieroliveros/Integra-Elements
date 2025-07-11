@@ -3,15 +3,11 @@
 // Default height configuration
 $height_defaults = [
     'selector' => '.section',
-    'defaults' => [
-        'desktop' => 50,
-        'tablet' => 60,
-        'mobile' => 70,
-    ],
+    'default' => 50, // Single default value that applies to all breakpoints initially
 ];
 
-// Merge with widget-specific config if provided - using recursive merge for nested arrays
-$height_config = isset($height_config) ? array_replace_recursive($height_defaults, $height_config) : $height_defaults;
+// Merge with widget-specific config if provided
+$height_config = isset($height_config) ? array_merge($height_defaults, $height_config) : $height_defaults;
 
 // Height Controls (Auto, Full, Marketing);
 $this->add_responsive_control(
@@ -34,16 +30,9 @@ $this->add_responsive_control(
         ],
         'default' => [
             'unit' => 'svh',
-            'size' => $height_config['defaults']['desktop'],
+            'size' => $height_config['default'],
         ],
-        'tablet_default' => [
-            'unit' => 'svh',
-            'size' => $height_config['defaults']['tablet'],
-        ],
-        'mobile_default' => [
-            'unit' => 'svh',
-            'size' => $height_config['defaults']['mobile'],
-        ],
+        // Note: No tablet_default or mobile_default - they will inherit from desktop
         'selectors' => [
             '{{WRAPPER}} ' . $height_config['selector'] => 'min-height: {{SIZE}}{{UNIT}};',
         ],

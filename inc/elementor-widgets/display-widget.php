@@ -1,6 +1,6 @@
 <?php
 /**
- * Heading Group Widget - Heading Group Widget Implementation
+ * Display Widget - Display Section Implementation
  *
  * @package Integra_Elements
  */
@@ -12,20 +12,20 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Class Heading_Group_Widget
+ * Class Display_Widget
  */
-class Heading_Group_Widget extends \Elementor\Widget_Base {
+class Display_Widget extends \Elementor\Widget_Base {
 
     public function get_name() {
-        return 'integra_heading_group';
+        return 'integra_display';
     }
 
     public function get_title() {
-        return __('Heading Group', 'integra-elements');
+        return __('Display', 'integra-elements');
     }
 
     public function get_icon() {
-        return 'eicon-heading';
+        return 'eicon-image-box';
     }
 
     public function get_categories() {
@@ -33,16 +33,17 @@ class Heading_Group_Widget extends \Elementor\Widget_Base {
     }
 
     public function get_keywords() {
-        return ['integra', 'elements', 'heading', 'group', 'title'];
+        return ['integra', 'elements', 'display', 'content', 'media'];
     }
 
     protected function register_controls() {
+
 
         /*-- Content Tab ------------------------------------------------------------*/
 
         // General Section
         $this->start_controls_section(
-            'section_general',
+        'section_general',
             [
                 'label' => __('General', 'integra-elements'),
             ]
@@ -53,35 +54,36 @@ class Heading_Group_Widget extends \Elementor\Widget_Base {
 
         // Height Controls
         $height_config = [
-            'selector' => '.heading',
-            'default' => 0, // Will apply to all breakpoints initially
+            'selector' => '.display-section',
+            'default' => 90, // Will apply to all breakpoints initially
         ];
         include('attr/height/height.controls.php');
 
-        // Alignment Controls
-        $this->add_responsive_control(
-            'alignment',
+        // Display Style Controls (Default, Boxed)
+        $this->add_control(
+            'display_style',
             [
-                'label' => __('Alignment', 'integra-elements'),
-                'type' => \Elementor\Controls_Manager::CHOOSE,
+                'label' => __('Display Style', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
                 'options' => [
-                    'left' => [
-                        'title' => __('Left', 'integra-elements'),
-                        'icon' => 'eicon-text-align-left',
-                    ],
-                    'center' => [
-                        'title' => __('Center', 'integra-elements'),
-                        'icon' => 'eicon-text-align-center',
-                    ],
-                    'right' => [
-                        'title' => __('Right', 'integra-elements'),
-                        'icon' => 'eicon-text-align-right',
-                    ],
+                    'default' => __('Default', 'integra-elements'), 
+                    'boxed' => __('Boxed', 'integra-elements')
                 ],
-                'default' => 'left',
-                'selectors' => [
-                    '{{WRAPPER}} .text-content' => 'text-align: {{VALUE}};',
+                'default' => 'default',
+            ]
+        );
+
+        // Display Layout Controls (Centered 1 Column, Display With Preview)
+        $this->add_control(
+            'display_layout',
+            [
+                'label' => __('Display Layout', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'display-centered' => __('Display Centered', 'integra-elements'),
+                    'display-w-preview' => __('Display + Preview', 'integra-elements')
                 ],
+                'default' => 'display-centered',
             ]
         );
 
@@ -91,17 +93,15 @@ class Heading_Group_Widget extends \Elementor\Widget_Base {
         // Content Section;
         include('attr/content/content.controls.php');
 
+        // Preview Section;
+        include('attr/preview/preview.controls.php');
+
+        // CTA Section;
+        include('attr/cta/cta.controls.php');
 
         // Spacing Section;
-        $spacing_config = [
-            'selector' => '.text-content',
-            'defaults_bottom' => [
-                'desktop' => 40,
-                'tablet' => 32,
-                'mobile' => 24,
-            ],
-        ];
         include('attr/spacing/spacing.controls.php');
+
 
         /*-- Style Tab ------------------------------------------------------------*/
 
@@ -124,7 +124,7 @@ class Heading_Group_Widget extends \Elementor\Widget_Base {
         $this->end_controls_section();
     }
 
-    /**
+        /**
      * Render widget output on the frontend.
      */
     protected function render() {
@@ -142,16 +142,41 @@ class Heading_Group_Widget extends \Elementor\Widget_Base {
         // Content Render;
         include('attr/content/content.render.php');
 
+        // Preview Render;
+        include('attr/preview/preview.render.php');
+
+        // CTA Render;
+        include('attr/cta/cta.render.php');
+
+        // Display Style;
+        $display_style = $settings['display_style'];
+        if($display_style === 'boxed') {
+            $section_class .= ' display-section--boxed';
+        }
+
+        // Display Layout;
+        $display_layout = $settings['display_layout'];
+        if($display_layout === 'display-centered') {
+            $section_class .= ' display-section--centered';
+        }
+
         ?>
 
-        <!-- Heading Section -->
-        <section class="heading <?= esc_attr(trim($section_class)); ?>"
+        <!-- Display: Boxed + Centered-->
+        <section class="display-section <?= esc_attr(trim($section_class)); ?>"
                 style="<?= esc_attr($section_style); ?>">
             <div class="<?= esc_attr(trim($container_class)); ?>">
 
-                <div class="text-content">
+                <div class="display-content text-content">
                     <?= $content_markup; ?>
+                    <?= $cta_markup; ?>
                 </div>
+
+                <?php if($display_layout === 'display-w-preview') { ?>
+                    <div class="display-preview">
+                        <?= $preview_markup; ?>
+                    </div>
+                <?php } ?>
 
             </div>
         </section>
