@@ -2329,6 +2329,14 @@ dd:last-child {
   border-radius: var(--display-icon-base-border-radius);
 }
 
+.stat-cards--5 .container {
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .stat-cards--5 .container {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
 .stat-cards--4 .container {
   grid-template-columns: repeat(1, 1fr);
 }

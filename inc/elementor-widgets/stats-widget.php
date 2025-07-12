@@ -214,6 +214,8 @@ class Stats_Widget extends \Elementor\Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 
+        $card_columns = $settings['card_columns']['size'];
+
         // Theme Render;
         include('attr/theme/theme.render.php');
         
@@ -222,8 +224,8 @@ class Stats_Widget extends \Elementor\Widget_Base {
         ?>
 
         <!-- Stat Cards Section -->
-        <section class="stat-cards <?= esc_attr(trim($section_class)); ?>" style="<?= esc_attr($section_style); ?>">
-            <div class="container" style="grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));">
+        <section class="stat-cards stat-cards--<?= esc_attr(trim($card_columns)); ?> <?= esc_attr(trim($section_class)); ?>" style="<?= esc_attr($section_style); ?>">
+            <div class="container">
                 <?php if ($settings['stat_cards']) : ?>
                     <?php foreach ($settings['stat_cards'] as $item) : ?>
                         <div class="stat-card card-style elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">

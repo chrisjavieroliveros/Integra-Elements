@@ -98,7 +98,7 @@ $this->add_responsive_control(
         'size' => 550,
       ],
       'selectors' => [
-        '{{WRAPPER}} .hero-preview img' => 'max-width: {{SIZE}}{{UNIT}};',
+        '{{WRAPPER}} .display-preview img' => 'max-width: {{SIZE}}{{UNIT}};',
       ],
   ]
 );
