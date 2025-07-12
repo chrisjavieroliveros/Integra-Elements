@@ -1,19 +1,31 @@
 <?php
 
-    // Add "Container" control; Select (Default, Narrow, Wide, Full);
-    $this->add_control(
+    // Add "Container" control; Range slider (320px to 1600px, steps of 8);
+    $this->add_responsive_control(
         'container',
         [
             'label' => __('Container', 'integra-elements'),
-            'type' => \Elementor\Controls_Manager::SELECT,
-            'options' => [
-                'slim' => __('Slim', 'integra-elements'),
-                'narrow' => __('Narrow', 'integra-elements'),
-                'default' => __('Default', 'integra-elements'),
-                'wide' => __('Wide', 'integra-elements'),
-                'full' => __('Full', 'integra-elements'),
+            'type' => \Elementor\Controls_Manager::SLIDER,
+            'size_units' => ['px', '%'],
+            'range' => [
+                'px' => [
+                    'min' => 320,
+                    'max' => 1600,
+                    'step' => 8,
+                ],
+                '%' => [
+                    'min' => 10,
+                    'max' => 100,
+                    'step' => 10,
+                ],
             ],
-            'default' => 'default',
+            'default' => [
+                'unit' => 'px',
+                'size' => 1200,
+            ],
+            'selectors' => [
+                '{{WRAPPER}} .container' => 'max-width: {{SIZE}}{{UNIT}};',
+            ]
         ]
     );
 

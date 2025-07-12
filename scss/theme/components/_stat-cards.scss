@@ -1,0 +1,24 @@
+.stat-cards {
+
+    .container {
+        display: grid;
+        gap: 1rem;
+    }
+
+    .stat-card {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 1.5rem 1rem;
+
+        p {
+            margin: 0;
+        }
+    }
+
+    .card-content {
+        gap: 0.25rem;
+    }
+
+}
