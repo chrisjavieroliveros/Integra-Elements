@@ -51,6 +51,47 @@ class Stats_Widget extends \Elementor\Widget_Base {
         // Container Controls;
         include('attr/container/container.controls.php');
 
+        // Icon Size;
+        $this->add_control(
+            'icon_size',
+            [
+                'label' => __('Icon Size', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 16,
+                        'max' => 64,
+                        'step' => 8,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 24,
+                ],
+            ]
+        );
+
+        // Card Columns;
+        $this->add_control(
+            'card_columns',
+            [
+                'label' => __('Card Columns', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 3,
+                        'max' => 5,
+                        'step' => 1,
+                    ],
+                ],
+                'default' => [
+                    'size' => 4,
+                ],
+            ]
+        );
+
         $this->end_controls_section();
 
 
@@ -70,42 +111,51 @@ class Stats_Widget extends \Elementor\Widget_Base {
                 'label' => __('Icon', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::ICONS,
                 'default' => [
-                    'value' => 'fas fa-chart-line',
+                    'value' => 'fas fa-border-none',
                     'library' => 'solid',
                 ],
             ]
         );
 
         $repeater->add_control(
-            'card_title',
+            'card_icon_color',
             [
-                'label' => __('Title', 'integra-elements'),
-                'type' => \Elementor\Controls_Manager::TEXT,
-                'default' => __('Card Title', 'integra-elements'),
-                'label_block' => true,
+                'label' => __( 'Icon Color', 'integra-elements' ),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'Transparent' => 'Transparent',
+                    'Separator_0' => '────',
+
+                    // Brand Colors
+                    'Primary' => 'Primary',
+                    'Secondary' => 'Secondary',
+                    'Separator_1' => '────',
+                        
+                    // Base Colors
+                    'Light' => 'Light',
+                    'Dark' => 'Dark',
+                    'Black' => 'Black',
+                    'White' => 'White',
+                    'Separator_2' => '────',
+
+                    // State Colors
+                    'Danger' => 'Danger',
+                    'Warning' => 'Warning',
+                    'Success' => 'Success',
+                    'Info' => 'Info',
+                ],
+                'default' => 'Primary',
             ]
         );
 
         $repeater->add_control(
-            'card_description',
+            'card_content',
             [
-                'label' => __('Description', 'integra-elements'),
-                'type' => \Elementor\Controls_Manager::TEXTAREA,
-                'default' => __('Lorem ipsum dolor sit amet.', 'integra-elements'),
+                'label' => __('Content', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::WYSIWYG,
+                'default' => __('<h6>Card Title</h6><p>Lorem ipsum dolor sit amet.</p>', 'integra-elements'),
             ]
         );
-
-        $repeater->add_control(
-			'card_color',
-			[
-				'label' => __( 'Color', 'integra-elements' ),
-				'type' => \Elementor\Controls_Manager::COLOR,
-				'selectors' => [
-					'{{WRAPPER}} .elementor-repeater-item-{{ID}} .icon-wrapper i' => 'color: {{VALUE}}',
-                    '{{WRAPPER}} .elementor-repeater-item-{{ID}} .card-content h6' => 'color: {{VALUE}}',
-				],
-			]
-		);
 
 
         $this->add_control(
@@ -116,27 +166,26 @@ class Stats_Widget extends \Elementor\Widget_Base {
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'card_title' => __( 'Card Title 1', 'integra-elements' ),
-                        'card_description' => __( 'Lorem ipsum dolor sit amet.', 'integra-elements' ),
+                        'card_content' => __( '<h6>Card Title 1</h6><p>Lorem ipsum dolor sit amet.</p>', 'integra-elements' ),
                     ],
                     [
-                        'card_title' => __( 'Card Title 2', 'integra-elements' ),
-                        'card_description' => __( 'Lorem ipsum dolor sit amet.', 'integra-elements' ),
+                        'card_content' => __( '<h6>Card Title 2</h6><p>Lorem ipsum dolor sit amet.</p>', 'integra-elements' ),
                     ],
                     [
-                        'card_title' => __( 'Card Title 3', 'integra-elements' ),
-                        'card_description' => __( 'Lorem ipsum dolor sit amet.', 'integra-elements' ),
+                        'card_content' => __( '<h6>Card Title 3</h6><p>Lorem ipsum dolor sit amet.</p>', 'integra-elements' ),
                     ],
                     [
-                        'card_title' => __( 'Card Title 4', 'integra-elements' ),
-                        'card_description' => __( 'Lorem ipsum dolor sit amet.', 'integra-elements' ),
+                        'card_content' => __( '<h6>Card Title 4</h6><p>Lorem ipsum dolor sit amet.</p>', 'integra-elements' ),
                     ]
                 ],
-                'title_field' => '{{{ card_title }}}',
+                'title_field' => '{{{ card_content }}}',
             ]
         );
 
         $this->end_controls_section();
+
+        // Spacing Section;
+        include('attr/spacing/spacing.controls.php');
 
         /*-- Style Tab ------------------------------------------------------------*/
 
@@ -168,9 +217,6 @@ class Stats_Widget extends \Elementor\Widget_Base {
         // Theme Render;
         include('attr/theme/theme.render.php');
         
-        // Container Render;
-        include('attr/container/container.render.php');
-        
         // Background Render;
         include('attr/background/background.render.php');
         ?>
@@ -182,11 +228,10 @@ class Stats_Widget extends \Elementor\Widget_Base {
                     <?php foreach ($settings['stat_cards'] as $item) : ?>
                         <div class="stat-card card-style elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
                             <div class="icon-wrapper">
-                                <?php \Elementor\Icons_Manager::render_icon($item['card_icon'], ['aria-hidden' => 'true']); ?>
+                                <i class="<?php echo esc_attr($item['card_icon']['value']); ?>" style="font-size: <?php echo $settings['icon_size']['size']; ?>px; color: var(--color-<?php echo esc_attr($item['card_icon_color']); ?>);"></i>
                             </div>
                             <div class="card-content">
-                                <h6><?php echo esc_html($item['card_title']); ?></h6>
-                                <p><?php echo esc_html($item['card_description']); ?></p>
+                                <?php echo wp_kses_post($item['card_content']); ?>
                             </div>
                         </div>
                     <?php endforeach; ?>

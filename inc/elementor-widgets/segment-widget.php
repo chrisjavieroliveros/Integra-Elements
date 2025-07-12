@@ -159,8 +159,7 @@ class Segment_Widget extends \Elementor\Widget_Base {
         // Theme Render;
         include('attr/theme/theme.render.php');
 
-        // Container Render;
-        include('attr/container/container.render.php');
+
 
         // Background Render;
         include('attr/background/background.render.php');
@@ -172,7 +171,7 @@ class Segment_Widget extends \Elementor\Widget_Base {
         <!-- Segment Section -->
         <section class="segment-ui <?= esc_attr(trim($section_class)); ?>"
                 style="<?= esc_attr($section_style); ?>">
-            <div class="<?= esc_attr(trim($container_class)); ?>">
+            <div class="container">
 
                 <div class="segment-ui-list">
                     <?php foreach ($segments as $index => $segment) : ?>

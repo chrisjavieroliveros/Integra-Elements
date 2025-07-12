@@ -485,7 +485,7 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 }
 .card-style .active, .card-style:hover {
   border: 1px solid #b9c3d5;
-  box-shadow: 0 8px 16px 0 rgba(122, 129, 140, 0.15);
+  box-shadow: 0 6px 12px 0 rgba(122, 129, 140, 0.2);
 }
 
 .card-content {
@@ -2329,6 +2329,27 @@ dd:last-child {
   border-radius: var(--display-icon-base-border-radius);
 }
 
+.stat-cards--4 .container {
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 480px) {
+  .stat-cards--4 .container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 768px) {
+  .stat-cards--4 .container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+.stat-cards--3 .container {
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 768px) {
+  .stat-cards--3 .container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
 .stat-cards .container {
   display: grid;
   gap: 1rem;

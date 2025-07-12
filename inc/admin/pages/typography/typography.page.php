@@ -112,84 +112,91 @@
             </div>
         </div>
 
-        <!-- H1-H3 Headings -->
+        <!-- 📱 Small Screens (Mobile) -->
         <div class="integra-config-section">
-            <h2>H1-H3 Headings</h2>
+            <h2>📱 Small Screens (Mobile)</h2>
             <div class="integra-config-grid">
                 <div class="integra-config-field">
                     <label for="h1-sm">H1 Small</label>
                     <input type="text" id="h1-sm" name="typography[h1_sm]" value="<?php echo esc_attr(get_option('integra_h1_sm', '2.25rem')); ?>" data-default-value="2.25rem" placeholder="2.25rem">
                 </div>
                 <div class="integra-config-field">
-                    <label for="h1-md">H1 Medium</label>
-                    <input type="text" id="h1-md" name="typography[h1_md]" value="<?php echo esc_attr(get_option('integra_h1_md', '2.5rem')); ?>" data-default-value="2.5rem" placeholder="2.5rem">
-                </div>
-                <div class="integra-config-field">
-                    <label for="h1-lg">H1 Large</label>
-                    <input type="text" id="h1-lg" name="typography[h1_lg]" value="<?php echo esc_attr(get_option('integra_h1_lg', '3rem')); ?>" data-default-value="3rem" placeholder="3rem">
-                </div>
-                <div class="integra-config-field">
                     <label for="h2-sm">H2 Small</label>
                     <input type="text" id="h2-sm" name="typography[h2_sm]" value="<?php echo esc_attr(get_option('integra_h2_sm', '2rem')); ?>" data-default-value="2rem" placeholder="2rem">
-                </div>
-                <div class="integra-config-field">
-                    <label for="h2-md">H2 Medium</label>
-                    <input type="text" id="h2-md" name="typography[h2_md]" value="<?php echo esc_attr(get_option('integra_h2_md', '2.25rem')); ?>" data-default-value="2.25rem" placeholder="2.25rem">
-                </div>
-                <div class="integra-config-field">
-                    <label for="h2-lg">H2 Large</label>
-                    <input type="text" id="h2-lg" name="typography[h2_lg]" value="<?php echo esc_attr(get_option('integra_h2_lg', '2.5rem')); ?>" data-default-value="2.5rem" placeholder="2.5rem">
                 </div>
                 <div class="integra-config-field">
                     <label for="h3-sm">H3 Small</label>
                     <input type="text" id="h3-sm" name="typography[h3_sm]" value="<?php echo esc_attr(get_option('integra_h3_sm', '1.875rem')); ?>" data-default-value="1.875rem" placeholder="1.875rem">
                 </div>
                 <div class="integra-config-field">
-                    <label for="h3-md">H3 Medium</label>
-                    <input type="text" id="h3-md" name="typography[h3_md]" value="<?php echo esc_attr(get_option('integra_h3_md', '2rem')); ?>" data-default-value="2rem" placeholder="2rem">
-                </div>
-                <div class="integra-config-field">
-                    <label for="h3-lg">H3 Large</label>
-                    <input type="text" id="h3-lg" name="typography[h3_lg]" value="<?php echo esc_attr(get_option('integra_h3_lg', '2.25rem')); ?>" data-default-value="2.25rem" placeholder="2.25rem">
-                </div>
-            </div>
-        </div>
-
-        <!-- H4-H6 Headings -->
-        <div class="integra-config-section">
-            <h2>H4-H6 Headings</h2>
-            <div class="integra-config-grid">
-                <div class="integra-config-field">
                     <label for="h4-sm">H4 Small</label>
                     <input type="text" id="h4-sm" name="typography[h4_sm]" value="<?php echo esc_attr(get_option('integra_h4_sm', '1.75rem')); ?>" data-default-value="1.75rem" placeholder="1.75rem">
-                </div>
-                <div class="integra-config-field">
-                    <label for="h4-md">H4 Medium</label>
-                    <input type="text" id="h4-md" name="typography[h4_md]" value="<?php echo esc_attr(get_option('integra_h4_md', '1.875rem')); ?>" data-default-value="1.875rem" placeholder="1.875rem">
-                </div>
-                <div class="integra-config-field">
-                    <label for="h4-lg">H4 Large</label>
-                    <input type="text" id="h4-lg" name="typography[h4_lg]" value="<?php echo esc_attr(get_option('integra_h4_lg', '2rem')); ?>" data-default-value="2rem" placeholder="2rem">
                 </div>
                 <div class="integra-config-field">
                     <label for="h5-sm">H5 Small</label>
                     <input type="text" id="h5-sm" name="typography[h5_sm]" value="<?php echo esc_attr(get_option('integra_h5_sm', '1.625rem')); ?>" data-default-value="1.625rem" placeholder="1.625rem">
                 </div>
                 <div class="integra-config-field">
+                    <label for="h6-sm">H6 Small</label>
+                    <input type="text" id="h6-sm" name="typography[h6_sm]" value="<?php echo esc_attr(get_option('integra_h6_sm', '1.5rem')); ?>" data-default-value="1.5rem" placeholder="1.5rem">
+                </div>
+            </div>
+        </div>
+
+        <!-- 📲 Medium Screens (Tablet) -->
+        <div class="integra-config-section">
+            <h2>📲 Medium Screens (Tablet)</h2>
+            <div class="integra-config-grid">
+                <div class="integra-config-field">
+                    <label for="h1-md">H1 Medium</label>
+                    <input type="text" id="h1-md" name="typography[h1_md]" value="<?php echo esc_attr(get_option('integra_h1_md', '2.5rem')); ?>" data-default-value="2.5rem" placeholder="2.5rem">
+                </div>
+                <div class="integra-config-field">
+                    <label for="h2-md">H2 Medium</label>
+                    <input type="text" id="h2-md" name="typography[h2_md]" value="<?php echo esc_attr(get_option('integra_h2_md', '2.25rem')); ?>" data-default-value="2.25rem" placeholder="2.25rem">
+                </div>
+                <div class="integra-config-field">
+                    <label for="h3-md">H3 Medium</label>
+                    <input type="text" id="h3-md" name="typography[h3_md]" value="<?php echo esc_attr(get_option('integra_h3_md', '2rem')); ?>" data-default-value="2rem" placeholder="2rem">
+                </div>
+                <div class="integra-config-field">
+                    <label for="h4-md">H4 Medium</label>
+                    <input type="text" id="h4-md" name="typography[h4_md]" value="<?php echo esc_attr(get_option('integra_h4_md', '1.875rem')); ?>" data-default-value="1.875rem" placeholder="1.875rem">
+                </div>
+                <div class="integra-config-field">
                     <label for="h5-md">H5 Medium</label>
                     <input type="text" id="h5-md" name="typography[h5_md]" value="<?php echo esc_attr(get_option('integra_h5_md', '1.75rem')); ?>" data-default-value="1.75rem" placeholder="1.75rem">
                 </div>
                 <div class="integra-config-field">
-                    <label for="h5-lg">H5 Large</label>
-                    <input type="text" id="h5-lg" name="typography[h5_lg]" value="<?php echo esc_attr(get_option('integra_h5_lg', '1.875rem')); ?>" data-default-value="1.875rem" placeholder="1.875rem">
-                </div>
-                <div class="integra-config-field">
-                    <label for="h6-sm">H6 Small</label>
-                    <input type="text" id="h6-sm" name="typography[h6_sm]" value="<?php echo esc_attr(get_option('integra_h6_sm', '1.5rem')); ?>" data-default-value="1.5rem" placeholder="1.5rem">
-                </div>
-                <div class="integra-config-field">
                     <label for="h6-md">H6 Medium</label>
                     <input type="text" id="h6-md" name="typography[h6_md]" value="<?php echo esc_attr(get_option('integra_h6_md', '1.625rem')); ?>" data-default-value="1.625rem" placeholder="1.625rem">
+                </div>
+            </div>
+        </div>
+
+        <!-- 🖥️ Large Screens (Desktop) -->
+        <div class="integra-config-section">
+            <h2>🖥️ Large Screens (Desktop)</h2>
+            <div class="integra-config-grid">
+                <div class="integra-config-field">
+                    <label for="h1-lg">H1 Large</label>
+                    <input type="text" id="h1-lg" name="typography[h1_lg]" value="<?php echo esc_attr(get_option('integra_h1_lg', '3rem')); ?>" data-default-value="3rem" placeholder="3rem">
+                </div>
+                <div class="integra-config-field">
+                    <label for="h2-lg">H2 Large</label>
+                    <input type="text" id="h2-lg" name="typography[h2_lg]" value="<?php echo esc_attr(get_option('integra_h2_lg', '2.5rem')); ?>" data-default-value="2.5rem" placeholder="2.5rem">
+                </div>
+                <div class="integra-config-field">
+                    <label for="h3-lg">H3 Large</label>
+                    <input type="text" id="h3-lg" name="typography[h3_lg]" value="<?php echo esc_attr(get_option('integra_h3_lg', '2.25rem')); ?>" data-default-value="2.25rem" placeholder="2.25rem">
+                </div>
+                <div class="integra-config-field">
+                    <label for="h4-lg">H4 Large</label>
+                    <input type="text" id="h4-lg" name="typography[h4_lg]" value="<?php echo esc_attr(get_option('integra_h4_lg', '2rem')); ?>" data-default-value="2rem" placeholder="2rem">
+                </div>
+                <div class="integra-config-field">
+                    <label for="h5-lg">H5 Large</label>
+                    <input type="text" id="h5-lg" name="typography[h5_lg]" value="<?php echo esc_attr(get_option('integra_h5_lg', '1.875rem')); ?>" data-default-value="1.875rem" placeholder="1.875rem">
                 </div>
                 <div class="integra-config-field">
                     <label for="h6-lg">H6 Large</label>

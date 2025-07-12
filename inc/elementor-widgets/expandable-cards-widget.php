@@ -260,8 +260,7 @@ fa fa-dot-circle-o | Success',
         // Theme Render;
         include('attr/theme/theme.render.php');
 
-        // Container Render;
-        include('attr/container/container.render.php');
+
 
         // Background Render;
         include('attr/background/background.render.php');
@@ -273,7 +272,7 @@ fa fa-dot-circle-o | Success',
         ?>
         <!-- Expandable Cards Section -->
         <section class="expandable-cards <?= esc_attr(trim($section_class)); ?>" style="<?= esc_attr($section_style); ?>">
-            <div class="<?= esc_attr(trim($container_class)); ?>">
+            <div class="container">
                 <div class="expandable-cards-wrapper expandable-cards-wrapper--layout-3">
                     <?php foreach ($cards as $card) : ?>
                         <div class="expandable-card card-style">

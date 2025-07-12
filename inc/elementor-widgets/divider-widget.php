@@ -246,8 +246,7 @@ class Divider_Widget extends \Elementor\Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 
-        // Container Render;
-        include('attr/container/container.render.php');
+
 
         // Divider color;
         $divider_color = $settings['divider_color'];
@@ -265,7 +264,7 @@ class Divider_Widget extends \Elementor\Widget_Base {
 
         <!-- Divider Section -->
         <section class="divider-section">
-            <div class="<?= esc_attr(trim($container_class)); ?>">
+            <div class="container">
                 <div class="divider" style="background-color: var(--color-<?= esc_attr($divider_color); ?>);"></div>
             </div>
         </section>

@@ -133,8 +133,7 @@ class Heading_Group_Widget extends \Elementor\Widget_Base {
         // Theme Render;
         include('attr/theme/theme.render.php');
 
-        // Container Render;
-        include('attr/container/container.render.php');
+
 
         // Background Render;
         include('attr/background/background.render.php');
@@ -147,7 +146,7 @@ class Heading_Group_Widget extends \Elementor\Widget_Base {
         <!-- Heading Section -->
         <section class="heading <?= esc_attr(trim($section_class)); ?>"
                 style="<?= esc_attr($section_style); ?>">
-            <div class="<?= esc_attr(trim($container_class)); ?>">
+            <div class="container">
 
                 <div class="text-content">
                     <?= $content_markup; ?>
