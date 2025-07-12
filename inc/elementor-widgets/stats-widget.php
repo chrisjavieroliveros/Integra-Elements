@@ -153,7 +153,7 @@ class Stats_Widget extends \Elementor\Widget_Base {
             [
                 'label' => __('Content', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::WYSIWYG,
-                'default' => __('<h6>Card Title</h6><p>Lorem ipsum dolor sit amet.</p>', 'integra-elements'),
+                'default' => __('<h5 class="text-Primary">Stat Title</h5>Stat description and text goes here', 'integra-elements'),
             ]
         );
 
@@ -166,16 +166,16 @@ class Stats_Widget extends \Elementor\Widget_Base {
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        'card_content' => __( '<h6>Card Title 1</h6><p>Lorem ipsum dolor sit amet.</p>', 'integra-elements' ),
+                        'card_content' => __( '<h5 class="text-Primary">Stat Title</h5>Stat description and text goes here', 'integra-elements' ),
                     ],
                     [
-                        'card_content' => __( '<h6>Card Title 2</h6><p>Lorem ipsum dolor sit amet.</p>', 'integra-elements' ),
+                        'card_content' => __( '<h5 class="text-Primary">Stat Title</h5>Stat description and text goes here', 'integra-elements' ),
                     ],
                     [
-                        'card_content' => __( '<h6>Card Title 3</h6><p>Lorem ipsum dolor sit amet.</p>', 'integra-elements' ),
+                        'card_content' => __( '<h5 class="text-Primary">Stat Title</h5>Stat description and text goes here', 'integra-elements' ),
                     ],
                     [
-                        'card_content' => __( '<h6>Card Title 4</h6><p>Lorem ipsum dolor sit amet.</p>', 'integra-elements' ),
+                        'card_content' => __( '<h5 class="text-Primary">Stat Title</h5>Stat description and text goes here', 'integra-elements' ),
                     ]
                 ],
                 'title_field' => '{{{ card_content }}}',
