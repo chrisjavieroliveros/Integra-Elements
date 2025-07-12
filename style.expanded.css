@@ -2070,16 +2070,16 @@ dd:last-child {
   }
 }
 
-.brands {
+.gallery {
   display: grid;
   place-items: center;
 }
-.brands .brands-grid {
+.gallery .gallery-grid {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
 }
-.brands .brand-item img {
+.gallery .gallery-item img {
   display: block;
   width: auto;
 }

@@ -1,14 +1,14 @@
-.brands {
+.gallery {
     display: grid;
     place-items: center;
 
-    .brands-grid {
+    .gallery-grid {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
     }
 
-    .brand-item {
+    .gallery-item {
         img {
             display: block;
             width: auto;

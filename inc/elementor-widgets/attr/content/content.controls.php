@@ -29,7 +29,7 @@
             [
                 'label' => __('Show Display Icon', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::SWITCHER,
-                'default' => 'yes',
+                'default' => 'no',
             ]
         );
     

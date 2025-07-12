@@ -1,6 +1,6 @@
 <?php
 /**
- * Brands Widget - Brand Logos Section Implementation
+ * Gallery Widget - Image Gallery Section Implementation
  *
  * @package Integra_Elements
  */
@@ -12,16 +12,16 @@ if (!defined('ABSPATH')) {
 }
 
 /**
- * Class Brands_Widget
+ * Class Gallery_Widget
  */
-class Brands_Widget extends \Elementor\Widget_Base {
+class Gallery_Widget extends \Elementor\Widget_Base {
 
     public function get_name() {
-        return 'integra_brands';
+        return 'integra_gallery';
     }
 
     public function get_title() {
-        return __('Brands', 'integra-elements');
+        return __('Gallery', 'integra-elements');
     }
 
     public function get_icon() {
@@ -53,7 +53,7 @@ class Brands_Widget extends \Elementor\Widget_Base {
 
         // Height Controls
         $height_config = [
-            'selector' => '.brands',
+            'selector' => '.gallery',
             'default' => 0, // Will apply to all breakpoints initially
         ];
         include('attr/height/height.controls.php');
@@ -61,16 +61,16 @@ class Brands_Widget extends \Elementor\Widget_Base {
         // End General Section
         $this->end_controls_section();
 
-        // Brands Section
+        // Gallery Section
         $this->start_controls_section(
-            'section_brands',
+            'section_gallery',
             [
-                'label' => __('Brands', 'integra-elements'),
+                'label' => __('Gallery', 'integra-elements'),
             ]
         );
 
         $this->add_responsive_control(
-            'brand_size',
+            'gallery_item_size',
             [
                 'label' => __('Size', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
@@ -95,13 +95,13 @@ class Brands_Widget extends \Elementor\Widget_Base {
                     'size' => 48,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .brand-item img' => 'height: {{SIZE}}{{UNIT}};',
+                    '{{WRAPPER}} .gallery-item img' => 'height: {{SIZE}}{{UNIT}};',
                 ],
             ]
         );
 
         $this->add_responsive_control(
-            'brand_column_spacing',
+            'gallery_column_spacing',
             [
                 'label' => __('Column Spacing', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
@@ -126,14 +126,14 @@ class Brands_Widget extends \Elementor\Widget_Base {
                     'size' => 12,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .brands-grid' => 'column-gap: calc({{SIZE}}{{UNIT}});',
+                    '{{WRAPPER}} .gallery-grid' => 'column-gap: calc({{SIZE}}{{UNIT}});',
                 ],
             ]
         );
 
 
         $this->add_responsive_control(
-            'brand_row_spacing',
+            'gallery_row_spacing',
             [
                 'label' => __('Row Spacing', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::SLIDER,
@@ -158,15 +158,15 @@ class Brands_Widget extends \Elementor\Widget_Base {
                     'size' => 12,
                 ],
                 'selectors' => [
-                    '{{WRAPPER}} .brands-grid' => 'row-gap: calc({{SIZE}}{{UNIT}});',
+                    '{{WRAPPER}} .gallery-grid' => 'row-gap: calc({{SIZE}}{{UNIT}});',
                 ],
             ]
         );
 
         $this->add_control(
-            'brand_gallery',
+            'gallery_images',
             [
-                'label' => __('Brands', 'integra-elements'),
+                'label' => __('Gallery Images', 'integra-elements'),
                 'type' => \Elementor\Controls_Manager::GALLERY,
                 'default' => [
                     ['url' => 'https://placehold.co/180x80', 'id' => 0],
@@ -179,7 +179,7 @@ class Brands_Widget extends \Elementor\Widget_Base {
             ]
         );
 
-        // End Brands Section
+        // End Gallery Section
         $this->end_controls_section();
 
         // Spacing Section;
@@ -224,19 +224,19 @@ class Brands_Widget extends \Elementor\Widget_Base {
 
         ?>
 
-        <!-- Brands Section -->
-        <section class="brands <?= esc_attr(trim($section_class)); ?>"
+        <!-- Gallery Section -->
+        <section class="gallery <?= esc_attr(trim($section_class)); ?>"
                 style="<?= esc_attr($section_style); ?>">
             <div class="<?= esc_attr(trim($container_class)); ?>">
-                <div class="brands-grid">
+                <div class="gallery-grid">
                     <?php
-                    if (!empty($settings['brand_gallery'])) {
-                        foreach ($settings['brand_gallery'] as $image) {
+                    if (!empty($settings['gallery_images'])) {
+                        foreach ($settings['gallery_images'] as $image) {
                             // Check if it's a placeholder URL (id = 0) or a real attachment
                             if (!empty($image['url']) && $image['id'] == 0) {
                                 // Handle placeholder URLs
                                 $final_url = $image['url'];
-                                $image_alt = 'Brand Logo';
+                                $image_alt = 'Gallery Image';
                             } else {
                                 // Handle WordPress attachments
                                 $image_url = wp_get_attachment_image_src($image['id'], 'full');
@@ -245,7 +245,7 @@ class Brands_Widget extends \Elementor\Widget_Base {
                             }
                             
                             if (!empty($final_url)) {
-                                echo '<div class="brand-item">';
+                                echo '<div class="gallery-item">';
                                 echo '<img src="' . esc_url($final_url) . '" alt="' . esc_attr($image_alt) . '">';
                                 echo '</div>';
                             }
