@@ -497,6 +497,525 @@ Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-com
 }
 
 /**
+ * HOW TO USE DISPLAY UTILITIES
+ * ============================
+ * 
+ * All display utilities now use the .d- prefix for consistency.
+ * Includes both basic and responsive variants with mobile-first approach.
+ * 
+ * BREAKPOINTS (Mobile-First):
+ * - xs: 480px+    - sm: 576px+    - md: 768px+
+ * - lg: 992px+    - xl: 1200px+   - xxl: 1400px+
+ * 
+ * BASIC USAGE:
+ * 
+ * <div class="d-none">Hidden</div>
+ * <div class="d-block">Block element</div>
+ * <div class="d-flex">Flex container</div>
+ * <div class="d-grid">Grid container</div>
+ * <div class="d-inline-block">Inline block</div>
+ * 
+ * RESPONSIVE USAGE:
+ * 
+ * Hide on mobile, show on tablet:
+ * <div class="d-none md:d-block">Content</div>
+ * 
+ * Flex on mobile, grid on desktop:
+ * <div class="d-flex lg:d-grid">Layout</div>
+ * 
+ * Block on mobile, inline on small screens, flex on large:
+ * <div class="d-block sm:d-inline lg:d-flex">Responsive</div>
+ * 
+ * COMMON PATTERNS:
+ * 
+ * Mobile menu toggle:
+ * <div class="d-block md:d-hidden">Mobile menu</div>
+ * <div class="d-none md:d-block">Desktop menu</div>
+ * 
+ * Responsive grid:
+ * <div class="d-block sm:d-flex lg:d-grid">Grid container</div>
+ * 
+ * Show/hide at different breakpoints:
+ * <div class="d-none xs:d-block sm:d-hidden md:d-block">Complex visibility</div>
+ * 
+ * AVAILABLE DISPLAY VALUES:
+ * block, inline, inline-block, flex, inline-flex, grid, inline-grid,
+ * table, table-row, table-cell, hidden (none), and more...
+ */
+/**
+ * DISPLAY UTILITIES
+ * -----------------
+ * Both shorthand (.d-*) and full Tailwind-style responsive display utilities.
+ * Mobile-first approach with breakpoint prefixes.
+ */
+.d-none {
+  display: none !important;
+}
+.d-block {
+  display: block !important;
+}
+.d-inline {
+  display: inline !important;
+}
+.d-inline-block {
+  display: inline-block !important;
+}
+.d-flex {
+  display: flex !important;
+}
+.d-grid {
+  display: grid !important;
+}
+.d-inline-flex {
+  display: inline-flex !important;
+}
+.d-inline-grid {
+  display: inline-grid !important;
+}
+.d-table {
+  display: table !important;
+}
+.d-table-row {
+  display: table-row !important;
+}
+.d-table-cell {
+  display: table-cell !important;
+}
+.d-table-column {
+  display: table-column !important;
+}
+.d-table-column-group {
+  display: table-column-group !important;
+}
+.d-table-footer-group {
+  display: table-footer-group !important;
+}
+.d-table-header-group {
+  display: table-header-group !important;
+}
+.d-table-row-group {
+  display: table-row-group !important;
+}
+.d-table-caption {
+  display: table-caption !important;
+}
+.d-flow-root {
+  display: flow-root !important;
+}
+.d-contents {
+  display: contents !important;
+}
+.d-list-item {
+  display: list-item !important;
+}
+
+.d-inline-table {
+  display: inline-table !important;
+}
+.d-flow-root {
+  display: flow-root !important;
+}
+.d-contents {
+  display: contents !important;
+}
+.d-list-item {
+  display: list-item !important;
+}
+.d-hidden {
+  display: none !important;
+}
+
+@media (min-width: 480px) {
+  .xs\:d-block {
+    display: block !important;
+  }
+  .xs\:d-inline-block {
+    display: inline-block !important;
+  }
+  .xs\:d-inline {
+    display: inline !important;
+  }
+  .xs\:d-flex {
+    display: flex !important;
+  }
+  .xs\:d-inline-flex {
+    display: inline-flex !important;
+  }
+  .xs\:d-table {
+    display: table !important;
+  }
+  .xs\:d-inline-table {
+    display: inline-table !important;
+  }
+  .xs\:d-table-caption {
+    display: table-caption !important;
+  }
+  .xs\:d-table-cell {
+    display: table-cell !important;
+  }
+  .xs\:d-table-column {
+    display: table-column !important;
+  }
+  .xs\:d-table-column-group {
+    display: table-column-group !important;
+  }
+  .xs\:d-table-footer-group {
+    display: table-footer-group !important;
+  }
+  .xs\:d-table-header-group {
+    display: table-header-group !important;
+  }
+  .xs\:d-table-row-group {
+    display: table-row-group !important;
+  }
+  .xs\:d-table-row {
+    display: table-row !important;
+  }
+  .xs\:d-flow-root {
+    display: flow-root !important;
+  }
+  .xs\:d-grid {
+    display: grid !important;
+  }
+  .xs\:d-inline-grid {
+    display: inline-grid !important;
+  }
+  .xs\:d-contents {
+    display: contents !important;
+  }
+  .xs\:d-list-item {
+    display: list-item !important;
+  }
+  .xs\:d-hidden {
+    display: none !important;
+  }
+}
+@media (min-width: 576px) {
+  .sm\:d-block {
+    display: block !important;
+  }
+  .sm\:d-inline-block {
+    display: inline-block !important;
+  }
+  .sm\:d-inline {
+    display: inline !important;
+  }
+  .sm\:d-flex {
+    display: flex !important;
+  }
+  .sm\:d-inline-flex {
+    display: inline-flex !important;
+  }
+  .sm\:d-table {
+    display: table !important;
+  }
+  .sm\:d-inline-table {
+    display: inline-table !important;
+  }
+  .sm\:d-table-caption {
+    display: table-caption !important;
+  }
+  .sm\:d-table-cell {
+    display: table-cell !important;
+  }
+  .sm\:d-table-column {
+    display: table-column !important;
+  }
+  .sm\:d-table-column-group {
+    display: table-column-group !important;
+  }
+  .sm\:d-table-footer-group {
+    display: table-footer-group !important;
+  }
+  .sm\:d-table-header-group {
+    display: table-header-group !important;
+  }
+  .sm\:d-table-row-group {
+    display: table-row-group !important;
+  }
+  .sm\:d-table-row {
+    display: table-row !important;
+  }
+  .sm\:d-flow-root {
+    display: flow-root !important;
+  }
+  .sm\:d-grid {
+    display: grid !important;
+  }
+  .sm\:d-inline-grid {
+    display: inline-grid !important;
+  }
+  .sm\:d-contents {
+    display: contents !important;
+  }
+  .sm\:d-list-item {
+    display: list-item !important;
+  }
+  .sm\:d-hidden {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) {
+  .md\:d-block {
+    display: block !important;
+  }
+  .md\:d-inline-block {
+    display: inline-block !important;
+  }
+  .md\:d-inline {
+    display: inline !important;
+  }
+  .md\:d-flex {
+    display: flex !important;
+  }
+  .md\:d-inline-flex {
+    display: inline-flex !important;
+  }
+  .md\:d-table {
+    display: table !important;
+  }
+  .md\:d-inline-table {
+    display: inline-table !important;
+  }
+  .md\:d-table-caption {
+    display: table-caption !important;
+  }
+  .md\:d-table-cell {
+    display: table-cell !important;
+  }
+  .md\:d-table-column {
+    display: table-column !important;
+  }
+  .md\:d-table-column-group {
+    display: table-column-group !important;
+  }
+  .md\:d-table-footer-group {
+    display: table-footer-group !important;
+  }
+  .md\:d-table-header-group {
+    display: table-header-group !important;
+  }
+  .md\:d-table-row-group {
+    display: table-row-group !important;
+  }
+  .md\:d-table-row {
+    display: table-row !important;
+  }
+  .md\:d-flow-root {
+    display: flow-root !important;
+  }
+  .md\:d-grid {
+    display: grid !important;
+  }
+  .md\:d-inline-grid {
+    display: inline-grid !important;
+  }
+  .md\:d-contents {
+    display: contents !important;
+  }
+  .md\:d-list-item {
+    display: list-item !important;
+  }
+  .md\:d-hidden {
+    display: none !important;
+  }
+}
+@media (min-width: 992px) {
+  .lg\:d-block {
+    display: block !important;
+  }
+  .lg\:d-inline-block {
+    display: inline-block !important;
+  }
+  .lg\:d-inline {
+    display: inline !important;
+  }
+  .lg\:d-flex {
+    display: flex !important;
+  }
+  .lg\:d-inline-flex {
+    display: inline-flex !important;
+  }
+  .lg\:d-table {
+    display: table !important;
+  }
+  .lg\:d-inline-table {
+    display: inline-table !important;
+  }
+  .lg\:d-table-caption {
+    display: table-caption !important;
+  }
+  .lg\:d-table-cell {
+    display: table-cell !important;
+  }
+  .lg\:d-table-column {
+    display: table-column !important;
+  }
+  .lg\:d-table-column-group {
+    display: table-column-group !important;
+  }
+  .lg\:d-table-footer-group {
+    display: table-footer-group !important;
+  }
+  .lg\:d-table-header-group {
+    display: table-header-group !important;
+  }
+  .lg\:d-table-row-group {
+    display: table-row-group !important;
+  }
+  .lg\:d-table-row {
+    display: table-row !important;
+  }
+  .lg\:d-flow-root {
+    display: flow-root !important;
+  }
+  .lg\:d-grid {
+    display: grid !important;
+  }
+  .lg\:d-inline-grid {
+    display: inline-grid !important;
+  }
+  .lg\:d-contents {
+    display: contents !important;
+  }
+  .lg\:d-list-item {
+    display: list-item !important;
+  }
+  .lg\:d-hidden {
+    display: none !important;
+  }
+}
+@media (min-width: 1200px) {
+  .xl\:d-block {
+    display: block !important;
+  }
+  .xl\:d-inline-block {
+    display: inline-block !important;
+  }
+  .xl\:d-inline {
+    display: inline !important;
+  }
+  .xl\:d-flex {
+    display: flex !important;
+  }
+  .xl\:d-inline-flex {
+    display: inline-flex !important;
+  }
+  .xl\:d-table {
+    display: table !important;
+  }
+  .xl\:d-inline-table {
+    display: inline-table !important;
+  }
+  .xl\:d-table-caption {
+    display: table-caption !important;
+  }
+  .xl\:d-table-cell {
+    display: table-cell !important;
+  }
+  .xl\:d-table-column {
+    display: table-column !important;
+  }
+  .xl\:d-table-column-group {
+    display: table-column-group !important;
+  }
+  .xl\:d-table-footer-group {
+    display: table-footer-group !important;
+  }
+  .xl\:d-table-header-group {
+    display: table-header-group !important;
+  }
+  .xl\:d-table-row-group {
+    display: table-row-group !important;
+  }
+  .xl\:d-table-row {
+    display: table-row !important;
+  }
+  .xl\:d-flow-root {
+    display: flow-root !important;
+  }
+  .xl\:d-grid {
+    display: grid !important;
+  }
+  .xl\:d-inline-grid {
+    display: inline-grid !important;
+  }
+  .xl\:d-contents {
+    display: contents !important;
+  }
+  .xl\:d-list-item {
+    display: list-item !important;
+  }
+  .xl\:d-hidden {
+    display: none !important;
+  }
+}
+@media (min-width: 1400px) {
+  .xxl\:d-block {
+    display: block !important;
+  }
+  .xxl\:d-inline-block {
+    display: inline-block !important;
+  }
+  .xxl\:d-inline {
+    display: inline !important;
+  }
+  .xxl\:d-flex {
+    display: flex !important;
+  }
+  .xxl\:d-inline-flex {
+    display: inline-flex !important;
+  }
+  .xxl\:d-table {
+    display: table !important;
+  }
+  .xxl\:d-inline-table {
+    display: inline-table !important;
+  }
+  .xxl\:d-table-caption {
+    display: table-caption !important;
+  }
+  .xxl\:d-table-cell {
+    display: table-cell !important;
+  }
+  .xxl\:d-table-column {
+    display: table-column !important;
+  }
+  .xxl\:d-table-column-group {
+    display: table-column-group !important;
+  }
+  .xxl\:d-table-footer-group {
+    display: table-footer-group !important;
+  }
+  .xxl\:d-table-header-group {
+    display: table-header-group !important;
+  }
+  .xxl\:d-table-row-group {
+    display: table-row-group !important;
+  }
+  .xxl\:d-table-row {
+    display: table-row !important;
+  }
+  .xxl\:d-flow-root {
+    display: flow-root !important;
+  }
+  .xxl\:d-grid {
+    display: grid !important;
+  }
+  .xxl\:d-inline-grid {
+    display: inline-grid !important;
+  }
+  .xxl\:d-contents {
+    display: contents !important;
+  }
+  .xxl\:d-list-item {
+    display: list-item !important;
+  }
+  .xxl\:d-hidden {
+    display: none !important;
+  }
+}
+/**
  * Base Styles
  */
 /**

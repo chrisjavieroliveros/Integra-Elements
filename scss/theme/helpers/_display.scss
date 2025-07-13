@@ -1,0 +1,250 @@
+@use "../utilities/breakpoints" as *;
+
+/**
+ * HOW TO USE DISPLAY UTILITIES
+ * ============================
+ * 
+ * All display utilities now use the .d- prefix for consistency.
+ * Includes both basic and responsive variants with mobile-first approach.
+ * 
+ * BREAKPOINTS (Mobile-First):
+ * - xs: 480px+    - sm: 576px+    - md: 768px+
+ * - lg: 992px+    - xl: 1200px+   - xxl: 1400px+
+ * 
+ * BASIC USAGE:
+ * 
+ * <div class="d-none">Hidden</div>
+ * <div class="d-block">Block element</div>
+ * <div class="d-flex">Flex container</div>
+ * <div class="d-grid">Grid container</div>
+ * <div class="d-inline-block">Inline block</div>
+ * 
+ * RESPONSIVE USAGE:
+ * 
+ * Hide on mobile, show on tablet:
+ * <div class="d-none md:d-block">Content</div>
+ * 
+ * Flex on mobile, grid on desktop:
+ * <div class="d-flex lg:d-grid">Layout</div>
+ * 
+ * Block on mobile, inline on small screens, flex on large:
+ * <div class="d-block sm:d-inline lg:d-flex">Responsive</div>
+ * 
+ * COMMON PATTERNS:
+ * 
+ * Mobile menu toggle:
+ * <div class="d-block md:d-hidden">Mobile menu</div>
+ * <div class="d-none md:d-block">Desktop menu</div>
+ * 
+ * Responsive grid:
+ * <div class="d-block sm:d-flex lg:d-grid">Grid container</div>
+ * 
+ * Show/hide at different breakpoints:
+ * <div class="d-none xs:d-block sm:d-hidden md:d-block">Complex visibility</div>
+ * 
+ * AVAILABLE DISPLAY VALUES:
+ * block, inline, inline-block, flex, inline-flex, grid, inline-grid,
+ * table, table-row, table-cell, hidden (none), and more...
+ */
+
+/**
+ * DISPLAY UTILITIES
+ * -----------------
+ * Both shorthand (.d-*) and full Tailwind-style responsive display utilities.
+ * Mobile-first approach with breakpoint prefixes.
+ */
+
+// Shorthand display utilities (.d-*)
+.d {
+    &-none {
+        display: none !important;
+    }
+
+    &-block {
+        display: block !important;
+    }
+
+    &-inline {
+        display: inline !important;
+    }
+
+    &-inline-block {
+        display: inline-block !important;
+    }
+
+    &-flex {
+        display: flex !important;
+    }
+
+    &-grid {
+        display: grid !important;
+    }
+
+    &-inline-flex {
+        display: inline-flex !important;
+    }
+
+    &-inline-grid {
+        display: inline-grid !important;
+    }
+
+    &-table {
+        display: table !important;
+    }
+
+    &-table-row {
+        display: table-row !important;
+    }
+
+    &-table-cell {
+        display: table-cell !important;
+    }
+
+    &-table-column {
+        display: table-column !important;
+    }
+
+    &-table-column-group {
+        display: table-column-group !important;
+    }
+
+    &-table-footer-group {
+        display: table-footer-group !important;
+    }
+
+    &-table-header-group {
+        display: table-header-group !important;
+    }
+
+    &-table-row-group {
+        display: table-row-group !important;
+    }
+
+    &-table-caption {
+        display: table-caption !important;
+    }
+
+    &-flow-root {
+        display: flow-root !important;
+    }
+
+    &-contents {
+        display: contents !important;
+    }
+
+    &-list-item {
+        display: list-item !important;
+    }
+}
+
+// Additional .d- prefixed utilities for consistency
+.d {
+    &-inline-table {
+        display: inline-table !important;
+    }
+
+    &-flow-root {
+        display: flow-root !important;
+    }
+
+    &-contents {
+        display: contents !important;
+    }
+
+    &-list-item {
+        display: list-item !important;
+    }
+
+    &-hidden {
+        display: none !important;
+    }
+}
+
+// Generate responsive display utilities - breakpoint:d-class format
+@each $breakpoint-name, $breakpoint-value in $breakpoints {
+    @include breakpoint($breakpoint-name) {
+        .#{$breakpoint-name}\:d-block {
+            display: block !important;
+        }
+
+        .#{$breakpoint-name}\:d-inline-block {
+            display: inline-block !important;
+        }
+
+        .#{$breakpoint-name}\:d-inline {
+            display: inline !important;
+        }
+
+        .#{$breakpoint-name}\:d-flex {
+            display: flex !important;
+        }
+
+        .#{$breakpoint-name}\:d-inline-flex {
+            display: inline-flex !important;
+        }
+
+        .#{$breakpoint-name}\:d-table {
+            display: table !important;
+        }
+
+        .#{$breakpoint-name}\:d-inline-table {
+            display: inline-table !important;
+        }
+
+        .#{$breakpoint-name}\:d-table-caption {
+            display: table-caption !important;
+        }
+
+        .#{$breakpoint-name}\:d-table-cell {
+            display: table-cell !important;
+        }
+
+        .#{$breakpoint-name}\:d-table-column {
+            display: table-column !important;
+        }
+
+        .#{$breakpoint-name}\:d-table-column-group {
+            display: table-column-group !important;
+        }
+
+        .#{$breakpoint-name}\:d-table-footer-group {
+            display: table-footer-group !important;
+        }
+
+        .#{$breakpoint-name}\:d-table-header-group {
+            display: table-header-group !important;
+        }
+
+        .#{$breakpoint-name}\:d-table-row-group {
+            display: table-row-group !important;
+        }
+
+        .#{$breakpoint-name}\:d-table-row {
+            display: table-row !important;
+        }
+
+        .#{$breakpoint-name}\:d-flow-root {
+            display: flow-root !important;
+        }
+
+        .#{$breakpoint-name}\:d-grid {
+            display: grid !important;
+        }
+
+        .#{$breakpoint-name}\:d-inline-grid {
+            display: inline-grid !important;
+        }
+
+        .#{$breakpoint-name}\:d-contents {
+            display: contents !important;
+        }
+
+        .#{$breakpoint-name}\:d-list-item {
+            display: list-item !important;
+        }
+
+        .#{$breakpoint-name}\:d-hidden {
+            display: none !important;
+        }
+    }
+}
