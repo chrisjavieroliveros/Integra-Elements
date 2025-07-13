@@ -1,0 +1,48 @@
+.simple-quote {
+    display: grid;
+    place-items: center;
+
+    .quote-content {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+        align-items: center;
+        justify-content: center;
+        gap: 0.25rem;
+    }
+
+    &.theme-light {
+        .quote-content {
+            color: var(--color-Light-500);
+        }
+    }
+
+    &.theme-dark {
+        .quote-content {
+            color: var(--color-Dark-300);
+        }
+    }
+
+    .quote-text {
+        font-style: italic;
+
+        p {
+            position: relative;
+            margin: 0;
+
+            &::before {
+                content: "\201C";
+            }
+
+            &::after {
+                content: "\201D";
+            }
+        }
+    }
+
+    .quote-author {
+        font-weight: bold;
+        font-size: 0.85rem;
+        text-transform: uppercase;
+    }
+}

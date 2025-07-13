@@ -108,6 +108,9 @@ class Divider_Widget extends \Elementor\Widget_Base {
         // End General Section
         $this->end_controls_section();
 
+        // Spacing Section;
+        include('attr/spacing/spacing.controls.php');
+
         /*-- Style Tab ------------------------------------------------------------*/
 
         // Style Section

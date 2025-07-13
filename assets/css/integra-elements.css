@@ -2376,6 +2376,43 @@ dd:last-child {
   gap: 0.25rem;
 }
 
+.simple-quote {
+  display: grid;
+  place-items: center;
+}
+.simple-quote .quote-content {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  gap: 0.25rem;
+}
+.simple-quote.theme-light .quote-content {
+  color: var(--color-Light-500);
+}
+.simple-quote.theme-dark .quote-content {
+  color: var(--color-Dark-300);
+}
+.simple-quote .quote-text {
+  font-style: italic;
+}
+.simple-quote .quote-text p {
+  position: relative;
+  margin: 0;
+}
+.simple-quote .quote-text p::before {
+  content: "“";
+}
+.simple-quote .quote-text p::after {
+  content: "”";
+}
+.simple-quote .quote-author {
+  font-weight: bold;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+}
+
 .elementor-widget-text-editor p {
   max-width: 65ch;
 }

@@ -19,17 +19,4 @@
     "editor.formatOnSave": true
   },
   "liveServer.settings.AdvanceCustomBrowserCmdLine": "",
-
-  "liveSassCompile.settings.formats": [
-    {
-      "format": "expanded",
-      "extensionName": ".expanded.css",
-      "savePath": "/"
-    },
-    {
-      "format": "compressed",
-      "extensionName": ".css",
-      "savePath": "/"
-    }
-],
 } 

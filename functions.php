@@ -18,7 +18,8 @@ function integra_elements_scripts() {
     wp_enqueue_script('jquery');
     
     // Theme Style & Script
-    wp_enqueue_style('integra-elements-style', get_stylesheet_uri(), array(), _S_VERSION);
+    wp_enqueue_style('theme-style', get_stylesheet_uri(), array(), _S_VERSION);
+    wp_enqueue_style('integra-elements-style', get_template_directory_uri() . '/assets/css/integra-elements.min.css', array(), _S_VERSION);
     wp_enqueue_script('integra-elements-js', get_template_directory_uri() . '/js/integra-elements.js', array('jquery'), _S_VERSION, true);
 
     // GSAP Animation Library
