@@ -2941,6 +2941,10 @@ dd:last-child {
   box-shadow: none;
   overflow: hidden;
 }
+.accordion-section .accordion-item--active .accordion-item-header i {
+  font-size: 16px;
+}
+.accordion-section .accordion-item--active .accordion-item-header i,
 .accordion-section .accordion-item--active .accordion-item-header svg {
   transition: transform 240ms ease-out;
   transform: rotate(180deg);

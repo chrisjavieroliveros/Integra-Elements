@@ -183,13 +183,8 @@ class Accordion_Widget extends \Elementor\Widget_Base {
                     <div class="accordion-item card-style<?= esc_attr($item_active); ?>">
                         <div class="accordion-item-header">
                             <?= esc_html($item['item_title']); ?>
-
                             <span class="accordion-item-icon">
-                                <?php if (!empty($accordion_icon['value'])) : ?>
-                                    <?php \Elementor\Icons_Manager::render_icon($accordion_icon, ['aria-hidden' => 'true']); ?>
-                                <?php else : ?>
-                                    <i class="fas fa-angle-down"></i>
-                                <?php endif; ?>
+                                <?php \Elementor\Icons_Manager::render_icon($accordion_icon, ['aria-hidden' => 'true']); ?>
                             </span>
                         </div>
                         <div class="accordion-item-content">
