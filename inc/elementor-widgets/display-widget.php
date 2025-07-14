@@ -83,7 +83,7 @@ class Display_Widget extends \Elementor\Widget_Base {
                     'left' => __('Left', 'integra-elements'),
                     'right' => __('Right', 'integra-elements')
                 ],
-                'default' => 'left',
+                'default' => 'right',
                 'condition' => [
                     'display_layout' => 'display-w-preview',
                 ],
@@ -155,6 +155,11 @@ class Display_Widget extends \Elementor\Widget_Base {
         $display_layout = $settings['display_layout'];
         if($display_layout === 'display-centered') {
             $section_class .= ' display-section--centered';
+        }
+
+        $preview_position = $settings['display_preview_position'];
+        if($display_layout === 'display-w-preview' && $preview_position === 'left') {
+            $section_class .= ' display-section--preview-left';
         }
 
         ?>

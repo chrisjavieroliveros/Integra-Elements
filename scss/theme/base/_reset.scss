@@ -146,7 +146,7 @@ h1,
 h2,
 h3,
 h4 {
-  text-wrap: balance;
+  // text-wrap: balance;
 }
 
 /* Make images and media easier to work with */
@@ -450,7 +450,6 @@ a:hover {
 
 /* Remove animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
-
   *,
   *::before,
   *::after {
@@ -482,7 +481,6 @@ a:hover {
 
 /* Print styles */
 @media print {
-
   *,
   *::before,
   *::after {
@@ -567,7 +565,6 @@ a:hover {
 
 /* Touch target sizing for mobile accessibility */
 @media (hover: none) and (pointer: coarse) {
-
   button,
   input[type="button"],
   input[type="submit"],
@@ -581,7 +578,6 @@ a:hover {
 
 /* Reduced motion for specific elements */
 @media (prefers-reduced-motion: reduce) {
-
   *::before,
   *::after {
     animation-delay: -1ms;

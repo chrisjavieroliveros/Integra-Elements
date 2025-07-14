@@ -1,62 +1,70 @@
 @use "../utilities/breakpoints" as breakpoints;
 
 .display-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  // For when background image is used;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  .container {
     display: flex;
     flex-direction: column;
+    align-items: center;
     justify-content: center;
+    gap: 2rem;
+  }
 
-    // For when background image is used;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
+  .display-content {
+    flex: 1 1 auto;
+    order: 2;
+  }
 
-    .container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 2rem;
+  .display-preview {
+    flex: 0 0 auto;
+    order: 1;
+
+    img {
+      display: block;
+      width: 100%;
+    }
+  }
+
+  &--centered {
+    .text-content {
+      text-align: center;
+      align-items: center;
     }
 
-    .display-content {
-        flex: 1 1 auto;
-        order: 2;
+    .inline-cta {
+      justify-content: center;
+    }
+  }
+
+  @include breakpoints.breakpoint(lg) {
+    .container {
+      flex-direction: row;
     }
 
     .display-preview {
-        flex: 0 0 auto;
+      order: 2;
+    }
+
+    .display-content {
+      order: 1;
+    }
+
+    &--preview-left {
+      .display-preview {
         order: 1;
+      }
 
-        img {
-            display: block;
-            width: 100%;
-        }
+      .display-content {
+        order: 2;
+      }
     }
-
-    &--centered {
-        .text-content {
-            text-align: center;
-            align-items: center;
-        }
-
-        .inline-cta {
-            justify-content: center;
-        }
-
-    }
-
-    @include breakpoints.breakpoint(lg) {
-        .container {
-            flex-direction: row;
-        }
-
-        .display-preview {
-            order: 2;
-        }
-
-        .display-content {
-            order: 1;
-        }
-    }
-
+  }
 }
