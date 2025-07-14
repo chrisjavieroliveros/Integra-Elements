@@ -2931,6 +2931,53 @@ dd:last-child {
   text-transform: uppercase;
 }
 
+.accordion-section .container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.accordion-section .accordion-item {
+  padding: 24px;
+  box-shadow: none;
+  overflow: hidden;
+}
+.accordion-section .accordion-item--active .accordion-item-header svg {
+  transition: transform 240ms ease-out;
+  transform: rotate(180deg);
+}
+.accordion-section .accordion-item--active .accordion-item-content {
+  padding-top: 16px;
+  max-height: 500px;
+  opacity: 1;
+  transition: max-height 170ms ease-in, opacity 175ms ease-in;
+}
+.accordion-section .accordion-item-header {
+  position: relative;
+  font-weight: bold;
+  padding-right: 32px;
+  cursor: pointer;
+}
+.accordion-section .accordion-item-header .accordion-item-icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-Black);
+}
+.accordion-section .accordion-item-header svg {
+  width: 100%;
+  height: auto;
+}
+.accordion-section .accordion-item-content {
+  padding-top: 0;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
 .elementor-widget-text-editor p {
   max-width: 65ch;
 }

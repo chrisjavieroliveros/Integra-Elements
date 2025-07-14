@@ -16,8 +16,6 @@
         $('.segment-ui-item').on('click', function (e) {
             e.preventDefault();
 
-            console.log('Segment UI Item Clicked');
-
             // Remove active class from all items
             $('.segment-ui-item').removeClass('active');
 
@@ -66,6 +64,16 @@
                 }
             }
 
+        });
+
+        /* Accordion Toggler */
+        $('.accordion-item-header').on('click', function (e) {
+            e.preventDefault();
+
+            const $accordionItem = $(this).closest('.accordion-item');
+
+            // Toggle active class - CSS transitions handle the animation
+            $accordionItem.toggleClass('accordion-item--active');
         });
 
     });
