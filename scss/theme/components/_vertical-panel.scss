@@ -120,12 +120,7 @@
     .sample-integrations-logos-group {
         display: flex;
         flex-wrap: wrap;
-        gap: 1.25rem;
-
-        // img {
-        //     height: 48px;
-        //     width: auto;
-        // }
+        gap: 0 1.25rem;
     }
 
     @include breakpoint(lg) {

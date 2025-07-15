@@ -187,6 +187,26 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
             ]
         );
         $repeater->add_control(
+            'cta_1_color',
+            [
+                'label' => esc_html__('CTA 1 Color', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'primary',
+                'options' => [
+                    'primary' => esc_html__('Primary', 'integra-elements'),
+                    'secondary' => esc_html__('Secondary', 'integra-elements'),
+                    'light' => esc_html__('Light', 'integra-elements'),
+                    'dark' => esc_html__('Dark', 'integra-elements'),
+                    'black' => esc_html__('Black', 'integra-elements'),
+                    'white' => esc_html__('White', 'integra-elements'),
+                    'danger' => esc_html__('Danger', 'integra-elements'),
+                    'warning' => esc_html__('Warning', 'integra-elements'),
+                    'success' => esc_html__('Success', 'integra-elements'),
+                    'info' => esc_html__('Info', 'integra-elements'),
+                ],
+            ]
+        );
+        $repeater->add_control(
             'cta_1_icon_position',
             [
                 'label' => esc_html__('CTA 1 Icon Position', 'integra-elements'),
@@ -234,6 +254,26 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
                 'options' => [
                     'flat' => esc_html__('Flat', 'integra-elements'),
                     'outline' => esc_html__('Outline', 'integra-elements'),
+                ],
+            ]
+        );
+        $repeater->add_control(
+            'cta_2_color',
+            [
+                'label' => esc_html__('CTA 2 Color', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'primary',
+                'options' => [
+                    'primary' => esc_html__('Primary', 'integra-elements'),
+                    'secondary' => esc_html__('Secondary', 'integra-elements'),
+                    'light' => esc_html__('Light', 'integra-elements'),
+                    'dark' => esc_html__('Dark', 'integra-elements'),
+                    'black' => esc_html__('Black', 'integra-elements'),
+                    'white' => esc_html__('White', 'integra-elements'),
+                    'danger' => esc_html__('Danger', 'integra-elements'),
+                    'warning' => esc_html__('Warning', 'integra-elements'),
+                    'success' => esc_html__('Success', 'integra-elements'),
+                    'info' => esc_html__('Info', 'integra-elements'),
                 ],
             ]
         );
@@ -311,9 +351,6 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
     {
         $settings = $this->get_settings_for_display();
         
-        // Container Render
-        // include get_template_directory() . '/inc/elementor-widgets/attr/container/container.render.php';
-        
         echo '<section class="vertical-panel">';
         echo '<div class="container">';
         echo '<div class="vertical-panel-body">';
@@ -385,7 +422,8 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
                 // CTA 1
                 if (!empty($panel['cta_1_text'])) {
                     $cta1_class = 'btn btn--sm';
-                    $cta1_class .= ($panel['cta_1_style'] === 'flat') ? ' btn--flat btn--primary' : ' btn--outline btn--primary';
+                    $cta1_class .= ($panel['cta_1_style'] === 'flat') ? ' btn--flat' : ' btn--outline';
+                    $cta1_class .= ' btn--' . (!empty($panel['cta_1_color']) ? $panel['cta_1_color'] : 'primary');
                     $cta1_icon_html = '';
                     if (!empty($panel['cta_1_icon']['value'])) {
                         $cta1_icon_position = isset($panel['cta_1_icon_position']) ? $panel['cta_1_icon_position'] : 'before';
@@ -404,7 +442,8 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
                 // CTA 2
                 if (!empty($panel['cta_2_text'])) {
                     $cta2_class = 'btn btn--sm';
-                    $cta2_class .= ($panel['cta_2_style'] === 'flat') ? ' btn--flat btn--primary' : ' btn--outline btn--primary';
+                    $cta2_class .= ($panel['cta_2_style'] === 'flat') ? ' btn--flat' : ' btn--outline';
+                    $cta2_class .= ' btn--' . (!empty($panel['cta_2_color']) ? $panel['cta_2_color'] : 'primary');
                     $cta2_icon_html = '';
                     if (!empty($panel['cta_2_icon']['value'])) {
                         $cta2_icon_position = isset($panel['cta_2_icon_position']) ? $panel['cta_2_icon_position'] : 'before';

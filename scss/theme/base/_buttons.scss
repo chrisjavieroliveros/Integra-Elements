@@ -174,13 +174,33 @@
     &.btn--light {
       background-color: var(--color-Light-500);
       color: var(--color-Black);
-      border-color: var(--color-Light);
+      border-color: var(--color-Light-500);
+
+      &:hover {
+        background-color: var(--color-Light-200);
+        color: var(--color-Dark-500);
+        border-color: var(--color-Light-200);
+      }
+
+      &:active {
+        background-color: var(--color-Light-800);
+      }
     }
 
     &.btn--dark {
       background-color: var(--color-Dark-500);
       color: var(--color-White);
       border-color: var(--color-Dark-500);
+
+      &:hover {
+        background-color: var(--color-Dark-950);
+        color: var(--color-White);
+        border-color: var(--color-Dark-950);
+      }
+
+      &:active {
+        background-color: var(--color-Dark-800);
+      }
     }
 
   }

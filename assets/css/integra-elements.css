@@ -2051,12 +2051,28 @@ blockquote cite::before {
 .btn--flat.btn--light {
   background-color: var(--color-Light-500);
   color: var(--color-Black);
-  border-color: var(--color-Light);
+  border-color: var(--color-Light-500);
+}
+.btn--flat.btn--light:hover {
+  background-color: var(--color-Light-200);
+  color: var(--color-Dark-500);
+  border-color: var(--color-Light-200);
+}
+.btn--flat.btn--light:active {
+  background-color: var(--color-Light-800);
 }
 .btn--flat.btn--dark {
   background-color: var(--color-Dark-500);
   color: var(--color-White);
   border-color: var(--color-Dark-500);
+}
+.btn--flat.btn--dark:hover {
+  background-color: var(--color-Dark-950);
+  color: var(--color-White);
+  border-color: var(--color-Dark-950);
+}
+.btn--flat.btn--dark:active {
+  background-color: var(--color-Dark-800);
 }
 .btn--outline {
   border-width: var(--btn-border-width);
@@ -3090,7 +3106,7 @@ dd:last-child {
 .vertical-panel .sample-integrations-logos-group {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.25rem;
+  gap: 0 1.25rem;
 }
 @media (min-width: 992px) {
   .vertical-panel .vertical-panel-tabs {
