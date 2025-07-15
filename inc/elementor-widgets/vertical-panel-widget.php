@@ -137,6 +137,108 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
             ]
         );
 
+        $repeater->add_control(
+            'cta_1_text',
+            [
+                'label' => esc_html__('CTA 1 Text', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__('Explore', 'integra-elements'),
+            ]
+        );
+        $repeater->add_control(
+            'cta_1_link',
+            [
+                'label' => esc_html__('CTA 1 Link', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => '#',
+            ]
+        );
+        $repeater->add_control(
+            'cta_1_style',
+            [
+                'label' => esc_html__('CTA 1 Style', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'flat',
+                'options' => [
+                    'flat' => esc_html__('Flat', 'integra-elements'),
+                    'outline' => esc_html__('Outline', 'integra-elements'),
+                ],
+            ]
+        );
+        $repeater->add_control(
+            'cta_1_icon',
+            [
+                'label' => esc_html__('CTA 1 Icon', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::ICONS,
+                'default' => [
+                    'value' => '',
+                    'library' => '',
+                ],
+            ]
+        );
+        $repeater->add_control(
+            'cta_1_icon_position',
+            [
+                'label' => esc_html__('CTA 1 Icon Position', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'before' => esc_html__('Before', 'integra-elements'),
+                    'after' => esc_html__('After', 'integra-elements'),
+                ],
+                'default' => 'before',
+            ]
+        );
+        $repeater->add_control(
+            'cta_2_text',
+            [
+                'label' => esc_html__('CTA 2 Text', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => esc_html__('Get a Demo', 'integra-elements'),
+            ]
+        );
+        $repeater->add_control(
+            'cta_2_link',
+            [
+                'label' => esc_html__('CTA 2 Link', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::TEXT,
+                'default' => '#',
+            ]
+        );
+        $repeater->add_control(
+            'cta_2_style',
+            [
+                'label' => esc_html__('CTA 2 Style', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'default' => 'outline',
+                'options' => [
+                    'flat' => esc_html__('Flat', 'integra-elements'),
+                    'outline' => esc_html__('Outline', 'integra-elements'),
+                ],
+            ]
+        );
+        $repeater->add_control(
+            'cta_2_icon',
+            [
+                'label' => esc_html__('CTA 2 Icon', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::ICONS,
+                'default' => [
+                    'value' => '',
+                    'library' => '',
+                ],
+            ]
+        );
+        $repeater->add_control(
+            'cta_2_icon_position',
+            [
+                'label' => esc_html__('CTA 2 Icon Position', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'before' => esc_html__('Before', 'integra-elements'),
+                    'after' => esc_html__('After', 'integra-elements'),
+                ],
+                'default' => 'before',
+            ]
+        );
 
 
         $this->add_control(
@@ -177,9 +279,6 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
         );
 
         $this->end_controls_section();
-
-        // CTA Controls
-        include get_template_directory() . '/inc/elementor-widgets/attr/cta/cta.controls.php';
 
         // Spacing Controls
         include get_template_directory() . '/inc/elementor-widgets/attr/spacing/spacing.controls.php';
@@ -255,10 +354,47 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
                     echo '</div>';
                 }
                 
-                // CTAs
-                $cta_markup = '';
-                include get_template_directory() . '/inc/elementor-widgets/attr/cta/cta.render.php';
-                echo $cta_markup;
+                echo '<div class="inline-cta">';
+                // CTA 1
+                if (!empty($panel['cta_1_text'])) {
+                    $cta1_class = 'btn btn--sm';
+                    $cta1_class .= ($panel['cta_1_style'] === 'flat') ? ' btn--flat btn--primary' : ' btn--outline btn--primary';
+                    $cta1_icon_html = '';
+                    if (!empty($panel['cta_1_icon']['value'])) {
+                        $cta1_icon_position = isset($panel['cta_1_icon_position']) ? $panel['cta_1_icon_position'] : 'before';
+                        $cta1_icon_style = $cta1_icon_position === 'before' ? 'margin-right: var(--size-2);' : 'margin-left: var(--size-2);';
+                        $cta1_icon_html = '<span class="cta-icon" style="' . $cta1_icon_style . '"><i class="' . esc_attr($panel['cta_1_icon']['value']) . '"></i></span>';
+                    }
+                    $cta1_icon_position = isset($panel['cta_1_icon_position']) ? $panel['cta_1_icon_position'] : 'before';
+                    echo '<a href="' . esc_url($panel['cta_1_link']) . '" class="' . esc_attr($cta1_class) . '">';
+                    if ($cta1_icon_position === 'before') {
+                        echo $cta1_icon_html . ' ' . esc_html($panel['cta_1_text']);
+                    } else {
+                        echo esc_html($panel['cta_1_text']) . ' ' . $cta1_icon_html;
+                    }
+                    echo '</a>';
+                }
+                // CTA 2
+                if (!empty($panel['cta_2_text'])) {
+                    $cta2_class = 'btn btn--sm';
+                    $cta2_class .= ($panel['cta_2_style'] === 'flat') ? ' btn--flat btn--primary' : ' btn--outline btn--primary';
+                    $cta2_icon_html = '';
+                    if (!empty($panel['cta_2_icon']['value'])) {
+                        $cta2_icon_position = isset($panel['cta_2_icon_position']) ? $panel['cta_2_icon_position'] : 'before';
+                        $cta2_icon_style = $cta2_icon_position === 'before' ? 'margin-right: var(--size-2);' : 'margin-left: var(--size-2);';
+                        $cta2_icon_html = '<span class="cta-icon" style="' . $cta2_icon_style . '"><i class="' . esc_attr($panel['cta_2_icon']['value']) . '"></i></span>';
+                    }
+                    $cta2_icon_position = isset($panel['cta_2_icon_position']) ? $panel['cta_2_icon_position'] : 'before';
+                    echo '<a href="' . esc_url($panel['cta_2_link']) . '" class="' . esc_attr($cta2_class) . '">';
+                    if ($cta2_icon_position === 'before') {
+                        echo $cta2_icon_html . ' ' . esc_html($panel['cta_2_text']);
+                    } else {
+                        echo esc_html($panel['cta_2_text']) . ' ' . $cta2_icon_html;
+                    }
+                    echo '</a>';
+                }
+                echo '</div>';
+                
                 echo '</div>';
             }
             
