@@ -20,7 +20,7 @@
         display: flex;
         flex-direction: column;
         justify-content: center;
-        gap: 0.75rem;
+        gap: 0.5rem;
     }
 
     .vertical-panel-tab {
@@ -29,13 +29,15 @@
         gap: 0.5rem;
         text-transform: uppercase;
         color: var(--color-Light-900);
-        font-size: 1rem;
+        font-size: 0.875rem; // 14px
         font-weight: 500;
-        padding: 1rem;
+        padding: 0.875rem;
+        padding-right: 1rem;
         border-radius: 8px;
-        cursor: pointer;
         border: 1px solid transparent;
         border-left: 4px solid transparent;
+        cursor: pointer;
+        user-select: none;
 
         .icon-wrapper {
             display: flex;
@@ -105,6 +107,7 @@
     .sample-integrations {
         display: flex;
         flex-direction: column;
+        gap: 0.25rem;
     }
 
     .sample-integrations-title {
@@ -132,6 +135,13 @@
             border-bottom-left-radius: 1rem;
             border: 1px solid var(--color-Light-400);
             border-right: none;
+            gap: 0.75rem;
+        }
+
+        .vertical-panel-tab {
+            font-size: 1rem;
+            padding: 1rem;
+            padding-right: 1.125rem;
         }
 
         .vertical-panel-view {
@@ -147,4 +157,16 @@
         }
     }
 
+}
+
+// Override when in Elementor Editor
+.elementor-editor-active {
+    .vertical-panel-item {
+        position: relative;
+        visibility: visible;
+        opacity: 1;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+        border-bottom: 1px solid var(--color-Light-400);
+    }
 }

@@ -10,7 +10,7 @@
 
     // Initialize when the DOM is fully loaded
     $(document).ready(function () {
-        console.log('Integra Elements Theme - Loaded');
+        console.log('Integra Elements Theme - Loaded v1.0.2');
 
         /* Segment UI */
         $('.segment-ui-item').on('click', function (e) {
@@ -96,14 +96,16 @@
             });
 
             // Calculate final height including padding
-            let calculatedHeight = maxHeight + totalPadding + 2;
+            let calculatedHeight = maxHeight + totalPadding + 16;
 
             // Set min-height on the view container
             $view.css('min-height', calculatedHeight + 'px');
         }
 
         // Initialize vertical panel height on page load
-        setVerticalPanelMinHeight();
+        setTimeout(function () {
+            setVerticalPanelMinHeight();
+        }, 100);
 
         // Recalculate on window resize
         $(window).on('resize', function () {
