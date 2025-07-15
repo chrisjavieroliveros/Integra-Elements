@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vertical Panel - Development</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="../assets/css/config.css" />
+    <link rel="stylesheet" href="../assets/css/integra-elements.css">
+
+    <!-- Font Imports -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Anek+Bangla:wght@100..800&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+        rel="stylesheet">
+
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+    <!-- GSAP Animation Library -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/Flip.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/SplitText.min.js"></script>
+
+    <!-- JS -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="../js/integra-elements.js"></script>
+    <script src="../js/scroll-smoother.js"></script>
+
+
+
+</head>
+
+<body style="background-color: #fbfcfc;">
+    <div id="smooth-wrapper">
+        <div id="smooth-content">
+
+            <br>
+            <br>
+
+            <section class="vertical-panel">
+                <div class="container" style="max-width: 1024px;">
+
+                    <div class="vertical-panel-body">
+                        <div class="vertical-panel-tabs">
+                            <div class="vertical-panel-tab active">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                </div>
+                                <span>/ NETWORK AUTH</span>
+                            </div>
+                            <div class="vertical-panel-tab">
+                                <div class="icon-wrapper">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L2 22h20L12 2Z" stroke="#000000" stroke-width="2"
+                                            stroke-linejoin="round" />
+                                        <path d="M12 9V15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M9 12H15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <span>/ APPLICATIONS</span>
+                            </div>
+                            <div class="vertical-panel-tab">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                </div>
+                                <span>/ ZTNA/VPN</span>
+                            </div>
+                            <div class="vertical-panel-tab">
+                                <div class="icon-wrapper">
+                                    <i class="fa-solid fa-network-wired"></i>
+                                </div>
+                                <span>/ DESKTOP LOGIN</span>
+                            </div>
+                            <div class="vertical-panel-tab">
+                                <div class="icon-wrapper">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L2 22h20L12 2Z" stroke="#000000" stroke-width="2"
+                                            stroke-linejoin="round" />
+                                        <path d="M12 9V15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M9 12H15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+
+                                <span>/ GUEST WI-FI</span>
+                            </div>
+                            <div class="vertical-panel-tab">
+                                <div class="icon-wrapper">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M12 2L2 22h20L12 2Z" stroke="#000000" stroke-width="2"
+                                            stroke-linejoin="round" />
+                                        <path d="M12 9V15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M9 12H15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                    </svg>
+                                </div>
+                                <span>/ NON-HUMAN IDENTITIES</span>
+                            </div>
+                        </div>
+                        <div class="vertical-panel-view">
+                            <div class="vertical-panel-item active text-content">
+
+                                <div class="vertical-panel-ear">
+                                    <div class="icon-wrapper">
+                                        <i class="fa-solid fa-network-wired"></i>
+                                    </div>
+                                    <span>SecureW2 / NETWORK AUTH</span>
+                                </div>
+
+                                <div class="inner-content">
+                                    <h4>Modernize Auth for Wired and Wireless Networks</h4>
+                                    <p>
+                                        Fast, reliable 802.1X and Cloud RADIUS authentication for Wi-Fi and wired
+                                        access—powered by real-time policy evaluation and passwordless certificate-based
+                                        access that adapts to identity, posture and risk.
+                                    </p>
+                                </div>
+
+                                <div class="sample-integrations">
+                                    <b class="sample-integrations-title">Sample Integrations</b>
+
+                                    <div class="sample-integrations-logos-group">
+                                        <img src="https://placehold.co/120x56" alt="Network Solution 1">
+                                        <img src="https://placehold.co/120x56" alt="Network Solution 2">
+                                        <img src="https://placehold.co/120x56" alt="Network Solution 3">
+                                        <img src="https://placehold.co/120x56" alt="Network Solution 4">
+                                    </div>
+                                </div>
+
+                                <div class="inline-cta">
+                                    <a href="#" class="btn btn--sm btn--flat btn--primary">Explore Guest Access</a>
+                                    <a href="#" class="btn btn--sm btn--outline btn--primary">Get a Demo</a>
+                                </div>
+
+                            </div>
+                            <div class="vertical-panel-item text-content">
+
+                                <div class="vertical-panel-ear">
+                                    <div class="icon-wrapper">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2L2 22h20L12 2Z" stroke="#000000" stroke-width="2"
+                                                stroke-linejoin="round" />
+                                            <path d="M12 9V15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M9 12H15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <span>SecureW2 / APPLICATIONS</span>
+                                </div>
+
+                                <div class="inner-content">
+                                    <h4>Secure Application Access Management</h4>
+                                    <p>
+                                        Streamline application access with comprehensive identity governance and
+                                        zero-trust security policies.
+                                        Protect your applications with multi-factor authentication and conditional
+                                        access controls.
+                                    </p>
+                                </div>
+
+                                <div class="sample-integrations">
+                                    <b class="sample-integrations-title">Sample Integrations</b>
+
+                                    <div class="sample-integrations-logos-group">
+                                        <img src="https://placehold.co/120x56" alt="Application 1">
+                                        <img src="https://placehold.co/120x56" alt="Application 2">
+                                        <img src="https://placehold.co/120x56" alt="Application 3">
+                                        <img src="https://placehold.co/120x56" alt="Application 4">
+                                    </div>
+                                </div>
+
+                                <div class="inline-cta">
+                                    <a href="#" class="btn btn--sm btn--flat btn--primary">Explore Applications</a>
+                                    <a href="#" class="btn btn--sm btn--outline btn--primary">Get a Demo</a>
+                                </div>
+
+                            </div>
+                            <div class="vertical-panel-item text-content">
+
+                                <div class="vertical-panel-ear">
+                                    <div class="icon-wrapper">
+                                        <i class="fa-solid fa-network-wired"></i>
+                                    </div>
+                                    <span>SecureW2 / ZTNA/VPN</span>
+                                </div>
+
+                                <div class="inner-content">
+                                    <h4>Zero Trust Network Access & VPN Solutions</h4>
+                                    <p>
+                                        Implement zero-trust network access with advanced VPN capabilities.
+                                        Secure remote access with identity-based policies and continuous authentication.
+                                    </p>
+                                </div>
+
+                                <div class="sample-integrations">
+                                    <b class="sample-integrations-title">Sample Integrations</b>
+
+                                    <div class="sample-integrations-logos-group">
+                                        <img src="https://placehold.co/120x56" alt="VPN Solution 1">
+                                        <img src="https://placehold.co/120x56" alt="VPN Solution 2">
+                                        <img src="https://placehold.co/120x56" alt="VPN Solution 3">
+                                        <img src="https://placehold.co/120x56" alt="VPN Solution 4">
+                                    </div>
+                                </div>
+
+                                <div class="inline-cta">
+                                    <a href="#" class="btn btn--sm btn--flat btn--primary">Explore ZTNA</a>
+                                    <a href="#" class="btn btn--sm btn--outline btn--primary">Get a Demo</a>
+                                </div>
+
+                            </div>
+                            <div class="vertical-panel-item text-content">
+
+                                <div class="vertical-panel-ear">
+                                    <div class="icon-wrapper">
+                                        <i class="fa-solid fa-network-wired"></i>
+                                    </div>
+                                    <span>SecureW2 / DESKTOP LOGIN</span>
+                                </div>
+
+                                <div class="inner-content">
+                                    <h4>Secure Desktop Authentication</h4>
+                                    <p>
+                                        Modernize desktop login with certificate-based authentication and seamless user
+                                        experience.
+                                        Enable secure, passwordless access to workstations and enterprise resources.
+                                    </p>
+                                </div>
+
+                                <div class="sample-integrations">
+                                    <b class="sample-integrations-title">Sample Integrations</b>
+
+                                    <div class="sample-integrations-logos-group">
+                                        <img src="https://placehold.co/120x56" alt="Windows Integration">
+                                        <img src="https://placehold.co/120x56" alt="Mac Integration">
+                                        <img src="https://placehold.co/120x56" alt="Linux Integration">
+                                        <img src="https://placehold.co/120x56" alt="Active Directory">
+                                    </div>
+                                </div>
+
+                                <div class="inline-cta">
+                                    <a href="#" class="btn btn--sm btn--flat btn--primary">Explore Desktop Auth</a>
+                                    <a href="#" class="btn btn--sm btn--outline btn--primary">Get a Demo</a>
+                                </div>
+
+                            </div>
+                            <div class="vertical-panel-item text-content">
+
+                                <div class="vertical-panel-ear">
+                                    <div class="icon-wrapper">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2L2 22h20L12 2Z" stroke="#000000" stroke-width="2"
+                                                stroke-linejoin="round" />
+                                            <path d="M12 9V15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M9 12H15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <span>SecureW2 / GUEST WI-FI</span>
+                                </div>
+
+                                <div class="inner-content">
+                                    <h4>Secure Guest Wi-Fi Access</h4>
+                                    <p>
+                                        Provide secure, seamless guest access to your wireless network with automated
+                                        onboarding
+                                        and policy enforcement. Protect your network while delivering exceptional user
+                                        experience.
+                                    </p>
+                                </div>
+
+                                <div class="sample-integrations">
+                                    <b class="sample-integrations-title">Sample Integrations</b>
+
+                                    <div class="sample-integrations-logos-group">
+                                        <img src="https://placehold.co/120x56" alt="WiFi Solution 1">
+                                        <img src="https://placehold.co/120x56" alt="WiFi Solution 2">
+                                        <img src="https://placehold.co/120x56" alt="WiFi Solution 3">
+                                        <img src="https://placehold.co/120x56" alt="WiFi Solution 4">
+                                    </div>
+                                </div>
+
+                                <div class="inline-cta">
+                                    <a href="#" class="btn btn--sm btn--flat btn--primary">Explore Guest Access</a>
+                                    <a href="#" class="btn btn--sm btn--outline btn--primary">Get a Demo</a>
+                                </div>
+
+                            </div>
+                            <div class="vertical-panel-item text-content">
+
+                                <div class="vertical-panel-ear">
+                                    <div class="icon-wrapper">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M12 2L2 22h20L12 2Z" stroke="#000000" stroke-width="2"
+                                                stroke-linejoin="round" />
+                                            <path d="M12 9V15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M9 12H15" stroke="#000000" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                    </div>
+                                    <span>SecureW2 / NON-HUMAN IDENTITIES</span>
+                                </div>
+
+                                <div class="inner-content">
+                                    <h4>Non-Human Identity Management</h4>
+                                    <p>
+                                        Secure and manage non-human identities including IoT devices, service accounts,
+                                        and automated systems.
+                                        Implement certificate-based authentication for machine-to-machine
+                                        communications.
+                                    </p>
+                                </div>
+
+                                <div class="sample-integrations">
+                                    <b class="sample-integrations-title">Sample Integrations</b>
+
+                                    <div class="sample-integrations-logos-group">
+                                        <img src="https://placehold.co/120x56" alt="IoT Platform 1">
+                                        <img src="https://placehold.co/120x56" alt="IoT Platform 2">
+                                        <img src="https://placehold.co/120x56" alt="IoT Platform 3">
+                                        <img src="https://placehold.co/120x56" alt="IoT Platform 4">
+                                    </div>
+                                </div>
+
+                                <div class="inline-cta">
+                                    <a href="#" class="btn btn--sm btn--flat btn--primary">Explore IoT Security</a>
+                                    <a href="#" class="btn btn--sm btn--outline btn--primary">Get a Demo</a>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
+
+        </div>
+    </div>
+</body>
+
+</html>

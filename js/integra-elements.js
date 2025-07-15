@@ -76,6 +76,22 @@
             $accordionItem.toggleClass('accordion-item--active');
         });
 
+        /* Vertical Panel */
+        $('.vertical-panel-tab').on('click', function (e) {
+            e.preventDefault();
+
+            // Remove active class from all items
+            $('.vertical-panel-tab').removeClass('active');
+
+            // Add active class to the clicked item
+            $(this).addClass('active');
+
+            // Show the preview of the clicked item
+            $('.vertical-panel-item').removeClass('active');
+            $('.vertical-panel-item').eq($(this).index()).addClass('active');
+
+        });
+
     });
 
 })(jQuery); 

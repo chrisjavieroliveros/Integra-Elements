@@ -4,9 +4,11 @@
     align-items: center;
     justify-content: center;
     width: fit-content;
-
     padding: var(--display-icon-padding);
-    // font-size: var(--display-icon-font-size);
+
+    &:has(img, svg) {
+        padding: 0;
+    }
 
     .display-icon-base {
         position: absolute;
@@ -16,6 +18,5 @@
         height: 100%;
         content: '';
         border-radius: var(--display-icon-base-border-radius);
-        // opacity: var(--display-icon-base-opacity);
     }
 }
