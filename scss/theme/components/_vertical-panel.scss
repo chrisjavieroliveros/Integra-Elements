@@ -122,10 +122,10 @@
         flex-wrap: wrap;
         gap: 1.25rem;
 
-        img {
-            height: 48px;
-            width: auto;
-        }
+        // img {
+        //     height: 48px;
+        //     width: auto;
+        // }
     }
 
     @include breakpoint(lg) {
@@ -140,7 +140,7 @@
         }
 
         .vertical-panel-tab {
-            font-size: 1rem;
+            // font-size: 1rem;
             padding: 1rem;
             padding-right: 2rem;
         }

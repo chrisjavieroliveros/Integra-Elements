@@ -60,6 +60,27 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
         // Height Controls
         include('attr/height/height.controls.php');
 
+        $this->add_control(
+            'integration_image_height',
+            [
+                'label' => esc_html__('Integration Image Height', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SLIDER,
+                'size_units' => ['px'],
+                'range' => [
+                    'px' => [
+                        'min' => 16,
+                        'max' => 64,
+                        'step' => 4,
+                    ],
+                ],
+                'default' => [
+                    'unit' => 'px',
+                    'size' => 56,
+                ],
+                'description' => esc_html__('Set the height for all integration images.', 'integra-elements'),
+            ]
+        );
+
         // end general section;
         $this->end_controls_section();
 
@@ -347,8 +368,13 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
                     echo '<b class="sample-integrations-title">Sample Integrations</b>';
                     echo '<div class="sample-integrations-logos-group">';
                     
+                    $integration_img_style = '';
+                    if (!empty($settings['integration_image_height']['size'])) {
+                        $integration_img_style = ' style="height: ' . esc_attr($settings['integration_image_height']['size']) . 'px;"';
+                    }
+
                     foreach ($panel['sample_integrations'] as $image) {
-                        echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '">';
+                        echo '<img src="' . esc_url($image['url']) . '" alt="' . esc_attr($image['alt']) . '"' . $integration_img_style . '>';
                     }
                     
                     echo '</div>';
