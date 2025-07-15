@@ -105,7 +105,7 @@
         // Initialize vertical panel height on page load
         setTimeout(function () {
             setVerticalPanelMinHeight();
-        }, 100);
+        }, 300);
 
         // Recalculate on window resize
         $(window).on('resize', function () {

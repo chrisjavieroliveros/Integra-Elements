@@ -32,12 +32,13 @@
         font-size: 0.875rem; // 14px
         font-weight: 500;
         padding: 0.875rem;
-        padding-right: 1rem;
+        padding-right: 1.25rem;
         border-radius: 8px;
         border: 1px solid transparent;
         border-left: 4px solid transparent;
         cursor: pointer;
         user-select: none;
+        transition: all 0.2s ease-in-out;
 
         .icon-wrapper {
             display: flex;
@@ -119,7 +120,7 @@
     .sample-integrations-logos-group {
         display: flex;
         flex-wrap: wrap;
-        gap: 1.5rem;
+        gap: 1.25rem;
 
         img {
             height: 48px;
@@ -141,7 +142,7 @@
         .vertical-panel-tab {
             font-size: 1rem;
             padding: 1rem;
-            padding-right: 1.125rem;
+            padding-right: 2rem;
         }
 
         .vertical-panel-view {
