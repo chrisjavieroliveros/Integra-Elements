@@ -55,10 +55,10 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
         );
 
         // Container Controls
-        include get_template_directory() . '/inc/elementor-widgets/attr/container/container.controls.php';
+        include('attr/container/container.controls.php');
 
         // Height Controls
-        include get_template_directory() . '/inc/elementor-widgets/attr/height/height.controls.php';
+        include('attr/height/height.controls.php');
 
         // end general section;
         $this->end_controls_section();
@@ -166,17 +166,6 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
             ]
         );
         $repeater->add_control(
-            'cta_1_icon',
-            [
-                'label' => esc_html__('CTA 1 Icon', 'integra-elements'),
-                'type' => \Elementor\Controls_Manager::ICONS,
-                'default' => [
-                    'value' => '',
-                    'library' => '',
-                ],
-            ]
-        );
-        $repeater->add_control(
             'cta_1_icon_position',
             [
                 'label' => esc_html__('CTA 1 Icon Position', 'integra-elements'),
@@ -186,6 +175,17 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
                     'after' => esc_html__('After', 'integra-elements'),
                 ],
                 'default' => 'before',
+            ]
+        );
+        $repeater->add_control(
+            'cta_1_icon',
+            [
+                'label' => esc_html__('CTA 1 Icon', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::ICONS,
+                'default' => [
+                    'value' => '',
+                    'library' => '',
+                ],
             ]
         );
         $repeater->add_control(
@@ -217,17 +217,6 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
             ]
         );
         $repeater->add_control(
-            'cta_2_icon',
-            [
-                'label' => esc_html__('CTA 2 Icon', 'integra-elements'),
-                'type' => \Elementor\Controls_Manager::ICONS,
-                'default' => [
-                    'value' => '',
-                    'library' => '',
-                ],
-            ]
-        );
-        $repeater->add_control(
             'cta_2_icon_position',
             [
                 'label' => esc_html__('CTA 2 Icon Position', 'integra-elements'),
@@ -237,6 +226,17 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
                     'after' => esc_html__('After', 'integra-elements'),
                 ],
                 'default' => 'before',
+            ]
+        );
+        $repeater->add_control(
+            'cta_2_icon',
+            [
+                'label' => esc_html__('CTA 2 Icon', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::ICONS,
+                'default' => [
+                    'value' => '',
+                    'library' => '',
+                ],
             ]
         );
 
@@ -280,8 +280,9 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
 
         $this->end_controls_section();
 
-        // Spacing Controls
-        include get_template_directory() . '/inc/elementor-widgets/attr/spacing/spacing.controls.php';
+
+        // Spacing Section;
+        include('attr/spacing/spacing.controls.php');
 
     }
 

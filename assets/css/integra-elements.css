@@ -3084,7 +3084,7 @@ dd:last-child {
 .vertical-panel .sample-integrations-title {
   text-transform: uppercase;
   font-size: 0.75rem;
-  color: var(--color-Dark-500);
+  color: var(--color-Light-800);
 }
 .vertical-panel .sample-integrations-logos-group {
   display: flex;
