@@ -77,6 +77,39 @@
         });
 
         /* Vertical Panel */
+        function setVerticalPanelMinHeight() {
+            const $view = $('.vertical-panel-view');
+            const $items = $('.vertical-panel-item');
+            let maxHeight = 0;
+            let paddingTop = parseInt($view.css('padding-top'), 10) || 0;
+            let paddingBottom = parseInt($view.css('padding-bottom'), 10) || 0;
+            let totalPadding = paddingTop + paddingBottom;
+
+            // Temporarily show all items to measure their height
+            $items.each(function () {
+                const $item = $(this);
+
+                // Measure the height
+                const itemHeight = $item.outerHeight();
+                maxHeight = Math.max(maxHeight, itemHeight);
+
+            });
+
+            // Calculate final height including padding
+            let calculatedHeight = maxHeight + totalPadding + 2;
+
+            // Set min-height on the view container
+            $view.css('min-height', calculatedHeight + 'px');
+        }
+
+        // Initialize vertical panel height on page load
+        setVerticalPanelMinHeight();
+
+        // Recalculate on window resize
+        $(window).on('resize', function () {
+            setVerticalPanelMinHeight();
+        });
+
         $('.vertical-panel-tab').on('click', function (e) {
             e.preventDefault();
 
