@@ -2909,6 +2909,10 @@ dd:last-child {
 .stat-cards .stat-card p {
   margin: 0;
 }
+.stat-cards .stat-card .icon-wrapper {
+  display: flex;
+  justify-content: center;
+}
 .stat-cards .card-content {
   gap: 0.25rem;
 }
@@ -3333,6 +3337,29 @@ dd:last-child {
   opacity: 1;
   pointer-events: auto;
   transform: translateY(0);
+}
+
+.elementor-editor-active .flip-card {
+  overflow: visible;
+}
+.elementor-editor-active .flip-card::before {
+  opacity: 0 !important;
+}
+.elementor-editor-active .flip-card::after {
+  opacity: 1 !important;
+}
+.elementor-editor-active .flip-card .flip-card-front {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: none;
+}
+.elementor-editor-active .flip-card .flip-card-overlay {
+  position: relative;
+  transform: translateY(0);
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  z-index: 3;
 }
 
 .elementor-widget-text-editor p {

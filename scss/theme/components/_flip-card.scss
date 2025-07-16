@@ -246,3 +246,35 @@
     }
 
 }
+
+// Override when in Elementor Editor
+.elementor-editor-active {
+
+    .flip-card {
+        overflow: visible;
+
+        &::before {
+            opacity: 0 !important;
+        }
+
+        &::after {
+            opacity: 1 !important;
+        }
+
+        .flip-card-front {
+            visibility: visible;
+            opacity: 1;
+            pointer-events: none;
+        }
+
+        .flip-card-overlay {
+            position: relative;
+            transform: translateY(0);
+            opacity: 1;
+            pointer-events: auto;
+            visibility: visible;
+            z-index: 3;
+        }
+    }
+
+}

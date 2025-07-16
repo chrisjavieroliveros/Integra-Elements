@@ -230,7 +230,25 @@ class Stats_Widget extends \Elementor\Widget_Base {
                     <?php foreach ($settings['stat_cards'] as $item) : ?>
                         <div class="stat-card card-style elementor-repeater-item-<?php echo esc_attr( $item['_id'] ); ?>">
                             <div class="icon-wrapper">
-                                <i class="<?php echo esc_attr($item['card_icon']['value']); ?>" style="font-size: <?php echo $settings['icon_size']['size']; ?>px; color: var(--color-<?php echo esc_attr($item['card_icon_color']); ?>);"></i>
+                                <?php 
+                                $display_icon = $item['card_icon'];
+                                
+                                // Simple check: if array, it's SVG upload; if string, it's library icon
+                                if (is_array($display_icon)) {
+                                    // Check if it's SVG (library = 'svg' and nested url)
+                                    if (isset($display_icon['library']) && $display_icon['library'] === 'svg' && isset($display_icon['value']['url'])) {
+                                        // SVG upload - render as img
+                                        echo '<img src="'. esc_url($display_icon['value']['url']) .'" alt="Stat Card Icon" style="width: '. $settings['icon_size']['size'] .'px; height: auto;" />';
+                                    } elseif (isset($display_icon['value']) && !empty($display_icon['value'])) {
+                                        // Library icon - render as i tag
+                                        echo '<i class="'. esc_attr($display_icon['value']) .'" style="font-size: '. $settings['icon_size']['size'] .'px; color: var(--color-'. esc_attr($item['card_icon_color']) .');"></i>';
+                                    }
+                                } elseif (!empty($display_icon)) {
+                                    // Library icon - render as i tag
+                                    $icon_class = is_array($display_icon) && isset($display_icon['value']) ? $display_icon['value'] : $display_icon;
+                                    echo '<i class="'. esc_attr($icon_class) .'" style="font-size: '. $settings['icon_size']['size'] .'px; color: var(--color-'. esc_attr($item['card_icon_color']) .');"></i>';
+                                }
+                                ?>
                             </div>
                             <div class="card-content">
                                 <?php echo wp_kses_post($item['card_content']); ?>

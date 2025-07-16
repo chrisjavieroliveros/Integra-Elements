@@ -54,6 +54,11 @@
         p {
             margin: 0;
         }
+
+        .icon-wrapper {
+            display: flex;
+            justify-content: center;
+        }
     }
 
     .card-content {
