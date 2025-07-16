@@ -127,6 +127,12 @@
 
         });
 
+        /* Flip Cards */
+        $('.flip-card').on('click', function (e) {
+            e.preventDefault();
+            $(this).toggleClass('active');
+        });
+
     });
 
 })(jQuery); 
