@@ -1803,11 +1803,9 @@ pre code {
 }
 
 blockquote {
-  margin: var(--size-6) 0;
-  padding-left: var(--size-4);
-  border-left: 4px solid var(--color-primary, #007bff);
-  font-style: italic;
-  color: var(--color-gray-600, #6c757d);
+  margin: var(--size-3) 0;
+  padding-left: var(--size-3);
+  border-left: 3px solid rgba(195, 51, 41, 0.3019607843);
 }
 blockquote p:last-child {
   margin-bottom: 0;
@@ -1821,6 +1819,19 @@ blockquote cite {
 }
 blockquote cite::before {
   content: "— ";
+}
+blockquote.pl-4 {
+  padding-left: var(--size-4);
+}
+@media (min-width: 768px) {
+  blockquote.pl-4 {
+    padding-left: var(--size-6);
+  }
+}
+@media (min-width: 992px) {
+  blockquote.pl-4 {
+    padding-left: var(--size-8);
+  }
 }
 
 .text-small {

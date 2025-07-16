@@ -438,7 +438,7 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
                 // Sample Integrations
                 if (!empty($panel['sample_integrations'])) {
                     echo '<div class="sample-integrations">';
-                    echo '<b class="sample-integrations-title">Sample Integrations</b>';
+                    echo '<b class="sample-integrations-title">Sample Integrations:</b>';
                     echo '<div class="sample-integrations-logos-group">';
                     
                     $integration_img_style = '';

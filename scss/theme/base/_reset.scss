@@ -450,6 +450,7 @@ a:hover {
 
 /* Remove animations for users who prefer reduced motion */
 @media (prefers-reduced-motion: reduce) {
+
   *,
   *::before,
   *::after {
@@ -481,6 +482,7 @@ a:hover {
 
 /* Print styles */
 @media print {
+
   *,
   *::before,
   *::after {
@@ -565,6 +567,7 @@ a:hover {
 
 /* Touch target sizing for mobile accessibility */
 @media (hover: none) and (pointer: coarse) {
+
   button,
   input[type="button"],
   input[type="submit"],
@@ -578,6 +581,7 @@ a:hover {
 
 /* Reduced motion for specific elements */
 @media (prefers-reduced-motion: reduce) {
+
   *::before,
   *::after {
     animation-delay: -1ms;
