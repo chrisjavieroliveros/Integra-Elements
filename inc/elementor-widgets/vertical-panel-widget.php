@@ -366,7 +366,25 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
                 // Icon
                 if (!empty($panel['tab_icon']['value'])) {
                     echo '<div class="icon-wrapper">';
-                    \Elementor\Icons_Manager::render_icon($panel['tab_icon'], ['aria-hidden' => 'true']);
+                    
+                    $display_icon = $panel['tab_icon'];
+                    
+                    // Simple check: if array, it's SVG upload; if string, it's library icon
+                    if (is_array($display_icon)) {
+                        // Check if it's SVG (library = 'svg' and nested url)
+                        if (isset($display_icon['library']) && $display_icon['library'] === 'svg' && isset($display_icon['value']['url'])) {
+                            // SVG upload - render as img
+                            echo '<img src="'. esc_url($display_icon['value']['url']) .'" alt="Vertical Panel Tab Icon" style="width: 24px; height: auto;" />';
+                        } elseif (isset($display_icon['value']) && !empty($display_icon['value'])) {
+                            // Library icon - render as i tag
+                            echo '<i class="'. esc_attr($display_icon['value']) .'" aria-hidden="true"></i>';
+                        }
+                    } elseif (!empty($display_icon)) {
+                        // Library icon - render as i tag
+                        $icon_class = is_array($display_icon) && isset($display_icon['value']) ? $display_icon['value'] : $display_icon;
+                        echo '<i class="'. esc_attr($icon_class) .'" aria-hidden="true"></i>';
+                    }
+                    
                     echo '</div>';
                 }
                 
@@ -388,7 +406,25 @@ class Vertical_Panel_Widget extends \Elementor\Widget_Base
                 echo '<div class="vertical-panel-ear">';
                 if (!empty($panel['tab_icon']['value'])) {
                     echo '<div class="icon-wrapper">';
-                    \Elementor\Icons_Manager::render_icon($panel['tab_icon'], ['aria-hidden' => 'true']);
+                    
+                    $display_icon = $panel['tab_icon'];
+                    
+                    // Simple check: if array, it's SVG upload; if string, it's library icon
+                    if (is_array($display_icon)) {
+                        // Check if it's SVG (library = 'svg' and nested url)
+                        if (isset($display_icon['library']) && $display_icon['library'] === 'svg' && isset($display_icon['value']['url'])) {
+                            // SVG upload - render as img
+                            echo '<img src="'. esc_url($display_icon['value']['url']) .'" alt="Vertical Panel Ear Icon" style="width: 24px; height: auto;" />';
+                        } elseif (isset($display_icon['value']) && !empty($display_icon['value'])) {
+                            // Library icon - render as i tag
+                            echo '<i class="'. esc_attr($display_icon['value']) .'" aria-hidden="true"></i>';
+                        }
+                    } elseif (!empty($display_icon)) {
+                        // Library icon - render as i tag
+                        $icon_class = is_array($display_icon) && isset($display_icon['value']) ? $display_icon['value'] : $display_icon;
+                        echo '<i class="'. esc_attr($icon_class) .'" aria-hidden="true"></i>';
+                    }
+                    
                     echo '</div>';
                 }
                 echo '<span>' . esc_html($panel['ear_prefix']) . ' / ' . esc_html($panel['tab_title']) . '</span>';
