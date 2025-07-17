@@ -7,8 +7,51 @@
     .active,
     &:hover {
         border: 1px solid #b9c3d5;
-        box-shadow: 0 6px 12px 0 rgba(122, 129, 140, 0.2);
+        box-shadow: 0 4px 8px 0 rgba(122, 129, 140, 0.2);
+        transform: translateY(-4px);
+        cursor: pointer;
     }
+
+    &--shadow-1 {
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.08);
+
+        &:hover {
+            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        }
+    }
+
+    &--shadow-2 {
+        box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.1);
+
+        &:hover {
+            box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.12);
+        }
+    }
+
+    &--shadow-3 {
+        box-shadow: 0 7px 14px 0 rgba(0, 0, 0, 0.12);
+
+        &:hover {
+            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.14);
+        }
+    }
+
+    &--shadow-4 {
+        box-shadow: 0 9px 18px 0 rgba(0, 0, 0, 0.14);
+
+        &:hover {
+            box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.16);
+        }
+    }
+
+    &--shadow-5 {
+        box-shadow: 0 11px 22px 0 rgba(0, 0, 0, 0.16);
+
+        &:hover {
+            box-shadow: 0 12px 24px 0 rgba(0, 0, 0, 0.18);
+        }
+    }
+
 }
 
 .card-content {

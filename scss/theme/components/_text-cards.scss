@@ -1,0 +1,97 @@
+@use "../utilities/breakpoints" as *;
+
+.text-cards-section {
+
+    .card-style {
+        background-color: #fff;
+        padding: 1rem;
+
+        p {
+            font-size: 16px;
+        }
+
+    }
+
+    .text-content .inner-content {
+        .styled-icons {
+            li {
+                padding-left: 1.25rem;
+            }
+        }
+    }
+
+    .text-cards-grid {
+        display: grid;
+        gap: 1rem;
+
+
+        &--2 {
+            grid-template-columns: repeat(1, 1fr);
+
+            @include breakpoint(md) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        &--3 {
+            grid-template-columns: repeat(1, 1fr);
+
+            @include breakpoint(md) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @include breakpoint(lg) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        &--4 {
+            grid-template-columns: repeat(1, 1fr);
+
+            @include breakpoint(md) {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            @include breakpoint(lg) {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        &--5 {
+            grid-template-columns: repeat(1, 1fr);
+
+            @include breakpoint(md) {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            @include breakpoint(lg) {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+
+        &--small {
+
+            .card-style,
+            p {
+                font-size: 14px;
+            }
+        }
+
+        &--large {
+
+            .card-style,
+            p {
+                font-size: 18px;
+            }
+        }
+
+        @include breakpoint(md) {
+            gap: 1.25rem;
+        }
+
+        @include breakpoint(lg) {
+            gap: 1.5rem;
+        }
+    }
+
+}

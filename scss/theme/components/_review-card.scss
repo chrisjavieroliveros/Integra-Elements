@@ -8,6 +8,10 @@
 
     .swiper {
         padding-bottom: 8px;
+
+        .swiper-wrapper {
+            padding-bottom: 8px;
+        }
     }
 
     .swiper-outer {
@@ -114,3 +118,6 @@
         }
     }
 }
+
+// Override when in Elementor Editor
+.elementor-editor-active {}

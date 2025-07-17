@@ -252,17 +252,6 @@ class Reviews_Scroller_Widget extends \Elementor\Widget_Base {
                 'fields' => $repeater->get_controls(),
                 'default' => [
                     [
-                        [
-                            'brand_logo' => [
-                                'url' => 'https://placehold.co/130x56',
-                            ],
-                            'star_rating' => [
-                                'size' => 4,
-                            ],
-                            'review_title' => __('Sed Do Eiusmod Tempor', 'integra-elements'),
-                            'review_content' => __('"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."', 'integra-elements'),
-                            'author_name' => __('Jane Smith, Title', 'integra-elements'),
-                        ],
                         'brand_logo' => [
                             'url' => 'https://placehold.co/130x56',
                         ],
@@ -272,6 +261,28 @@ class Reviews_Scroller_Widget extends \Elementor\Widget_Base {
                         'review_title' => __('Lorem Ipsum Dolor Sit Amet', 'integra-elements'),
                         'review_content' => __('"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque euismod, urna eu tincidunt consectetur, nisi nisl aliquam enim, eget aliquam massa nisl quis neque."', 'integra-elements'),
                         'author_name' => __('John Doe, Position', 'integra-elements'),
+                    ],
+                    [
+                        'brand_logo' => [
+                            'url' => 'https://placehold.co/130x56',
+                        ],
+                        'star_rating' => [
+                            'size' => 4,
+                        ],
+                        'review_title' => __('Sed Do Eiusmod Tempor', 'integra-elements'),
+                        'review_content' => __('"Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."', 'integra-elements'),
+                        'author_name' => __('Jane Smith, Title', 'integra-elements'),
+                    ],
+                    [
+                        'brand_logo' => [
+                            'url' => 'https://placehold.co/130x56',
+                        ],
+                        'star_rating' => [
+                            'size' => 3,
+                        ],
+                        'review_title' => __('Consectetur Adipiscing Elit', 'integra-elements'),
+                        'review_content' => __('"Consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida."', 'integra-elements'),
+                        'author_name' => __('Alex Roe, Developer', 'integra-elements'),
                     ],
                 ],
                 'title_field' => '{{{ review_title }}}',
