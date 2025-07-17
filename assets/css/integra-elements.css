@@ -2666,6 +2666,7 @@ dd:last-child {
 }
 .gallery .gallery-item img {
   display: block;
+  height: 100px;
   width: auto;
 }
 
@@ -3594,6 +3595,32 @@ dd:last-child {
   .text-cards-section .text-cards-grid {
     gap: 1.5rem;
   }
+}
+
+/* Scroller Gallery */
+.scroller-gallery {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.scroller-gallery .gallery-section {
+  padding: 2rem 0;
+  border-radius: 1rem;
+}
+.scroller-gallery .gallery-section.grayed-out .scroll-gallery-item {
+  filter: grayscale(100%) opacity(0.6);
+  transition: filter 0.3s ease;
+}
+.scroller-gallery .gallery-section.grayed-out .scroll-gallery-item:hover {
+  filter: grayscale(0%) opacity(1);
+}
+.scroller-gallery .gallery-wrapper {
+  display: flex;
+  align-items: center;
+}
+.scroller-gallery .gallery-container {
+  overflow: hidden;
+  width: 100%;
 }
 
 .elementor-widget-text-editor p {

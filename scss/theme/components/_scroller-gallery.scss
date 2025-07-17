@@ -1,0 +1,33 @@
+/* Scroller Gallery */
+.scroller-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    .gallery-section {
+        padding: 2rem 0;
+        border-radius: 1rem;
+
+        &.grayed-out {
+            .scroll-gallery-item {
+                filter: grayscale(100%) opacity(0.6);
+                transition: filter 0.3s ease;
+
+                &:hover {
+                    filter: grayscale(0%) opacity(1);
+                }
+            }
+        }
+    }
+
+    .gallery-wrapper {
+        display: flex;
+        align-items: center;
+    }
+
+    .gallery-container {
+        overflow: hidden;
+        width: 100%;
+    }
+
+}

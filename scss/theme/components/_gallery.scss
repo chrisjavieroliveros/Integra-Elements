@@ -11,6 +11,7 @@
     .gallery-item {
         img {
             display: block;
+            height: 100px; // will be set by JS
             width: auto;
         }
     }

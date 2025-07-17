@@ -49,15 +49,167 @@
 
             <br>
 
-
             <!-- Scroller: Gallery -->
+            <section class="scroller-gallery">
+                <div class="container">
+
+                    <div class="gallery-section">
+                        <div class="gallery-container">
+                            <div class="gallery-wrapper">
+                                <div class="scroll-gallery-item">
+                                    <img src="https://placehold.co/200x100" alt="">
+                                </div>
+                                <div class="scroll-gallery-item">
+                                    <img src="https://placehold.co/200x100" alt="">
+                                </div>
+                                <div class="scroll-gallery-item">
+                                    <img src="https://placehold.co/200x100" alt="">
+                                </div>
+                                <div class="scroll-gallery-item">
+                                    <img src="https://placehold.co/200x100" alt="">
+                                </div>
+                                <div class="scroll-gallery-item">
+                                    <img src="https://placehold.co/200x100" alt="">
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </section>
 
 
         </div>
     </div>
 
     <script>
+        // Dynamic endless scroller - scalable for Elementor
+        function initScrollerGallery() {
+            const gallery = document.querySelector('.gallery-container');
+            const wrapper = document.querySelector('.gallery-wrapper');
 
+            if (!gallery || !wrapper) return;
+
+            const items = Array.from(wrapper.children);
+            if (items.length === 0) return;
+
+            // Configuration (can be made dynamic later)
+            const config = {
+                itemHeight: 100,        // Default height
+                gap: 24,                // Gap between items
+                duration: 50,           // Animation duration in seconds
+                speed: 4,               // Speed multiplier
+                sideColor: 'var(--color-Light-200)',  // Edge/side color
+                midColor: 'var(--color-White)'       // Center color
+            };
+
+            // Apply gradient background
+            const gallerySection = document.querySelector('.gallery-section');
+            if (gallerySection) {
+                gallerySection.style.background = `linear-gradient(to right, ${config.sideColor} 0%, ${config.midColor} 50%, ${config.sideColor} 100%)`;
+            }
+
+            // Set up specific styles
+            wrapper.style.gap = config.gap + 'px';
+            gallery.style.height = config.itemHeight + 'px';
+
+            // Calculate dimensions dynamically
+            let totalWidth = 0;
+            items.forEach((item, index) => {
+                const img = item.querySelector('img');
+                if (img) {
+                    // Set item height and calculate width based on aspect ratio
+                    item.style.height = config.itemHeight + 'px';
+                    item.style.flexShrink = '0';
+                    item.style.display = 'flex';
+                    item.style.alignItems = 'center';
+                    item.style.justifyContent = 'center';
+                    item.style.overflow = 'hidden';
+                    item.style.borderRadius = '8px';
+
+                    img.style.height = '100%';
+                    img.style.width = 'auto';
+                    img.style.objectFit = 'cover';
+
+                    // Wait for image to load to get actual dimensions
+                    img.onload = function () {
+                        calculateAnimation();
+                    };
+
+                    // If image is already loaded
+                    if (img.complete) {
+                        calculateAnimation();
+                    }
+                }
+            });
+
+            function calculateAnimation() {
+                // Clone items for seamless loop
+                const existingClones = wrapper.querySelectorAll('.scroll-gallery-item.cloned');
+                existingClones.forEach(clone => clone.remove());
+
+                items.forEach(item => {
+                    const clone = item.cloneNode(true);
+                    clone.classList.add('cloned');
+                    wrapper.appendChild(clone);
+                });
+
+                // Calculate total width of original items
+                totalWidth = 0;
+                items.forEach(item => {
+                    totalWidth += item.offsetWidth;
+                });
+                totalWidth += (items.length - 1) * config.gap;
+
+                // Create or update animation
+                const animationName = 'scroll-' + Math.random().toString(36).substr(2, 9);
+                const existingStyle = document.querySelector('#scroller-styles');
+                if (existingStyle) {
+                    existingStyle.remove();
+                }
+
+                const style = document.createElement('style');
+                style.id = 'scroller-styles';
+                style.textContent = `
+                    @keyframes ${animationName} {
+                        0% { transform: translateX(0); }
+                        100% { transform: translateX(-${totalWidth + config.gap}px); }
+                    }
+                    .gallery-wrapper {
+                        animation: ${animationName} ${config.duration}s linear infinite;
+                    }
+                    .gallery-wrapper:hover {
+                        animation-play-state: paused;
+                    }
+                `;
+                document.head.appendChild(style);
+
+                wrapper.style.animation = `${animationName} ${config.duration}s linear infinite`;
+            }
+        }
+
+        // Debounce function to limit resize event calls
+        function debounce(func, wait) {
+            let timeout;
+            return function executedFunction(...args) {
+                const later = () => {
+                    clearTimeout(timeout);
+                    func(...args);
+                };
+                clearTimeout(timeout);
+                timeout = setTimeout(later, wait);
+            };
+        }
+
+        // Initialize when DOM is ready
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initScrollerGallery);
+        } else {
+            initScrollerGallery();
+        }
+
+        // Re-initialize on screen resize (debounced to avoid excessive calls)
+        window.addEventListener('resize', debounce(initScrollerGallery, 250));
     </script>
 </body>
 
