@@ -1,5 +1,13 @@
 <?php
 
+    // Container Default;
+    $container_defaults = [
+        'default' => 1200,
+    ];
+
+    // Merge with widget-specific config if provided
+    $container_config = isset($container_config) ? array_merge($container_defaults, $container_config) : $container_defaults;
+
     // Add "Container" control; Range slider (320px to 1600px, steps of 8);
     $this->add_responsive_control(
         'container',
@@ -21,7 +29,7 @@
             ],
             'default' => [
                 'unit' => 'px',
-                'size' => 1200,
+                'size' => $container_default['default'],
             ],
             'selectors' => [
                 '{{WRAPPER}} .container' => 'max-width: {{SIZE}}{{UNIT}};',

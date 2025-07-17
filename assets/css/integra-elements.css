@@ -3373,6 +3373,106 @@ dd:last-child {
   z-index: 3;
 }
 
+.reviews-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.reviews-section .swiper {
+  padding-bottom: 8px;
+}
+.reviews-section .swiper-outer {
+  width: 100%;
+  padding: 1rem;
+  border-radius: 12px;
+  background-color: var(--color-Light-200);
+  border: 1px solid var(--color-Light-300);
+}
+@media (min-width: 768px) {
+  .reviews-section .swiper-outer {
+    padding: 1.5rem;
+  }
+}
+.reviews-section .review-swiper-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+.reviews-section .review-swiper-controls .review-button {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background-color: var(--color-White);
+  border: 1px solid var(--color-Light-400);
+  cursor: pointer;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.08);
+  font-size: 14px;
+}
+.reviews-section .review-swiper-controls .review-button:hover {
+  background-color: var(--color-Light-100);
+}
+.reviews-section .review-swiper-controls .review-button:active {
+  background-color: var(--color-Light-200);
+}
+
+.review-card {
+  background-color: var(--color-White);
+  border-radius: 12px;
+  border-left: 4px solid var(--color-Primary-100);
+  box-shadow: 0px 1px 1px 0px rgba(0, 0, 0, 0.08);
+  padding: 24px;
+  padding-bottom: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.review-card .review-card-header {
+  display: flex;
+  justify-content: space-between;
+}
+.review-card .review-card-header .review-brand {
+  opacity: 0.7;
+}
+.review-card .review-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+.review-card .review-card-body .review-card-stars {
+  display: flex;
+  gap: 2px;
+  font-size: 12px;
+  color: #facc14;
+}
+.review-card .review-card-body p {
+  margin: 0;
+  position: relative;
+}
+.review-card .review-card-body .text-content {
+  gap: 0.85rem;
+}
+.review-card .review-card-body .review-title {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-Dark-900);
+}
+.review-card .review-card-body .review-card-author {
+  position: relative;
+  font-size: 14px;
+  color: var(--color-Dark-50);
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+.review-card .review-card-body .review-card-author::before {
+  content: "— ";
+}
+
 .elementor-widget-text-editor p {
   max-width: 65ch;
 }

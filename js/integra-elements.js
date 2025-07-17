@@ -133,6 +133,16 @@
             $(this).toggleClass('active');
         });
 
+        /* Reviews Scroller */
+        const swiper = new Swiper('.reviews-section .swiper', {
+            cssMode: true,
+            loop: true,
+            navigation: {
+                nextEl: '.review-button-next',
+                prevEl: '.review-button-prev',
+            },
+        });
+
     });
 
 })(jQuery); 
