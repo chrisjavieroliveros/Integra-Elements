@@ -291,10 +291,10 @@ class Gallery_Scroller_Widget extends \Elementor\Widget_Base {
             const config = {
                 itemHeight: <?= esc_js($gallery_item_height); ?>,
                 gap: <?= esc_js($gallery_gap); ?>,
-                duration: 500,           // Keep duration constant
+                duration: 300,           // Keep duration constant
                 speed: <?= esc_js($speed); ?>,
-                                 sideColor: '<?= esc_js($side_color); ?>',
-                 midColor: '<?= esc_js($mid_color); ?>'
+                sideColor: '<?= esc_js($side_color); ?>',
+                midColor: '<?= esc_js($mid_color); ?>'
             };
 
             // Dynamic endless scroller - instance specific
@@ -313,7 +313,7 @@ class Gallery_Scroller_Widget extends \Elementor\Widget_Base {
                 
                 // Set up specific styles
                 wrapper.style.gap = config.gap + 'px';
-                gallery.style.height = config.itemHeight + 'px';
+                gallery.style.height = config.itemHeight + 12 + 'px';
                 
                 // Calculate dimensions dynamically
                 let totalWidth = 0;
@@ -383,9 +383,6 @@ class Gallery_Scroller_Widget extends \Elementor\Widget_Base {
                         #gallery-wrapper-${widgetId} {
                             animation: ${animationName} ${actualDuration}s linear infinite;
                         }
-                        #gallery-wrapper-${widgetId}:hover {
-                            animation-play-state: paused;
-                        }
                     `;
                     document.head.appendChild(style);
                 }
@@ -410,9 +407,6 @@ class Gallery_Scroller_Widget extends \Elementor\Widget_Base {
             } else {
                 initScrollerGallery();
             }
-
-            // Re-initialize on screen resize (debounced to avoid excessive calls)
-            window.addEventListener('resize', debounce(initScrollerGallery, 250));
         })();
         </script>
 

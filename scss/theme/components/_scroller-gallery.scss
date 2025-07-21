@@ -10,11 +10,17 @@
 
         &.grayed-out {
             .scroll-gallery-item {
-                filter: grayscale(100%) opacity(0.6);
-                transition: filter 0.3s ease;
+
+                img {
+                    filter: grayscale(100%) opacity(0.6);
+                    transition: filter 0.3s ease, transform 0.7s ease-out;
+                }
 
                 &:hover {
-                    filter: grayscale(0%) opacity(1);
+
+                    img {
+                        filter: grayscale(0%) opacity(1);
+                    }
                 }
             }
         }
@@ -26,8 +32,35 @@
     }
 
     .gallery-container {
+        padding: 8px 0;
         overflow: hidden;
         width: 100%;
     }
 
+    .scroll-gallery-item {
+        transition: transform 0.4s ease-out;
+
+        &:hover {
+            transform: scale(1.05);
+        }
+    }
+
 }
+
+
+// .elementor-editor-active {
+
+//     .scroller-gallery {
+//         .gallery-wrapper {
+//             gap: 24px;
+//             flex-wrap: wrap;
+//             justify-content: center;
+//         }
+
+//         .gallery-container {
+//             overflow: visible;
+//         }
+
+//     }
+
+// }

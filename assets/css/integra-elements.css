@@ -3607,11 +3607,11 @@ dd:last-child {
   padding: 2rem 0;
   border-radius: 1rem;
 }
-.scroller-gallery .gallery-section.grayed-out .scroll-gallery-item {
+.scroller-gallery .gallery-section.grayed-out .scroll-gallery-item img {
   filter: grayscale(100%) opacity(0.6);
-  transition: filter 0.3s ease;
+  transition: filter 0.3s ease, transform 0.7s ease-out;
 }
-.scroller-gallery .gallery-section.grayed-out .scroll-gallery-item:hover {
+.scroller-gallery .gallery-section.grayed-out .scroll-gallery-item:hover img {
   filter: grayscale(0%) opacity(1);
 }
 .scroller-gallery .gallery-wrapper {
@@ -3619,8 +3619,15 @@ dd:last-child {
   align-items: center;
 }
 .scroller-gallery .gallery-container {
+  padding: 8px 0;
   overflow: hidden;
   width: 100%;
+}
+.scroller-gallery .scroll-gallery-item {
+  transition: transform 0.4s ease-out;
+}
+.scroller-gallery .scroll-gallery-item:hover {
+  transform: scale(1.05);
 }
 
 .elementor-widget-text-editor p {
