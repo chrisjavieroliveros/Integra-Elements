@@ -8,7 +8,7 @@
         text-align: center;
         align-items: center;
         justify-content: center;
-        gap: 0.25rem;
+        gap: 0.5rem;
     }
 
     &.theme-light {
@@ -25,6 +25,7 @@
 
     .quote-text {
         font-style: italic;
+        font-weight: 500;
 
         p {
             position: relative;
@@ -41,8 +42,9 @@
     }
 
     .quote-author {
-        font-weight: bold;
+        // font-weight: bold;
         font-size: 0.85rem;
-        text-transform: uppercase;
+        color: var(--color-Secondary-300);
+        // text-transform: uppercase;
     }
 }
