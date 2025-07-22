@@ -248,12 +248,18 @@ class Gallery_Scroller_Widget extends \Elementor\Widget_Base {
         <section class="scroller-gallery <?= esc_attr(trim($section_class)); ?>"
                 style="<?= esc_attr($section_style); ?>">
             <div class="container">
-                                 <div class="gallery-section<?= esc_attr($gallery_section_class); ?>" id="gallery-section-<?= esc_attr($widget_id); ?>">
-                    <div class="gallery-container" id="gallery-container-<?= esc_attr($widget_id); ?>">
-                        <div class="gallery-wrapper" id="gallery-wrapper-<?= esc_attr($widget_id); ?>">
+                                 <div class="gallery-section<?= esc_attr($gallery_section_class); ?>" 
+                     id="gallery-section-<?= esc_attr($widget_id); ?>"
+                     style="background: linear-gradient(to right, <?= esc_attr($side_color); ?> 0%, <?= esc_attr($mid_color); ?> 50%, <?= esc_attr($side_color); ?> 100%)">
+                    <div class="gallery-container" 
+                         id="gallery-container-<?= esc_attr($widget_id); ?>"
+                         style="height: <?= esc_attr($gallery_item_height); ?>px;">
+                        <div class="gallery-wrapper" 
+                             id="gallery-wrapper-<?= esc_attr($widget_id); ?>"
+                             style="gap: <?= esc_attr($gallery_gap); ?>px;">
                             <?php if (!empty($gallery_images)) : ?>
                                 <?php foreach ($gallery_images as $image) : ?>
-                                    <div class="scroll-gallery-item">
+                                    <div class="scroll-gallery-item" style="height: <?= esc_attr($gallery_item_height); ?>px;">
                                         <?php if (!empty($image['url'])) : ?>
                                             <img src="<?= esc_url($image['url']); ?>" 
                                                  alt="<?= esc_attr($image['alt'] ?? 'Gallery Image'); ?>">
@@ -262,19 +268,19 @@ class Gallery_Scroller_Widget extends \Elementor\Widget_Base {
                                 <?php endforeach; ?>
                             <?php else : ?>
                                 <!-- Default placeholder images if no gallery images are selected -->
-                                <div class="scroll-gallery-item">
+                                <div class="scroll-gallery-item" style="height: <?= esc_attr($gallery_item_height); ?>px;">
                                     <img src="https://placehold.co/200x100" alt="Gallery Image">
                                 </div>
-                                <div class="scroll-gallery-item">
+                                <div class="scroll-gallery-item" style="height: <?= esc_attr($gallery_item_height); ?>px;">
                                     <img src="https://placehold.co/200x100" alt="Gallery Image">
                                 </div>
-                                <div class="scroll-gallery-item">
+                                <div class="scroll-gallery-item" style="height: <?= esc_attr($gallery_item_height); ?>px;">
                                     <img src="https://placehold.co/200x100" alt="Gallery Image">
                                 </div>
-                                <div class="scroll-gallery-item">
+                                <div class="scroll-gallery-item" style="height: <?= esc_attr($gallery_item_height); ?>px;">
                                     <img src="https://placehold.co/200x100" alt="Gallery Image">
                                 </div>
-                                <div class="scroll-gallery-item">
+                                <div class="scroll-gallery-item" style="height: <?= esc_attr($gallery_item_height); ?>px;">
                                     <img src="https://placehold.co/200x100" alt="Gallery Image">
                                 </div>
                             <?php endif; ?>
@@ -284,131 +290,45 @@ class Gallery_Scroller_Widget extends \Elementor\Widget_Base {
             </div>
         </section>
 
-        <script>
-        (function() {
-            // Configuration for this widget instance
-            const widgetId = '<?= esc_js($widget_id); ?>';
-            const config = {
-                itemHeight: <?= esc_js($gallery_item_height); ?>,
-                gap: <?= esc_js($gallery_gap); ?>,
-                duration: 300,           // Keep duration constant
-                speed: <?= esc_js($speed); ?>,
-                sideColor: '<?= esc_js($side_color); ?>',
-                midColor: '<?= esc_js($mid_color); ?>'
+        
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const wrapper = document.querySelector('.gallery-wrapper');
+
+            // Speed configuration from Elementor settings
+            const speed = <?= $speed; ?> || 4;
+
+            // Responsive speed multipliers
+            let currentSpeedMultiplier = window.innerWidth <= 768 ? 0.8 : 0.05; // Mobile: 0.8, Desktop: 0.05
+            
+            // Recalculate speed multiplier on window resize
+            const updateSpeedMultiplier = () => {
+                currentSpeedMultiplier = window.innerWidth <= 768 ? 0.8 : 0.05;
             };
+            
+            // Add resize event listener
+            window.addEventListener('resize', updateSpeedMultiplier);
 
-            // Dynamic endless scroller - instance specific
-            function initScrollerGallery() {
-                const gallerySection = document.querySelector('#gallery-section-' + widgetId);
-                const gallery = document.querySelector('#gallery-container-' + widgetId);
-                const wrapper = document.querySelector('#gallery-wrapper-' + widgetId);
-                
-                if (!gallery || !wrapper || !gallerySection) return;
-                
-                const items = Array.from(wrapper.children);
-                if (items.length === 0) return;
-                
-                // Apply gradient background
-                gallerySection.style.background = `linear-gradient(to right, ${config.sideColor} 0%, ${config.midColor} 50%, ${config.sideColor} 100%)`;
-                
-                // Set up specific styles
-                wrapper.style.gap = config.gap + 'px';
-                gallery.style.height = config.itemHeight + 12 + 'px';
-                
-                // Calculate dimensions dynamically
-                let totalWidth = 0;
-                items.forEach((item, index) => {
-                    const img = item.querySelector('img');
-                    if (img) {
-                        // Set item height and calculate width based on aspect ratio
-                        item.style.height = config.itemHeight + 'px';
-                        item.style.flexShrink = '0';
-                        item.style.display = 'flex';
-                        item.style.alignItems = 'center';
-                        item.style.justifyContent = 'center';
-                        item.style.overflow = 'hidden';
-                        item.style.borderRadius = '8px';
-                        
-                        img.style.height = '100%';
-                        img.style.width = 'auto';
-                        img.style.objectFit = 'cover';
-                        
-                        // Wait for image to load to get actual dimensions
-                        img.onload = function() {
-                            calculateAnimation();
-                        };
-                        
-                        // If image is already loaded
-                        if (img.complete) {
-                            calculateAnimation();
-                        }
-                    }
-                });
-                
-                function calculateAnimation() {
-                    // Clone items for seamless loop
-                    const existingClones = wrapper.querySelectorAll('.scroll-gallery-item.cloned');
-                    existingClones.forEach(clone => clone.remove());
-                    
-                    items.forEach(item => {
-                        const clone = item.cloneNode(true);
-                        clone.classList.add('cloned');
-                        wrapper.appendChild(clone);
-                    });
-                    
-                    // Calculate total width of original items
-                    totalWidth = 0;
-                    items.forEach(item => {
-                        totalWidth += item.offsetWidth;
-                    });
-                    totalWidth += (items.length - 1) * config.gap;
-                    
-                    // Create or update animation
-                    const animationName = 'scroll-' + widgetId;
-                    const existingStyle = document.querySelector('#scroller-styles-' + widgetId);
-                    if (existingStyle) {
-                        existingStyle.remove();
-                    }
-                    
-                    // Calculate actual duration based on speed
-                    const actualDuration = config.duration / config.speed;
-                    
-                    const style = document.createElement('style');
-                    style.id = 'scroller-styles-' + widgetId;
-                    style.textContent = `
-                        @keyframes ${animationName} {
-                            0% { transform: translateX(0); }
-                            100% { transform: translateX(-${totalWidth + config.gap}px); }
-                        }
-                        #gallery-wrapper-${widgetId} {
-                            animation: ${animationName} ${actualDuration}s linear infinite;
-                        }
-                    `;
-                    document.head.appendChild(style);
+            // Duplicate the content for seamless scrolling
+            wrapper.innerHTML += wrapper.innerHTML;
+
+            let scrollAmount = 0;
+
+            function scrollGallery() {
+                scrollAmount += speed * currentSpeedMultiplier;
+                wrapper.scrollLeft = scrollAmount;
+
+                // Reset scroll to start when halfway through (since we doubled content)
+                if (scrollAmount >= wrapper.scrollWidth / 2) {
+                    scrollAmount = 0;
                 }
+
+                requestAnimationFrame(scrollGallery);
             }
 
-            // Debounce function to limit resize event calls
-            function debounce(func, wait) {
-                let timeout;
-                return function executedFunction(...args) {
-                    const later = () => {
-                        clearTimeout(timeout);
-                        func(...args);
-                    };
-                    clearTimeout(timeout);
-                    timeout = setTimeout(later, wait);
-                };
-            }
-
-            // Initialize when DOM is ready
-            if (document.readyState === 'loading') {
-                document.addEventListener('DOMContentLoaded', initScrollerGallery);
-            } else {
-                initScrollerGallery();
-            }
-        })();
-        </script>
+            scrollGallery();
+        });
+    </script>
 
         <?php
     }

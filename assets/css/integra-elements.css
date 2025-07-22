@@ -2695,6 +2695,10 @@ dd:last-child {
   display: block;
   height: 100px;
   width: auto;
+  transition: transform 120ms ease-in-out;
+}
+.gallery .gallery-item:hover img {
+  transform: scale(1.03);
 }
 
 .text-content {
@@ -3658,17 +3662,30 @@ dd:last-child {
 .scroller-gallery .gallery-wrapper {
   display: flex;
   align-items: center;
+  overflow: hidden;
 }
 .scroller-gallery .gallery-container {
-  padding: 8px 0;
   overflow: hidden;
   width: 100%;
+  white-space: nowrap;
 }
 .scroller-gallery .scroll-gallery-item {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  border-radius: 8px;
+  flex-shrink: 0;
   transition: transform 0.4s ease-out;
+  transform: scale(0.95);
 }
 .scroller-gallery .scroll-gallery-item:hover {
-  transform: scale(1.05);
+  transform: scale(1);
+}
+.scroller-gallery .scroll-gallery-item img {
+  height: 100%;
+  width: auto;
+  object-fit: cover;
 }
 
 .elementor-widget-text-editor p {

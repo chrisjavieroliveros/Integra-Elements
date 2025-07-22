@@ -13,6 +13,14 @@
             display: block;
             height: 100px; // will be set by JS
             width: auto;
+            transition: transform 120ms ease-in-out;
+        }
+
+        &:hover {
+
+            img {
+                transform: scale(1.03);
+            }
         }
     }
 }
