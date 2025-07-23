@@ -292,42 +292,139 @@ class Gallery_Scroller_Widget extends \Elementor\Widget_Base {
 
         
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const wrapper = document.querySelector('.gallery-wrapper');
-
-            // Speed configuration from Elementor settings
-            const speed = <?= $speed; ?> || 4;
-
-            // Responsive speed multipliers
-            let currentSpeedMultiplier = window.innerWidth <= 768 ? 0.08 : 0.05; // Mobile: 0.8, Desktop: 0.05
+        // Defensive gallery scroller initialization to handle caching issues
+        (function() {
+            'use strict';
             
-            // Recalculate speed multiplier on window resize
-            const updateSpeedMultiplier = () => {
-                currentSpeedMultiplier = window.innerWidth <= 768 ? 0.08 : 0.05;
-            };
-            
-            // Add resize event listener
-            window.addEventListener('resize', updateSpeedMultiplier);
-
-            // Duplicate the content for seamless scrolling
-            wrapper.innerHTML += wrapper.innerHTML;
-
-            let scrollAmount = 0;
-
-            function scrollGallery() {
-                scrollAmount += speed * currentSpeedMultiplier;
-                wrapper.scrollLeft = scrollAmount;
-
-                // Reset scroll to start when halfway through (since we doubled content)
-                if (scrollAmount >= wrapper.scrollWidth / 2) {
-                    scrollAmount = 0;
+            // Ensure DOM is ready with multiple fallbacks
+            function domReady(fn) {
+                if (document.readyState === 'loading') {
+                    document.addEventListener('DOMContentLoaded', fn);
+                } else {
+                    fn();
                 }
-
-                requestAnimationFrame(scrollGallery);
             }
+            
+            // Retry mechanism for finding elements
+            function waitForElement(selector, callback, maxAttempts = 20) {
+                let attempts = 0;
+                
+                function checkElement() {
+                    const element = document.querySelector(selector);
+                    if (element && element.offsetParent !== null) {
+                        callback(element);
+                    } else if (attempts < maxAttempts) {
+                        attempts++;
+                        setTimeout(checkElement, 100);
+                    } else {
+                        console.warn('Gallery Scroller: Element not found after multiple attempts:', selector);
+                    }
+                }
+                
+                checkElement();
+            }
+            
+            domReady(function() {
+                try {
+                    waitForElement('.gallery-wrapper', function(wrapper) {
+                        // Speed configuration from Elementor settings
+                        const speed = <?= $speed; ?> || 4;
 
-            scrollGallery();
-        });
+                        // Responsive speed multipliers
+                        let currentSpeedMultiplier = window.innerWidth <= 768 ? 0.08 : 0.05;
+                        
+                        // Recalculate speed multiplier on window resize
+                        const updateSpeedMultiplier = () => {
+                            currentSpeedMultiplier = window.innerWidth <= 768 ? 0.08 : 0.05;
+                        };
+                        
+                        // Add resize event listener
+                        window.addEventListener('resize', updateSpeedMultiplier);
+
+                        // Wait for images to load before duplicating content
+                        const images = wrapper.querySelectorAll('img');
+                        let loadedImages = 0;
+                        const totalImages = images.length;
+                        
+                        function onImageLoad() {
+                            loadedImages++;
+                            if (loadedImages === totalImages || loadedImages === 0) {
+                                initializeScroller();
+                            }
+                        }
+                        
+                        function initializeScroller() {
+                            // Additional safety check
+                            if (!wrapper || !wrapper.innerHTML.trim()) {
+                                console.warn('Gallery Scroller: Wrapper is empty, retrying...');
+                                setTimeout(() => initializeScroller(), 200);
+                                return;
+                            }
+                            
+                            // Duplicate the content for seamless scrolling
+                            const originalContent = wrapper.innerHTML;
+                            wrapper.innerHTML = originalContent + originalContent;
+
+                            let scrollAmount = 0;
+                            let isScrolling = true;
+
+                            function scrollGallery() {
+                                if (!isScrolling || !wrapper) return;
+                                
+                                try {
+                                    scrollAmount += speed * currentSpeedMultiplier;
+                                    wrapper.scrollLeft = scrollAmount;
+
+                                    // Reset scroll to start when halfway through (since we doubled content)
+                                    if (scrollAmount >= wrapper.scrollWidth / 2) {
+                                        scrollAmount = 0;
+                                    }
+
+                                    requestAnimationFrame(scrollGallery);
+                                } catch (error) {
+                                    console.warn('Gallery Scroller: Animation error:', error);
+                                    isScrolling = false;
+                                }
+                            }
+
+                            // Start scrolling with a small delay to ensure proper rendering
+                            setTimeout(() => {
+                                scrollGallery();
+                            }, 100);
+                            
+                            // Pause scrolling when tab is not visible (performance optimization)
+                            document.addEventListener('visibilitychange', () => {
+                                isScrolling = !document.hidden;
+                                if (isScrolling) {
+                                    scrollGallery();
+                                }
+                            });
+                        }
+                        
+                        // Handle image loading
+                        if (totalImages > 0) {
+                            images.forEach(img => {
+                                if (img.complete) {
+                                    onImageLoad();
+                                } else {
+                                    img.addEventListener('load', onImageLoad);
+                                    img.addEventListener('error', onImageLoad); // Count failed loads too
+                                }
+                            });
+                            
+                            // Fallback: initialize after timeout even if not all images load
+                            setTimeout(initializeScroller, 2000);
+                        } else {
+                            // No images, initialize immediately
+                            initializeScroller();
+                        }
+                    });
+                    
+                } catch (error) {
+                    console.error('Gallery Scroller: Initialization error:', error);
+                }
+            });
+        })();
     </script>
 
         <?php
