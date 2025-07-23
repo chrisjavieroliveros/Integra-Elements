@@ -9,6 +9,9 @@
     }
 
     .gallery-item {
+
+        transition: all 240ms ease-out;
+
         img {
             display: block;
             height: 100px; // will be set by JS
@@ -17,6 +20,9 @@
         }
 
         &:hover {
+            transform: translateY(-4px);
+            cursor: pointer;
+
 
             img {
                 transform: scale(1.03);

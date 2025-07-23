@@ -299,11 +299,11 @@ class Gallery_Scroller_Widget extends \Elementor\Widget_Base {
             const speed = <?= $speed; ?> || 4;
 
             // Responsive speed multipliers
-            let currentSpeedMultiplier = window.innerWidth <= 768 ? 0.8 : 0.05; // Mobile: 0.8, Desktop: 0.05
+            let currentSpeedMultiplier = window.innerWidth <= 768 ? 0.08 : 0.05; // Mobile: 0.8, Desktop: 0.05
             
             // Recalculate speed multiplier on window resize
             const updateSpeedMultiplier = () => {
-                currentSpeedMultiplier = window.innerWidth <= 768 ? 0.8 : 0.05;
+                currentSpeedMultiplier = window.innerWidth <= 768 ? 0.08 : 0.05;
             };
             
             // Add resize event listener

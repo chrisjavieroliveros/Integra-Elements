@@ -6,9 +6,10 @@
     }
 
     .accordion-item {
-        padding: 24px;
+        // padding: 24px;
         box-shadow: none;
         overflow: hidden;
+
 
         &--active {
 
@@ -26,25 +27,34 @@
             }
 
             .accordion-item-content {
-                padding-top: 16px;
+                padding: 24px;
+                padding-top: 0px;
                 max-height: 500px;
                 opacity: 1;
                 transition: max-height 170ms ease-in, opacity 175ms ease-in;
 
             }
         }
+
+        // Remove hover effect from .card-style;
+        &:hover {
+            transform: translateY(0);
+        }
     }
 
     .accordion-item-header {
         position: relative;
         font-weight: bold;
+        padding: 24px;
         padding-right: 32px;
         cursor: pointer;
+        // outline: 1px solid red;
 
         .accordion-item-icon {
             position: absolute;
-            right: 0;
-            top: 0;
+            top: 50%;
+            right: 16px;
+            transform: translateY(-50%);
             width: 12px;
             display: flex;
             align-items: center;

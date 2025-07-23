@@ -2691,11 +2691,18 @@ dd:last-child {
   flex-wrap: wrap;
   justify-content: center;
 }
+.gallery .gallery-item {
+  transition: all 240ms ease-out;
+}
 .gallery .gallery-item img {
   display: block;
   height: 100px;
   width: auto;
   transition: transform 120ms ease-in-out;
+}
+.gallery .gallery-item:hover {
+  transform: translateY(-4px);
+  cursor: pointer;
 }
 .gallery .gallery-item:hover img {
   transform: scale(1.03);
@@ -3043,7 +3050,6 @@ dd:last-child {
   gap: 12px;
 }
 .accordion-section .accordion-item {
-  padding: 24px;
   box-shadow: none;
   overflow: hidden;
 }
@@ -3056,21 +3062,27 @@ dd:last-child {
   transform: rotate(180deg);
 }
 .accordion-section .accordion-item--active .accordion-item-content {
-  padding-top: 16px;
+  padding: 24px;
+  padding-top: 0px;
   max-height: 500px;
   opacity: 1;
   transition: max-height 170ms ease-in, opacity 175ms ease-in;
 }
+.accordion-section .accordion-item:hover {
+  transform: translateY(0);
+}
 .accordion-section .accordion-item-header {
   position: relative;
   font-weight: bold;
+  padding: 24px;
   padding-right: 32px;
   cursor: pointer;
 }
 .accordion-section .accordion-item-header .accordion-item-icon {
   position: absolute;
-  right: 0;
-  top: 0;
+  top: 50%;
+  right: 16px;
+  transform: translateY(-50%);
   width: 12px;
   display: flex;
   align-items: center;
