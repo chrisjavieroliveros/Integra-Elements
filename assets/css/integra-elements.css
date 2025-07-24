@@ -2698,13 +2698,23 @@ dd:last-child {
   display: block;
   height: 100px;
   width: auto;
-  transition: transform 120ms ease-in-out;
+  transition: all 240ms ease-out;
 }
 .gallery .gallery-item:hover {
   transform: translateY(-4px);
   cursor: pointer;
 }
 .gallery .gallery-item:hover img {
+  transform: scale(1.03);
+}
+.gallery--is-gray .gallery-item img {
+  filter: grayscale(100%) opacity(0.6);
+}
+.gallery--is-gray .gallery-item:hover {
+  transform: translateY(0px);
+}
+.gallery--is-gray .gallery-item:hover img {
+  filter: grayscale(0%) opacity(1);
   transform: scale(1.03);
 }
 

@@ -9,14 +9,13 @@
     }
 
     .gallery-item {
-
         transition: all 240ms ease-out;
 
         img {
             display: block;
             height: 100px; // will be set by JS
             width: auto;
-            transition: transform 120ms ease-in-out;
+            transition: all 240ms ease-out;
         }
 
         &:hover {
@@ -29,4 +28,24 @@
             }
         }
     }
+
+    &--is-gray {
+
+        .gallery-item {
+            img {
+                filter: grayscale(100%) opacity(0.6);
+            }
+
+            &:hover {
+                transform: translateY(0px);
+
+                img {
+                    filter: grayscale(0%) opacity(1);
+                    transform: scale(1.03);
+                }
+            }
+        }
+    }
+
+
 }

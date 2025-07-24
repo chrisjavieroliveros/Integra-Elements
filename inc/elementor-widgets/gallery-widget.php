@@ -58,6 +58,20 @@ class Gallery_Widget extends \Elementor\Widget_Base {
         ];
         include('attr/height/height.controls.php');
 
+        // Styling (Default, Gray First);
+        $this->add_control(
+            'gallery_style',
+            [
+                'label' => __('Style', 'integra-elements'),
+                'type' => \Elementor\Controls_Manager::SELECT,
+                'options' => [
+                    'default' => __('Default', 'integra-elements'),
+                    'gray-first' => __('Gray First', 'integra-elements'),
+                ],
+                'default' => 'default',
+            ]
+        );
+
         // End General Section
         $this->end_controls_section();
 
@@ -217,9 +231,13 @@ class Gallery_Widget extends \Elementor\Widget_Base {
         include('attr/theme/theme.render.php');
 
 
-
         // Background Render;
         include('attr/background/background.render.php');
+
+        // Gallery Style;
+        if ($settings['gallery_style'] == 'gray-first') {
+            $section_class .= ' gallery--is-gray';
+        }
 
         ?>
 
