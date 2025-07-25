@@ -214,7 +214,7 @@ class Stats_Widget extends \Elementor\Widget_Base {
     protected function render() {
         $settings = $this->get_settings_for_display();
 
-        $card_columns = $settings['card_columns']['size'];
+        $card_columns = isset($settings['card_columns']['size']) ? $settings['card_columns']['size'] : 3;
 
         // Theme Render;
         include('attr/theme/theme.render.php');

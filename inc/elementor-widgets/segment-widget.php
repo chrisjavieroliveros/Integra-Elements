@@ -164,7 +164,7 @@ class Segment_Widget extends \Elementor\Widget_Base {
         // Background Render;
         include('attr/background/background.render.php');
 
-        $segments = $settings['segments'];
+        $segments = $settings['segments'] ?? [];
 
         ?>
 

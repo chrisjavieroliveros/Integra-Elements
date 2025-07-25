@@ -152,12 +152,12 @@ class Display_Widget extends \Elementor\Widget_Base {
         include('attr/cta/cta.render.php');
 
         // Display Layout;
-        $display_layout = $settings['display_layout'];
+        $display_layout = $settings['display_layout'] ?? 'display-centered';
         if($display_layout === 'display-centered') {
             $section_class .= ' display-section--centered';
         }
 
-        $preview_position = $settings['display_preview_position'];
+        $preview_position = $settings['display_preview_position'] ?? 'right';
         if($display_layout === 'display-w-preview' && $preview_position === 'left') {
             $section_class .= ' display-section--preview-left';
         }

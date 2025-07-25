@@ -21,26 +21,15 @@ $list_style_icon_color = $settings['list_style_icon_color'] ?? 'Primary';
 
 // Display Icon;
 if($settings['display_icon_show'] === 'yes') {
-    $content_markup .= '<div class="display-icon" style="color: var(--color-'. $display_icon_color .'); font-size: '. $settings['display_icon_size']['size'] .'px;">';
+    $icon_size = isset($settings['display_icon_size']['size']) ? $settings['display_icon_size']['size'] : 24;
+    $icon_value = isset($display_icon['value']) ? $display_icon['value'] : '';
+    $opacity_value = isset($display_icon_opacity['size']) ? $display_icon_opacity['size'] : 10;
     
-    // Simple check: if array, it's SVG upload; if string, it's library icon
-    if (is_array($display_icon)) {
-        // Check if it's SVG (library = 'svg' and nested url)
-        if (isset($display_icon['library']) && $display_icon['library'] === 'svg' && isset($display_icon['value']['url'])) {
-            // SVG upload - no base needed, use icon size as width
-            $content_markup .= '<img src="'. esc_url($display_icon['value']['url']) .'" alt="Display Icon" style="width: '. $settings['display_icon_size']['size'] .'px; height: auto;" />';
-        } elseif (isset($display_icon['value']) && !empty($display_icon['value'])) {
-            // Library icon - include base
-            $content_markup .= '<i class="'. esc_attr($display_icon['value']) .'"></i>';
-            $content_markup .= '<div class="display-icon-base" style="background-color: var(--color-'. $display_icon_color .'); opacity: '. $display_icon_opacity['size'] .'%;"></div>';
-        }
-    } elseif (!empty($display_icon)) {
-        // Library icon - include base
-        $icon_class = is_array($display_icon) && isset($display_icon['value']) ? $display_icon['value'] : $display_icon;
-        $content_markup .= '<i class="'. esc_attr($icon_class) .'"></i>';
-        $content_markup .= '<div class="display-icon-base" style="background-color: var(--color-'. $display_icon_color .'); opacity: '. $display_icon_opacity['size'] .'%;"></div>';
+    $content_markup .= '<div class="display-icon" style="color: var(--color-'. $display_icon_color .'); font-size: '. $icon_size .'px;">';
+    if (!empty($icon_value)) {
+        $content_markup .= '<i class="'. $icon_value .'"></i>';
     }
-    
+    $content_markup .= '<div class="display-icon-base" style="background-color: var(--color-'. $display_icon_color .'); opacity: '. $opacity_value .'%;"></div>';
     $content_markup .= '</div>';
 }
 

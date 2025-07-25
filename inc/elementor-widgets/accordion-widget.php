@@ -166,8 +166,8 @@ class Accordion_Widget extends \Elementor\Widget_Base {
         // Background Render
         include('attr/background/background.render.php');
 
-        $accordion_items = $settings['accordion_items'];
-        $accordion_icon = $settings['accordion_icon'];
+        $accordion_items = $settings['accordion_items'] ?? [];
+        $accordion_icon = $settings['accordion_icon'] ?? [];
 
         ?>
 

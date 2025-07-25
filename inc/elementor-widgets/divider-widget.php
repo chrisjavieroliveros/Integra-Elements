@@ -252,9 +252,9 @@ class Divider_Widget extends \Elementor\Widget_Base {
 
 
         // Divider color;
-        $divider_color = $settings['divider_color'];
-        $light_variants = $settings['light_variants'];
-        $dark_variants = $settings['dark_variants'];
+        $divider_color = $settings['divider_color'] ?? 'Primary';
+        $light_variants = $settings['light_variants'] ?? 'Light';
+        $dark_variants = $settings['dark_variants'] ?? 'Dark';
 
         if ($divider_color === 'Light') {
             $divider_color = $light_variants;
